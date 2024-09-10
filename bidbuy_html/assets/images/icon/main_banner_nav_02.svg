@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_5679" data-name="사각형 5679" width="20" height="20" transform="translate(577 1602)" fill="none" stroke="#82c2bd" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_9623" data-name="마스크 그룹 9623" transform="translate(-577 -1602)" clip-path="url(#clip-path)">
+    <g id="Icon_akar-calculator" data-name="Icon akar-calculator" transform="translate(577.633 1603)">
+      <path id="패스_11668" data-name="패스 11668" d="M3,6.673A3.673,3.673,0,0,1,6.673,3h11.02a3.673,3.673,0,0,1,3.673,3.673v4.592H3Z" transform="translate(-3 -3)" fill="none" stroke="#82c2bd" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_11669" data-name="패스 11669" d="M26.005,24.75H23.25" transform="translate(-10.852 -11.434)" fill="none" stroke="#82c2bd" stroke-linecap="square" stroke-width="1.5"/>
+      <path id="패스_11670" data-name="패스 11670" d="M12.183,16.5h9.183v6.428A3.673,3.673,0,0,1,17.693,26.6h-5.51Zm0,0H3v6.428A3.673,3.673,0,0,0,6.673,26.6h5.51Z" transform="translate(-3 -8.235)" fill="none" stroke="#82c2bd" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_11671" data-name="패스 11671" d="M8.25,25.255l1.378-1.378m0,0L11.005,22.5M9.628,23.878l1.378,1.378M9.628,23.878,8.25,22.5" transform="translate(-5.036 -10.562)" fill="none" stroke="#82c2bd" stroke-linecap="square" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

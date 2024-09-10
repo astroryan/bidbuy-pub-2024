@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+:root {
+  --white: #fff;
+  --mainMint: #82c2bd;
+}
+
+:root[color-theme="dark"] {
+}
