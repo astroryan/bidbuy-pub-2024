@@ -2,7 +2,9 @@
 
 :root {
   --white: #fff;
+  --black: #000;
   --mainMint: #82c2bd;
+  --mainBlue: #579ee5;
 }
 
 :root[color-theme="dark"] {
