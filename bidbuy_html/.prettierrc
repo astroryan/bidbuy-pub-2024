@@ -6,7 +6,7 @@
   "useTabs": false,
   "bracketSpacing": true,
   "bracketSameLine": false,
-  "printWidth": 160,
+  "printWidth": 120,
   "semi": true,
   "endOfLine": "lf"
 }

@@ -79,3 +79,42 @@ function menuHover() {
     menuList.addEventListener("mouse");
   });
 }
+
+// MAIN
+const mainVisualSlide = new Swiper(".main-slider", {
+  speed: 600,
+  a11y: {
+    prevSlideMessage: "이전 슬라이드",
+    nextSlideMessage: "다음 슬라이드",
+    slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+  },
+  loop: false, // 슬라이드 반복 여부
+  watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+  autoplay: {
+    // 자동 슬라이드 설정 , 비 활성화 시 false
+    delay: 3000, // 시간 설정
+    disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
+  },
+  pagination: {
+    el: ".main-slider__pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".main-slider__button--next",
+    prevEl: ".main-slider__button--prev",
+  },
+});
+
+function SlideAutoplayControl(el) {
+  if (el.classList.contains("pause")) {
+    el.classList.remove("pause");
+    mainVisualSlide.autoplay.start();
+    console.log("?");
+    return false;
+  } else {
+    mainVisualSlide.autoplay.stop();
+    el.classList.add("pause");
+    console.log("!");
+    return false;
+  }
+}

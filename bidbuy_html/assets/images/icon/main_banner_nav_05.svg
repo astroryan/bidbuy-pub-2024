@@ -1,10 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
   <defs>
     <clipPath id="clip-path">
-      <rect id="사각형_5682" data-name="사각형 5682" width="20" height="20" transform="translate(1319 1606)" fill="none" stroke="#707070" stroke-width="1"/>
+      <rect id="사각형_5681" data-name="사각형 5681" width="20" height="20" transform="translate(1137 1601)" fill="none" stroke="#82c2bd" stroke-width="1"/>
     </clipPath>
   </defs>
-  <g id="마스크_그룹_9626" data-name="마스크 그룹 9626" transform="translate(-1319 -1606)" clip-path="url(#clip-path)">
-    <path id="Icon_awesome-stamp" data-name="Icon awesome-stamp" d="M1.125,18h15.75V15.75H1.125Zm13.5-9h-2.34A1.035,1.035,0,0,1,11.25,7.965V7.633A5.972,5.972,0,0,1,12,4.9a3.333,3.333,0,0,0,.318-2.124,3.375,3.375,0,0,0-6.7.6A3.3,3.3,0,0,0,5.93,4.767a7.656,7.656,0,0,1,.819,3.2v0A1.035,1.035,0,0,1,5.715,9H3.375A3.375,3.375,0,0,0,0,12.375V13.5a1.125,1.125,0,0,0,1.125,1.125h15.75A1.125,1.125,0,0,0,18,13.5V12.375A3.375,3.375,0,0,0,14.625,9Z" transform="translate(1320 1607)" fill="#fff"/>
+  <g id="마스크_그룹_9625" data-name="마스크 그룹 9625" transform="translate(-1137 -1601)" clip-path="url(#clip-path)">
+    <g id="그룹_13329" data-name="그룹 13329" transform="translate(1140 1602)">
+      <g id="Icon_feather-box" data-name="Icon feather-box" transform="translate(0 1.356)">
+        <path id="패스_11674" data-name="패스 11674" d="M19.417,14.6V7.974a1.657,1.657,0,0,0-.829-1.434l-5.8-3.315a1.657,1.657,0,0,0-1.657,0L5.329,6.54A1.657,1.657,0,0,0,4.5,7.974V14.6a1.657,1.657,0,0,0,.829,1.434l5.8,3.315a1.657,1.657,0,0,0,1.657,0l5.8-3.315A1.657,1.657,0,0,0,19.417,14.6Z" transform="translate(-4.5 -3.003)" fill="none" stroke="#82c2bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <path id="패스_11675" data-name="패스 11675" d="M4.9,10.44l7.235,4.185,7.235-4.185M12.14,22.971V14.617" transform="translate(-4.681 -6.331)" fill="none" stroke="#82c2bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+      <path id="패스_11676" data-name="패스 11676" d="M0,0,3.642,4.918l8.626,11.647" transform="translate(2.65)" fill="#82c2bd" stroke="#82c2bd" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
   </g>
 </svg>

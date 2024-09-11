@@ -40,9 +40,11 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
 
     <!-- JS -->
     <script src="../assets/js/jquery-3.5.1.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js" defer></script>
     <script src="../assets/js/common.js" defer></script>
     <script src="../assets/js/include.js" defer></script>
   </head>
@@ -71,23 +73,33 @@
               <ul>
                 <!-- 최근 검색어 -->
                 <li class="search-box__info-list">
-                  <p class="search-box__info-title">최근 검색어<button type="button" class="recent-searches__all-delete">전체삭제</button></p>
+                  <p class="search-box__info-title">
+                    최근 검색어<button type="button" class="recent-searches__all-delete">전체삭제</button>
+                  </p>
                   <ul class="recent-searches__list">
                     <li>
                       <a href="" class="recent-searches__text">야후와인</a
-                      ><button type="button" class="recent-searches__delete"><span class="blind">태그삭제</span></button>
+                      ><button type="button" class="recent-searches__delete">
+                        <span class="blind">태그삭제</span>
+                      </button>
                     </li>
                     <li>
                       <a href="" class="recent-searches__text">레드와인</a
-                      ><button type="button" class="recent-searches__delete"><span class="blind">태그삭제</span></button>
+                      ><button type="button" class="recent-searches__delete">
+                        <span class="blind">태그삭제</span>
+                      </button>
                     </li>
                     <li>
                       <a href="" class="recent-searches__text">명품시계</a
-                      ><button type="button" class="recent-searches__delete"><span class="blind">태그삭제</span></button>
+                      ><button type="button" class="recent-searches__delete">
+                        <span class="blind">태그삭제</span>
+                      </button>
                     </li>
                     <li>
                       <a href="" class="recent-searches__text">토로르피규어</a
-                      ><button type="button" class="recent-searches__delete"><span class="blind">태그삭제</span></button>
+                      ><button type="button" class="recent-searches__delete">
+                        <span class="blind">태그삭제</span>
+                      </button>
                     </li>
                   </ul>
                 </li>
@@ -100,7 +112,8 @@
                     <li><a href="" class="recommended-search__text">Babysense</a></li>
                     <li>
                       <a href="" class="recommended-search__text"
-                        >Binaural Hemi-SyncBinaural Hemi-SyncBinaural Hemi-SyncBinaural Hemi-SyncBinaural Hemi-SyncBinaural Hemi-SyncBinaural Hemi-Sync</a
+                        >Binaural Hemi-SyncBinaural Hemi-SyncBinaural Hemi-SyncBinaural Hemi-SyncBinaural
+                        Hemi-SyncBinaural Hemi-SyncBinaural Hemi-Sync</a
                       >
                     </li>
                   </ol>
@@ -109,10 +122,14 @@
                 <li class="search-box__info-list">
                   <ul class="search-banner">
                     <li>
-                      <a href="" class="search-banner__text"><span class="nowrap">야후일본 경매 초가성비 Top10 보기</span></a>
+                      <a href="" class="search-banner__text"
+                        ><span class="nowrap">야후일본 경매 초가성비 Top10 보기</span></a
+                      >
                     </li>
                     <li>
-                      <a href="" class="search-banner__text"><span class="nowrap">2024년 봄시즌 비드바이코리아 특별 할인</span></a>
+                      <a href="" class="search-banner__text"
+                        ><span class="nowrap">2024년 봄시즌 비드바이코리아 특별 할인</span></a
+                      >
                     </li>
                     <li>
                       <a href="" class="search-banner__text"><span class="nowrap">포인트 1+1 핵 아이템 이벤트</span></a>
@@ -130,7 +147,12 @@
               </a>
             </li>
             <li>
-              <button type="button" class="header__util util-notify modal_button" onclick="openModal(this)" data-modal="notify">
+              <button
+                type="button"
+                class="header__util util-notify modal_button"
+                onclick="openModal(this)"
+                data-modal="notify"
+              >
                 <span class="blind">알림</span>
               </button>
             </li>
@@ -166,7 +188,7 @@
         </div>
 
         <!-- GNB DROPDOWN MENU -->
-        <div class="dropdown-menu-box">
+        <div class="dropdown-menu-box" style="display: none">
           <div class="inner-width flex">
             <ul class="dropdown-menu">
               <li>
@@ -205,9 +227,9 @@
               </li>
             </ul>
             <ul class="dropdown-menu__items item-list">
-              <li class="item-box">
+              <li class="item-box simple">
                 <a href="" class="item__img">
-                  <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                  <img src="https://i.ebayimg.com/images/g/VqIAAOSwjSlmzPFE/s-l1200.jpg" alt="item" />
                 </a>
                 <div class="item__info">
                   <div class="item__market">
@@ -230,7 +252,7 @@
                   <span class="like-button__icon"></span>
                 </button>
               </li>
-              <li class="item-box">
+              <li class="item-box simple">
                 <a href="" class="item__img">
                   <img src="../assets/images/dummy/item_01.jpg" alt="item" />
                 </a>
@@ -241,7 +263,11 @@
                     </figure>
                     <p>라쿠텐 - Ten past Ten</p>
                   </div>
-                  <a href="" class="item__name">あすつく ビール 送料無料 アサヒ スーパードライ 350mlx48本あすつく ビール 送料無料 アサヒ スーパードライ 350mlx48本あすつく ビール 送料無料 アサヒ スーパードライ 350mlx48本あすつく ビール 送料無料 アサヒ スーパードライ 350mlx48本</a>
+                  <a href="" class="item__name"
+                    >あすつく ビール 送料無料 アサヒ スーパードライ 350mlx48本あすつく ビール 送料無料 アサヒ
+                    スーパードライ 350mlx48本あすつく ビール 送料無料 アサヒ スーパードライ 350mlx48本あすつく ビール
+                    送料無料 アサヒ スーパードライ 350mlx48本</a
+                  >
                   <div class="item__price">
                     <p>¥ 10,000,000</p>
                     <p class="item__discount-price">
@@ -249,6 +275,7 @@
                       <span class="item__discount-percent">(40%)</span>
                     </p>
                   </div>
+                </div>
                 <button class="like-button active" type="button" onClick="onClickLikeButton(this)">
                   <span>25</span>
                   <span class="like-button__icon"></span>
@@ -263,7 +290,9 @@
           <section class="modal-notify__box">
             <div class="modal-notify__header">
               <div class="modal-notify__title">알림</div>
-              <button class="modal__close-button" type="button" onclick="closeModal(this)"><span class="blind">모달 닫기</span></button>
+              <button class="modal__close-button" type="button" onclick="closeModal(this)">
+                <span class="blind">모달 닫기</span>
+              </button>
             </div>
             <div class="modal-notify__body tabs-container">
               <div class="notify__tabs tabs">
@@ -540,7 +569,7 @@
                   </li>
                 </ul>
                 <ul class="category__items item-list">
-                  <li class="item-box">
+                  <li class="item-box simple">
                     <figure class="item__img">
                       <img src="../assets/images/dummy/item_01.jpg" alt="item" />
                     </figure>
@@ -552,7 +581,7 @@
                     </div>
                     <div class="item__name">あすつく ビール 送料無料 アサヒ スーパル 送料無料 アサヒ スーパ</div>
                   </li>
-                  <li class="item-box">
+                  <li class="item-box simple">
                     <figure class="item__img">
                       <img src="../assets/images/dummy/item_01.jpg" alt="item" />
                     </figure>
@@ -576,7 +605,697 @@
       </header>
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
-      <main id="main" style="min-height: 100vh"></main>
+      <main id="main">
+        <div class="inner-width">
+          <section class="main-visual">
+            <article class="main-slider">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <a href="">
+                    <figure>
+                      <img src="../assets/images/dummy/slide_01.jpg" alt="slide" />
+                    </figure>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="">
+                    <figure>
+                      <img src="../assets/images/dummy/slide_01.jpg" alt="slide" />
+                    </figure>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="">
+                    <figure>
+                      <img src="../assets/images/dummy/slide_01.jpg" alt="slide" />
+                    </figure>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="">
+                    <figure>
+                      <img src="../assets/images/dummy/slide_01.jpg" alt="slide" />
+                    </figure>
+                  </a>
+                </li>
+              </ul>
+              <div class="main-slider__controls">
+                <button type="button" class="main-slider__autoplay-controls" onclick="SlideAutoplayControl(this)">
+                  <span class="blind">자동재생 시작</span>
+                </button>
+
+                <div class="main-slider__navigation">
+                  <button type="button" class="main-slider__button--prev"></button>
+                  <div class="main-slider__pagination"></div>
+                  <button type="button" class="main-slider__button--next"></button>
+                </div>
+              </div>
+            </article>
+            <!-- PUB :: 로그인 전/후가 다릅니다 -->
+            <!-- 1. 로그인 전 -->
+            <article class="main-visual__offline" style="display: none">
+              <div class="main-visual__inner">
+                <p>
+                  비드바이 멤버십으로<br />
+                  탁월한 해외쇼핑 경험과 혜택
+                </p>
+                <a href="/auth.html" class="basic-button__blue">로그인</a>
+                <ul class="offline-utils">
+                  <li><a href="">ID/PW찾기</a></li>
+                  <li><a href="">이용가이드</a></li>
+                  <li><a href="/signup.html">회원가입</a></li>
+                </ul>
+              </div>
+              <figure class="offline-banner">
+                <img src="" alt="" />
+              </figure>
+            </article>
+            <!-- 1. 로그인 후 -->
+            <article class="main-visual__online">
+              <div class="main-visual__inner">
+                <ul class="online-utils">
+                  <li><a href="">개인정보</a></li>
+                  <li><a href="">로그아웃</a></li>
+                </ul>
+
+                <div class="user-info-box">
+                  <figure class="user-info-box__profile">
+                    <img src="../assets/images/dummy/guide_banner_01.png" alt="" />
+                  </figure>
+
+                  <div class="user-info-box__details">
+                    <p class="user-info-box__name"><b>홍길동</b>님</p>
+                    <div class="user-info-box__rank">
+                      <b>우수회원</b>
+                      <div class="user-info-box__progress">
+                        <progress value="100" max="190"></progress>
+                        <span>190</span>
+                      </div>
+                      <b>프리미엄</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="user-info-box__points">
+                <a href="" class="user-info-box__bid-point">
+                  <p>비드포인트</p>
+                  <p><b>180</b>점</p>
+                </a>
+                <a href="" class="user-info-box__yahoo-point">
+                  <p>야후보증금</p>
+                  <p><b>30,000</b>원</p>
+                </a>
+                <a href="" class="user-info-box__ebay-point">
+                  <p>이베이보증금</p>
+                  <p><b>30,000</b>원</p>
+                </a>
+              </div>
+              <div class="main-visual__inner">
+                <ul class="user-info-box__benefits">
+                  <li>
+                    <b>동시입찰</b>
+                    <span>무제한</span>
+                  </li>
+                  <li>
+                    <b>국제운임할인</b>
+                    <span>2,000원</span>
+                  </li>
+                  <li>
+                    <b>대행수수료 할인</b>
+                    <span>3,000원</span>
+                  </li>
+                  <li>
+                    <b>결제대기</b>
+                    <span>3건</span>
+                  </li>
+                  <li>
+                    <b>보관료 할인</b>
+                    <span>3,000원</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </section>
+
+          <section class="main-content">
+            <article class="main-content__reco-item">
+              <ul class="main-reco-item item-list">
+                <!-- [관심상품 아이콘노출] item-box에 favorite-item 클래스 추가 -->
+                <li class="item-box">
+                  <a href="" class="item__img">
+                    <img src="https://i.ebayimg.com/images/g/VqIAAOSwjSlmzPFE/s-l1200.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price">
+                        <span class="item__total-price">¥<s>18,000</s></span>
+                        <span class="item__discount-percent">(40%)</span>
+                      </p>
+                    </div>
+                    <div class="item-tags">
+                      <span>#Nike</span>
+                      <span>#배송무료</span>
+                      <span>#중고</span>
+                    </div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                    1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                    2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                    > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <div class="item-button-wrap">
+                        <button class="item-button__cart">
+                          <span class="blind">장바구니</span>
+                        </button>
+                        <!-- <a href="제품상세" class="item-button__bid basic-button__dark-gray">
+                          입찰
+                          <div class="num-badge">5</div>
+                        </a>
+                        <a href="제품상세" class="item-button__buy basic-button__blue">
+                          구매
+                          <div class="num-badge">5</div>
+                        </a>
+                        <a href="제품상세" class="item-button__check "> <span class="blind">확인</span></a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+                <li class="item-box">
+                  <a href="" class="item__img">
+                    <img src="https://i.ebayimg.com/images/g/VqIAAOSwjSlmzPFE/s-l1200.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price">
+                        <span class="item__total-price">¥<s>18,000</s></span>
+                        <span class="item__discount-percent">즉시낙찰 </span>
+                      </p>
+                    </div>
+                    <div class="item-tags">
+                      <span>#Nike</span>
+                      <span>#배송무료</span>
+                      <span>#중고</span>
+                    </div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                    1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                    2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                    > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <p>05.04 14:47(1일)</p>
+                      <div class="item-button-wrap">
+                        <a href="제품상세" class="item-button__bid basic-button__dark-gray">
+                          입찰
+                          <div class="num-badge">5</div>
+                        </a>
+                        <a href="제품상세" class="item-button__buy basic-button__blue">
+                          구매
+                          <div class="num-badge">5</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+                <li class="item-box favorite-item">
+                  <a href="" class="item__img">
+                    <img src="https://i.ebayimg.com/images/g/VqIAAOSwjSlmzPFE/s-l1200.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                    </div>
+                    <div class="item-tags"></div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                    1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                    2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                    > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <p>05.04 14:47(1일)</p>
+                      <div class="item-button-wrap">
+                        <a href="제품상세" class="item-button__bid basic-button__dark-gray">
+                          입찰
+                          <div class="num-badge">5</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button active" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+                <li class="item-box favorite-item">
+                  <a href="" class="item__img">
+                    <img src="https://i.ebayimg.com/images/g/VqIAAOSwjSlmzPFE/s-l1200.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../assets/images/icon/country_uk.png" alt="uk" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name"
+                      >あすつく ビール 送料無料 アサヒあすつく ビール 送料無料 アサヒあすつく ビール 送料無料
+                      アサヒあすつく ビール 送料無料 アサヒ</a
+                    >
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price">
+                        <span class="item__total-price">¥<s>18,000</s></span>
+                        <span class="item__discount-percent">(40%)</span>
+                      </p>
+                    </div>
+                    <div class="item-tags">
+                      <span>#Nike</span>
+                      <span>#배송무료</span>
+                      <span>#중고</span>
+                    </div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                    1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                    2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                    > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <div class="item-button-wrap">
+                        <a href="제품상세" class="item-button__bid basic-button__dark-gray">
+                          입찰
+                          <div class="num-badge">5</div>
+                        </a>
+                        <button class="item-button__cart">
+                          <span class="blind">장바구니</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+                <li class="item-box favorite-item">
+                  <a href="" class="item__img">
+                    <img src="https://i.ebayimg.com/images/g/VqIAAOSwjSlmzPFE/s-l1200.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price">
+                        <span class="item__total-price">¥<s>18,000</s></span>
+                        <span class="item__discount-percent">즉시낙찰 ¥299</span>
+                      </p>
+                    </div>
+                    <div class="item-tags">
+                      <span>#Nike</span>
+                      <span>#배송무료</span>
+                      <span>#중고</span>
+                    </div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                    1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                    2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                    > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <p>05.04 14:47(1일)</p>
+                      <div class="item-button-wrap">
+                        <a href="제품상세" class="item-button__check"> <span class="blind">확인</span></a>
+                        <button class="item-button__cart">
+                          <span class="blind">장바구니</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+                <li class="item-box favorite-item">
+                  <a href="" class="item__img">
+                    <img src="https://i.ebayimg.com/images/g/VqIAAOSwjSlmzPFE/s-l1200.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price">
+                        <span class="item__total-price">¥<s>18,000</s></span>
+                      </p>
+                    </div>
+                    <div class="item-tags">
+                      <span>#Nike</span>
+                      <span>#배송무료</span>
+                      <span>#중고</span>
+                    </div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                    1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                    2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                    > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <p>05.04 14:47(1일)</p>
+                      <div class="item-button-wrap">
+                        <a href="제품상세" class="item-button__buy basic-button__blue">
+                          구매
+                          <div class="num-badge">5</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+              </ul>
+            </article>
+            <div class="main-content__sidebar">
+              <article class="main-content__notice">
+                <h2 class="main-title">BB 공지<a href="">더 보기</a></h2>
+                <ul class="main-notice-list">
+                  <li>
+                    <figure class="main-notice__country">
+                      <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                    </figure>
+                    <a href="" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
+                    <p class="main-notice__date">2024.04.26</p>
+                  </li>
+                  <li>
+                    <figure class="main-notice__country">
+                      <img src="../assets/images/icon/country_usa.png" alt="usa" />
+                    </figure>
+                    <a href="" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
+                    <p class="main-notice__date">2024.04.26</p>
+                  </li>
+                  <li>
+                    <figure class="main-notice__country">
+                      <img src="../assets/images/icon/country_uk.png" alt="uk" />
+                    </figure>
+                    <a href="" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
+                    <p class="main-notice__date">2024.04.26</p>
+                  </li>
+                  <li>
+                    <figure class="main-notice__country">
+                      <img src="../assets/images/icon/country_kor.png" alt="kor" />
+                    </figure>
+                    <a href="" class="main-notice__title">2024년 5월 카드사별 무이자 및 부분결제 부분결제</a>
+                    <p class="main-notice__date">2024.04.26</p>
+                  </li>
+                </ul>
+              </article>
+              <article class="main-content__auction">
+                <h2 class="main-title">HOT 경매<b>마감임박</b></h2>
+                <div class="hot-aution-box">
+                  <ul class="hot-aution-list">
+                    <li>
+                      <a href="" class="hot-aution__img">
+                        <img src="../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="hot-aution__info">
+                        <div class="item__market">
+                          <figure class="item__country">
+                            <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          </figure>
+                          <p>라쿠텐 - Ten past Ten</p>
+                        </div>
+                        <p class="hot-aution__time">종료 45분 남음</p>
+                        <a href="" class="hot-aution__name">あすつく ビール 送料無料 アサヒ</a>
+                        <div class="hot-aution__price">
+                          <p>¥ 10,000</p>
+                          <p class="hot-aution__bid"><strong>245</strong> bid</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="" class="hot-aution__img">
+                        <img src="../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="hot-aution__info">
+                        <div class="item__market">
+                          <figure class="item__country">
+                            <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          </figure>
+                          <p>라쿠텐 - Ten past Ten</p>
+                        </div>
+                        <p class="hot-aution__time">종료 45분 남음</p>
+                        <a href="" class="hot-aution__name"
+                          >あすつく ビール 送料無料 アサヒあすつく ビール 送料無料 アサヒあすつく ビール 送料無料
+                          アサヒあすつく ビール 送料無料 アサヒ</a
+                        >
+                        <div class="hot-aution__price">
+                          <p>¥ 10,000</p>
+                          <p class="hot-aution__bid"><strong>245</strong> bid</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="" class="hot-aution__img">
+                        <img src="../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="hot-aution__info">
+                        <div class="item__market">
+                          <figure class="item__country">
+                            <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          </figure>
+                          <p>라쿠텐 - Ten past Ten</p>
+                        </div>
+                        <p class="hot-aution__time">종료 45분 남음</p>
+                        <a href="" class="hot-aution__name">あすつく ビール 送料無料 アサヒ</a>
+                        <div class="hot-aution__price">
+                          <p>¥ 10,000</p>
+                          <p class="hot-aution__bid"><strong>245</strong> bid</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="" class="hot-aution__img"> <img src="../assets/images/dummy/item_01.jpg" alt="" /> </a>
+                      <div class="hot-aution__info">
+                        <div class="item__market">
+                          <figure class="item__country">
+                            <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          </figure>
+                          <p>라쿠텐 - Ten past Ten</p>
+                        </div>
+                        <p class="hot-aution__time">종료 45분 남음</p>
+                        <a href="" class="hot-aution__name">あすつく ビール 送料無料 アサヒ</a>
+                        <div class="hot-aution__price">
+                          <p>¥ 10,000</p>
+                          <p class="hot-aution__bid"><strong>245</strong> bid</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <section class="main-nav">
+          <div class="inner-width">
+            <ul class="main-nav__list">
+              <li class="main-nav__item">
+                <a href="https://unipass.customs.go.kr/csp/persIndex.do" target="_blank">
+                  <p>개인통관공유부호</p>
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="">
+                  <!-- <a href="javascript:VivaUtil.callCalculator();"> -->
+                </a>
+                <p>비용계산기</p>
+              </li>
+              <li class="main-nav__item">
+                <a href="" class="modal-"> <p>단위변환</p> </a>
+              </li>
+              <li class="main-nav__item">
+                <a href="" class="modal-"><p>해외사이즈표</p></a>
+              </li>
+              <li class="main-nav__item">
+                <a href="" class="modal-"> <p>EMS발송 불가품목</p></a>
+              </li>
+              <li class="main-nav__item">
+                <a href="/community/attendance"> <p>비바출석부</p> </a>
+              </li>
+
+              <li class="main-nav__item">
+                <a href=""> <p>예상 관세율조회</p> </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="inner-width">
+          <section class="service-info">
+            <article class="service-info__center">
+              <h2 class="main-title">비드바이 센터</h2>
+              <ul>
+                <li>
+                  <figure class="center__county">
+                    <img src="../assets/images/icon/country_kor.png" alt="kor" />
+                  </figure>
+                  <div class="center__info">
+                    <p class="center__title"><b>한국</b>KOREA</p>
+                    <p class="center__region">서울 사무소</p>
+                    <p class="center__time">24.05.08 PM 03:02:11</p>
+                  </div>
+                  <div class="center__status">
+                    <div class="center__status-badge">업무중</div>
+                    <button type="button" onclick="openModal(this)" data-modal="scheduleModal"></button>
+                  </div>
+                </li>
+                <li>
+                  <figure class="center__county">
+                    <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                  </figure>
+                  <div class="center__info">
+                    <p class="center__title"><b>일본</b>JAPAN</p>
+                    <p class="center__region">오사카 사무소</p>
+                    <p class="center__time">24.05.08 PM 03:02:11</p>
+                  </div>
+                  <div class="center__status">
+                    <div class="center__status-badge">업무중</div>
+                    <button type="button" onclick="openModal(this)" data-modal="scheduleModal"></button>
+                  </div>
+                </li>
+                <li>
+                  <figure class="center__county">
+                    <img src="../assets/images/icon/country_usa.png" alt="usa" />
+                  </figure>
+                  <div class="center__info">
+                    <p class="center__title"><b>미국</b>USA</p>
+                    <p class="center__region">캘리포니아 사무소</p>
+                    <p class="center__time">24.05.08 PM 03:02:11</p>
+                  </div>
+
+                  <div class="center__status">
+                    <div class="center__status-badge end">업무종료</div>
+                    <button type="button" onclick="openModal(this)" data-modal="scheduleModal"></button>
+                  </div>
+                </li>
+                <li>
+                  <figure class="center__county">
+                    <img src="../assets/images/icon/country_uk.png" alt="uk" />
+                  </figure>
+                  <div class="center__info">
+                    <p class="center__title"><b>영국</b>UK</p>
+                    <p class="center__region">런던 사무소</p>
+                    <p class="center__time">24.05.08 PM 03:02:11</p>
+                  </div>
+
+                  <div class="center__status">
+                    <div class="center__status-badge end">업무종료</div>
+                    <button type="button" onclick="openModal(this)" data-modal="scheduleModal"></button>
+                  </div>
+                </li>
+              </ul>
+            </article>
+            <article class="service-info__exchange">
+              <h2 class="main-title">비드바이 고시환율</h2>
+            </article>
+            <article class="service-info__cs">
+              <h2 class="main-title">고객센터</h2>
+            </article>
+            <article class="service-info__contact">
+              <h2 class="main-title">편의연락정보</h2>
+              <div class="contact-inner">
+                <dl class="office-customs">
+                  <dt>관세청</dt>
+                  <dd>125</dd>
+                </dl>
+                <dl class="aone">
+                  <dt>관세법인 에이원</dt>
+                  <dd>032-745-0870~2</dd>
+                </dl>
+                <dl class="jeongun-customs">
+                  <dt>정운관세사</dt>
+                  <dd>032-752-5926</dd>
+                </dl>
+                <dl class="wooshin-customs">
+                  <dt>우신관세사</dt>
+                  <dd>02-2666-5445</dd>
+                </dl>
+                <hr />
+                <dl class="pantos">
+                  <dt>판토스</dt>
+                  <dd>032-744-1528</dd>
+                </dl>
+                <dl class="ems">
+                  <dt>EMS</dt>
+                  <dd>1588-1300</dd>
+                </dl>
+                <dl class="hanjin">
+                  <dt>한진</dt>
+                  <dd>1588-1612(3번)</dd>
+                </dl>
+                <dl class="intl-sea-express">
+                  <dt>국제선편 특송</dt>
+                  <dd>02-3143-5555</dd>
+                </dl>
+              </div>
+            </article>
+          </section>
+
+          <section class="extra-info">
+            <div class="extra-info__sidebar">
+              <article class="extra-info__reviews">
+                <h2 class="main-title">고객후기</h2>
+              </article>
+              <article class="extra-info__recent-items">
+                <h2 class="main-title">최근낙찰상품</h2>
+              </article>
+            </div>
+            <article class="extra-info__reporter">
+              <h2 class="main-title">비드바이특파원</h2>
+            </article>
+          </section>
+        </div>
+      </main>
       <!-- END :: MAIN -->
       <!-- START :: FOOTER -->
       <footer id="footer"></footer>
