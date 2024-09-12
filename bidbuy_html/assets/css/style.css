@@ -205,6 +205,7 @@
   margin-bottom: 22px;
 }
 .user-info-box__profile {
+  position: relative;
   flex-shrink: 0;
   width: 70px;
   height: 70px;
@@ -212,13 +213,14 @@
   border-radius: 10px;
   overflow: hidden;
 }
+
 .user-info-box__details {
   flex: 1;
 }
 .user-info-box__name {
   display: flex;
   align-items: center;
-  grid-area: 3px;
+  gap: 3px;
   font-size: 16px;
   margin-bottom: 14px;
 }
@@ -306,8 +308,9 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 2px;
+  gap: 3px;
   font-size: 14px;
+  line-height: 1.4;
   font-weight: 400;
   margin-top: 3px;
 }
@@ -451,12 +454,7 @@
   border: 1px solid #f0f0f0;
   margin-right: 25px;
 }
-.hot-aution__img img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 .hot-aution__info {
   flex: 1;
   display: flex;
@@ -580,38 +578,41 @@
 }
 
 /* MAIN SERVICE */
-.service-info {
+.main-service {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
 }
-.service-info > article {
+.main-service > article {
   flex-shrink: 0;
   width: 303px;
   border: 1px solid rgba(222, 222, 222, 1);
   border-radius: 12px;
+  overflow: hidden;
 }
-.service-info .main-title {
+.main-service .main-title {
   display: flex;
   align-items: center;
   padding: 0 16px;
   height: 51px;
 }
-.service-info__center {
+/* 비드바이 센터 */
+.main-service__center {
 }
-.service-info__center .main-title {
+.main-service__center .main-title {
   background-color: rgba(130, 194, 189, 0.1);
 }
-.service-info__center ul {
+.main-service__center ul {
   padding: 24px 25px 14px;
 }
-.service-info__center li {
+.main-service__center li {
   position: relative;
   display: flex;
 }
-.service-info__center li + li {
+.main-service__center li + li {
   margin-top: 20px;
 }
+
 .center__county {
   width: 25px;
   height: 25px;
@@ -619,6 +620,7 @@
   border-radius: 50%;
   margin-right: 19px;
 }
+
 .center__info {
   display: flex;
   flex-direction: column;
@@ -641,7 +643,7 @@
   font-weight: 700;
   color: #707070;
 }
-.center__time {
+.center__desc {
   font-size: 14px;
   letter-spacing: -0.02em;
   color: #707070;
@@ -668,6 +670,7 @@
 .center__status-badge.end {
   background-color: #f0f0f0;
   color: #707070;
+  border: none;
 }
 .center__status button {
   flex-shrink: 0;
@@ -677,33 +680,201 @@
   border: 1px solid #707070;
   background: #fff url("../images/icon/calendar.svg") no-repeat center/ 11px 12px;
 }
-.service-info__exchange {
+
+/* 비드바이 고시환율 */
+.main-service__exchange {
 }
-.service-info__exchange .main-title {
+.main-service__exchange .main-title {
   background-color: rgba(87, 158, 229, 0.1);
 }
-
-.service-info__cs {
+.main-service__exchange .service-inner {
+  padding: 30px 25px 20px 23px;
 }
-.service-info__cs .main-title {
-  background-color: #f0f0f0;
-}
-.service-info__contact {
-}
-.service-info__contact .main-title {
-  background-color: #f0f0f0;
-}
-
-.contact-inner {
-  padding: 25px 22px 32px;
-}
-.service-info__contact dl {
+.exchange__thead {
   display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #707070;
 }
-.service-info__contact dl + dl {
+.main-service__exchange ul {
+}
+.main-service__exchange li {
+  position: relative;
+  padding: 20px 0;
+  border-bottom: 1px dashed #dedede;
+}
+.main-service__exchange li + li {
+}
+.exchange__county {
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.exchange__info {
+  display: flex;
+  align-items: center;
+}
+.exchange__title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  padding-top: 2px;
+}
+.exchange__title b {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.exchange__rate {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin-left: auto;
+}
+
+.exchange__desc {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #707070;
+  gap: 3px;
+  padding-left: 41px;
+  margin-top: 7px;
+}
+
+.exchange-icon {
+  flex-shrink: 0;
+  width: 13px;
+  height: 9px;
+}
+.down-icon {
+  background: url("../images/icon/down_blue.svg") no-repeat center / contain;
+}
+.up-icon {
+  background: url("../images/icon/up_red.svg") no-repeat center / contain;
+}
+
+.exchange-blue {
+  color: #0045ff;
+}
+.exchange-red {
+  color: #ff0000;
+}
+.exchange__bottom {
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  line-height: 1.4;
+  text-align: center;
+  color: #707070;
+  padding-top: 13px;
+}
+.exchange__bottom b {
+  font-weight: 700;
+}
+/* 고객센터 */
+.main-service__cs {
+}
+.main-service__cs .main-title {
+  background-color: #f0f0f0;
+}
+.main-service__cs .service-inner {
+  padding: 32px 22px 35px;
+}
+.cs__main-number-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #dedede;
+}
+.cs__main-number-img {
+  flex-shrink: 0;
+  width: 84px;
+  height: 63px;
+  background: url("../images/icon/computer.png") no-repeat center right / cover;
+}
+.cs__main-number {
+  font-size: 16px;
+  font-weight: 700;
+  color: #707070;
+}
+.cs__main-number b {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 27px;
+  font-weight: 700;
+  color: #000;
+}
+.cs__main-cs-box {
   margin-top: 23px;
 }
-.service-info__contact dt {
+.cs__main-cs-box dl {
+  display: flex;
+  align-items: center;
+}
+.cs__main-cs-box dl + dl {
+  margin-top: 11px;
+}
+.cs__main-cs-box dt {
+  flex-shrink: 0;
+  min-width: 52px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  padding-right: 3px;
+}
+.cs__main-cs-box dd {
+  font-size: 14px;
+  color: #000;
+}
+.cs__business-hours {
+  margin-top: 28px;
+}
+.cs__business-hours dl {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.cs__business-hours dl + dl {
+  margin-top: 9px;
+}
+.cs__business-hours dt {
+  font-size: 15px;
+  color: #707070;
+  font-weight: 700;
+}
+.cs__business-hours dd {
+  font-size: 15px;
+  color: #000;
+  font-weight: 700;
+}
+.cs__business-hours p {
+  font-size: 14px;
+  color: #707070;
+  margin-top: 6px;
+}
+/* 편의연락정보 */
+.main-service__contact {
+}
+.main-service__contact .main-title {
+  background-color: #f0f0f0;
+}
+
+.main-service__contact .service-inner {
+  padding: 25px 22px 32px;
+}
+.main-service__contact dl {
+  display: flex;
+}
+.main-service__contact dl + dl {
+  margin-top: 23px;
+}
+.main-service__contact dt {
   position: relative;
   flex-shrink: 0;
   width: 136px;
@@ -713,7 +884,7 @@
   font-weight: 700;
   padding-left: 5px;
 }
-.service-info__contact dt::before {
+.main-service__contact dt::before {
   content: "";
   flex-shrink: 0;
   width: 18px;
@@ -721,7 +892,7 @@
   background-position: center;
   background-size: contain;
 }
-.service-info__contact dd {
+.main-service__contact dd {
   flex: 1;
   font-size: 14px;
 }
@@ -749,8 +920,317 @@
 .intl-sea-express dt:before {
   background-image: url("../images/icon/contact_08.png");
 }
-.service-info__contact hr {
+.main-service__contact hr {
   border: none;
-  border-top: 1px dashed #dedede;
+  border: 1px solid #dedede;
+  border-radius: 12px;
   margin: 24px 0;
+}
+
+/* 고객후기 */
+.main-customer {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+.main-customer .main-title {
+  margin-bottom: 26px;
+}
+.main-customer__container {
+  /* width: 846px; */
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  border: 1px solid #dedede;
+  border-radius: 12px;
+  padding: 35px 25px 43px;
+}
+.main-customer__reviews {
+  flex-shrink: 0;
+  width: 412px;
+}
+.reviews-list {
+  width: 100%;
+}
+.review-box {
+  position: relative;
+  border: 1px solid #dedede;
+  border-radius: 12px;
+  padding: 23px 26px 26px;
+}
+.review-box + .review-box {
+  margin-top: 25px;
+}
+.review-box__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+.review__info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.review__profile {
+  position: relative;
+  flex-shrink: 0;
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.review__details {
+}
+.review__name {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 7px;
+}
+.review__star {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.review__star span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 14px;
+}
+.review__star-num {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 700;
+  color: #000;
+}
+.reviews__rank {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #707070;
+}
+.reviews__img {
+  position: relative;
+  flex-shrink: 0;
+  width: 97px;
+  height: 97px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.review-box__content {
+  width: 260px;
+}
+.review-box__title {
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: #000;
+  font-weight: 700;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+.review-box__desc {
+  font-size: 14px;
+  line-height: 1.5;
+  height: 2lh;
+  letter-spacing: -0.02em;
+  color: #707070;
+  margin-top: 16px;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.review-box__badge {
+  position: absolute;
+  right: 27px;
+  bottom: 20px;
+  min-width: 60px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  border-radius: 15px;
+  padding: 0 5px;
+}
+.bid-badge {
+  border: 1px solid var(--mainBlue);
+  color: var(--mainBlue);
+}
+.buy-badge {
+  border: 1px solid var(--mainMint);
+  color: var(--mainMint);
+}
+/* 최근낙찰상품 */
+.main-customer__recent-items {
+  flex-shrink: 0;
+  width: 360px;
+}
+.main-title {
+}
+.recent-items-list {
+  width: 100%;
+}
+.recent-item-box {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #dedede;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px 20px 18px;
+}
+.recent-item-box + .recent-item-box {
+  margin-top: 19px;
+}
+.recent-item__left {
+}
+.recent-item__channel {
+  display: flex;
+  align-items: center;
+}
+.recent-item__channel figure {
+  flex-shrink: 0;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+}
+.recent-item__channel p {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #707070;
+  font-weight: 700;
+}
+.recent-item__name {
+  max-width: 185px;
+  font-size: 14px;
+  height: 2lh;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin-top: 15px;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+.recent-item__price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #707070;
+  margin-top: 18px;
+}
+.recent-item__price b {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+}
+.recent-items__img {
+  flex-shrink: 0;
+  background-color: #fff;
+  width: 78px;
+  height: 78px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+/* 비드바이특파원 */
+.main-customer__reporter {
+  flex-shrink: 0;
+  width: 412px;
+  border: 1px solid #dedede;
+  border-radius: 12px;
+  padding: 35px 25px 38px;
+}
+.reporter-list {
+}
+.reporter-box {
+  display: flex;
+  align-items: center;
+  height: 109px;
+  gap: 15px;
+}
+.reporter-box + .reporter-box {
+  margin-top: 20px;
+}
+.reporter-box figure {
+  flex-shrink: 0;
+  width: 109px;
+  height: 100%;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.reporter__content {
+  width: 205px;
+}
+.reporter__title {
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #000;
+  font-weight: 700;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+.reporter__post {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+.reporter__post span {
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  color: #707070;
+}
+.reporter__post span + span {
+  position: relative;
+}
+.reporter__post span + span:after {
+  position: absolute;
+  top: 50%;
+  left: -8.5px;
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: rgba(112, 112, 112, 0.27);
+  transform: translateY(-50%);
+}
+.reporter__desc {
+  width: 100%;
+  font-size: 13px;
+  height: 2lh;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin-top: 14px;
+  line-height: 1.5;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
 }
