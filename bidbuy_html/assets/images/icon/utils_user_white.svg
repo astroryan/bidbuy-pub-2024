@@ -5,8 +5,8 @@
     </clipPath>
   </defs>
   <g id="마스크_그룹_3" data-name="마스크 그룹 3" transform="translate(-1398 -51)" clip-path="url(#clip-path)">
-    <g id="그룹_2" data-name="그룹 2" transform="translate(-2.079 0.455)">
-      <path id="Icon_material-person-outline" data-name="Icon material-person-outline" d="M21.978,9.795a4.194,4.194,0,1,1-4.194,4.194,4.194,4.194,0,0,1,4.194-4.194m0,17.975c5.932,0,12.183,2.916,12.183,4.194v2.2H9.795v-2.2c0-1.278,6.251-4.194,12.183-4.194M21.978,6a7.989,7.989,0,1,0,7.989,7.989A7.987,7.987,0,0,0,21.978,6Zm0,17.975C16.645,23.975,6,26.651,6,31.964v5.992H37.955V31.964C37.955,26.651,27.31,23.975,21.978,23.975Z" transform="translate(1400.5 52.545)" stroke="#fff" stroke-width="1.6"/>
+    <g id="그룹_2" data-name="그룹 2" transform="translate(-2.079 0.455)" fill="#fff">
+      <path id="Icon_material-person-outline" data-name="Icon material-person-outline" d="M21.978,9.795a4.194,4.194,0,1,1-4.194,4.194,4.194,4.194,0,0,1,4.194-4.194m0,17.975c5.932,0,12.183,2.916,12.183,4.194v2.2H9.795v-2.2c0-1.278,6.251-4.194,12.183-4.194M21.978,6a7.989,7.989,0,1,0,7.989,7.989A7.987,7.987,0,0,0,21.978,6Zm0,17.975C16.645,23.975,6,26.651,6,31.964v5.992H37.955V31.964C37.955,26.651,27.31,23.975,21.978,23.975Z" transform="translate(1400.5 52.545)" stroke="none" stroke-width="1.6"/>
     </g>
   </g>
 </svg>

@@ -119,4 +119,3 @@ const $FOOTER = document.getElementById("footer");
 if ($FOOTER) {
   $FOOTER.innerHTML = $FOOTER_CONT;
 }
-console.log($FOOTER);
