@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_5294" data-name="사각형 5294" width="21" height="21" transform="translate(538 1133)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_9549" data-name="마스크 그룹 9549" transform="translate(-538 -1133)" clip-path="url(#clip-path)">
+    <path id="Icon_akar-link-out" data-name="Icon akar-link-out" d="M12.512,10.223,18.234,4.5m-3.815,0h3.815V8.315m0,4.578v3.815a1.526,1.526,0,0,1-1.526,1.526H6.026A1.526,1.526,0,0,1,4.5,16.708V6.026A1.526,1.526,0,0,1,6.026,4.5H9.841" transform="translate(537 1132)" fill="none" stroke="#579ee5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

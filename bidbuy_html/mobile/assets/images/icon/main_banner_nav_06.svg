@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_5682" data-name="사각형 5682" width="20" height="20" transform="translate(1319 1606)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_9626" data-name="마스크 그룹 9626" transform="translate(-1319 -1606)" clip-path="url(#clip-path)">
+    <path id="Icon_awesome-stamp" data-name="Icon awesome-stamp" d="M1.125,18h15.75V15.75H1.125Zm13.5-9h-2.34A1.035,1.035,0,0,1,11.25,7.965V7.633A5.972,5.972,0,0,1,12,4.9a3.333,3.333,0,0,0,.318-2.124,3.375,3.375,0,0,0-6.7.6A3.3,3.3,0,0,0,5.93,4.767a7.656,7.656,0,0,1,.819,3.2v0A1.035,1.035,0,0,1,5.715,9H3.375A3.375,3.375,0,0,0,0,12.375V13.5a1.125,1.125,0,0,0,1.125,1.125h15.75A1.125,1.125,0,0,0,18,13.5V12.375A3.375,3.375,0,0,0,14.625,9Z" transform="translate(1320 1607)" fill="#fff"/>
+  </g>
+</svg>

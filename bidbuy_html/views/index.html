@@ -825,7 +825,7 @@
         </div>
 
         <!-- 카테고리 -->
-        <nav class="category modal">
+        <nav class="category modal" style="display: none">
           <div class="modal__dim"></div>
           <div class="modal__box">
             <button type="button" class="modal__close-button"></button>
@@ -1158,7 +1158,7 @@
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
       <main id="main">
-        <div class="inner-width">
+        <div class="inner-width flex">
           <section class="main-visual">
             <article class="main-slider">
               <ul class="swiper-wrapper">
@@ -1203,94 +1203,7 @@
                 </div>
               </div>
             </article>
-            <!-- PUB :: 로그인 전/후가 다릅니다 -->
-            <!-- 1. 로그인 전 -->
-            <article class="main-visual__offline" style="display: none">
-              <div class="main-visual__inner">
-                <p>
-                  비드바이 멤버십으로<br />
-                  탁월한 해외쇼핑 경험과 혜택
-                </p>
-                <a href="/auth.html" class="basic-button__blue">로그인</a>
-                <ul class="offline-utils">
-                  <li><a href="">ID/PW찾기</a></li>
-                  <li><a href="">이용가이드</a></li>
-                  <li><a href="/signup.html">회원가입</a></li>
-                </ul>
-              </div>
-              <figure class="offline-banner">
-                <img src="" alt="" />
-              </figure>
-            </article>
-            <!-- 1. 로그인 후 -->
-            <article class="main-visual__online">
-              <div class="main-visual__inner">
-                <ul class="online-utils">
-                  <li><a href="">개인정보</a></li>
-                  <li><a href="">로그아웃</a></li>
-                </ul>
-
-                <div class="user-info-box">
-                  <figure class="user-info-box__profile img-wrap">
-                    <img src="../assets/images/dummy/guide_banner_01.png" alt="" />
-                  </figure>
-
-                  <div class="user-info-box__details">
-                    <p class="user-info-box__name"><b>홍길동</b>님</p>
-                    <div class="user-info-box__rank">
-                      <b>우수회원</b>
-                      <div class="user-info-box__progress">
-                        <progress value="100" max="190"></progress>
-                        <span>190</span>
-                      </div>
-                      <b>프리미엄</b>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="user-info-box__points">
-                <a href="" class="user-info-box__bid-point">
-                  <p>비드포인트</p>
-                  <p><b>180</b>점</p>
-                </a>
-                <a href="" class="user-info-box__yahoo-point">
-                  <p>야후보증금</p>
-                  <p><b>30,000</b>원</p>
-                </a>
-                <a href="" class="user-info-box__ebay-point">
-                  <p>이베이보증금</p>
-                  <p><b>30,000</b>원</p>
-                </a>
-              </div>
-              <div class="main-visual__inner">
-                <ul class="user-info-box__benefits">
-                  <li>
-                    <b>동시입찰</b>
-                    <span>무제한</span>
-                  </li>
-                  <li>
-                    <b>국제운임할인</b>
-                    <span>2,000원</span>
-                  </li>
-                  <li>
-                    <b>대행수수료 할인</b>
-                    <span>3,000원</span>
-                  </li>
-                  <li>
-                    <b>결제대기</b>
-                    <span>3건</span>
-                  </li>
-                  <li>
-                    <b>보관료 할인</b>
-                    <span>3,000원</span>
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </section>
-
-          <section class="main-content">
-            <article class="main-content__reco-item">
+            <article class="main-visual__reco-item">
               <ul class="main-reco-item item-list">
                 <!-- [관심상품 아이콘노출] item-box에 favorite-item 클래스 추가 -->
                 <li class="item-box">
@@ -1359,8 +1272,7 @@
                     <div class="item__price">
                       <p>¥ 10,000</p>
                       <p class="item__discount-price">
-                        <span class="item__total-price">¥<s>18,000</s></span>
-                        <span class="item__discount-percent">즉시낙찰 </span>
+                        <span class="item__total-price">즉시낙찰 ¥299</span>
                       </p>
                     </div>
                     <div class="item-tags">
@@ -1446,8 +1358,7 @@
                     <div class="item__price">
                       <p>¥ 10,000</p>
                       <p class="item__discount-price">
-                        <span class="item__total-price">¥<s>18,000</s></span>
-                        <span class="item__discount-percent">(40%)</span>
+                        <span class="item__total-price">¥<s>18,000</s> (40%)</span>
                       </p>
                     </div>
                     <div class="item-tags">
@@ -1492,8 +1403,7 @@
                     <div class="item__price">
                       <p>¥ 10,000</p>
                       <p class="item__discount-price">
-                        <span class="item__total-price">¥<s>18,000</s></span>
-                        <span class="item__discount-percent">즉시낙찰 ¥299</span>
+                        <span class="item__total-price">즉시낙찰 ¥299</span>
                       </p>
                     </div>
                     <div class="item-tags">
@@ -1536,7 +1446,7 @@
                     <div class="item__price">
                       <p>¥ 10,000</p>
                       <p class="item__discount-price">
-                        <span class="item__total-price">¥<s>18,000</s></span>
+                        <span class="item__total-price">¥<s>18,000</s> (40%)</span>
                       </p>
                     </div>
                     <div class="item-tags">
@@ -1566,9 +1476,96 @@
                 </li>
               </ul>
             </article>
-            <div class="main-content__sidebar">
-              <article class="main-content__notice">
-                <h2 class="main-title">BB 공지<a href="">더 보기</a></h2>
+          </section>
+
+          <section class="main-side">
+            <!-- PUB :: 로그인 전/후가 다릅니다 -->
+            <!-- 1. 로그인 전 -->
+            <article class="main-side__offline" style="display: none">
+              <div class="main-side__inner">
+                <p>
+                  비드바이 멤버십으로<br />
+                  탁월한 해외쇼핑 경험과 혜택
+                </p>
+                <a href="/auth.html" class="basic-button__blue">로그인</a>
+                <ul class="offline-utils">
+                  <li><a href="">ID/PW찾기</a></li>
+                  <li><a href="">이용가이드</a></li>
+                  <li><a href="/signup.html">회원가입</a></li>
+                </ul>
+              </div>
+              <figure class="offline-banner">
+                <img src="" alt="" />
+              </figure>
+            </article>
+            <!-- 1. 로그인 후 -->
+            <article class="main-side__online">
+              <div class="main-side__inner">
+                <ul class="online-utils">
+                  <li><a href="">개인정보</a></li>
+                  <li><a href="">로그아웃</a></li>
+                </ul>
+
+                <div class="user-info-box">
+                  <figure class="user-info-box__profile img-wrap">
+                    <img src="../assets/images/dummy/guide_banner_01.png" alt="" />
+                  </figure>
+
+                  <div class="user-info-box__details">
+                    <p class="user-info-box__name"><b>홍길동</b>님</p>
+                    <div class="user-info-box__rank">
+                      <b>우수회원</b>
+                      <div class="user-info-box__progress">
+                        <progress value="100" max="190"></progress>
+                        <span>190</span>
+                      </div>
+                      <b>프리미엄</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="user-info-box__points">
+                <a href="" class="user-info-box__bid-point">
+                  <p>비드포인트</p>
+                  <p><b>180</b>점</p>
+                </a>
+                <a href="" class="user-info-box__yahoo-point">
+                  <p>야후보증금</p>
+                  <p><b>30,000</b>원</p>
+                </a>
+                <a href="" class="user-info-box__ebay-point">
+                  <p>이베이보증금</p>
+                  <p><b>30,000</b>원</p>
+                </a>
+              </div>
+              <div class="main-side__inner">
+                <ul class="user-info-box__benefits">
+                  <li>
+                    <b>동시입찰</b>
+                    <span>무제한</span>
+                  </li>
+                  <li>
+                    <b>국제운임할인</b>
+                    <span>2,000원</span>
+                  </li>
+                  <li>
+                    <b>대행수수료 할인</b>
+                    <span>3,000원</span>
+                  </li>
+                  <li>
+                    <b>결제대기</b>
+                    <span>3건</span>
+                  </li>
+                  <li>
+                    <b>보관료 할인</b>
+                    <span>3,000원</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <div class="main-side__sidebar">
+              <article class="main-side__notice">
+                <h2 class="main-title">BB공지<a href="">더 보기</a></h2>
                 <ul class="main-notice-list">
                   <li>
                     <figure class="main-notice__country">
@@ -1600,7 +1597,7 @@
                   </li>
                 </ul>
               </article>
-              <article class="main-content__auction">
+              <article class="main-side__auction">
                 <h2 class="main-title">HOT 경매<b>마감임박</b></h2>
                 <div class="hot-aution-box">
                   <ul class="hot-aution-list">
