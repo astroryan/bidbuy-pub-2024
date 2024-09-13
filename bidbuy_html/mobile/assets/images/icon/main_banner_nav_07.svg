@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_5686" data-name="사각형 5686" width="20" height="20" transform="translate(1538 1601)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_9628" data-name="마스크 그룹 9628" transform="translate(-1538 -1601)" clip-path="url(#clip-path)">
+    <path id="Icon_awesome-percentage" data-name="Icon awesome-percentage" d="M5.083,9.583a2.978,2.978,0,1,0-4.211,0A2.978,2.978,0,0,0,5.083,9.583Zm11.91,7.7a2.978,2.978,0,1,0,0,4.211A2.978,2.978,0,0,0,16.993,17.282ZM16.9,6.515,15.85,5.463a1.488,1.488,0,0,0-2.105,0L.963,18.245a1.488,1.488,0,0,0,0,2.105L2.015,21.4a1.488,1.488,0,0,0,2.105,0L16.9,8.62A1.488,1.488,0,0,0,16.9,6.515Z" transform="translate(1539 1597.5)" fill="#fff"/>
+  </g>
+</svg>

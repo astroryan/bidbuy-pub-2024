@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 31">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_3" data-name="사각형 3" width="31" height="31" transform="translate(331 22)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_9661" data-name="마스크 그룹 9661" transform="translate(-331 -22)" clip-path="url(#clip-path)">
+    <g id="Icon_feather-shopping-cart" data-name="Icon feather-shopping-cart" transform="translate(334.027 29.588)">
+      <path id="패스_62" data-name="패스 62" d="M13.751,30.875A.875.875,0,1,1,12.875,30,.875.875,0,0,1,13.751,30.875Z" transform="translate(-5.872 -13.367)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="패스_63" data-name="패스 63" d="M30.251,30.875A.875.875,0,1,1,29.375,30,.875.875,0,0,1,30.251,30.875Z" transform="translate(-12.743 -13.367)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="패스_64" data-name="패스 64" d="M1.5,1.5H5L7.348,13.222A1.751,1.751,0,0,0,9.1,14.631h8.509a1.751,1.751,0,0,0,1.751-1.409l1.4-7.345H5.877" transform="translate(-1.5 -1.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+    <path id="패스_11531" data-name="패스 11531" d="M6,0A6,6,0,1,1,0,6,6,6,0,0,1,6,0Z" transform="translate(348 25)" fill="#82c2bd"/>
+    <text id="_2" data-name="2" transform="translate(351 34)" fill="#fff" font-size="9" font-family="Pretendard-Bold, Pretendard" font-weight="700"><tspan x="0" y="0">2</tspan></text>
+  </g>
+</svg>

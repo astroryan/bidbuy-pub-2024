@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+  <g id="icon_search_24" transform="translate(0 8)">
+    <rect id="사각형_1593" data-name="사각형 1593" width="31" height="31" transform="translate(0 -8)" fill="none"/>
+    <g id="그룹_6965" data-name="그룹 6965" transform="translate(6 -2)">
+      <path id="Vector" d="M9.114,18.228a9.114,9.114,0,1,1,9.114-9.114A9.124,9.124,0,0,1,9.114,18.228Zm0-16.894a7.78,7.78,0,1,0,7.78,7.78A7.789,7.789,0,0,0,9.114,1.334Z" transform="translate(0 0)" stroke="#000" stroke-width="0.5"/>
+      <path id="Vector-2" data-name="Vector" d="M.683,1.8-3.052-1.9a.667.667,0,0,1,0-.937.667.667,0,0,1,.937,0L1.62.858a.667.667,0,0,1,0,.937.661.661,0,0,1-.937,0Z" transform="translate(17.885 17.834)" stroke="#000" stroke-width="0.5"/>
+    </g>
+  </g>
+</svg>
