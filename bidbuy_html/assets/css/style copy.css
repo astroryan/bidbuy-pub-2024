@@ -2125,7 +2125,7 @@
     flex: 1;
     border-radius: 22.5px;
   }
-  & .bid-check-box label {
+  & .bid-check-button label {
     position: relative;
     display: flex;
     align-items: center;
@@ -2141,10 +2141,10 @@
     padding: 0 20px;
   }
 
-  & .bid-check-box input {
+  & .bid-check-button input {
     display: none;
   }
-  & .bid-check-box label:after {
+  & .bid-check-button label:after {
     position: absolute;
     top: 50%;
     right: 20px;
@@ -2154,22 +2154,22 @@
     height: 19.5px;
     transform: translateY(-50%);
   }
-  & .bid-check-box small {
+  & .bid-check-button small {
     font-size: 12px;
     font-weight: bold;
     color: #707070;
     margin-left: 10px;
   }
-  & .bid-check-box input:checked ~ label {
+  & .bid-check-button input:checked ~ label {
     justify-content: center;
     color: var(--white);
     background-color: var(--mainBlue);
   }
-  & .bid-check-box input:checked ~ label small {
+  & .bid-check-button input:checked ~ label small {
     display: none;
   }
 
-  & .bid-check-box input:checked ~ label:after {
+  & .bid-check-button input:checked ~ label:after {
     background-image: url("../images/icon/button_check_white.svg");
   }
   & .button-wrap .basic-button__gray-line {
