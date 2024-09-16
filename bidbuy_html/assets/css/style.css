@@ -1433,7 +1433,9 @@
     color: #000;
   }
 }
-
+.exhibition-page .like-keyword-button {
+  margin-left: 20px;
+}
 /* 상품리스트 필터 페이지*/
 .list-page {
   padding: 30px 0 137px;
