@@ -2,9 +2,14 @@
 
 ## 페이지 정리
 
-| 폴더 명 | 페이지 명  | 파일 명    |
-| ------- | ---------- | ---------- |
-| ""      | 메인페이지 | index.html |
+| 폴더 명 | 페이지 명                 | 파일 명                       |
+| ------- | ------------------------- | ----------------------------- |
+| ""      | 메인페이지                | index.html                    |
+| ""      | 검색페이지                | search.html                   |
+| ""      | 전시 카테고리 목록 화면   | exhibition_category_list.html |
+| ""      | 시스템 카테고리 목록 화면 | system_category_list.html     |
+| ""      | 경매대행상세              | auction_agency_details.html   |
+| ""      | 구대매행상세              | purchase_agency_details.html  |
 
 # 사이트 메뉴 구조
 

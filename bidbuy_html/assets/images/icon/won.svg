@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+    <defs>
+        <clipPath id="8o8n3kr5ra">
+            <path data-name="사각형 5250" transform="translate(765 645)" style="fill:#db3058;stroke:#579ee5" d="M0 0h22v22H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 7646" transform="translate(-765 -645)" style="clip-path:url(#8o8n3kr5ra)">
+        <path data-name="Icon fa-solid-won-sign" d="M2.2 3.022a1.132 1.132 0 0 0-2.148.714l1.767 5.3H1.13a1.131 1.131 0 1 0 0 2.261h1.446l2 6.01a1.13 1.13 0 0 0 2.169-.081l1.484-5.929h1.628l1.484 5.929a1.13 1.13 0 0 0 2.169.081l2-6.01h1.445a1.131 1.131 0 0 0 0-2.261h-.692l1.767-5.3a1.131 1.131 0 1 0-2.145-.717l-2.003 6.013h-2.258L10.14 3.1a1.129 1.129 0 0 0-2.191 0L6.466 9.032H4.2zm2.76 8.271h.94L5.5 12.9zM8.8 9.032l.247-.993.247.993zm3.392 2.261h.94l-.54 1.607z" transform="translate(767 645.754)" style="fill:#579ee5"/>
+    </g>
+</svg>

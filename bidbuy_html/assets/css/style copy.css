@@ -1963,132 +1963,9 @@
   & .swiper-button-disabled {
     opacity: 0.5;
   }
-  & .seller-info {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 151px;
-    padding: 19px 15px;
-    object-fit: contain;
-    border-radius: 12px;
-    border: solid 1px #dedede;
-    background-color: #fff;
-    margin-top: 20px;
-  }
-  & .seller-info__left {
-  }
-  & .seller-info__left li {
-    display: flex;
-    align-items: center;
-    padding: 11px 0;
-  }
-  & .seller-info__left li + li {
-    border-top: 1px solid #f0f0f0;
-  }
-  & .seller-into__title {
-    width: 75px;
-  }
-  & .seller-info__desc {
-    display: flex;
-    align-items: center;
-  }
-  & .seller-info__desc .img-wrap {
-    width: 19px;
-    height: 19px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 6px;
-  }
-  & .seller-info__desc b {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: -0.26px;
-    color: #707070;
-  }
-  & .seller-info__desc .basic-button__gray-line {
-    font-size: 11px;
-    font-weight: 500;
-    color: #666;
-    padding: 5px 10px 6px;
-    margin-left: 8px;
-    border-radius: 4px;
-    border: solid 1px #d8d8d8;
-  }
-  & .seller-info__right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  & .like-seller__button {
-  }
-
-  & .like-seller__button input {
-    display: none;
-  }
-
-  & .like-seller__button label {
-    display: flex;
-    align-items: center;
-    padding: 7px 9px 7px 14px;
-    gap: 16px;
-    border-radius: 4px;
-    border: solid 1px #d8d8d8;
-    background-color: #f7f7f7;
-  }
-  & .like-seller__button-icon {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    background: url("../images/icon/like_off.svg") no-repeat center / contain;
-  }
-  & .like-seller__button-text {
-    font-size: 12px;
-    font-weight: 500;
-    color: #666;
-  }
-
-  & .like-seller__button input[type="checkbox"]:checked ~ label .like-seller__button-text {
-    color: #000;
-  }
-  & .like-seller__button input[type="checkbox"]:checked ~ label .like-seller__button-icon {
-    background-image: url("../images/icon/like.svg");
-    animation: animateHeart 0.3s linear forwards;
-  }
-
-  & .seller-info__review {
-    font-size: 14px;
-    font-weight: bold;
-
-    color: #000;
-    margin-bottom: 11px;
-    margin-top: auto;
-  }
-
-  & .seller-review__star {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-  & .seller-review__star span {
-    flex-shrink: 0;
-    width: 15px;
-    height: 14px;
-  }
-  & .seller-review__star-num {
-    font-size: 16px;
-    font-weight: bold;
-    color: #707070;
-    margin-right: 11px;
-  }
-
-  /* 입찰 / 즉시날찰 탭 */
-  & .bid-tab-and-seller-items {
+  & .item-info {
     flex-shrink: 0;
     width: 826px;
-  }
-
-  & .item-info {
-    width: 100%;
   }
 
   & .item-info__tabs {
@@ -2148,9 +2025,6 @@
     overflow: hidden;
   }
   & .item-info__left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     flex-shrink: 0;
     width: 431px;
     padding: 29px 37px;
@@ -2242,7 +2116,6 @@
     gap: 10px;
     height: 45px;
     margin-top: 27px;
-    /* margin-top: auto; */
   }
   & .button-wrap > button {
     flex-shrink: 0;

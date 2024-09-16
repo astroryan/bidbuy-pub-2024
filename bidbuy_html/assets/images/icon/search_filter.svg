@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_4088" data-name="사각형 4088" width="24" height="24" transform="translate(1023 45)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_13472" data-name="그룹 13472" transform="translate(-561 -1142)">
+    <g id="사각형_4085" data-name="사각형 4085" transform="translate(561 1142)" fill="#fff" stroke="#e6e6e6" stroke-width="1">
+      <rect width="50" height="50" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="49" height="49" rx="4.5" fill="none"/>
+    </g>
+    <g id="마스크_그룹_19" data-name="마스크 그룹 19" transform="translate(-449 1110)" clip-path="url(#clip-path)">
+      <g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(1025.823 47.824)">
+        <path id="패스_10701" data-name="패스 10701" d="M21.441,12.971A8.471,8.471,0,1,1,12.971,4.5a8.471,8.471,0,0,1,8.471,8.471Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="패스_10702" data-name="패스 10702" d="M29.581,29.581l-4.606-4.606" transform="translate(-10.522 -10.522)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>
