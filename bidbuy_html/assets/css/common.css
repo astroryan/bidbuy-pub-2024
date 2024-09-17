@@ -692,7 +692,7 @@ input[type="radio"] label {
   background: url("../images/icon/star_gray_empty.svg") no-repeat center / contain;
 }
 .like-keyword-button.active:after {
-  background-image: url("../images/icon/star_mint.svg");
+  background-image: url("../images/icon/star_blue.svg");
 } */
 .like-keyword-button {
   align-items: center;
@@ -724,7 +724,7 @@ input[type="radio"] label {
 }
 
 .like-keyword-button input[type="checkbox"]:checked ~ label:after {
-  background-image: url("../images/icon/star_mint.svg");
+  background-image: url("../images/icon/star_blue.svg");
 }
 
 /* 검색결과 공윺 버튼 */
