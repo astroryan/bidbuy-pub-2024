@@ -995,12 +995,12 @@ input[type="radio"] label {
   gap: 5px;
   margin-bottom: 7px;
 }
-
 .item-box.simple .item__country {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
 }
+
 .item-box.simple .item__market p {
   letter-spacing: -0.22px;
   font-size: 11px;
@@ -1030,6 +1030,18 @@ input[type="radio"] label {
 .item-box.simple .item__discount-percent {
   font-size: 10px;
   letter-spacing: -0.2px;
+}
+.item-box.simple.small .item__market.line {
+  padding: 3px 7px;
+}
+.item-box.simple.small .item__country {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.item-box.simple.small .item__market {
+  gap: 4px;
+  margin-bottom: 9px;
 }
 /* ITEM LIST [LIST]  - width 값이 작음 */
 .item-box.list .item__info {
@@ -1902,7 +1914,7 @@ input[type="radio"] label {
 }
 .category__tab-container {
   height: 100%;
-  padding: 58px 20px 30px;
+  padding: 58px 18px 30px;
 }
 
 .category__tabs {
@@ -2189,11 +2201,14 @@ input[type="radio"] label {
   font-weight: 400;
 }
 /* 맞춤쇼핑 - 로그인 후 */
-.in-progress__items {
+.in-progress-items-swiper {
+  padding: 20px 0 30px;
+}
+/* .in-progress__items {
   display: flex;
   gap: 14px;
   padding: 20px 0 30px;
-}
+} */
 
 .custom-shopping__tab-wrap {
 }
@@ -2204,9 +2219,15 @@ input[type="radio"] label {
   padding: 16px 0 30px;
 }
 
-.like-item__list .item-list-box + .item-list-box {
-  margin-top: 10px;
+.like-item-swiper {
+  height: 300px;
 }
+.like-item-swiper .swiper-slide {
+  height: calc((100% - 20px) / 3) !important;
+}
+/* .like-item__list .item-list-box + .item-list-box {
+  margin-top: 10px;
+} */
 .item-list-box a {
   display: flex;
   align-items: center;
@@ -2263,16 +2284,18 @@ input[type="radio"] label {
   color: #707070;
   margin-top: 3px;
 }
-.recent-list {
+.recent-item-swiper {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 6px;
+  height: 214px;
+  /* gap: 8px 6px; */
   margin-bottom: 18px;
 }
-.recent-list > li {
+.recent-item-swiper .item-list-box {
   width: calc(100% / 3 - (16px / 2));
+  height: calc((100% - 8px) / 2) !important;
 }
-.recent-list .img-wrap {
+.recent-item-swiper .img-wrap {
   width: 100%;
   height: 107px;
   border-radius: 5px;

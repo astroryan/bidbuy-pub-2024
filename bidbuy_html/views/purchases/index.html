@@ -34,19 +34,19 @@
     <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
 		SEO를 신경쓴다면 꼭 설정  -->
 
-    <link rel="icon" href="../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
     <link rel="apple-touch-icon" href="이미지경로" />
     <title>Bidbuy</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/libary/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
 
     <!-- JS -->
-    <script src="../assets/js/libary/jquery-3.5.1.js"></script>
-    <script src="../assets/js/libary/swiper-bundle.min.js" defer></script>
-    <script src="../assets/js/include.js" defer></script>
-    <script src="../assets/js/common.js" defer></script>
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
   </head>
 
   <body>
@@ -1074,6 +1074,31 @@
           </div>
         </section>
       </div>
+      <!-- MODAL :: 구매대행신청 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="proxy-purchase"></button> -->
+      <div class="modal-proxy-purchase modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">비드바이 입찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body default">
+            <div class="modal__content">
+              <p class="modal__text">
+                <b><span class="purchase_num">00</span>건의 구매대행신청이 완료 되었습니다.</b>
+              </p>
+              <p class="modal__small-text">마이페이지에서 신청 내역을 확인할 수 있습니다.</p>
+            </div>
+            <div class="modal-button-wrap">
+              <button type="button" class="basic-button__black-line" onclick="closeModal(this)">계속신청</button>
+              <a href="/mypage.html" class="basic-button__black">마이페이지</a>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <!-- START :: HEADER -->
       <header id="header"></header>
@@ -1084,7 +1109,7 @@
           <section class="top-content">
             <div class="platform">
               <figure class="img-wrap">
-                <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
               </figure>
               <b>야후경매</b>
             </div>
@@ -1165,7 +1190,7 @@
                     <span class="seller-into__title">Seller ID</span>
                     <span class="seller-info__desc">
                       <figure class="img-wrap">
-                        <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                        <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                       </figure>
                       <b class="nowrap">Jon0653</b>
                     </span>
@@ -1174,7 +1199,7 @@
                     <span class="seller-into__title">Seller 위치</span>
                     <span class="seller-info__desc">
                       <figure class="img-wrap">
-                        <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                        <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                       </figure>
                       <b class="nowrap">Jon0653</b>
                     </span>
@@ -1183,7 +1208,7 @@
                     <span class="seller-into__title">Seller 평가</span>
                     <span class="seller-info__desc">
                       <figure class="img-wrap">
-                        <img src="../assets/images/icon/reveiw_positive.svg" alt="up" />
+                        <img src="../../assets/images/icon/reveiw_positive.svg" alt="up" />
                       </figure>
                       <b class="nowrap">648 positive</b>
                       <a href="" target="blank" class="basic-button__gray-line">평가보기</a>
@@ -1202,19 +1227,19 @@
                   <div class="seller-review__star">
                     <span class="seller-review__star-num">4.0</span>
                     <span>
-                      <img src="../assets/images/icon/star_orange.svg" alt="별점" />
+                      <img src="../../assets/images/icon/star_orange.svg" alt="별점" />
                     </span>
                     <span>
-                      <img src="../assets/images/icon/star_orange.svg" alt="별점" />
+                      <img src="../../assets/images/icon/star_orange.svg" alt="별점" />
                     </span>
                     <span>
-                      <img src="../assets/images/icon/star_orange.svg" alt="별점" />
+                      <img src="../../assets/images/icon/star_orange.svg" alt="별점" />
                     </span>
                     <span>
-                      <img src="../assets/images/icon/star_orange.svg" alt="별점" />
+                      <img src="../../assets/images/icon/star_orange.svg" alt="별점" />
                     </span>
                     <span>
-                      <img src="../assets/images/icon/star_gray_empty.svg" alt="별점" />
+                      <img src="../../assets/images/icon/star_gray_empty.svg" alt="별점" />
                     </span>
                   </div>
                 </div>
@@ -1224,37 +1249,52 @@
               <!-- 입찰 / 즉시날찰 탭 -->
               <article class="item-info tabs-container">
                 <div class="item-info__tabs tabs">
-                  <button type="button" class="item-info__tab active" data-idx="0"><b>입찰하기</b>(경매대행)</button>
-                  <button type="button" class="item-info__tab" data-idx="1"><b>즉시낙찰</b>(구매대행)</button>
+                  <button type="button" class="item-info__tab active" data-idx="0"><b>구매대행</b></button>
                 </div>
                 <ul class="item-info__tabs-content tabs-content">
-                  <!-- 0. 입찰하기(경매대행) : make-bid -->
-                  <li data-idx="0" class="" class="make-bid__tab-content">
+                  <!-- 0. 구매대행 : purchase-agency -->
+                  <li data-idx="0" class="" class="purchase-agency__tab-content">
                     <div class="flex">
                       <!-- 입찰하기(경매대행) / 즉시낙찰(구매대행) -->
                       <div class="item-info__left">
                         <div>
                           <div class="item-info__line">
-                            <p class="item-info__title">아이템NO.</p>
-                            <p class="item-info__desc">v1135509199</p>
+                            <p class="item-info__title">상품코드</p>
+                            <p class="item-info__desc">1135509199</p>
                           </div>
                           <div class="item-info__line">
-                            <p class="item-info__title">종료일자</p>
-                            <p class="item-info__desc">2024.05.13 20:00:55</p>
+                            <p class="item-info__title">브랜드</p>
+                            <p class="item-info__desc">도모호룬린크루</p>
                           </div>
                           <div class="item-info__line">
-                            <p class="item-info__title">자동연장</p>
-                            <p class="item-info__desc">있음</p>
+                            <p class="item-info__title">상품유형</p>
+                            <p class="item-info__desc">신상품 / 중고상품</p>
                           </div>
                           <div class="item-info__line">
-                            <p class="item-info__title">수량</p>
-                            <p class="item-info__desc">2개</p>
+                            <p class="item-info__title">기간 및 수량</p>
+                            <p class="item-info__desc">상시판매, 2개</p>
                           </div>
                           <div class="item-info__line">
-                            <p class="item-info__title">옵션유형</p>
+                            <p class="item-info__title">배송안내</p>
+                            <p class="item-info__desc">무료운송, 발송까지 1~2일 소요</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">발송지역</p>
+                            <p class="item-info__desc">효고현</p>
+                          </div>
+
+                          <hr class="line-gray" />
+                          <div class="item-info__line">
+                            <p class="item-info__title w-icon">판매가격</p>
+                            <p class="item-info__desc"><strong>¥ 92,000</strong>&nbsp;<span>(￦837,200)</span></p>
+                          </div>
+                          <hr class="line-gray" />
+                          <div class="item-info__line">
+                            <p class="item-info__title">주문수량</p>
                             <div class="item-info__desc">
                               <div class="basic-select-box gray">
                                 <select name="" id="" required>
+                                  <option value="" disabled selected>수량 선택</option>
                                   <option value="" disabled selected>세부 옵션 선택</option>
 
                                   <option>세부 옵션 선택1</option>
@@ -1264,97 +1304,75 @@
                               </div>
                             </div>
                           </div>
-                          <hr class="line-gray" />
                           <div class="item-info__line">
-                            <p class="item-info__title clock-icon">남은 시간</p>
-                            <p class="item-info__desc"><strong>6시간 46분 33초</strong></p>
+                            <p class="item-info__title">옵션선택</p>
+                            <div class="item-info__desc">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option value="" disabled selected>칼라 선택</option>
+                                  <option value="" disabled selected>세부 옵션 선택</option>
+
+                                  <option>세부 옵션 선택1</option>
+                                  <option>세부 옵션 선택2</option>
+                                  <option>세부 옵션 선택3</option>
+                                </select>
+                              </div>
+                            </div>
                           </div>
                           <div class="item-info__line">
-                            <p class="item-info__title w-icon">현재 입찰가</p>
-                            <p class="item-info__desc"><strong>¥ 92,000</strong>&nbsp;<span>(￦837,200)</span></p>
+                            <p class="item-info__title"></p>
+                            <div class="item-info__desc">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option value="" disabled selected>사이즈 선택</option>
+                                  <option value="" disabled selected>세부 옵션 선택</option>
+
+                                  <option>세부 옵션 선택1</option>
+                                  <option>세부 옵션 선택2</option>
+                                  <option>세부 옵션 선택3</option>
+                                </select>
+                              </div>
+                            </div>
                           </div>
-                          <p class="item-info__gray">(일본내 소비세 10%포함)</p>
-                          <hr class="line-gray" />
+
                           <div class="item-info__line">
-                            <p class="item-info__title">입찰 건수</p>
-                            <p class="item-info__desc">32 bid</p>
+                            <p class="item-info__title">주문 참고사항</p>
+                            <div class="item-info__desc">
+                              <div class="radio-check-button">
+                                <input type="radio" name="public" id="aaa123" checked />
+                                <label for="aaa123"><span class="radio-check-button-icon"></span>공개</label>
+                              </div>
+
+                              <div class="radio-check-button">
+                                <input type="radio" name="public" id="aaa234" />
+                                <label for="aaa234"><span class="radio-check-button-icon"></span>비공개</label>
+                              </div>
+                            </div>
                           </div>
                           <div class="item-info__line">
-                            <p class="item-info__title">최고 입찰자</p>
-                            <p class="item-info__desc">없음</p>
-                          </div>
-                          <div class="item-info__line">
-                            <p class="item-info__title">배송정보</p>
-                            <p class="item-info__desc">현지배송료 무료</p>
+                            <p class="item-info__title">주문 요청사항</p>
+                            <div class="item-info__desc">
+                              <textarea name="" id="" class="basic-textarea"></textarea>
+                            </div>
                           </div>
                         </div>
-                        <!-- 1. 예약 입찰 -->
+                        <!-- 9. 구매대행 = 장바구니, 바로구매 -->
                         <div class="details-button-wrap">
-                          <button class="chat-button" data-idx="1" onclick="">
-                            <span class="blind">1:1(출품자)문의</span>
-                          </button>
                           <button
                             class="modal_button basic-button__gray-line"
                             onclick="openModal(this)"
-                            data-modal="bid-scheduled"
+                            data-modal="add-to-cart"
                           >
-                            예약 입찰하기
+                            장바구니
                           </button>
                           <button
                             class="modal_button basic-button__blue"
                             onclick="openModal(this)"
-                            data-modal="bid-now"
+                            data-modal="purchase-complete"
                           >
-                            바로 입찰하기
+                            바로구매
                           </button>
                         </div>
-                        <!-- 2. 입찰 불가 -->
-                        <!-- <div class="details-button-wrap">
-                          <button class="chat-button" data-idx="1" onclick="">
-                            <span class="blind">1:1(출품자)문의</span>
-                          </button>
-                          <button class="basic-button__blue" disabled>입찰불가</button>
-                        </div> -->
-                        <!-- 3. 입찰 체크사항 확인 입찰& 체크사항 확인 완료 + 체크 모달 -->
-                        <!-- <div class="details-button-wrap">
-                          <button class="chat-button" data-idx="1" onclick="">
-                            <span class="blind">1:1(출품자)문의</span>
-                          </button>
-                          <button class="bid-check-button" type="button">
-                            <input type="checkbox" name="" id="bidCheck" />
-                            <label for="bidCheck"> 입찰 체크사항 확인<small>체크 후 입찰하기</small></label>
-                          </button>
-                        </div> -->
-                        <!-- 4. 흥정 낙찰 받기 -->
-                        <!-- <div class="details-button-wrap">
-                          <button
-                            class="modal_button basic-button__gray-line"
-                            onclick="openModal(this)"
-                            data-modal="negotiation-purchase"
-                          >
-                            흥정 낙찰받기
-                          </button>
-                          <button
-                            class="modal_button basic-button__blue"
-                            onclick="openModal(this)"
-                            data-modal="buy-now"
-                          >
-                            즉시낙찰하기
-                          </button>
-                        </div> -->
-                        <!-- 5. 경매 종료 아이템 -->
-                        <!-- <div class="details-button-wrap">
-                          <button class="basic-button__blue" disabled>경매 종료된 아이템 입니다.</button>
-                        </div> -->
-                        <!-- 6. 품절 상품 -->
-                        <!-- <div class="details-button-wrap">
-                          <button class="basic-button__blue" disabled>품절 상품 입니다.</button>
-                        </div> -->
-                        <!-- 7. 구매대행 = 장바구니, 바로구매 -->
-                        <!-- <div class="details-button-wrap">
-                          <button class="modal_button basic-button__gray-line"  onclick="openModal(this)" data-modal="add-to-cart">장바구니</button>
-                          <button class="modal_button basic-button__blue" onclick="openModal(this)" data-modal="purchase-complete">바로구매</button>
-                        </div> -->
                       </div>
                       <!-- 입찰내역 / 예상입찰비용 -->
                       <div class="item-info__right tabs-container">
@@ -1364,43 +1382,8 @@
                         </div>
                         <ul class="item-bid__tabs-content tabs-content">
                           <li data-idx="0" class="">
-                            <!-- 1. 최고입찰자 상태 -->
+                            <!-- 2. 예약입찰 상태 -->
                             <div class="bid-details-status">
-                              <div class="bid-details-status__inner">
-                                <p>고객님은 현재 <b>최고입찰자</b>입니다.</p>
-                                <p class="bid-details-status__desc">(남은 시간 : 6시간 46분 33초)</p>
-                                <div class="bid-details-status__button-wrap">
-                                  <button type="button" class="basic-button__black-line">새로고침</button>
-                                  <button
-                                    type="button"
-                                    class="modal_button basic-button__black"
-                                    onclick="openModal(this)"
-                                    data-modal="re-bid"
-                                  >
-                                    재입찰하기
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- 2. 최고입찰자 아닌 상태 -->
-                            <!-- <div class="bid-details-status">
-                              <div class="bid-details-status__inner">
-                                <p><b>최고입찰자</b>가 아닙니다.</p>
-                                <p class="bid-details-status__desc">(재입찰 가능)</p>
-                                <div class="bid-details-status__button-wrap">
-                                  <button
-                                    type="button"
-                                    class="modal_button basic-button__black"
-                                    onclick="openModal(this)"
-                                    data-modal="re-bid"
-                                  >
-                                    재입찰하기
-                                  </button>
-                                </div>
-                              </div>
-                            </div> -->
-                            <!-- 3. 예약입찰 상태 -->
-                            <!-- <div class="bid-details-status">
                               <div class="bid-details-status__inner">
                                 <p><b>예약입찰</b> 상태입니다.</p>
                                 <p class="bid-details-status__desc">(시간 : 종료 30분 전, 2024.06.06 23:00:20)</p>
@@ -1414,17 +1397,7 @@
                                   </button>
                                 </div>
                               </div>
-                            </div> -->
-                            <!-- 4. 경매 낙찰 상태 -->
-                            <!-- <div class="bid-details-status">
-                              <div class="bid-details-status__inner">
-                                <p><b>경매 낙찰</b> 아이템입니다.</p>
-                                <p class="bid-details-status__desc">(주문-2023-05-05 | 결제금액 ￦10,000)</p>
-                                <div class="bid-details-status__button-wrap">
-                                  <a href="" class="basic-button__black">결제하기</a>
-                                </div>
-                              </div>
-                            </div> -->
+                            </div>
                             <div class="bid-details-table">
                               <div class="bid-details-table__inner">
                                 <table>
@@ -1559,221 +1532,6 @@
                       </div>
                     </div>
                   </li>
-                  <!-- 1. 즉시낙찰(구매대행) : Immediate-auction -->
-                  <li data-idx="1" class="" class="Immediate-auction__tab-content" style="display: none">
-                    <div class="flex">
-                      <!-- 입찰하기(경매대행) / 즉시낙찰(구매대행) -->
-                      <div class="item-info__left">
-                        <div>
-                          <div class="item-info__line">
-                            <p class="item-info__title">아이템NO.</p>
-                            <p class="item-info__desc">v1135509199</p>
-                          </div>
-                          <div class="item-info__line">
-                            <p class="item-info__title">종료일자</p>
-                            <p class="item-info__desc">2024.05.13 20:00:55</p>
-                          </div>
-                          <div class="item-info__line">
-                            <p class="item-info__title">자동연장</p>
-                            <p class="item-info__desc">있음</p>
-                          </div>
-                          <div class="item-info__line">
-                            <p class="item-info__title">수량</p>
-                            <p class="item-info__desc">2개</p>
-                          </div>
-                          <div class="item-info__line">
-                            <p class="item-info__title">옵션유형</p>
-                            <div class="item-info__desc">
-                              <div class="basic-select-box gray">
-                                <select name="" id="" required>
-                                  <option value="" disabled selected>세부 옵션 선택</option>
-                                  <option>세부 옵션 선택1</option>
-                                  <option>세부 옵션 선택2</option>
-                                  <option>세부 옵션 선택3</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <hr class="line-gray" />
-                          <div class="item-info__line">
-                            <p class="item-info__title clock-icon">남은 시간</p>
-                            <p class="item-info__desc"><strong>6시간 46분 33초</strong></p>
-                          </div>
-                          <div class="item-info__line">
-                            <p class="item-info__title w-icon">현재 입찰가</p>
-                            <p class="item-info__desc"><strong>¥ 92,000</strong>&nbsp;<span>(￦837,200)</span></p>
-                          </div>
-                        </div>
-                        <!-- 3. 입찰 체크사항 확인 -->
-                        <div class="details-button-wrap">
-                          <button class="chat-button" data-idx="1" onclick="">
-                            <span class="blind">1:1(출품자)문의</span>
-                          </button>
-                          <button class="bid-check-button" type="button">
-                            <input type="checkbox" name="" id="bidCheck" />
-                            <label for="bidCheck"> 입찰 체크사항 확인<small>체크 후 입찰하기</small></label>
-                          </button>
-                        </div>
-                      </div>
-                      <!-- 입찰내역 / 예상입찰비용 -->
-                      <div class="item-info__right tabs-container">
-                        <div class="item-bid__tabs tabs">
-                          <!-- <button type="button" class="item-bid__tab" data-idx="0">입찰내역</button> -->
-                          <button type="button" class="item-bid__tab active" data-idx="1">예상입찰비용</button>
-                        </div>
-                        <ul class="item-bid__tabs-content tabs-content">
-                          <li data-idx="0" class="" style="display: none">
-                            <!-- 2. 최고입찰자 아닌 상태 -->
-                            <div class="bid-details-status">
-                              <div class="bid-details-status__inner">
-                                <p><b>최고입찰자</b>가 아닙니다.</p>
-                                <p class="bid-details-status__desc">(재입찰 가능)</p>
-                                <div class="bid-details-status__button-wrap">
-                                  <button
-                                    type="button"
-                                    class="modal_button basic-button__black"
-                                    onclick="openModal(this)"
-                                    data-modal="re-bid"
-                                  >
-                                    재입찰하기
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="bid-details-table">
-                              <div class="bid-details-table__inner">
-                                <table>
-                                  <thead>
-                                    <tr>
-                                      <th scope="col" class="thead-bid-time"><span>입찰일시</span></th>
-                                      <th scope="col" class="thead-bid"><span>입찰가</span></th>
-                                      <th scope="col" class="thead-bid-status"><span>상태</span></th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
-                                      <td>
-                                        <span
-                                          >옵션명옵션명<br />
-                                          1개 | ¥300</span
-                                        >
-                                      </td>
-                                      <td><span>예약입찰</span></td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
-                                      <td>
-                                        <span
-                                          >옵션명<br />
-                                          1개 | ¥300</span
-                                        >
-                                      </td>
-                                      <td><span>예약입찰</span></td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
-                                      <td>
-                                        <span
-                                          >옵션명<br />
-                                          1개 | ¥300</span
-                                        >
-                                      </td>
-                                      <td><span>예약입찰</span></td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
-                                      <td>
-                                        <span
-                                          >옵션명<br />
-                                          1개 | ¥300</span
-                                        >
-                                      </td>
-                                      <td><span>예약입찰</span></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                          </li>
-                          <li data-idx="1" class="">
-                            <div>
-                              <div class="item-info__line">
-                                <p class="item-info__title">예상 입찰 수량</p>
-                                <div class="item-info__desc">
-                                  <div class="basic-select-box gray">
-                                    <select name="" id="" disabled>
-                                      <option>1개</option>
-                                    </select>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="item-info__line">
-                                <div class="item-info__title">
-                                  <div class="basic-select-box gray">
-                                    <select name="" id="" required>
-                                      <option value="" disabled selected>국제운송 선택</option>
-                                      <option>국제운송 선택1</option>
-                                      <option>국제운송 선택2</option>
-                                      <option>국제운송 선택3</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="item-info__desc">
-                                  <div class="basic-select-box gray">
-                                    <select name="" id="" required>
-                                      <option value="" disabled selected>무게 선택</option>
-                                      <option>무게 선택1</option>
-                                      <option>무게 선택2</option>
-                                      <option>무게 선택3</option>
-                                    </select>
-                                  </div>
-                                </div>
-                              </div>
-                              <hr class="line-gray" />
-                              <div class="item-info__line">
-                                <p class="item-info__title"><b>(+) 현재 입찰가</b></p>
-                                <p class="item-info__desc">(¥92,000 ) ￦837,200</p>
-                              </div>
-                              <div class="item-info__line">
-                                <p class="item-info__title">(+) 국제 운송료</p>
-                                <p class="item-info__desc">(¥2,400) ￦21,840</p>
-                              </div>
-                              <div class="item-info__line">
-                                <p class="item-info__title">(+) 현지 운송료</p>
-                                <p class="item-info__desc">2차 결제 시 청구</p>
-                              </div>
-                              <div class="item-info__line">
-                                <p class="item-info__title">(+) 현지 세금</p>
-                                <p class="item-info__desc">2차 결제 시 청구</p>
-                              </div>
-                              <div class="item-info__line">
-                                <p class="item-info__title">(+) 대행 수수료</p>
-                                <p class="item-info__desc">(¥6,000) ￦56,600</p>
-                              </div>
-                              <div class="item-info__line">
-                                <p class="item-info__title">(+) 송금 수수료</p>
-                                <p class="item-info__desc">(¥300) ￦2,730</p>
-                              </div>
-                              <div class="item-info__line">
-                                <p class="item-info__title">(+) 기타 부가 2차 결제 금액</p>
-                                <p class="item-info__desc">2차 결제 시 청구</p>
-                              </div>
-                              <div class="item-info__line">
-                                <p class="item-info__title">(-) 대행수수료 쿠폰할인.</p>
-                                <p class="item-info__desc">￦4,996</p>
-                              </div>
-                              <hr class="line-gray" />
-                              <div class="item-total-price">
-                                <p class="item-info__title">예상 경매대행 구입가</p>
-                                <p class="item-info__desc">￦910,919</p>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
                 </ul>
               </article>
               <!-- 셀러 다른 아이템 & 체크사항 -->
@@ -1793,7 +1551,7 @@
                     <!-- 셀러 아이템 리스트 -->
                     <a href="" class="seller-other-item__box">
                       <figure class="seller-other-items__img img-wrap">
-                        <img src="../assets/images/dummy/item_01.jpg" alt="" />
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
                       </figure>
                       <div class="seller-other-items__info">
                         <p class="seller-other-items__name p_2">
@@ -1808,7 +1566,7 @@
                     </a>
                     <a href="" class="seller-other-item__box">
                       <figure class="seller-other-items__img img-wrap">
-                        <img src="../assets/images/dummy/item_01.jpg" alt="" />
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
                       </figure>
                       <div class="seller-other-items__info">
                         <p class="seller-other-items__name p_2">
@@ -1823,9 +1581,8 @@
                     </a>
                   </div>
                 </section>
-                <!-- PUB :: 정확히 어느상황일때 해당 모달이 보여지는지 의문 -->
-                <!-- 체크사항  -->
-                <section class="item-check-list">
+                <!-- 체크사항 -->
+                <!-- <section class="item-check-list">
                   <div class="item-check-list__left">
                     <h4>체크사항</h4>
                     <ol>
@@ -1843,7 +1600,7 @@
                       </dd>
                     </dl>
                   </div>
-                </section>
+                </section> -->
               </div>
             </div>
           </section>
@@ -2454,12 +2211,12 @@
                 <div class="related-item-list item-list">
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2479,12 +2236,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2504,12 +2261,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2529,12 +2286,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2554,12 +2311,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2579,12 +2336,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2604,12 +2361,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2629,12 +2386,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2654,12 +2411,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>
@@ -2679,12 +2436,12 @@
                   </div>
                   <div class="item-box simple">
                     <a href="" class="item__img img-wrap">
-                      <img src="../assets/images/dummy/item_01.jpg" alt="item" />
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                     </a>
                     <div class="item__info">
                       <div class="item__market">
                         <figure class="item__country">
-                          <img src="../assets/images/icon/country_jp.png" alt="jp" />
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                         </figure>
                         <p>라쿠텐 - Ten past Ten</p>
                       </div>

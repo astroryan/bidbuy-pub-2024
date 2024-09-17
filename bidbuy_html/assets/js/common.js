@@ -278,6 +278,50 @@ function mainSlide() {
 }
 mainSlide();
 
+function inProgressItemSlide() {
+  if (document.querySelector(".in-progress-items-swiper")) {
+    const inProgressItemSwiper = new Swiper(".in-progress-items-swiper", {
+      slidesPerView: 2,
+      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+      centeredSlides: false,
+      freeMode: true,
+      spaceBetween: 13,
+      grabCursor: true,
+      keyboard: {
+        enabled: true,
+      },
+    });
+  }
+}
+inProgressItemSlide();
+function likeItemSlide() {
+  if (document.querySelector(".like-item-swiper")) {
+    const likeItemSwiper = new Swiper(".like-item-swiper", {
+      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+      slidesPerView: 1,
+      grid: {
+        rows: 3,
+      },
+      spaceBetween: 10,
+    });
+  }
+}
+likeItemSlide();
+function recentItemSlide() {
+  if (document.querySelector(".recent-item-swiper")) {
+    const recentItemSwiper = new Swiper(".recent-item-swiper", {
+      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      grid: {
+        rows: 2,
+      },
+      spaceBetween: 8,
+    });
+  }
+}
+recentItemSlide();
+
 // DETAIL
 function ItemDetailSlide() {
   if (document.querySelector(".bigImgSlide")) {
