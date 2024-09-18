@@ -156,6 +156,11 @@ textarea::placeholder {
 }
 
 /* COMMON */
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
 .inner-width {
   width: 1280px;
   margin: 0 auto;
@@ -359,6 +364,46 @@ textarea::placeholder {
   font-weight: 400;
   border: solid 1px #000;
 }
+.basic-button__blue:hover {
+  background-color: #6aa9f0;
+}
+/* .basic-button__blue-line:hover {
+  color: var(--mainBlue);
+  background-color: var(--white);
+  border: 1px solid var(--mainBlue);
+}
+.basic-button__blue-bg-line:hover {
+  color: var(--mainBlue);
+  background-color: rgba(87, 158, 229, 0.1);
+  border: 1px solid var(--mainBlue);
+}
+.basic-button__dark-gray:hover {
+  color: var(--white);
+  background-color: #646464;
+}
+.basic-button__gray:hover {
+  color: var(--white);
+  background-color: #707070;
+}
+.basic-button__gray-line:hover {
+  background-color: #fff;
+  color: #707070;
+  border: 1px solid #707070;
+}
+.basic-button__light-gray-line:hover {
+  background-color: #fff;
+  border: 1px solid #dedede;
+}
+.basic-button__black:hover {
+  background-color: #000;
+  color: #fff;
+}
+.basic-button__black-line:hover {
+  color: #000;
+  background-color: #fff;
+  font-weight: 400;
+  border: solid 1px #000;
+} */
 /* INPUT */
 .basic-input {
   position: relative;

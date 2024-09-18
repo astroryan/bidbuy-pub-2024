@@ -213,6 +213,7 @@ function categoryToggle() {
     el.addEventListener("click", () => {
       const currentDepth = el.closest(".category-depth");
       const nextDepth = currentDepth.nextElementSibling;
+      console.log(nextDepth, "?");
 
       currentDepth.style.display = "none";
       nextDepth.style.display = "block";
@@ -276,7 +277,6 @@ function mainSlide() {
     });
   }
 }
-mainSlide();
 
 function inProgressItemSlide() {
   if (document.querySelector(".in-progress-items-swiper")) {
@@ -293,7 +293,7 @@ function inProgressItemSlide() {
     });
   }
 }
-inProgressItemSlide();
+
 function likeItemSlide() {
   if (document.querySelector(".like-item-swiper")) {
     const likeItemSwiper = new Swiper(".like-item-swiper", {
@@ -306,7 +306,7 @@ function likeItemSlide() {
     });
   }
 }
-likeItemSlide();
+
 function recentItemSlide() {
   if (document.querySelector(".recent-item-swiper")) {
     const recentItemSwiper = new Swiper(".recent-item-swiper", {
@@ -320,7 +320,12 @@ function recentItemSlide() {
     });
   }
 }
-recentItemSlide();
+window.addEventListener("DOMContentLoaded", () => {
+  mainSlide();
+  inProgressItemSlide();
+  likeItemSlide();
+  recentItemSlide();
+});
 
 // DETAIL
 function ItemDetailSlide() {

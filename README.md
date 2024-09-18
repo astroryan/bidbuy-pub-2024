@@ -2,20 +2,17 @@
 
 ## 페이지 정리
 
-| 폴더 명 | 페이지 명                  | 파일 명                       |
-| ------- | -------------------------- | ----------------------------- |
-| ""      | 메인페이지                 | index.html                    |
-| ""      | 검색페이지                 | search.html                   |
-| ""      | 전시 카테고리 목록 화면    | exhibition_category_list.html |
-| ""      | 시스템 카테고리 목록 화면  | system_category_list.html     |
-| ""      | 경매대행상세               | auctions.html                 |
-| ""      | 구매대행상세               | purchases.html                |
-| ""      | 로그인                     | auth.html                     |
-| ""      | 아이디 비밀번호 찾기       | auth/forgot.html              |
-| ""      | 회원가입 (멤버십혜택 약관) | signup.html                   |
-| ""      | 회원가입 (가입정보입력)    | signup/join.html              |
-| ""      | 회원가입 (가입완료)        | signup.html                   |
-| ""      | 간편회원가입               | signup.html                   |
+| 폴더 명     | 파일 명                       | 페이지 명                  |
+| ----------- | ----------------------------- | -------------------------- |
+| "index"     | index.html                    | 메인페이지                 |
+| "search"    | index.html                    | 검색페이지                 |
+| "list"      | exhibition_category_list.html | 전시 카테고리 목록 화면    |
+| "list"      | system_category_list.html     | 시스템 카테고리 목록 화면  |
+| "auctions"  | index.html                    | 경매대행상세               |
+| "purchases" | index.html                    | 구매대행상세               |
+| "auth"      | index.html                    | 로그인                     |
+| "auth"      | forgot.html                   | 아이디 비밀번호 찾기       |
+| "signup"    | index.html                    | 회원가입 (멤버십혜택 약관) |
 
 <!-- r/cs/guide/auction -->
 
