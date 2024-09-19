@@ -170,15 +170,6 @@ function headerScroll() {
       header.classList.remove("header-sticky");
       // header.style.transform = "translateY(0px)";
     }
-
-    if (scrollTop > 0) {
-      // header.style.backgroundColor = "#fff";
-    } else {
-      // header.style.backgroundColor = "transparent";
-      scrollTop = 8;
-    }
-
-    lastScrollTop = scrollTop;
   });
 }
 
