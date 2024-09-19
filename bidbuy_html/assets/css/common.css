@@ -156,6 +156,11 @@ textarea::placeholder {
 }
 
 /* COMMON */
+input:disabled,
+input:read-only {
+  background-color: #d8d8d8 !important;
+  color: #898989 !important;
+}
 .title {
   font-size: 22px;
   font-weight: bold;
@@ -352,6 +357,7 @@ textarea::placeholder {
 }
 .basic-button__light-gray-line {
   background-color: #fff;
+  color: #666;
   border: 1px solid #dedede;
 }
 .basic-button__black {

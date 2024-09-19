@@ -92,7 +92,7 @@ let $HEADER_CONT = `
     <button
       type="button"
       class="header__util util-notify modal_button"
-      onclick="openModal(this)"
+      onclick="openModal(this, event)"
       data-modal="notify"
     >
       <span class="blind">알림</span>
@@ -114,7 +114,7 @@ let $HEADER_CONT = `
     <button
       type="button"
       class="category-button modal_button"
-      onclick="openModal(this)"
+      onclick="openModal(this, event)"
       data-modal="category"
     >
       <span class="blind">카테고리 메뉴열기</span>

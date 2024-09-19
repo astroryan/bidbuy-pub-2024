@@ -1,5 +1,6 @@
 // 모달 열기
-function openModal(button) {
+function openModal(button, event) {
+  event.preventDefault();
   const modalName = button.dataset.modal;
   const selectedModal = document.querySelector(`.modal-${modalName}`);
   selectedModal.style.display = "block";

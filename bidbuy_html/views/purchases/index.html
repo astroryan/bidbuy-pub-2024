@@ -52,7 +52,7 @@
   <body>
     <div id="content-wrap">
       <!-- MODAL :: 비드바이 충전 -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="bid-charge"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="bid-charge"></button> -->
       <div class="modal-bid-charge bid-modal modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -107,7 +107,7 @@
         </section>
       </div>
       <!-- MODAL :: 바로입찰 3depth -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="bid-now"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="bid-now"></button> -->
       <div class="modal-bid-now bid-modal modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -289,7 +289,7 @@
         </section>
       </div>
       <!-- MODAL :: 예약입찰 3depth -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="bid-scheduled"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="bid-scheduled"></button> -->
       <div class="modal-bid-scheduled bid-modal modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -517,7 +517,7 @@
         </section>
       </div>
       <!-- MODAL :: 즉시낙찰 3depth -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="buy-now"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="buy-now"></button> -->
       <div class="modal-buy-now bid-modal modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -703,7 +703,7 @@
         </section>
       </div>
       <!-- MODAL :: 흥정낙찰 3depth -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="negotiation-purchase"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="negotiation-purchase"></button> -->
       <div class="modal-negotiation-purchase bid-modal modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -908,7 +908,7 @@
         </section>
       </div>
       <!-- MODAL :: 재입찰 2depth -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="re-bid"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="re-bid"></button> -->
       <div class="modal-re-bid bid-modal modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -1025,7 +1025,7 @@
         </section>
       </div>
       <!-- MODAL :: 장바구니담기 -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="add-to-cart"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="add-to-cart"></button> -->
       <div class="modal-add-to-cart modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -1048,7 +1048,7 @@
         </section>
       </div>
       <!-- MODAL :: 구매신청완료 -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="purchase-complete"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="purchase-complete"></button> -->
       <div class="modal-purchase-complete modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -1075,7 +1075,7 @@
         </section>
       </div>
       <!-- MODAL :: 구매대행신청 -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this)" data-modal="proxy-purchase"></button> -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="proxy-purchase"></button> -->
       <div class="modal-proxy-purchase modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
@@ -1295,8 +1295,6 @@
                               <div class="basic-select-box gray">
                                 <select name="" id="" required>
                                   <option value="" disabled selected>수량 선택</option>
-                                  <option value="" disabled selected>세부 옵션 선택</option>
-
                                   <option>세부 옵션 선택1</option>
                                   <option>세부 옵션 선택2</option>
                                   <option>세부 옵션 선택3</option>
@@ -1310,8 +1308,6 @@
                               <div class="basic-select-box gray">
                                 <select name="" id="" required>
                                   <option value="" disabled selected>칼라 선택</option>
-                                  <option value="" disabled selected>세부 옵션 선택</option>
-
                                   <option>세부 옵션 선택1</option>
                                   <option>세부 옵션 선택2</option>
                                   <option>세부 옵션 선택3</option>
@@ -1325,8 +1321,6 @@
                               <div class="basic-select-box gray">
                                 <select name="" id="" required>
                                   <option value="" disabled selected>사이즈 선택</option>
-                                  <option value="" disabled selected>세부 옵션 선택</option>
-
                                   <option>세부 옵션 선택1</option>
                                   <option>세부 옵션 선택2</option>
                                   <option>세부 옵션 선택3</option>
@@ -1360,14 +1354,14 @@
                         <div class="details-button-wrap">
                           <button
                             class="modal_button basic-button__gray-line"
-                            onclick="openModal(this)"
+                            onclick="openModal(this, event)"
                             data-modal="add-to-cart"
                           >
                             장바구니
                           </button>
                           <button
                             class="modal_button basic-button__blue"
-                            onclick="openModal(this)"
+                            onclick="openModal(this, event)"
                             data-modal="purchase-complete"
                           >
                             바로구매

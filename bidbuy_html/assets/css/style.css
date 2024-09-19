@@ -3618,12 +3618,174 @@
   }
 }
 
-.step-page {
+.signup-page {
+  padding: 30px 0 100px;
+
+  & .signup-section .basic-input input,
+  & .signup-section .basic-select-box select {
+    height: 48px;
+  }
+  & .signup-section .basic-input input {
+    flex: 1;
+    width: 100%;
+    padding: 15px 12px;
+  }
+  & .signup-section .with-button {
+    display: flex;
+    gap: 13px;
+  }
+
+  & .signup-section .basic-button__light-gray-line {
+    width: 130px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  & .signup-list {
+    margin-top: 40px;
+  }
+  & .signup-list > li {
+  }
+  & .signup-list > li + li {
+    margin-top: 30px;
+  }
+  & .signup-title {
+    font-size: 20px;
+    line-height: 1.25;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  & .signup-list-box {
+    padding: 30px;
+    border-radius: 12px;
+    border: solid 1px #dedede;
+  }
+  & .signup-list-box > li + li {
+    margin-top: 15px;
+  }
+  & .signup-benefits {
+    display: flex;
+    margin-bottom: 46px;
+  }
+  & .signup-benefits > label {
+    flex-shrink: 0;
+    width: 500px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57;
+    color: #000;
+  }
+  & .consent-options {
+  }
+  & .consent-options > li {
+    display: flex;
+    align-items: center;
+  }
+  & .consent-options > li + li {
+    margin-top: 20px;
+  }
+  & .consent-title {
+    width: 84px;
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 1.57;
+    color: #000;
+  }
+
+  & .consent-options .radio-check-button + .radio-check-button {
+    margin-left: 13px;
+  }
+  & .signup-select-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  & .signup-select-input .basic-select-box {
+    width: 158px;
+  }
+  & .signup-select-input .basic-select-box ~ .radio-button-wrap {
+    width: 158px;
+    margin-left: 19px;
+    gap: 13px;
+  }
+  & .radio-button-wrap {
+    display: flex;
+  }
+  & .signup-desc {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: #707070;
+  }
+
+  & .signup-path-title {
+    display: inline-block;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 23px;
+  }
+  & .signup-path .radio-button-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  & .signup-path .radio-check-button + .radio-check-button {
+    margin-left: 19px;
+  }
+
+  & .signup-path .etc-input {
+    flex: 1;
+    margin-left: 10px;
+    /* height: 48px; */
+  }
+  & .signup-button-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 60px;
+    margin-top: 40px;
+  }
+  & .signup-button-wrap .basic-button__black-line {
+    width: 150px;
+    border-radius: 30px;
+    font-size: 16px;
+  }
+  & .signup-button-wrap .basic-button__blue {
+    width: 220px;
+    border-radius: 30px;
+    font-size: 16px;
+  }
+
+  /* 소셜 로그인 */
+  & .social-banner {
+    width: 872px;
+    margin: 38px auto 0;
+    padding: 35px 0;
+    object-fit: contain;
+    border-radius: 11px;
+    background-color: #fff;
+  }
+  & .social-banner b {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.39;
+    color: #000;
+    margin-bottom: 18px;
+  }
+  & .social-banner p {
+    font-size: 16px;
+    line-height: 1.38;
+    letter-spacing: -0.32px;
+    text-align: center;
+    color: #707070;
+  }
+
   & .top-content {
     width: 100%;
     min-height: 343px;
     text-align: center;
-    background: url("../images/banner/step_banner.jpg") no-repeat center / cover;
+    background: url("../images/banner/signup_banner_gray.jpg") no-repeat center / cover;
     padding: 50px 0;
     border-radius: 12px;
     overflow: hidden;
@@ -3636,18 +3798,18 @@
     color: #707070;
     margin-bottom: 10px;
   }
-  & .step-inner {
+  & .signup-inner {
     width: 798px;
     margin: 0 auto;
   }
 
-  & .step-order {
+  & .signup-order {
     display: flex;
     justify-content: center;
     gap: 48px;
     /* justify-content: space-between; */
   }
-  & .step-order .step-order-list {
+  & .signup-order .signup-order-list {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -3659,7 +3821,7 @@
     background-color: #fff;
     margin-top: 38px;
   }
-  & .step-order .step-order-list + .step-order-list::before {
+  & .signup-order .signup-order-list + .signup-order-list::before {
     position: absolute;
     top: 50%;
     left: -34px;
@@ -3670,7 +3832,7 @@
     background: url("../images/icon/arrow_right_light_gray.svg") no-repeat center / contain;
   }
 
-  & .step-order .step-order__num {
+  & .signup-order .signup-order__num {
     display: grid;
     place-content: center;
     text-align: center;
@@ -3684,10 +3846,10 @@
     border-radius: 50%;
     padding: 10px;
     background-color: #82c2bd;
-    margin-bottom: 8px;
+    margin-bottom: 19px;
   }
 
-  & .step-order .step-order__text {
+  & .signup-order .signup-order__text {
     display: flex;
     align-items: center;
     flex: 1;
@@ -3697,22 +3859,22 @@
     letter-spacing: -0.43px;
     color: #000;
   }
-  & .step-order .step-order-list.active {
+  & .signup-order .signup-order-list.active {
     box-shadow: 0 0 0 1.5px #82c2bd inset;
   }
 
-  & .step-banner {
+  & .signup-banner {
     width: 100%;
     margin: 40px auto 0;
   }
 
-  & .step-banner ul {
+  & .signup-banner ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 24px 22px;
   }
-  & .step-banner li {
+  & .signup-banner li {
     width: calc(100% / 2 - 24px / 2);
     height: 103px;
     display: flex;
@@ -3720,19 +3882,19 @@
     align-items: center;
     justify-content: center;
   }
-  & .step-banner li:is(:nth-child(1), :nth-child(4)) .badge {
+  & .signup-banner li:is(:nth-child(1), :nth-child(4)) .badge {
     color: var(--mainMint);
   }
-  & .step-banner li:is(:nth-child(1), :nth-child(4)) {
+  & .signup-banner li:is(:nth-child(1), :nth-child(4)) {
     background-image: linear-gradient(to right, #90ddd7 41%, #8bd5d0 91%);
   }
-  & .step-banner li:is(:nth-child(2), :nth-child(3)) .badge {
+  & .signup-banner li:is(:nth-child(2), :nth-child(3)) .badge {
     color: var(--mainBlue);
   }
-  & .step-banner li:is(:nth-child(2), :nth-child(3)) {
+  & .signup-banner li:is(:nth-child(2), :nth-child(3)) {
     background-image: linear-gradient(to right, #579ee5 41%, #6aa3dd 91%);
   }
-  & .step-banner .badge {
+  & .signup-banner .badge {
     font-size: 12px;
     font-weight: bold;
     line-height: 1.08;
@@ -3743,13 +3905,13 @@
     border-radius: 12px;
     background-color: #fff;
   }
-  & .step-banner p {
+  & .signup-banner p {
     font-size: 13px;
     letter-spacing: -0.26px;
     color: #fff;
     margin-bottom: 4px;
   }
-  & .step-banner b {
+  & .signup-banner b {
     font-size: 16px;
     font-weight: bold;
     letter-spacing: -0.32px;
@@ -3804,27 +3966,27 @@
     color: #707070;
     overflow: auto;
   }
-  & .step-utils {
+  & .signup-utils {
     margin-top: 33px;
   }
-  & .step-utils .radio-input {
+  & .signup-utils .radio-input {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
   }
-  & .step-utils .radio-button-wrap {
+  & .signup-utils .radio-button-wrap {
     display: flex;
     align-items: center;
     gap: 17px;
   }
-  & .step-utils .basic-check-box__squire {
+  & .signup-utils .basic-check-box__squire {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
   }
-  & .step-utils .step-button-wrap {
+  & .signup-button-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3832,13 +3994,13 @@
     height: 60px;
     margin-top: 33px;
   }
-  & .step-utils .basic-button__blue {
+  & .signup-button-wrap .basic-button__blue {
     width: 220px;
     border-radius: 30px;
     height: 100%;
     font-size: 16px;
   }
-  & .step-utils .basic-button__black-line {
+  & .signup-button-wrap .basic-button__black-line {
     width: 366px;
     border-radius: 30px;
     height: 100%;
@@ -3866,4 +4028,156 @@
   & .sns-apple {
     background: url("../../assets/images/icon/login_apple.svg") no-repeat center / contain;
   }
+  /* 가입완료 */
+  & .signup-complete-banner {
+    width: 798px;
+    height: 198px;
+    background: url("../../assets/images/banner/signup_banner_blue.jpg") no-repeat center / contain;
+    margin-top: 50px;
+  }
+  & .signup-complete-banner__text {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 426px;
+    height: 100%;
+    margin-left: auto;
+  }
+  & .signup-complete-banner p {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: #fff;
+  }
+  & .signup-complete-banner b {
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: bold;
+  }
+  & .signup-complete__coupon {
+    margin-top: 65px;
+  }
+  & .signup-complete__coupon > li {
+    display: flex;
+    align-items: center;
+    gap: 66px;
+  }
+  & .signup-complete__coupon > li + li {
+    margin-top: 30px;
+  }
+  & .signup-complete__coupon > li:nth-child(1) span {
+    background-color: #579ee5;
+  }
+  & .signup-complete__coupon > li:nth-child(1) .coupon-img {
+    background: url("../images/signup/coupon_01.png") no-repeat center / cover;
+    /* background: url("../images/signup/coupon_01.svg") no-repeat center / cover; */
+  }
+  & .signup-complete__coupon > li:nth-child(2) span {
+    background-color: #82c2bd;
+  }
+  & .signup-complete__coupon > li:nth-child(2) .coupon-img {
+    background: url("../images/signup/coupon_02.png") no-repeat center / cover;
+    /* background: url("../images/signup/coupon_02.svg") no-repeat center / cover; */
+  }
+  & .signup-complete__coupon .coupon-img {
+    width: 335px;
+    height: 166px;
+  }
+  & .signup-complete__coupon .coupon-text {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 202px;
+    margin-left: auto;
+  }
+  & .signup-complete__coupon span {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    padding: 3px 10px 5px;
+    border-radius: 11px;
+    background-color: #579ee5;
+    margin-bottom: 10px;
+  }
+  & .signup-complete__coupon p {
+    font-size: 14px;
+    letter-spacing: -0.14px;
+    color: #333;
+  }
+  & .signup-complete__coupon strong {
+    display: inline-block;
+    font-size: 23px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+  }
+  & .signup-complete__coupon .basic-button__light-gray-line {
+    width: 92px;
+    height: 28px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.54;
+    color: #333;
+    margin-top: 10px;
+  }
+  & .coupon-desc {
+  }
+  & .coupon-desc > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+  }
+  & .coupon-desc > li::before {
+    content: "·";
+    font-size: 15px;
+    letter-spacing: -0.02em;
+    color: #898989;
+  }
+  & .coupon-desc li {
+    letter-spacing: -0.35px;
+    color: #000;
+  }
+  & .coupon-desc li + li {
+    margin-top: 20px;
+  }
+  & .coupon-desc b {
+  }
+
+  & .signup-complete-button-wrap {
+    display: flex;
+    gap: 10px;
+  }
+  & .complete-buttons {
+    margin-top: 106px;
+  }
+  & .complete-buttons .basic-button__black-line {
+    width: 220px;
+  }
+  /* & .signup-complete-button-wrap > * {
+    width: 220px;
+    font-size: 16px;
+  } */
+}
+
+/* MODAL :: 소셜계정 이메일 중복체크 */
+.modal-social-email-check__desc {
+  margin: 29px 0 75px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.57;
+  letter-spacing: -0.28px;
+  text-align: center;
+  color: #707070;
+}
+.modal-social-email-check__desc .modal-button-wrap > *,
+.modal-button-wrap > [class^="basic-button__"] {
+  width: 200px;
 }
