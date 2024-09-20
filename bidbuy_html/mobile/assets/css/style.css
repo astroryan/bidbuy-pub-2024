@@ -433,7 +433,7 @@
   width: 33px;
   height: 33px;
   flex-shrink: 0;
-  background: url("../images/icon/icon_clock.svg") no-repeat center / contain;
+  background: url("../images/icon/clock.svg") no-repeat center / contain;
   margin-right: 8px;
 }
 .main-side__auction .main-title b {

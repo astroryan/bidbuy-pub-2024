@@ -1,0 +1,2995 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- MODAL :: 비드바이 충전 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="bid-charge"></button> -->
+      <div class="modal-bid-charge bid-modal modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">비드바이 입찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__content">
+              <div class="content-box">
+                <p class="modal__content-title">입찰보증금 충전 또는 전환이 필요합니다.</p>
+                <ol class="bid-order">
+                  <li class="bid-order-list">
+                    <div class="bid-order__num">1st</div>
+                    <p class="bid-order__text">
+                      입찰보증금<br />
+                      충전
+                    </p>
+                  </li>
+                  <li class="bid-order-list">
+                    <div class="bid-order__num">2st</div>
+                    <p class="bid-order__text">
+                      경매입찰<br />
+                      참여
+                    </p>
+                  </li>
+                  <li class="bid-order-list">
+                    <div class="bid-order__num">3st</div>
+                    <p class="bid-order__text">낙찰 & 유찰</p>
+                  </li>
+                  <li class="bid-order-list">
+                    <div class="bid-order__num">4st</div>
+                    <p class="bid-order__text">경매종료</p>
+                  </li>
+                </ol>
+              </div>
+              <ul class="modal-bid-charge__notice">
+                <li>
+                  입찰보증금은 안전한 경매 거래를 위한 예치금 형식이며<br />
+                  낙찰 후 상품 구매 완료나 유찰 시 100% 환불 하실 수 있습니다.
+                </li>
+                <li>일본 야후 또는 이베이 경매 참여 보증금은 전환하며 사용 가능 합니다.</li>
+              </ul>
+            </div>
+            <div class="modal-button-wrap">
+              <a href="" class="basic-button__black">보증금 충전하기</a>
+              <a href="" class="basic-button__black-line">경매보증금 관리</a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 바로입찰 3depth -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="bid-now"></button> -->
+      <div class="modal-bid-now bid-modal modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">바로 입찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <ol class="bid-modal__depth-list">
+              <!-- 1 DEPTH -->
+              <li class="depth-one">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">입찰 체크사항</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">입찰하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>현재 입찰가 :&nbsp;<b>¥1,200</b>&nbsp;(￦10,920)</li>
+                      <li><b>입찰가 입력하기</b>&nbsp;:&nbsp;<b>¥1,300</b>&nbsp;이상으로 입찰 가능합니다.</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+                  <div class="bid-order__notice">
+                    <p>입찰 승인 안내 및 규정</p>
+                    <pre>
+1. 경매 입찰 반영 이후의 입찰취소에 대해서는 출품자에게 입찰 취소 요청을 해 드리오나, 
+입찰 취소 요청이 받아 들여지지 않을 경우엔 입찰 취소 처리가 불가합니다.
+( 미국의 경우, 입찰 취소 요청도 어려운 점 양해 부탁드립니다.)
+2. 경매 낙찰 이후에는 경매대행계약의 청약철회 등을 할 수 없습니다.
+그럼에도 불구하고, 미결제 사유로 인한 낙찰취소를 할 경우 경매 보증금이 환수됩니다.
+(세번의 낙찰취소를 하시면 비드바이 사이트 이용이 영구적으로 정지됩니다.)
+물품을 결제하신 이후에 청약철회를 원하실 경우에도 원칙적으로 청약철회 등을 할 수 없습니다.</pre
+                    >
+                  </div>
+                  <div class="modal-check-box-wrap">
+                    <div class="modal-check-box basic-check-box__squire gray">
+                      <input type="checkbox" name="" id="1eeee5" required />
+                      <label for="1eeee5">
+                        <span class="basic-check-box__squire-icon"></span> 위 규정에 동의하며 입찰을 신청합니다.</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 2 DEPTH -->
+              <li class="depth-two" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">입찰 체크사항</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">입찰하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>현재 입찰가 :&nbsp;<b>¥1,200</b>&nbsp;(￦10,920)</li>
+                      <li><b>입찰가 입력하기</b>&nbsp;:&nbsp;<b>¥1,300</b>&nbsp;이상으로 입찰 가능합니다.</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+
+                  <ul class="bid-order__option">
+                    <li>
+                      <label for="num" class="bid-order__option-label">수량</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-select-box gray">
+                          <select name="" id="num" required>
+                            <option>1개</option>
+                            <option>2개</option>
+                            <option>3개</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">입찰가</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input">
+                          <input id="price" type="text" placeholder="입찰가를  ¥ 단위로 입력해 주세요." />
+                        </div>
+                        <span class="bid-order__price-desc">(구만이천 엔)</span>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">경매낙찰정보</label>
+                      <div class="bid-order__option-desc">
+                        <div class="radio-check-button">
+                          <input type="radio" name="public5" id="public52" checked />
+                          <label for="public52"><span class="radio-check-button-icon"></span>공개</label>
+                        </div>
+                        <div class="radio-check-button">
+                          <input type="radio" name="public5" id="public51" />
+                          <label for="public51"><span class="radio-check-button-icon"></span>비공개</label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 3 DEPTH -->
+              <li class="depth-three" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">입찰 체크사항</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">입찰하기</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>
+                        <span class="bid-item-details__dt"><b>입찰금액</b></span>
+                        <span class="bid-item-details__dd"><b>¥ 92,000 </b>(구만이천엔)</span>
+                      </li>
+                      <li>
+                        <span class="bid-item-details__dt"><b>입찰 수량</b></span>
+                        <span class="bid-item-details__dd">1개</span>
+                      </li>
+                      <li>
+                        <span class="bid-item-details__dt"><b>경매낙찰정보</b></span>
+                        <span class="bid-item-details__dd">공개</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="depth-three__notice">
+                    <p>최고 입찰자로 낙찰된 후에는 낙찰 취소가 불가능 합니다.</p>
+                    <small>(취소 시 보증금이 환수 됩니다.)</small>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <a href="" class="basic-button__black-line">입찰완료</a>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 예약입찰 3depth -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="bid-scheduled"></button> -->
+      <div class="modal-bid-scheduled bid-modal modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">예약 입찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <ol class="bid-modal__depth-list">
+              <!-- 1 DEPTH -->
+              <li class="depth-one">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">예약입찰 체크</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">예약입찰하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">예약입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>현재 입찰가 : <b>¥1,200</b> (￦10,920)</li>
+                      <li><b>입찰가 입력하기</b> : <b>¥1,300</b> 이상으로 입찰 가능합니다.</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+                  <div class="bid-order__notice">
+                    <p>입찰 승인 안내 및 규정</p>
+                    <pre>
+1. 경매 입찰 반영 이후의 입찰취소에 대해서는 출품자에게 입찰 취소 요청을 해 드리오나, 
+입찰 취소 요청이 받아 들여지지 않을 경우엔 입찰 취소 처리가 불가합니다.
+( 미국의 경우, 입찰 취소 요청도 어려운 점 양해 부탁드립니다.)
+2. 경매 낙찰 이후에는 경매대행계약의 청약철회 등을 할 수 없습니다.
+그럼에도 불구하고, 미결제 사유로 인한 낙찰취소를 할 경우 경매 보증금이 환수됩니다.
+(세번의 낙찰취소를 하시면 비드바이 사이트 이용이 영구적으로 정지됩니다.)
+물품을 결제하신 이후에 청약철회를 원하실 경우에도 원칙적으로 청약철회 등을 할 수 없습니다.</pre
+                    >
+                  </div>
+                  <div class="modal-check-box-wrap">
+                    <div class="modal-check-box basic-check-box__squire gray">
+                      <input type="checkbox" name="" id="1eeee2" required />
+                      <label for="1eeee2">
+                        <span class="basic-check-box__squire-icon"></span> 위 규정에 동의하며 입찰을 신청합니다.</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 2 DEPTH -->
+              <li class="depth-two" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">예약입찰 체크</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">예약입찰하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">예약입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>현재 입찰가 : <b>¥1,200</b> (￦10,920)</li>
+                      <li><b>입찰가 입력하기</b> : <b>¥1,300</b> 이상으로 입찰 가능합니다.</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+
+                  <ul class="bid-order__option">
+                    <li>
+                      <label for="num" class="bid-order__option-label">수량</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-select-box gray">
+                          <select name="" id="num" required>
+                            <option>1개</option>
+                            <option>2개</option>
+                            <option>3개</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">입찰가</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input">
+                          <input id="price" type="text" placeholder="입찰가를  ¥ 단위로 입력해 주세요." />
+                        </div>
+                        <span class="bid-order__price-desc">(구만이천 엔)</span>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="date" class="bid-order__option-label">예약일</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-select-box gray time-select">
+                          <select name="" id="date" required>
+                            <option value="" disabled selected>입찰종료 시간 전</option>
+                            <option>1시간</option>
+                            <option>2시간</option>
+                          </select>
+                        </div>
+                        <span class="bid-order__price-desc">또는 직접입력</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bid-order__option-label"></div>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input date-input">
+                          <input id="date" type="date" data-placeholder="날짜 선택" required aria-required="true" />
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="bid-order__option-label"></div>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input time-input-group">
+                          <input id="date" type="number" /><small>시</small> <input id="date" type="number" /><small
+                            >분</small
+                          >
+                          <input id="date" type="number" /><small>초</small>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">입찰가</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input">
+                          <input id="price" type="text" placeholder="입찰가를  ¥ 단위로 입력해 주세요." />
+                        </div>
+                        <span class="bid-order__price-desc">(구만이천 엔)</span>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">경매낙찰정보</label>
+                      <div class="bid-order__option-desc">
+                        <div class="radio-check-button">
+                          <input type="radio" name="public2" id="qw" checked />
+                          <label for="qw"><span class="radio-check-button-icon"></span>공개</label>
+                        </div>
+                        <div class="radio-check-button">
+                          <input type="radio" name="public2" id="as" />
+                          <label for="as"><span class="radio-check-button-icon"></span>비공개</label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 3 DEPTH -->
+              <li class="depth-three" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">예약입찰 체크</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">예약입찰 체크</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">예약입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="depth-three__alert-text">예약 입찰 내용을 최종 확인해 주세요.</div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>
+                        <span class="bid-item-details__dt"><b>예약입찰금액</b></span>
+                        <span class="bid-item-details__dd"><b>¥ 92,000 </b>(구만이천엔)</span>
+                      </li>
+                      <li>
+                        <span class="bid-item-details__dt"><b>예약입찰시간 </b></span>
+                        <span class="bid-item-details__dd">입찰종료 1시간 전</span>
+                      </li>
+                      <li>
+                        <span class="bid-item-details__dt"><b>예약입찰 수량</b></span>
+                        <span class="bid-item-details__dd">1개</span>
+                      </li>
+                      <li>
+                        <span class="bid-item-details__dt"><b>경매낙찰정보</b></span>
+                        <span class="bid-item-details__dd">공개</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="depth-three__notice">
+                    <p>최고 입찰자로 낙찰된 후에는 낙찰 취소가 불가능 합니다.</p>
+                    <small>(취소 시 보증금이 환수 됩니다.)</small>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <a href="" class="basic-button__black-line">예약입찰</a>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 즉시낙찰 3depth -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="buy-now"></button> -->
+      <div class="modal-buy-now bid-modal modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">즉시 낙찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <ol class="bid-modal__depth-list">
+              <!-- 1 DEPTH -->
+              <li class="depth-one">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">즉시낙찰 체크</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">즉시낙찰하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">결제하기</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>
+                        입찰방식 : 즉시낙찰&nbsp;<small
+                          >(입력하신 금액과 희망낙찰가격이 같으면 즉시 낙찰되는 방식입니다.)</small
+                        >
+                      </li>
+                      <li>즉시 낙찰가 :&nbsp;<b>¥1,300</b>&nbsp;(일천삼백 엔)</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+                  <div class="bid-order__notice">
+                    <p>입찰 승인 안내 및 규정</p>
+                    <pre>
+1. 경매 입찰 반영 이후의 입찰취소에 대해서는 출품자에게 입찰 취소 요청을 해 드리오나, 
+입찰 취소 요청이 받아 들여지지 않을 경우엔 입찰 취소 처리가 불가합니다.
+( 미국의 경우, 입찰 취소 요청도 어려운 점 양해 부탁드립니다.)
+2. 경매 낙찰 이후에는 경매대행계약의 청약철회 등을 할 수 없습니다.
+그럼에도 불구하고, 미결제 사유로 인한 낙찰취소를 할 경우 경매 보증금이 환수됩니다.
+(세번의 낙찰취소를 하시면 비드바이 사이트 이용이 영구적으로 정지됩니다.)
+물품을 결제하신 이후에 청약철회를 원하실 경우에도 원칙적으로 청약철회 등을 할 수 없습니다.</pre
+                    >
+                  </div>
+                  <div class="modal-check-box-wrap">
+                    <div class="modal-check-box basic-check-box__squire gray">
+                      <input type="checkbox" name="" id="1eeee3" required />
+                      <label for="1eeee3">
+                        <span class="basic-check-box__squire-icon"></span> 위 규정에 동의하며 입찰을 신청합니다.</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 2 DEPTH -->
+              <li class="depth-two" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">즉시낙찰 체크</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">즉시낙찰하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">결제하기</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>
+                        입찰방식 : 즉시낙찰&nbsp;<small
+                          >(입력하신 금액과 희망낙찰가격이 같으면 즉시 낙찰되는 방식입니다.)</small
+                        >
+                      </li>
+                      <li>즉시 낙찰가 :&nbsp;<b>¥1,300</b>&nbsp;(일천삼백 엔)</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+
+                  <ul class="bid-order__option">
+                    <li>
+                      <label for="num" class="bid-order__option-label">수량</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-select-box gray">
+                          <select name="" id="num" required>
+                            <option>1개</option>
+                            <option>2개</option>
+                            <option>3개</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">최종 즉시낙찰가</label>
+                      <div class="bid-order__option-desc">
+                        <strong class="modal-buy-now__price">£ 245.00</strong
+                        ><span class="bid-order__price-desc">(￦433,650)</span>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">낙찰상품정보</label>
+                      <div class="bid-order__option-desc">
+                        <div class="radio-check-button">
+                          <input type="radio" name="public3" id="public31" checked />
+                          <label for="public31"><span class="radio-check-button-icon"></span>공개</label>
+                        </div>
+                        <div class="radio-check-button">
+                          <input type="radio" name="public3" id="public32" />
+                          <label for="public32"><span class="radio-check-button-icon"></span>비공개</label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 3 DEPTH -->
+              <li class="depth-three" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">즉시낙찰 체크</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">즉시낙찰하기</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">결제하기</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="depth-three__alert-text">낙찰 완료 되었습니다.</div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>
+                        <span class="bid-item-details__dt"><b>낙찰금액</b></span>
+                        <span class="bid-item-details__dd"
+                          ><b>£ 245.00</b><span class="bid-item-details__dd-gray">(￦433,650)</span></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="depth-three__notice">
+                    <p>
+                      낙찰된 후에는 낙찰 취소가 불가능하며 바로 결제<br />
+                      또는 24시간 내 결제가 진행 되어야 취소 처리 되지 않습니다.
+                    </p>
+                    <small>(취소 시 또는 미결제로 자동 취소시도 보증금이 환수 됩니다.)</small>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <a href="" class="basic-button__black-line">결제하기</a>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 흥정낙찰 3depth -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="negotiation-purchase"></button> -->
+      <div class="modal-negotiation-purchase bid-modal modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">흥정 낙찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <ol class="bid-modal__depth-list">
+              <!-- 1 DEPTH -->
+              <li class="depth-one">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">흥정낙찰 체크</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">흥정하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">흥정 결제하기</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>
+                        입찰방식 : 흥정하기&nbsp;<small>
+                          (입력하신 금액에 출품자가 승낙하면 낙찰이 되는 방식입니다.)</small
+                        >
+                      </li>
+                      <li>즉시 낙찰가 :&nbsp;<b>¥1,300</b>&nbsp;(일천삼백 엔)</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+                  <div class="bid-order__notice">
+                    <p>입찰 승인 안내 및 규정</p>
+                    <pre>
+1. 경매 입찰 반영 이후의 입찰취소에 대해서는 출품자에게 입찰 취소 요청을 해 드리오나, 
+입찰 취소 요청이 받아 들여지지 않을 경우엔 입찰 취소 처리가 불가합니다.
+( 미국의 경우, 입찰 취소 요청도 어려운 점 양해 부탁드립니다.)
+2. 경매 낙찰 이후에는 경매대행계약의 청약철회 등을 할 수 없습니다.
+그럼에도 불구하고, 미결제 사유로 인한 낙찰취소를 할 경우 경매 보증금이 환수됩니다.
+(세번의 낙찰취소를 하시면 비드바이 사이트 이용이 영구적으로 정지됩니다.)
+물품을 결제하신 이후에 청약철회를 원하실 경우에도 원칙적으로 청약철회 등을 할 수 없습니다.</pre
+                    >
+                  </div>
+                  <div class="modal-check-box-wrap">
+                    <div class="modal-check-box basic-check-box__squire gray">
+                      <input type="checkbox" name="" id="1eeee4" required />
+                      <label for="1eeee4">
+                        <span class="basic-check-box__squire-icon"></span> 위 규정에 동의하며 입찰을 신청합니다.</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 2 DEPTH -->
+              <li class="depth-two" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">흥정낙찰 체크</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">흥정하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">흥정 결제하기</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>
+                        입찰방식 : 흥정하기&nbsp;<small>
+                          (입력하신 금액에 출품자가 승낙하면 낙찰이 되는 방식입니다.)</small
+                        >
+                      </li>
+                      <li>즉시 낙찰가 :&nbsp;<b>¥1,300</b>&nbsp;(일천삼백 엔)</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+
+                  <ul class="bid-order__option">
+                    <li>
+                      <label for="num" class="bid-order__option-label">수량</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-select-box gray">
+                          <select name="" id="num" required>
+                            <option>1개</option>
+                            <option>2개</option>
+                            <option>3개</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">제안금액</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input">
+                          <input id="price" type="text" placeholder="합계 £ 단위로 입력" />
+                        </div>
+                        <span class="bid-order__price-desc">(구만이천 엔)</span>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">Counter Offer</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input two-depth__option-input">
+                          <input id="price" type="text" placeholder="선택사항" />
+                        </div>
+                        <span class="bid-order__price-desc">(구만이천 엔)</span>
+                        <small class="two-depth__option-input-small">(출품자가 제안 미수락 시 최종 오퍼 금액)</small>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">경매낙찰정보</label>
+                      <div class="bid-order__option-desc">
+                        <div class="radio-check-button">
+                          <input type="radio" name="public5" id="14" checked />
+                          <label for="14"><span class="radio-check-button-icon"></span>공개</label>
+                        </div>
+                        <div class="radio-check-button">
+                          <input type="radio" name="public5" id="16" />
+                          <label for="16"><span class="radio-check-button-icon"></span>비공개</label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 3 DEPTH -->
+              <li class="depth-three" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">흥정낙찰 체크</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">흥정하기</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">3st</div>
+                        <p class="bid-order__text">흥정 결제하기</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="depth-three__alert-text">흥정 낙찰 내용을 최종 확인해 주세요.</div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>
+                        <span class="bid-item-details__dt"><b>제안금액</b></span>
+                        <span class="bid-item-details__dd"><b>£ 255.00 </b>(￦475,000)</span>
+                      </li>
+                      <li>
+                        <span class="bid-item-details__dt"><b>입찰 수량</b></span>
+                        <span class="bid-item-details__dd">1개</span>
+                      </li>
+                      <li>
+                        <span class="bid-item-details__dt"><b>Counter Offer</b></span>
+                        <span class="bid-item-details__dd"><b>£ 260.00 </b>(￦490,000)</span>
+                      </li>
+                      <li>
+                        <span class="bid-item-details__dt"><b>경매낙찰정보</b></span>
+                        <span class="bid-item-details__dd">공개</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="depth-three__notice">
+                    <p>결제 진행하시면 출품자에게 자동으로 MAKER OFFER 금액이 전달됩니다.</p>
+                    <small>(취소 시 또는 미결제로 자동 취소시도 보증금이 환수 됩니다.)</small>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <a href="" class="basic-button__black-line">입찰완료</a>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 재입찰 2depth -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="re-bid"></button> -->
+      <div class="modal-re-bid bid-modal modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">재입찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <ol class="bid-modal__depth-list">
+              <!-- 1 DEPTH -->
+              <li class="depth-two">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">재입찰하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">재입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>이전 입찰가 :&nbsp;<b>¥1,200</b>&nbsp;(￦10,920)</li>
+                      <li><b>입찰가 입력하기</b>&nbsp;:&nbsp;<b>¥1,300</b>&nbsp;이상으로 입찰 가능합니다.</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+
+                  <ul class="bid-order__option">
+                    <li>
+                      <label for="num" class="bid-order__option-label">수량</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-select-box gray">
+                          <select name="" id="num" required>
+                            <option>1개</option>
+                            <option>2개</option>
+                            <option>3개</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">재입찰가</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input">
+                          <input id="price" type="text" placeholder="입찰가를  ¥ 단위로 입력해 주세요." />
+                        </div>
+                        <span class="bid-order__price-desc">(구만이천 엔)</span>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">경매낙찰정보</label>
+                      <div class="bid-order__option-desc">
+                        <div class="radio-check-button">
+                          <input type="radio" name="public2" id="public21" checked />
+                          <label for="public21"><span class="radio-check-button-icon"></span>공개</label>
+                        </div>
+                        <div class="radio-check-button">
+                          <input type="radio" name="public2" id="public22" />
+                          <label for="public22"><span class="radio-check-button-icon"></span>비공개</label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 2 DEPTH -->
+              <li class="depth-three" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">재입찰하기</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">재입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="depth-three__alert-text">재입찰 금액을 확인해 주세요.</div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>
+                        <span class="bid-item-details__dt"><b>재입찰급액</b></span>
+                        <span class="bid-item-details__dd"
+                          ><b>¥ 92,000</b><span class="bid-item-details__dd-gray">(￦433,650)</span></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="depth-three__notice">
+                    <p>최고 입찰자로 낙찰된 후에는 낙찰 취소가 불가능 합니다.</p>
+                    <small>(취소 시 보증금이 환수 됩니다.)</small>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <a href="" class="basic-button__black-line">재입찰하기</a>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 장바구니담기 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="add-to-cart"></button> -->
+      <div class="modal-add-to-cart modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">장바구니 담기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body default">
+            <div class="modal__content">
+              <p class="modal__text"><b>해당 구매대행 상품이 장바구니에 추가 되었습니다.</b></p>
+              <p class="modal__small-text">(장바구니 이동 후 결제 또는 계속쇼핑 할 수 있습니다.)</p>
+            </div>
+            <div class="modal-button-wrap">
+              <button type="button" class="basic-button__black-line" onclick="closeModal(this)">계속쇼핑</button>
+              <a href="/cart.html" class="basic-button__black">장바구니 이동</a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 구매신청완료 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="purchase-complete"></button> -->
+      <div class="modal-purchase-complete modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">구매신청완료</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body default">
+            <div class="modal__content">
+              <p class="modal__text"><b>해당 구매대행 상품이 장바구니에 추가 되었습니다.</b></p>
+              <p class="modal__small-text">(마이페이지 주문내역에서 확인 가능합니다.)</p>
+              <p class="modal__sub-text">
+                제조사나 판매자에 따라서 배송이<br />
+                늦어질 수 있으니 사전 확인 부탁 드립니다.
+              </p>
+            </div>
+            <div class="modal-button-wrap">
+              <button type="button" class="basic-button__black-line" onclick="closeModal(this)">계속쇼핑</button>
+              <a href="/mypage/order.html" class="basic-button__black">주문내역 확인</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- START :: HEADER -->
+      <header id="header"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <div id="main" class="detail-page auction-agency-details-page">
+        <div class="inner-width">
+          <section class="top-content">
+            <div class="platform">
+              <figure class="img-wrap">
+                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+              </figure>
+              <b>야후경매</b>
+            </div>
+            <p class="item-name p_2 top-content__main-text">
+              소니 렌즈 신품미사용! FE PZ 16-35 mm F4 G SELP1635G FE PZ 16-35 mm F4SELP1635G FE PZ 16-35 mm F4SELP1635G
+              FE PZ 16-35 mm F4 G SELP1635G
+            </p>
+            <div class="top-content__utils">
+              <button class="translation-button toggle-button" type="button">번역</button>
+              <button type="button" class="like-keyword-button" onclick="toggleKeyword(this, event)">
+                <input type="checkbox" id="likeKeyword" />
+                <label for="likeKeyword">관심키워드 등록</label>
+              </button>
+              <button class="share-button" type="button">공유하기</button>
+            </div>
+          </section>
+          <!-- 아이템 이미지, 정보 -->
+          <section class="detail-item-box">
+            <div class="interest-num">
+              <p>관심</p>
+              <p><b>5</b>회</p>
+            </div>
+            <div class="item-img-and-seller">
+              <article class="item-slider">
+                <div class="swiper bigImgSlide">
+                  <div class="swiper-wrapper">
+                    <figure class="swiper-slide img-wrap">
+                      <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                    </figure>
+                    <figure class="swiper-slide img-wrap">
+                      <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                    </figure>
+                    <figure class="swiper-slide img-wrap">
+                      <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                    </figure>
+                    <figure class="swiper-slide img-wrap">
+                      <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                    </figure>
+                    <figure class="swiper-slide img-wrap">
+                      <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                    </figure>
+                    <figure class="swiper-slide img-wrap">
+                      <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                    </figure>
+                  </div>
+                </div>
+                <div class="thumbsSlide-box">
+                  <button type="button" class="thumbs-button-next"></button>
+                  <div thumbsSlider="" class="swiper thumbsSlide">
+                    <div class="swiper-wrapper">
+                      <figure class="swiper-slide img-wrap">
+                        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                      </figure>
+                      <figure class="swiper-slide img-wrap">
+                        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                      </figure>
+                      <figure class="swiper-slide img-wrap">
+                        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                      </figure>
+                      <figure class="swiper-slide img-wrap">
+                        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                      </figure>
+                      <figure class="swiper-slide img-wrap">
+                        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                      </figure>
+                      <figure class="swiper-slide img-wrap">
+                        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                      </figure>
+                    </div>
+                  </div>
+                  <button type="button" class="thumbs-button-prev"></button>
+                </div>
+              </article>
+              <!-- 셀러 정보 -->
+              <article class="seller-info">
+                <ul class="seller-info__left">
+                  <li>
+                    <span class="seller-into__title">Seller ID</span>
+                    <span class="seller-info__desc">
+                      <figure class="img-wrap">
+                        <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <b class="nowrap">Jon0653</b>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="seller-into__title">Seller 위치</span>
+                    <span class="seller-info__desc">
+                      <figure class="img-wrap">
+                        <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <b class="nowrap">Jon0653</b>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="seller-into__title">Seller 평가</span>
+                    <span class="seller-info__desc">
+                      <figure class="img-wrap">
+                        <img src="../../assets/images/icon/reveiw_positive.svg" alt="up" />
+                      </figure>
+                      <b class="nowrap">648 positive</b>
+                      <a href="" target="blank" class="basic-button__gray-line">평가보기</a>
+                    </span>
+                  </li>
+                </ul>
+                <div class="seller-info__right">
+                  <div class="like-seller__button">
+                    <input type="checkbox" id="likeSeller" checked />
+                    <label for="likeSeller">
+                      <span class="like-seller__button-text">관심판매자등록</span>
+                      <span class="like-seller__button-icon"></span>
+                    </label>
+                  </div>
+                  <p class="seller-info__review">BB출품자 평점</p>
+                  <div class="seller-review__star">
+                    <span class="seller-review__star-num">4.0</span>
+                    <span>
+                      <img src="../../assets/images/icon/star_orange.svg" alt="별점" />
+                    </span>
+                    <span>
+                      <img src="../../assets/images/icon/star_orange.svg" alt="별점" />
+                    </span>
+                    <span>
+                      <img src="../../assets/images/icon/star_orange.svg" alt="별점" />
+                    </span>
+                    <span>
+                      <img src="../../assets/images/icon/star_orange.svg" alt="별점" />
+                    </span>
+                    <span>
+                      <img src="../../assets/images/icon/star_gray_empty.svg" alt="별점" />
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="bid-tab-and-seller-items">
+              <!-- 입찰 / 즉시날찰 탭 -->
+              <article class="item-info tabs-container">
+                <div class="item-info__tabs tabs">
+                  <button type="button" class="item-info__tab active" data-idx="0"><b>입찰하기</b>(경매대행)</button>
+                  <button type="button" class="item-info__tab" data-idx="1"><b>즉시낙찰</b>(구매대행)</button>
+                  <button type="button" class="item-info__tab" data-idx="2"><b>구매대행</b></button>
+                </div>
+                <ul class="item-info__tabs-content tabs-content">
+                  <!-- 0. 입찰하기(경매대행) : make-bid -->
+                  <li data-idx="0" class="" class="make-bid__tab-content">
+                    <div class="flex">
+                      <!-- 입찰하기(경매대행) / 즉시낙찰(구매대행) -->
+                      <div class="item-info__left">
+                        <div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">아이템NO.</p>
+                            <p class="item-info__desc">v1135509199</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">종료일자</p>
+                            <p class="item-info__desc">2024.05.13 20:00:55</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">자동연장</p>
+                            <p class="item-info__desc">있음</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">수량</p>
+                            <p class="item-info__desc">2개</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">옵션유형</p>
+                            <div class="item-info__desc">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option value="" disabled selected>세부 옵션 선택</option>
+
+                                  <option>세부 옵션 선택1</option>
+                                  <option>세부 옵션 선택2</option>
+                                  <option>세부 옵션 선택3</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <hr class="line-gray" />
+                          <div class="item-info__line">
+                            <p class="item-info__title clock-icon">남은 시간</p>
+                            <p class="item-info__desc"><strong>6시간 46분 33초</strong></p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title w-icon">현재 입찰가</p>
+                            <p class="item-info__desc"><strong>¥ 92,000</strong>&nbsp;<span>(￦837,200)</span></p>
+                          </div>
+                          <p class="item-info__gray">(일본내 소비세 10%포함)</p>
+                          <hr class="line-gray" />
+                          <div class="item-info__line">
+                            <p class="item-info__title">입찰 건수</p>
+                            <p class="item-info__desc">32 bid</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">최고 입찰자</p>
+                            <p class="item-info__desc">없음</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">배송정보</p>
+                            <p class="item-info__desc">현지배송료 무료</p>
+                          </div>
+                        </div>
+                        <!-- 1. 예약 입찰 -->
+                        <div class="details-button-wrap">
+                          <button class="chat-button" data-idx="1" onclick="">
+                            <span class="blind">1:1(출품자)문의</span>
+                          </button>
+                          <button
+                            class="modal_button basic-button__gray-line"
+                            onclick="openModal(this, event)"
+                            data-modal="bid-scheduled"
+                          >
+                            예약 입찰하기
+                          </button>
+                          <button
+                            class="modal_button basic-button__blue"
+                            onclick="openModal(this, event)"
+                            data-modal="bid-now"
+                          >
+                            바로 입찰하기
+                          </button>
+                        </div>
+                        <!-- 2. 입찰 불가 -->
+                        <!-- <div class="details-button-wrap">
+                          <button class="chat-button" data-idx="1" onclick="">
+                            <span class="blind">1:1(출품자)문의</span>
+                          </button>
+                          <button class="basic-button__blue" disabled>입찰불가</button>
+                        </div> -->
+                        <!-- 3. 입찰 체크사항 확인 입찰& 체크사항 확인 완료 -->
+                        <!-- <div class="details-button-wrap">
+                          <button class="chat-button" data-idx="1" onclick="">
+                            <span class="blind">1:1(출품자)문의</span>
+                          </button>
+                          <button class="bid-check-button" type="button">
+                            <input type="checkbox" name="" id="bidCheck" />
+                            <label for="bidCheck"> 입찰 체크사항 확인<small>체크 후 입찰하기</small></label>
+                          </button>
+                        </div> -->
+                        <!-- 4. 흥정 낙찰 받기 -->
+                        <!-- <div class="details-button-wrap">
+                          <button
+                            class="modal_button basic-button__gray-line"
+                            onclick="openModal(this, event)"
+                            data-modal="negotiation-purchase"
+                          >
+                            흥정 낙찰받기
+                          </button>
+                          <button
+                            class="modal_button basic-button__blue"
+                            onclick="openModal(this, event)"
+                            data-modal="buy-now"
+                          >
+                            즉시낙찰하기
+                          </button>
+                        </div> -->
+                        <!-- 5. 경매 종료 아이템 -->
+                        <!-- <div class="details-button-wrap">
+                          <button class="basic-button__blue" disabled>경매 종료된 아이템 입니다.</button>
+                        </div> -->
+                        <!-- 6. 품절 상품 -->
+                        <!-- <div class="details-button-wrap">
+                          <button class="basic-button__blue" disabled>품절 상품 입니다.</button>
+                        </div> -->
+                        <!-- 7. 구매대행 = 장바구니, 바로구매 -->
+                        <!-- <div class="details-button-wrap">
+                          <button class="modal_button basic-button__gray-line"  onclick="openModal(this, event)" data-modal="add-to-cart">장바구니</button>
+                          <button class="modal_button basic-button__blue" onclick="openModal(this, event)" data-modal="purchase-complete">바로구매</button>
+                        </div> -->
+                      </div>
+                      <!-- 입찰내역 / 예상입찰비용 -->
+                      <div class="item-info__right tabs-container">
+                        <div class="item-bid__tabs tabs">
+                          <button type="button" class="item-bid__tab active" data-idx="0">입찰내역</button>
+                          <button type="button" class="item-bid__tab" data-idx="1">예상입찰비용</button>
+                        </div>
+                        <ul class="item-bid__tabs-content tabs-content">
+                          <li data-idx="0" class="">
+                            <!-- 1. 최고입찰자 상태 -->
+                            <div class="bid-details-status">
+                              <div class="bid-details-status__inner">
+                                <p>고객님은 현재 <b>최고입찰자</b>입니다.</p>
+                                <p class="bid-details-status__desc">(남은 시간 : 6시간 46분 33초)</p>
+                                <div class="bid-details-status__button-wrap">
+                                  <button type="button" class="basic-button__black-line">새로고침</button>
+                                  <button
+                                    type="button"
+                                    class="modal_button basic-button__black"
+                                    onclick="openModal(this, event)"
+                                    data-modal="re-bid"
+                                  >
+                                    재입찰하기
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 2. 최고입찰자 아닌 상태 -->
+                            <!-- <div class="bid-details-status">
+                              <div class="bid-details-status__inner">
+                                <p><b>최고입찰자</b>가 아닙니다.</p>
+                                <p class="bid-details-status__desc">(재입찰 가능)</p>
+                                <div class="bid-details-status__button-wrap">
+                                  <button
+                                    type="button"
+                                    class="modal_button basic-button__black"
+                                    onclick="openModal(this, event)"
+                                    data-modal="re-bid"
+                                  >
+                                    재입찰하기
+                                  </button>
+                                </div>
+                              </div>
+                            </div> -->
+                            <!-- 3. 예약입찰 상태 -->
+                            <!-- <div class="bid-details-status">
+                              <div class="bid-details-status__inner">
+                                <p><b>예약입찰</b> 상태입니다.</p>
+                                <p class="bid-details-status__desc">(시간 : 종료 30분 전, 2024.06.06 23:00:20)</p>
+                                <div class="bid-details-status__button-wrap">
+                                  <button
+                                    type="button"
+                                    class="basic-button__black-line"
+                                    onclick="alert('예약입찰이 정상적으로 취소 되었습니다.')"
+                                  >
+                                    예약입찰취소
+                                  </button>
+                                </div>
+                              </div>
+                            </div> -->
+                            <!-- 4. 경매 낙찰 상태 -->
+                            <!-- <div class="bid-details-status">
+                              <div class="bid-details-status__inner">
+                                <p><b>경매 낙찰</b> 아이템입니다.</p>
+                                <p class="bid-details-status__desc">(주문-2023-05-05 | 결제금액 ￦10,000)</p>
+                                <div class="bid-details-status__button-wrap">
+                                  <a href="" class="basic-button__black">결제하기</a>
+                                </div>
+                              </div>
+                            </div> -->
+                            <div class="bid-details-table">
+                              <div class="bid-details-table__inner">
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" class="thead-bid-time"><span>입찰일시</span></th>
+                                      <th scope="col" class="thead-bid"><span>입찰가</span></th>
+                                      <th scope="col" class="thead-bid-status"><span>상태</span></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </li>
+                          <li data-idx="1" class="" style="display: none">
+                            <div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">예상 입찰 수량</p>
+                                <div class="item-info__desc">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" disabled>
+                                      <option>1개</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-info__line">
+                                <div class="item-info__title">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" required>
+                                      <option value="" disabled selected>국제운송 선택</option>
+                                      <option>국제운송 선택1</option>
+                                      <option>국제운송 선택2</option>
+                                      <option>국제운송 선택3</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="item-info__desc">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" required>
+                                      <option value="" disabled selected>무게 선택</option>
+                                      <option>무게 선택1</option>
+                                      <option>무게 선택2</option>
+                                      <option>무게 선택3</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <hr class="line-gray" />
+                              <div class="item-info__line">
+                                <p class="item-info__title"><b>(+) 현재 입찰가</b></p>
+                                <p class="item-info__desc">(¥92,000 ) ￦837,200</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 국제 운송료</p>
+                                <p class="item-info__desc">(¥2,400) ￦21,840</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 현지 운송료</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 현지 세금</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 대행 수수료</p>
+                                <p class="item-info__desc">(¥6,000) ￦56,600</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 송금 수수료</p>
+                                <p class="item-info__desc">(¥300) ￦2,730</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 기타 부가 2차 결제 금액</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(-) 대행수수료 쿠폰할인.</p>
+                                <p class="item-info__desc">￦4,996</p>
+                              </div>
+                              <hr class="line-gray" />
+                              <div class="item-total-price">
+                                <p class="item-info__title">예상 경매대행 구입가</p>
+                                <p class="item-info__desc">￦910,919</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- 1. 즉시낙찰(구매대행) : Immediate-auction -->
+                  <li data-idx="1" class="" class="Immediate-auction__tab-content" style="display: none">
+                    <div class="flex">
+                      <!-- 입찰하기(경매대행) / 즉시낙찰(구매대행) -->
+                      <div class="item-info__left">
+                        <div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">아이템NO.</p>
+                            <p class="item-info__desc">v1135509199</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">종료일자</p>
+                            <p class="item-info__desc">2024.05.13 20:00:55</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">자동연장</p>
+                            <p class="item-info__desc">있음</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">수량</p>
+                            <p class="item-info__desc">2개</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">옵션유형</p>
+                            <div class="item-info__desc">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option value="" disabled selected>세부 옵션 선택</option>
+                                  <option>세부 옵션 선택1</option>
+                                  <option>세부 옵션 선택2</option>
+                                  <option>세부 옵션 선택3</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <hr class="line-gray" />
+                          <div class="item-info__line">
+                            <p class="item-info__title clock-icon">남은 시간</p>
+                            <p class="item-info__desc"><strong>6시간 46분 33초</strong></p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title w-icon">현재 입찰가</p>
+                            <p class="item-info__desc"><strong>¥ 92,000</strong>&nbsp;<span>(￦837,200)</span></p>
+                          </div>
+                        </div>
+                        <!-- 3. 입찰 체크사항 확인 -->
+                        <div class="details-button-wrap">
+                          <button class="chat-button" data-idx="1" onclick="">
+                            <span class="blind">1:1(출품자)문의</span>
+                          </button>
+                          <button class="bid-check-button" type="button">
+                            <input type="checkbox" name="" id="bidCheck" />
+                            <label for="bidCheck"> 입찰 체크사항 확인<small>체크 후 입찰하기</small></label>
+                          </button>
+                        </div>
+                      </div>
+                      <!-- 입찰내역 / 예상입찰비용 -->
+                      <div class="item-info__right tabs-container">
+                        <div class="item-bid__tabs tabs">
+                          <!-- <button type="button" class="item-bid__tab" data-idx="0">입찰내역</button> -->
+                          <button type="button" class="item-bid__tab active" data-idx="1">예상입찰비용</button>
+                        </div>
+                        <ul class="item-bid__tabs-content tabs-content">
+                          <li data-idx="0" class="" style="display: none">
+                            <!-- 2. 최고입찰자 아닌 상태 -->
+                            <div class="bid-details-status">
+                              <div class="bid-details-status__inner">
+                                <p><b>최고입찰자</b>가 아닙니다.</p>
+                                <p class="bid-details-status__desc">(재입찰 가능)</p>
+                                <div class="bid-details-status__button-wrap">
+                                  <button
+                                    type="button"
+                                    class="modal_button basic-button__black"
+                                    onclick="openModal(this, event)"
+                                    data-modal="re-bid"
+                                  >
+                                    재입찰하기
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="bid-details-table">
+                              <div class="bid-details-table__inner">
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" class="thead-bid-time"><span>입찰일시</span></th>
+                                      <th scope="col" class="thead-bid"><span>입찰가</span></th>
+                                      <th scope="col" class="thead-bid-status"><span>상태</span></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </li>
+                          <li data-idx="1" class="">
+                            <div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">예상 입찰 수량</p>
+                                <div class="item-info__desc">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" disabled>
+                                      <option>1개</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-info__line">
+                                <div class="item-info__title">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" required>
+                                      <option value="" disabled selected>국제운송 선택</option>
+                                      <option>국제운송 선택1</option>
+                                      <option>국제운송 선택2</option>
+                                      <option>국제운송 선택3</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="item-info__desc">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" required>
+                                      <option value="" disabled selected>무게 선택</option>
+                                      <option>무게 선택1</option>
+                                      <option>무게 선택2</option>
+                                      <option>무게 선택3</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <hr class="line-gray" />
+                              <div class="item-info__line">
+                                <p class="item-info__title"><b>(+) 현재 입찰가</b></p>
+                                <p class="item-info__desc">(¥92,000 ) ￦837,200</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 국제 운송료</p>
+                                <p class="item-info__desc">(¥2,400) ￦21,840</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 현지 운송료</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 현지 세금</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 대행 수수료</p>
+                                <p class="item-info__desc">(¥6,000) ￦56,600</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 송금 수수료</p>
+                                <p class="item-info__desc">(¥300) ￦2,730</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 기타 부가 2차 결제 금액</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(-) 대행수수료 쿠폰할인.</p>
+                                <p class="item-info__desc">￦4,996</p>
+                              </div>
+                              <hr class="line-gray" />
+                              <div class="item-total-price">
+                                <p class="item-info__title">예상 경매대행 구입가</p>
+                                <p class="item-info__desc">￦910,919</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- 2. 구매대행 : purchase-agency -->
+                  <li data-idx="2" class="" class="purchase-agency__tab-content" style="display: none">
+                    <div class="flex">
+                      <!-- 입찰하기(경매대행) / 즉시낙찰(구매대행) -->
+                      <div class="item-info__left">
+                        <div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">상품코드</p>
+                            <p class="item-info__desc">1135509199</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">브랜드</p>
+                            <p class="item-info__desc">도모호룬린크루</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">상품유형</p>
+                            <p class="item-info__desc">신상품 / 중고상품</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">기간 및 수량</p>
+                            <p class="item-info__desc">상시판매, 2개</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">배송안내</p>
+                            <p class="item-info__desc">무료운송, 발송까지 1~2일 소요</p>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">발송지역</p>
+                            <p class="item-info__desc">효고현</p>
+                          </div>
+
+                          <hr class="line-gray" />
+                          <div class="item-info__line">
+                            <p class="item-info__title w-icon">판매가격</p>
+                            <p class="item-info__desc"><strong>¥ 92,000</strong>&nbsp;<span>(￦837,200)</span></p>
+                          </div>
+                          <hr class="line-gray" />
+                          <div class="item-info__line">
+                            <p class="item-info__title">주문수량</p>
+                            <div class="item-info__desc">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option value="" disabled selected>수량 선택</option>
+
+                                  <option>세부 옵션 선택1</option>
+                                  <option>세부 옵션 선택2</option>
+                                  <option>세부 옵션 선택3</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">옵션선택</p>
+                            <div class="item-info__desc">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option value="" disabled selected>칼라 선택</option>
+
+                                  <option>세부 옵션 선택1</option>
+                                  <option>세부 옵션 선택2</option>
+                                  <option>세부 옵션 선택3</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title"></p>
+                            <div class="item-info__desc">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option value="" disabled selected>사이즈 선택</option>
+
+                                  <option>세부 옵션 선택1</option>
+                                  <option>세부 옵션 선택2</option>
+                                  <option>세부 옵션 선택3</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="item-info__line">
+                            <p class="item-info__title">주문 참고사항</p>
+                            <div class="item-info__desc">
+                              <div class="radio-check-button">
+                                <input type="radio" name="public" id="aaa123" checked />
+                                <label for="aaa123"><span class="radio-check-button-icon"></span>공개</label>
+                              </div>
+
+                              <div class="radio-check-button">
+                                <input type="radio" name="public" id="aaa234" />
+                                <label for="aaa234"><span class="radio-check-button-icon"></span>비공개</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-info__line">
+                            <p class="item-info__title">주문 요청사항</p>
+                            <div class="item-info__desc">
+                              <textarea name="" id="" class="basic-textarea"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 9. 구매대행 = 장바구니, 바로구매 -->
+                        <div class="details-button-wrap">
+                          <button
+                            class="modal_button basic-button__gray-line"
+                            onclick="openModal(this, event)"
+                            data-modal="add-to-cart"
+                          >
+                            장바구니
+                          </button>
+                          <button
+                            class="modal_button basic-button__blue"
+                            onclick="openModal(this, event)"
+                            data-modal="purchase-complete"
+                          >
+                            바로구매
+                          </button>
+                        </div>
+                      </div>
+                      <!-- 입찰내역 / 예상입찰비용 -->
+                      <div class="item-info__right tabs-container">
+                        <div class="item-bid__tabs tabs">
+                          <button type="button" class="item-bid__tab active" data-idx="0">입찰내역</button>
+                          <button type="button" class="item-bid__tab" data-idx="1">예상입찰비용</button>
+                        </div>
+                        <ul class="item-bid__tabs-content tabs-content">
+                          <li data-idx="0" class="">
+                            <!-- 2. 예약입찰 상태 -->
+                            <div class="bid-details-status">
+                              <div class="bid-details-status__inner">
+                                <p><b>예약입찰</b> 상태입니다.</p>
+                                <p class="bid-details-status__desc">(시간 : 종료 30분 전, 2024.06.06 23:00:20)</p>
+                                <div class="bid-details-status__button-wrap">
+                                  <button
+                                    type="button"
+                                    class="basic-button__black-line"
+                                    onclick="alert('예약입찰이 정상적으로 취소 되었습니다.')"
+                                  >
+                                    예약입찰취소
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="bid-details-table">
+                              <div class="bid-details-table__inner">
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" class="thead-bid-time"><span>입찰일시</span></th>
+                                      <th scope="col" class="thead-bid"><span>입찰가</span></th>
+                                      <th scope="col" class="thead-bid-status"><span>상태</span></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"><span>2024.05.10 17:13:48</span></th>
+                                      <td>
+                                        <span
+                                          >옵션명<br />
+                                          1개 | ¥300</span
+                                        >
+                                      </td>
+                                      <td><span>예약입찰</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </li>
+                          <li data-idx="1" class="" style="display: none">
+                            <div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">예상 입찰 수량</p>
+                                <div class="item-info__desc">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" disabled>
+                                      <option>1개</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-info__line">
+                                <div class="item-info__title">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" required>
+                                      <option value="" disabled selected>국제운송 선택</option>
+                                      <option>국제운송 선택1</option>
+                                      <option>국제운송 선택2</option>
+                                      <option>국제운송 선택3</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="item-info__desc">
+                                  <div class="basic-select-box gray">
+                                    <select name="" id="" required>
+                                      <option value="" disabled selected>무게 선택</option>
+                                      <option>무게 선택1</option>
+                                      <option>무게 선택2</option>
+                                      <option>무게 선택3</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <hr class="line-gray" />
+                              <div class="item-info__line">
+                                <p class="item-info__title"><b>(+) 현재 입찰가</b></p>
+                                <p class="item-info__desc">(¥92,000 ) ￦837,200</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 국제 운송료</p>
+                                <p class="item-info__desc">(¥2,400) ￦21,840</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 현지 운송료</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 현지 세금</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 대행 수수료</p>
+                                <p class="item-info__desc">(¥6,000) ￦56,600</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 송금 수수료</p>
+                                <p class="item-info__desc">(¥300) ￦2,730</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(+) 기타 부가 2차 결제 금액</p>
+                                <p class="item-info__desc">2차 결제 시 청구</p>
+                              </div>
+                              <div class="item-info__line">
+                                <p class="item-info__title">(-) 대행수수료 쿠폰할인.</p>
+                                <p class="item-info__desc">￦4,996</p>
+                              </div>
+                              <hr class="line-gray" />
+                              <div class="item-total-price">
+                                <p class="item-info__title">예상 경매대행 구입가</p>
+                                <p class="item-info__desc">￦910,919</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+              <!-- 셀러 다른 아이템 & 체크사항 -->
+              <div class="seller-other-item-and-check-list">
+                <!-- 셀러 다른 아이템 -->
+                <section class="seller-other-item">
+                  <div class="seller-other-item__left">
+                    <p>
+                      Seller<br />
+                      다른 아이템
+                    </p>
+                    <button type="button" class="seller-other-item__button"></button>
+                  </div>
+                  <div class="seller-other-item__right">
+                    <!-- 셀러 다른아이템 없을때 -->
+                    <!-- <p class="seller-other-items__empty">“아직 해당 출품자의 다른 아이템이 없습니다.”</p> -->
+                    <!-- 셀러 아이템 리스트 -->
+                    <a href="" class="seller-other-item__box">
+                      <figure class="seller-other-items__img img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </figure>
+                      <div class="seller-other-items__info">
+                        <p class="seller-other-items__name p_2">
+                          정형외 우송료 510엔 닌텐도 욧시의 탱크 물총 슈퍼 마리오슈퍼 마리오슈퍼 마리오 풀
+                        </p>
+                        <p class="seller-other-items__time"><span>2024.05.13 21:29:24</span> <span>6시간</span></p>
+                        <div class="seller-other-items__price">
+                          <strong>¥ 10,000</strong>
+                          <p class="seller-other-items__bid"><span>입찰수</span> <b>100 Bids</b></p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="" class="seller-other-item__box">
+                      <figure class="seller-other-items__img img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </figure>
+                      <div class="seller-other-items__info">
+                        <p class="seller-other-items__name p_2">
+                          정형외 우송료 510엔 닌텐도 욧시의 탱크 물총 슈퍼 마리오 풀
+                        </p>
+                        <p class="seller-other-items__time"><span>2024.05.13 21:29:24</span> <span>6시간</span></p>
+                        <div class="seller-other-items__price">
+                          <strong>¥ 10,000</strong>
+                          <p class="seller-other-items__bid"><span>입찰수</span> <b>1 Bids</b></p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </section>
+                <!-- 체크사항 -->
+                <!-- <section class="item-check-list">
+                  <div class="item-check-list__left">
+                    <h4>체크사항</h4>
+                    <ol>
+                      <li>1. 물품 통관 주의 사항</li>
+                      <li>2. EMS 발송불가상품</li>
+                    </ol>
+                  </div>
+                  <div class="item-check-list__right">
+                    <dl>
+                      <dt>[주 의] 고객님은 지금 컴퓨터/주변기기 카테고리의 물품에 입찰 안내</dt>
+                      <dd>
+                        해당품목: 컴퓨터( 컴퓨터 주변기기)<br />
+                        노트북컴퓨터/퍼스널컴퓨터/키보드/모니터/마우스/프린터스캐너/조이스틱/카드리더기/<br />
+                        외장형 하드디스크 드라이브전원공급기/마더보드/네비게이션/디지털 카메라 등
+                      </dd>
+                    </dl>
+                  </div>
+                </section> -->
+              </div>
+            </div>
+          </section>
+
+          <!-- 상세정보 / 출품자문의 / 연관아이템 -->
+          <section class="item-detail-info tabs-container">
+            <div class="tabs">
+              <button type="button" data-idx="0" class="scroll-tab active">경매상세정보</button>
+              <button type="button" data-idx="1" class="scroll-tab">출품자문의</button>
+              <button type="button" data-idx="2" class="scroll-tab">연관아이템</button>
+            </div>
+            <ul class="tabs-content">
+              <!-- A. 상세정보 -->
+              <li class="tab-content-list auction-details" data-idx="0">
+                <!-- A-1 아이템상세 -->
+                <article class="product-details">
+                  <div class="product-details__info">
+                    <h5>상세정보</h5>
+                    <ul>
+                      <li>- 이 제품은 구매대행을 통하여 유통되는 제품입니다.</li>
+                      <li>- 이 제품은 [ 전기용품 및 생활용품 안전관리법 ]에 따른 안전관리대상 제품입니다.</li>
+                      <li>- 통관 가능여부는 회원이 미리 관세청에 확인하신 후 입찰을 부탁드립니다.</li>
+                    </ul>
+                  </div>
+                  <figure class="product-details__image">
+                    <img src="https://placehold.co/1000x2000" alt="제품 상세 이미지" />
+                  </figure>
+                </article>
+                <!-- A-2 출품자 문의-->
+                <article class="inquiry-seller">
+                  <h5>출품자 문의</h5>
+                  <textarea
+                    name=""
+                    id=""
+                    class="basic-textarea"
+                    placeholder="질문은 한글로 작성 (저희 담당자가 일본어로 번역하여 질문하게 됩니다.)
+질문 후 ‘답변보기’ 버튼을 클릭하여 새창에서 답변을 확인하시면 됩니다."
+                  ></textarea>
+                  <div class="inquiry-button-wrap">
+                    <button type="button" class="basic-button__blue">출품자에게 문의하기</button>
+                  </div>
+                </article>
+                <!-- A-3 나의 문의 내역 : 1. 내역 없을때-->
+                <article class="inquiry-history">
+                  <h5>나의 문의 내역</h5>
+                  <div class="inquiry-history__inner">
+                    <p class="inquiry-history__empty">아직 해당 출품자 문의가 없습니다.</p>
+                  </div>
+                </article>
+                <!-- A-3  나의 문의 내역 : 2. 내역 있을때 -->
+                <article class="inquiry-history">
+                  <h5>나의 문의 내역</h5>
+                  <div class="inquiry-history__inner">
+                    <ul class="inquiry-list-wrap">
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button type="button" class="inquiry-list__statue basic-button__gray-line">처리대기</button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <a href="" target="_blank" class="inquiry-list__statue basic-button__blue-bg-line">
+                              출품자 답변 확인
+                            </a>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="inquiry-history">
+                  <h5>나의 문의 내역</h5>
+                  <div class="inquiry-history__inner">
+                    <ul class="inquiry-list-wrap">
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button type="button" class="inquiry-list__statue basic-button__gray-line">
+                              출품자 답변 대기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <a href="" target="_blank" class="inquiry-list__statue basic-button__blue-bg-line">
+                              출품자 답변 확인
+                            </a>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button
+                              type="button"
+                              class="inquiry-list__statue inquiry-button basic-button__blue-bg-line"
+                              onclick="openAnswer(this)"
+                            >
+                              출품자 답변 보기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none">
+                          <p class="inquiry-list__tittle">13번 답변</p>
+                          <p class="inquiry-list__desc">
+                            안전을 보장하기 위해 Povasee 스마트 클램프는 자동차 배터리에 올바르게 연결될 <br />
+                            때까지 출력이 없습니다. 전류를 감지해야 하는 경우 자동차 배터리를 연결하십시오.<br />
+                            Povasee 점프 스타터 x 1, 스마트 점퍼 케이블 x 1, USB-A-C 케이블 x 1(어댑터 제외), 휴대용
+                            케이스 x 1, 사용자 설명서 lx <br />
+                            1, 3개월 보증 x1. 질문이 있으시면 언제든지 고객 서비스에 문의하십시오. (PS: AC 어댑터는
+                            패키지에 포함되어 있지 않습니다.)
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button
+                              type="button"
+                              class="inquiry-list__statue inquiry-button basic-button__blue-bg-line"
+                              onclick="closeAnswer(this)"
+                            >
+                              출품자 답변 닫기
+                            </button>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button
+                              type="button"
+                              class="inquiry-list__statue inquiry-button basic-button__blue-bg-line"
+                              onclick="openAnswer(this)"
+                            >
+                              출품자 답변 보기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none">
+                          <p class="inquiry-list__tittle">13번 답변</p>
+                          <p class="inquiry-list__desc">
+                            안전을 보장하기 위해 Povasee 스마트 클램프는 자동차 배터리에 올바르게 연결될 <br />
+                            때까지 출력이 없습니다. 전류를 감지해야 하는 경우 자동차 배터리를 연결하십시오.<br />
+                            Povasee 점프 스타터 x 1, 스마트 점퍼 케이블 x 1, USB-A-C 케이블 x 1(어댑터 제외), 휴대용
+                            케이스 x 1, 사용자 설명서 lx <br />
+                            1, 3개월 보증 x1. 질문이 있으시면 언제든지 고객 서비스에 문의하십시오. (PS: AC 어댑터는
+                            패키지에 포함되어 있지 않습니다.)
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button
+                              type="button"
+                              class="inquiry-list__statue inquiry-button basic-button__blue-bg-line"
+                              onclick="closeAnswer(this)"
+                            >
+                              출품자 답변 닫기
+                            </button>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button type="button" class="inquiry-list__statue basic-button__gray-line">
+                              출품자 답변 대기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                    </ul>
+                    <div class="inquiry-pagination-wrap">
+                      <div class="basic-pagination">
+                        <button class="first-button" type="button"></button>
+                        <button class="prev-button" type="button"></button>
+
+                        <div class="basic-pagination__button-wrap">
+                          <button class="page-button" type="button">1</button>
+                          <button class="page-button active" ype="button">2</button>
+                          <button class="page-button" type="button">3</button>
+                          <button class="page-button" type="button">4</button>
+                          <button class="page-button" type="button">5</button>
+                        </div>
+
+                        <button class="next-button" type="button"></button>
+                        <button class="last-button" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- A-3  출품자 공개 질문 답변 : 1. 내역 없을때- -->
+                <article class="seller-answer">
+                  <h5>출품자 공개 질문&답변</h5>
+                  <div class="inquiry-history__inner">
+                    <div class="inquiry-history__inner">
+                      <p class="inquiry-history__empty">아직 출품자 공개 질문 & 답변이 없습니다.</p>
+                    </div>
+                  </div>
+                </article>
+                <!-- A-3  출품자 공개 질문 답변 : 2. 내역 있을때 -->
+                <article class="seller-answer">
+                  <h5>출품자 공개 질문&답변</h5>
+                  <div class="inquiry-history__inner">
+                    <ul class="inquiry-list-wrap">
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle"><span class="inquiry-list__time">2024-05-35</span></p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <button type="button" class="inquiry-list__statue basic-button__gray-line">
+                              답변 대기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle"><span class="inquiry-list__time">2024-05-35</span></p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <button
+                              type="button"
+                              class="inquiry-list__statue basic-button__gray-line"
+                              onclick="openPublicAnswer(this)"
+                            >
+                              답변 보기
+                            </button>
+                            <!-- <button
+                              type="button"
+                              class="inquiry-list__statue  basic-button__blue-bg-line"
+                              onclick="openAnswer(this)"
+                            >
+                              답변 닫기
+                            </button> -->
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none">
+                          <p class="inquiry-list__tittle">13번 답변</p>
+                          <p class="inquiry-list__desc">
+                            안전을 보장하기 위해 Povasee 스마트 클램프는 자동차 배터리에 올바르게 연결될 <br />
+                            때까지 출력이 없습니다. 전류를 감지해야 하는 경우 자동차 배터리를 연결하십시오.<br />
+                            Povasee 점프 스타터 x 1, 스마트 점퍼 케이블 x 1, USB-A-C 케이블 x 1(어댑터 제외), 휴대용
+                            케이스 x 1, 사용자 설명서 lx <br />
+                            1, 3개월 보증 x1. 질문이 있으시면 언제든지 고객 서비스에 문의하십시오. (PS: AC 어댑터는
+                            패키지에 포함되어 있지 않습니다.)
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="inquiry-pagination-wrap">
+                      <div class="basic-pagination">
+                        <button class="first-button" type="button"></button>
+                        <button class="prev-button" type="button"></button>
+
+                        <div class="basic-pagination__button-wrap">
+                          <button class="page-button" type="button">1</button>
+                          <button class="page-button active" ype="button">2</button>
+                          <button class="page-button" type="button">3</button>
+                          <button class="page-button" type="button">4</button>
+                          <button class="page-button" type="button">5</button>
+                        </div>
+
+                        <button class="next-button" type="button"></button>
+                        <button class="last-button" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <!-- B. 출품자 문의 -->
+              <li class="tab-content-list inquiry" data-idx="1" style="display: none">
+                <!-- B-1 출품자 문의-->
+                <article class="inquiry-seller">
+                  <h5>출품자 문의</h5>
+                  <textarea
+                    name=""
+                    id=""
+                    class="basic-textarea"
+                    placeholder="질문은 한글로 작성 (저희 담당자가 일본어로 번역하여 질문하게 됩니다.)
+질문 후 ‘답변보기’ 버튼을 클릭하여 새창에서 답변을 확인하시면 됩니다."
+                  ></textarea>
+                  <div class="inquiry-button-wrap">
+                    <button type="button" class="basic-button__blue">출품자에게 문의하기</button>
+                  </div>
+                </article>
+                <!-- B-2 나의 문의 내역 : 1. 문의내역 없을때-->
+                <article class="inquiry-history">
+                  <h5>나의 문의 내역</h5>
+                  <div class="inquiry-history__inner">
+                    <p class="inquiry-history__empty">아직 해당 출품자 문의가 없습니다.</p>
+                  </div>
+                </article>
+                <!-- B-2  나의 문의 내역 : 2. 문의내역 있을때 -->
+                <article class="inquiry-history">
+                  <h5>나의 문의 내역</h5>
+                  <div class="inquiry-history__inner">
+                    <ul class="inquiry-list-wrap">
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button type="button" class="inquiry-list__statue basic-button__gray-line">처리대기</button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <a href="" target="_blank" class="inquiry-list__statue basic-button__blue-bg-line">
+                              출품자 답변 확인
+                            </a>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="inquiry-history">
+                  <h5>나의 문의 내역</h5>
+                  <div class="inquiry-history__inner">
+                    <ul class="inquiry-list-wrap">
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button type="button" class="inquiry-list__statue basic-button__gray-line">
+                              출품자 답변 대기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <a href="" target="_blank" class="inquiry-list__statue basic-button__blue-bg-line">
+                              출품자 답변 확인
+                            </a>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button
+                              type="button"
+                              class="inquiry-list__statue inquiry-button basic-button__blue-bg-line"
+                              onclick="openAnswer(this)"
+                            >
+                              출품자 답변 보기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none">
+                          <p class="inquiry-list__tittle">13번 답변</p>
+                          <p class="inquiry-list__desc">
+                            안전을 보장하기 위해 Povasee 스마트 클램프는 자동차 배터리에 올바르게 연결될 <br />
+                            때까지 출력이 없습니다. 전류를 감지해야 하는 경우 자동차 배터리를 연결하십시오.<br />
+                            Povasee 점프 스타터 x 1, 스마트 점퍼 케이블 x 1, USB-A-C 케이블 x 1(어댑터 제외), 휴대용
+                            케이스 x 1, 사용자 설명서 lx <br />
+                            1, 3개월 보증 x1. 질문이 있으시면 언제든지 고객 서비스에 문의하십시오. (PS: AC 어댑터는
+                            패키지에 포함되어 있지 않습니다.)
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button
+                              type="button"
+                              class="inquiry-list__statue inquiry-button basic-button__blue-bg-line"
+                              onclick="closeAnswer(this)"
+                            >
+                              출품자 답변 닫기
+                            </button>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button
+                              type="button"
+                              class="inquiry-list__statue inquiry-button basic-button__blue-bg-line"
+                              onclick="openAnswer(this)"
+                            >
+                              출품자 답변 보기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none">
+                          <p class="inquiry-list__tittle">13번 답변</p>
+                          <p class="inquiry-list__desc">
+                            안전을 보장하기 위해 Povasee 스마트 클램프는 자동차 배터리에 올바르게 연결될 <br />
+                            때까지 출력이 없습니다. 전류를 감지해야 하는 경우 자동차 배터리를 연결하십시오.<br />
+                            Povasee 점프 스타터 x 1, 스마트 점퍼 케이블 x 1, USB-A-C 케이블 x 1(어댑터 제외), 휴대용
+                            케이스 x 1, 사용자 설명서 lx <br />
+                            1, 3개월 보증 x1. 질문이 있으시면 언제든지 고객 서비스에 문의하십시오. (PS: AC 어댑터는
+                            패키지에 포함되어 있지 않습니다.)
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button
+                              type="button"
+                              class="inquiry-list__statue inquiry-button basic-button__blue-bg-line"
+                              onclick="closeAnswer(this)"
+                            >
+                              출품자 답변 닫기
+                            </button>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button type="button" class="inquiry-list__statue basic-button__gray-line">
+                              출품자 답변 대기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                    </ul>
+                    <div class="inquiry-pagination-wrap">
+                      <div class="basic-pagination">
+                        <button class="first-button" type="button"></button>
+                        <button class="prev-button" type="button"></button>
+
+                        <div class="basic-pagination__button-wrap">
+                          <button class="page-button" type="button">1</button>
+                          <button class="page-button active" ype="button">2</button>
+                          <button class="page-button" type="button">3</button>
+                          <button class="page-button" type="button">4</button>
+                          <button class="page-button" type="button">5</button>
+                        </div>
+
+                        <button class="next-button" type="button"></button>
+                        <button class="last-button" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- B-3 출품자 문의 + 상품코드 -->
+                <article class="inquiry-seller-form">
+                  <h5>출품자 문의하기</h5>
+                  <fieldset class="inquiry-seller-form__inner">
+                    <div class="inquiry-seller__line">
+                      <div class="inquiry-seller-input basic-input">
+                        <label for="id">출품자 아이디</label>
+                        <input id="id" type="text" value="dgia00000" disabled />
+                      </div>
+                      <div class="inquiry-seller-input basic-input">
+                        <label for="itemNo">상품 코드</label>
+                        <input id="itemNo" type="text" value="p3923901212" disabled />
+                      </div>
+                    </div>
+                    <div class="inquiry-seller__line">
+                      <label for="textarea">문의 작성</label>
+                      <textarea
+                        name=""
+                        id="textarea"
+                        class="basic-textarea"
+                        placeholder="문의 내용 입력 (200자 이내)"
+                        maxlength="200"
+                      ></textarea>
+                    </div>
+
+                    <div class="inquiry-button-wrap">
+                      <button type="button" class="basic-button__black-line">취소</button>
+                      <button type="button" class="basic-button__blue">문의 신청</button>
+                    </div>
+                  </fieldset>
+                </article>
+
+                <article class="inquiry-history">
+                  <h5>나의 문의 내역</h5>
+                  <div class="inquiry-history__inner">
+                    <ul class="inquiry-list-wrap">
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <button type="button" class="inquiry-list__statue basic-button__gray-line">
+                              출품자 답변 대기
+                            </button>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                      <li class="inquiry-list">
+                        <div class="inquiry-question">
+                          <p class="inquiry-list__tittle">13번 질문</p>
+                          <p class="inquiry-list__desc">
+                            일반적으로 결제 대금을 받은 후 영업일 기준 1~2일 이내에 배송인가요?
+                          </p>
+                          <p class="inquiry-question__etc">
+                            <span class="inquiry-list__time">2024-05-35</span>
+                            <a href="" target="_blank" class="inquiry-list__statue basic-button__blue-bg-line">
+                              출품자 답변 확인
+                            </a>
+                          </p>
+                        </div>
+                        <div class="inquiry-answer" style="display: none"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <!-- B-4  출품자 공개 질문 답변 -->
+                <article class="seller-answer">
+                  <h5>출품자 공개 질문&답변</h5>
+                  <div class="inquiry-history__inner">
+                    <div class="inquiry-history__inner">
+                      <p class="inquiry-history__empty">아직 출품자 공개 질문 & 답변이 없습니다.</p>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <li class="tab-content-list related-items" data-idx="2" style="display: none">
+                <div class="related-item-list item-list">
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                  <div class="item-box simple">
+                    <a href="" class="item__img img-wrap">
+                      <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                    </a>
+                    <div class="item__info">
+                      <div class="item__market">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>라쿠텐 - Ten past Ten</p>
+                      </div>
+                      <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                      <div class="item__price">
+                        <p>¥ 10,000</p>
+                        <p class="item__discount-price">
+                          <span class="item__total-price">¥<s>18,000</s></span>
+                          <span class="item__discount-percent">(40%)</span>
+                        </p>
+                      </div>
+                    </div>
+                    <button class="like-button" type="button" onclick="onClickLikeButton(this)">
+                      <span>25</span>
+                      <span class="like-button__icon"></span>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

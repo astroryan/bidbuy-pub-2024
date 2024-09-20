@@ -1,0 +1,26 @@
+<svg width="47.000000" height="47.000000" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs/>
+	<mask id="mask1_381" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="47.000000" height="47.000000">
+		<g style="mix-blend-mode:normal">
+			<rect id="사각형 5869" width="47.000000" height="47.000000" fill="#FFFFFF" fill-opacity="1.000000"/>
+			<rect id="사각형 5869" x="0.500000" y="0.500000" width="46.000000" height="46.000000" stroke="#707070" stroke-opacity="1.000000" stroke-width="1.000000"/>
+		</g>
+	</mask>
+	<g mask="url(#mask1_381)">
+		<g style="mix-blend-mode:normal">
+			<path id="패스 11724" d="M18.37 37.62C18.37 38.34 17.78 38.93 17.06 38.93C16.33 38.93 15.75 38.34 15.75 37.62C15.75 36.89 16.33 36.31 17.06 36.31C17.78 36.31 18.37 36.89 18.37 37.62Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+			<path id="패스 11724" d="M17.06 38.93C16.33 38.93 15.75 38.34 15.75 37.62C15.75 36.89 16.33 36.31 17.06 36.31C17.78 36.31 18.37 36.89 18.37 37.62C18.37 38.34 17.78 38.93 17.06 38.93Z" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
+		</g>
+		<g style="mix-blend-mode:normal">
+			<path id="패스 11725" d="M32.81 37.62C32.81 38.34 32.22 38.93 31.49 38.93C30.77 38.93 30.18 38.34 30.18 37.62C30.18 36.89 30.77 36.31 31.49 36.31C32.22 36.31 32.81 36.89 32.81 37.62Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+			<path id="패스 11725" d="M31.49 38.93C30.77 38.93 30.18 38.34 30.18 37.62C30.18 36.89 30.77 36.31 31.49 36.31C32.22 36.31 32.81 36.89 32.81 37.62C32.81 38.34 32.22 38.93 31.49 38.93Z" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
+		</g>
+		<g style="mix-blend-mode:normal">
+			<path id="패스 11726" d="M15.33 28.94C15.57 30.19 16.68 31.08 17.95 31.06L30.71 31.06C31.98 31.08 33.08 30.19 33.33 28.94L35.43 17.93L13.12 17.93L15.33 28.94Z" fill="#000000" fill-opacity="0" fill-rule="evenodd"/>
+			<path id="패스 11726" d="M6.56 11.37L11.81 11.37L15.33 28.94C15.57 30.19 16.68 31.08 17.95 31.06L30.71 31.06C31.98 31.08 33.08 30.19 33.33 28.94L35.43 17.93L13.12 17.93" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
+		</g>
+	</g>
+</svg>
