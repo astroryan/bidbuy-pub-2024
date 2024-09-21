@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/mypage.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- skip -->
+      <!-- <div class="skip">
+        <ul>
+          <li><a href="#main">본문 내용 바로가기</a></li>
+          <li><a href="#nav">주 메뉴 바로가기</a></li>
+        </ul>
+      </div> -->
+      <!-- START :: HEADER -->
+      <header id="header"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="my-page order-bid-list-page">
+        <!-- 마이페이지 DASHBOARD -->
+        <section id="myDashBoard" class="dashboard"></section>
+
+        <div class="inner-width">
+          <!-- 경매 입찰 상품 -->
+          <section class="my-order">
+            <h3 class="my-title">
+              <b>경매 입찰 상품<small>5건</small></b>
+              <div class="title-utils">
+                <ul class="search__filter">
+                  <li>
+                    <div class="tab-check-button">
+                      <input type="checkbox" name="" id="all" checked />
+                      <label for="all">전체</label>
+                    </div>
+                    <div class="tab-check-button">
+                      <input type="checkbox" name="" id="searchJp" checked />
+                      <label for="searchJp">일본</label>
+                    </div>
+                    <div class="tab-check-button">
+                      <input type="checkbox" name="" id="searchUsa" />
+                      <label for="searchUsa">미국</label>
+                    </div>
+                    <div class="tab-check-button">
+                      <input type="checkbox" name="" id="searchUK" />
+                      <label for="searchUK">영국</label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <a href="../mypage/order_auction_list.html" class="my-order-utils-button">낙찰목록</a>
+                    <a href="" class="my-order-utils-button">유찰목록</a>
+                    <button type="button" class="basic-button__light-gray refresh-button">새로고침</button>
+                  </li>
+                </ul>
+              </div>
+            </h3>
+
+            <section class="my-order-table-wrap">
+              <!-- 1. 주문 제품 없을때 -->
+              <!-- <article class="basic-table">
+                <div class="basic-table__header">
+                  <div></div>
+                  <div>날짜</div>
+                  <div>상품정보</div>
+                  <div>옵션/수량</div>
+                  <div>입찰가/흥정가</div>
+                  <div>경매현황</div>
+                  <div></div>
+                </div>
+                <p class="my-order__empty-text">
+                  <b>현재 경매 입찰 내역이 없습니다.</b><br />
+                  비드바이에서 새로운 쇼핑을 경험해 보세요.
+                </p>
+              </article> -->
+              <!-- 2. 주문 제품 있을때 -->
+              <article class="basic-table">
+                <div class="basic-table__header">
+                  <div></div>
+                  <div class="td-left">날짜</div>
+                  <div>상품정보</div>
+                  <div>옵션/수량</div>
+                  <div>입찰가/흥정가</div>
+                  <div>경매현황</div>
+                </div>
+                <div class="basic-table__body">
+                  <!-- 1 -->
+                  <div class="basic-table__row">
+                    <div><b>마감임박</b></div>
+                    <div class="td-left">
+                      입찰일 2024-05-05 12:12:24<br />
+                      종료일 2024-06-06 14:23:33
+                    </div>
+                    <div class="my-order-item td-left">
+                      <a href="../auctions/index.html" class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="my-order-item__info">
+                        <div class="my-order-item__market">
+                          <a href="../auctions/index.html" class="item__country">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </a>
+                          <p class="p_1">야후경매 <span class="my-order-item__code">- im111dancin</span></p>
+                        </div>
+                        <a href="../auctions/index.html" class="my-order-item__name p_2"
+                          >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                          10枚入 アソー</a
+                        >
+                      </div>
+                    </div>
+                    <div class="">OOOOO<br />1개</div>
+                    <div class="td-column">
+                      <strong> ¥ 92,000 </strong>
+                      (구만이천엔)
+                    </div>
+                    <div class="my-order-button-td td-column">
+                      <p>(바로입찰)</p>
+                      <p class="basic-button__light-gray-line">최고 낙찰자</p>
+                    </div>
+                  </div>
+                  <!-- 2 -->
+                  <div class="basic-table__row">
+                    <div><b>마감임박</b></div>
+                    <div class="td-left">
+                      입찰일 2024-05-05 12:12:24<br />
+                      종료일 2024-06-06 14:23:33
+                    </div>
+                    <div class="my-order-item td-left">
+                      <a href="../auctions/index.html" class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="my-order-item__info">
+                        <div class="my-order-item__market">
+                          <a href="../auctions/index.html" class="item__country">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </a>
+                          <p class="p_1">야후경매 <span class="my-order-item__code">- im111dancin</span></p>
+                        </div>
+                        <a href="../auctions/index.html" class="my-order-item__name p_2"
+                          >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                          10枚入 アソー</a
+                        >
+                      </div>
+                    </div>
+                    <div class="">OOOOO<br />1개</div>
+                    <div class="td-column">
+                      <strong> ¥ 92,000 </strong>
+                      (구만이천엔)
+                    </div>
+                    <div class="my-order-button-td td-column">
+                      <p>(예약입찰)</p>
+                      <p class="basic-button__light-gray-line">최고 낙찰자</p>
+                    </div>
+                  </div>
+                  <!-- 3 -->
+                  <div class="basic-table__row">
+                    <div><b>마감임박</b></div>
+                    <div class="td-left">
+                      입찰일 2024-05-05 12:12:24<br />
+                      종료일 2024-06-06 14:23:33
+                    </div>
+                    <div class="my-order-item td-left">
+                      <a href="../auctions/index.html" class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="my-order-item__info">
+                        <div class="my-order-item__market">
+                          <a href="../auctions/index.html" class="item__country">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </a>
+                          <p class="p_1">야후경매 <span class="my-order-item__code">- im111dancin</span></p>
+                        </div>
+                        <a href="../auctions/index.html" class="my-order-item__name p_2"
+                          >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                          10枚入 アソー</a
+                        >
+                      </div>
+                    </div>
+                    <div class="">OOOOO<br />1개</div>
+                    <div class="td-column">
+                      <strong> ¥ 92,000 </strong>
+                      (구만이천엔)
+                    </div>
+                    <div class="my-order-button-td td-column">
+                      <p>(흥정입찰)</p>
+                      <p class="basic-button__light-gray-line">최고 낙찰자</p>
+                    </div>
+                  </div>
+                  <!-- 4 -->
+                  <div class="basic-table__row">
+                    <div><b></b></div>
+                    <div class="td-left">
+                      입찰일 2024-05-05 12:12:24<br />
+                      종료일 2024-06-06 14:23:33
+                    </div>
+                    <div class="my-order-item td-left">
+                      <a href="../auctions/index.html" class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="my-order-item__info">
+                        <div class="my-order-item__market">
+                          <a href="../auctions/index.html" class="item__country">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </a>
+                          <p class="p_1">야후경매 <span class="my-order-item__code">- im111dancin</span></p>
+                        </div>
+                        <a href="../auctions/index.html" class="my-order-item__name p_2"
+                          >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                          10枚入 アソー</a
+                        >
+                      </div>
+                    </div>
+                    <div class="">OOOOO<br />1개</div>
+                    <div class="td-column">
+                      <strong> ¥ 92,000 </strong>
+                      (구만이천엔)
+                    </div>
+                    <div class="my-order-button-td td-column">
+                      <p>(바로입찰)</p>
+                      <p class="basic-button__light-gray-line">최고 낙찰자</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <div class="my-order-utils">
+                <div class="basic-pagination">
+                  <button class="first-button" type="button"></button>
+                  <button class="prev-button" type="button"></button>
+
+                  <div class="basic-pagination__button-wrap">
+                    <button class="page-button" type="button">1</button>
+                    <button class="page-button active" ype="button">2</button>
+                    <button class="page-button" type="button">3</button>
+                    <button class="page-button" type="button">4</button>
+                    <button class="page-button" type="button">5</button>
+                  </div>
+
+                  <button class="next-button" type="button"></button>
+                  <button class="last-button" type="button"></button>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

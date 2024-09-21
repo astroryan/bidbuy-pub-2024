@@ -204,8 +204,9 @@ input:read-only {
 .basic-select-box option[value=""][disabled] {
   display: none;
 }
-.basic-select-box select:valid {
-  color: #333;
+.basic-select-box select {
+  /* @@@ */
+  /* color: #333; */
 }
 /* MODAL */
 .modal {
@@ -512,19 +513,34 @@ input[type="date"]:valid::before {
   font-weight: 700;
   color: #707070;
 }
+
 .tabs button + button {
   border-left: 1px solid #f0f0f0;
 }
 .tabs button.active {
   color: var(--mainBlue);
 }
-
 .tabs button.active:after {
   position: absolute;
   inset: 0;
   border: 2px solid var(--mainBlue);
   content: "";
   pointer-events: none;
+}
+
+.tabs.sky-blue {
+  color: #7f8095;
+  border-color: #d8d8d8;
+}
+.tabs.sky-blue button {
+  font-weight: 400;
+}
+.tabs.sky-blue button.active {
+  font-weight: bold;
+  background-color: rgba(87, 158, 229, 0.1);
+}
+.tabs.sky-blue button.active:after {
+  border: 1px solid var(--mainBlue);
 }
 
 .tabs-content {
@@ -619,6 +635,8 @@ input[type="radio"] label {
   display: none;
 }
 .tab-check-button label {
+  flex-shrink: 0;
+  min-width: 58px;
   display: inline-block;
   font-size: 15px;
   letter-spacing: -0.15px;
@@ -627,6 +645,7 @@ input[type="radio"] label {
   border-radius: 8px;
   border: solid 1px #dedede;
   background-color: #fff;
+  white-space: nowrap;
 }
 /* .tab-check-button label::after {
   content: attr(title);
@@ -725,7 +744,10 @@ input[type="radio"] label {
 .basic-table div.td-left {
   justify-content: flex-start;
 }
-
+.td-column {
+  flex-direction: column;
+  gap: 7px;
+}
 .basic-table__header {
   display: flex;
   align-items: center;
@@ -749,6 +771,7 @@ input[type="radio"] label {
   padding: 20px 5px;
   color: #000;
 }
+
 .basic-table__empty-text {
   display: grid;
   place-content: center;
@@ -1244,6 +1267,22 @@ input[type="radio"] label {
   min-width: 14px;
   height: 14px;
   font-size: 8px;
+}
+
+/* SEARCH FILTER */
+.search__filter {
+  display: flex;
+  align-items: center;
+}
+.search__filter > li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search__filter > li + li {
+  border-left: 1px solid #e6e6e6;
+  padding-left: 24px;
+  margin-left: 24px;
 }
 
 /* HEADER */

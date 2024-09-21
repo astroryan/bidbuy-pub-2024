@@ -7,7 +7,12 @@ function openModal(button, event) {
   if (selectedModal.classList.contains("bid-modal")) {
     initializeModalDepths(selectedModal);
   }
-  blockBodyScroll();
+
+  // 알림모달은 스크롤 블럭제거
+  if (!selectedModal.classList.contains("modal-notify")) {
+    console.log(selectedModal);
+    blockBodyScroll();
+  }
   document.removeEventListener("keydown", () => {
     if (e.key === "Escape") {
       selectedModal.style.display = "none";
@@ -240,7 +245,6 @@ function mainSlide() {
         slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
       },
       loop: false, // 슬라이드 반복 여부
-      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
       autoplay: {
         // 자동 슬라이드 설정 , 비 활성화 시 false
         delay: 3000, // 시간 설정
@@ -274,7 +278,12 @@ function inProgressItemSlide() {
   if (document.querySelector(".in-progress-items-swiper")) {
     const inProgressItemSwiper = new Swiper(".in-progress-items-swiper", {
       slidesPerView: 2,
-      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정,
+      a11y: {
+        prevSlideMessage: "이전 슬라이드",
+        nextSlideMessage: "다음 슬라이드",
+        slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+      },
       centeredSlides: false,
       freeMode: true,
       spaceBetween: 13,
@@ -289,7 +298,12 @@ function inProgressItemSlide() {
 function likeItemSlide() {
   if (document.querySelector(".like-item-swiper")) {
     const likeItemSwiper = new Swiper(".like-item-swiper", {
-      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정,
+      a11y: {
+        prevSlideMessage: "이전 슬라이드",
+        nextSlideMessage: "다음 슬라이드",
+        slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+      },
       slidesPerView: 1,
       grid: {
         rows: 3,
@@ -302,7 +316,12 @@ function likeItemSlide() {
 function recentItemSlide() {
   if (document.querySelector(".recent-item-swiper")) {
     const recentItemSwiper = new Swiper(".recent-item-swiper", {
-      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정,
+      a11y: {
+        prevSlideMessage: "이전 슬라이드",
+        nextSlideMessage: "다음 슬라이드",
+        slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+      },
       slidesPerView: 3,
       slidesPerGroup: 3,
       grid: {
@@ -322,20 +341,29 @@ window.addEventListener("DOMContentLoaded", () => {
 // DETAIL
 function ItemDetailSlide() {
   if (document.querySelector(".bigImgSlide")) {
-    const thumbsSlide = new Swiper(".thumbsSlide", {
+    const thumbsSwiper = new Swiper(".thumbsSlide", {
       spaceBetween: 10,
       slidesPerView: 4,
       freeMode: true,
-      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정
+      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정,
+      a11y: {
+        prevSlideMessage: "이전 슬라이드",
+        nextSlideMessage: "다음 슬라이드",
+        slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+      },
       watchSlidesProgress: true,
       navigation: {
         nextEl: ".thumbs-button-next",
         prevEl: ".thumbs-button-prev",
       },
     });
-    const swiper2 = new Swiper(".bigImgSlide", {
+    const bigImgSwiper = new Swiper(".bigImgSlide", {
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
       thumbs: {
-        swiper: thumbsSlide,
+        swiper: thumbsSwiper,
       },
     });
   }
@@ -420,5 +448,23 @@ function onClickNextModal(button) {
   if (nextDepth) {
     currentDepth.style.display = "none";
     nextDepth.style.display = "block";
+  }
+}
+
+// 마이페이지 "주문 상세검색 모드"
+function changModeButton(button) {
+  const searchModeContent = document.querySelector(".shopping-status__summary-box");
+  const deliveryModeContent = document.querySelector(".shopping-status__filters");
+
+  if (button.classList.contains("show-search-mode")) {
+    button.innerText = "상세검색 모드";
+    button.classList.remove("show-search-mode");
+    searchModeContent.style.display = "flex";
+    deliveryModeContent.style.display = "none";
+  } else {
+    button.innerText = "주문배송절차 모드";
+    button.classList.add("show-search-mode");
+    searchModeContent.style.display = "none";
+    deliveryModeContent.style.display = "flex";
   }
 }

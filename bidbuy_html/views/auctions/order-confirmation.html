@@ -89,12 +89,12 @@
                   </div>
                   <div class="basic-table__row">
                     <div>2024.05.10 17:13:48</div>
-                    <div>1개 | ¥300</div>
+                    <div>옵션명</div>
                     <div>입찰실패</div>
                   </div>
                   <div class="basic-table__row">
                     <div>2024.05.10 17:13:48</div>
-                    <div>1개 | ¥300</div>
+                    <div>옵션명</div>
                     <div>입찰실패</div>
                   </div>
                 </div>
@@ -131,7 +131,14 @@
           <!-- 경매주문상품정보 -->
           <section class="order-list">
             <h3 class="order-title">
-              경매주문상품정보<button type="button" class="modal_button order-title__sub">본 입찰내역 조회</button>
+              경매주문상품정보<button
+                type="button"
+                class="modal_button order-title__sub"
+                onclick="openModal(this, event)"
+                data-modal="auction-list"
+              >
+                본 입찰내역 조회
+              </button>
             </h3>
             <article class="order-item order-list-box">
               <figure class="order-item__image">
@@ -196,7 +203,15 @@
                 <!-- 주문배송정보 -->
                 <li class="order-list">
                   <h3 class="order-title">
-                    <b>주문배송정보</b><button type="button" class="modal_button order-title__sub">인보이스출력</button>
+                    <b>주문배송정보</b
+                    ><button
+                      type="button"
+                      class="modal_button order-title__sub"
+                      onclick="openModal(this, event)"
+                      data-modal="print-invoice"
+                    >
+                      인보이스출력
+                    </button>
                   </h3>
                   <article class="order-list-box order-info-article">
                     <ul class="order-list__details">
@@ -454,7 +469,76 @@
                 <!-- 주문 메모 내역 -->
                 <li class="order-list">
                   <h3 class="order-title"><b>주문 메모 내역</b></h3>
-                  <article class="order-list-box"></article>
+                  <article class="order-list-box">
+                    <div class="order-memo-box">
+                      <div class="basic-textarea">
+                        <textarea name="" id="" cols="" rows="" placeholder="문의 내용 입력"></textarea>
+                      </div>
+                      <button type="button" class="basic-button__gray">문의</button>
+                    </div>
+                    <ul class="order-memo-list">
+                      <!-- 1 -->
+                      <li>
+                        <div class="order-memo__header">
+                          <b>관리자메모</b> <span class="order-memo__date">[2024-05-16 24:14:55]</span>
+                        </div>
+                        <p class="order-memo__content">
+                          관리자메모로 안내 드리도록 하겠습니다. 이상 없이 구매완료 시 “결제완료” 에서 “주문완료” 로<br />
+                          상태 변경 됩니다. [청약 철회에 대한 안내] 실제 주문완료 이후에는 구매대행계약의 청약철회를 할
+                          수 <br />
+                          없습니다. 다만, 판매자가 환불에 동의한 경우 고객님의 비용부담으로 반품, 환불 절차를
+                          대행합니다. <br />
+                          (메루카리/라쿠마/페이페이프리마 제외) 이 경우 대행 수수료는 환불 대상이 아닙니다. 또한 부피,
+                          무게 등의 차이로 인한 송료 차액은 2차 결제시 실제 금액으로 정산 될수 있습니다. <br />
+                          이용시 참고 부탁드립니다. 감사합니다.
+                        </p>
+                        <p class="order-memo__footer">
+                          2024.05.16 20:06:42 취소사유 고객님 요청으로 거래 취소되었습니다.
+                        </p>
+                      </li>
+                      <!-- 2 -->
+                      <li>
+                        <div class="order-memo__header">
+                          <b>메모 문의</b> <span class="order-memo__date">[2024-05-16 24:14:55]</span>
+                          <button type="button" class="small-gary-text">삭제</button>
+                        </div>
+                        <p class="order-memo__content">
+                          또한 부피, 무게 등의 차이로 인한 송료 차액은 2차 결제시 실제 금액으로 정산 될수 있습니다.<br />
+                          이용시 참고 부탁드립니다. 감사합니다.
+                        </p>
+
+                        <div class="order-memo-answer">
+                          <p class="answer-title">[답변] 2025-12-04 13:23</p>
+                          <p class="answer-content">
+                            네.. 고객님 답변 드립니다. 고객님 답변 드립니다. 고객님 답변 드립니다. 고객님 답변
+                            드립니다.<br />
+                            고객님 답변 드립니다. 고객님 답변 드립니다. 고객님 답변 드립니다. 고객님 답변 드립니다.
+                            고객님 <br />
+                            답변 드립니다. 고객님 답변 드립니다. 고객님 답변 드립니다.
+                          </p>
+                        </div>
+                      </li>
+                      <!-- 1 -->
+                      <li>
+                        <div class="order-memo__header">
+                          <b>관리자메모</b> <span class="order-memo__date">[2024-05-16 24:14:55]</span>
+                        </div>
+                        <p class="order-memo__content">
+                          관리자메모로 안내 드리도록 하겠습니다. 이상 없이 구매완료 시 “결제완료” 에서 “주문완료” 로<br />
+                          상태 변경 됩니다. [청약 철회에 대한 안내] 실제 주문완료 이후에는 구매대행계약의 청약철회를 할
+                          수 <br />
+                          없습니다. 다만, 판매자가 환불에 동의한 경우 고객님의 비용부담으로 반품, 환불 절차를
+                          대행합니다. <br />
+                          (메루카리/라쿠마/페이페이프리마 제외) 이 경우 대행 수수료는 환불 대상이 아닙니다. 또한 부피,
+                          무게 등의 차이로 인한 송료 차액은 2차 결제시 실제 금액으로 정산 될수 있습니다. <br />
+                          이용시 참고 부탁드립니다. 감사합니다.
+                        </p>
+                        <p class="order-memo__footer">
+                          2024.05.16 20:06:42 취소사유 고객님 요청으로 거래 취소되었습니다.
+                        </p>
+                      </li>
+                    </ul>
+                  </article>
                 </li>
               </ul>
             </article>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+    <defs>
+        <clipPath id="a0488x6upa">
+            <path data-name="사각형 5380" transform="translate(1501 782)" style="stroke:#fff;fill:none" d="M0 0h29v29H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 9553" transform="translate(-1501 -782)" style="clip-path:url(#a0488x6upa)">
+        <path data-name="Icon fa-regular-map" d="M23.887 2.426a1.018 1.018 0 0 1 .439.836v14.19a1.01 1.01 0 0 1-.655.946l-7.1 2.7a.991.991 0 0 1-.68.013L8.13 18.529l-6.757 2.576A1.012 1.012 0 0 1 0 20.155V5.965a1 1 0 0 1 .655-.946l7.1-2.7A.991.991 0 0 1 8.43 2.3l7.77 2.588 6.757-2.576a1.015 1.015 0 0 1 .938.114zM2.027 6.662v12.023l5.073-1.93V4.732zM15.2 18.749V6.7L9.122 4.668v12.053zm2.027-.063 5.068-1.93V4.732l-5.068 1.93z" transform="translate(1503.5 785.255)" style="stroke:#fff"/>
+    </g>
+</svg>
