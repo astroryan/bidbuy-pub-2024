@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- MODAL :: 구매대행신청 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="proxy-purchase"></button> -->
+      <div class="modal-proxy-purchase modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">비드바이 입찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body default">
+            <div class="modal__content">
+              <p class="modal__text">
+                <b><span class="purchase_num">00</span>건의 구매대행신청이 완료 되었습니다.</b>
+              </p>
+              <p class="modal__small-text">마이페이지에서 신청 내역을 확인할 수 있습니다.</p>
+            </div>
+            <div class="modal-button-wrap">
+              <button type="button" class="basic-button__black-line" onclick="closeModal(this)">계속신청</button>
+              <a href="/mypage.html" class="basic-button__black">마이페이지</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- START :: HEADER -->
+      <header id="header"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <div id="main" class="cart-page">
+        <div class="inner-width">
+          <h2 class="title">장바구니</h2>
+          <section class="tabs-container cart-tab">
+            <div class="tabs">
+              <button type="button" data-idx="0" class="active">전체</button>
+              <button type="button" data-idx="1">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                </figure>
+                <b>라쿠텐</b>(4)
+              </button>
+              <button type="button" data-idx="2">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                </figure>
+                <b>야후쇼핑</b>(2)
+              </button>
+              <button type="button" data-idx="3">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                </figure>
+                <b>야후쇼핑</b>(2)
+              </button>
+              <button type="button" data-idx="4">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                </figure>
+                <b>야후쇼핑</b>(0)
+              </button>
+            </div>
+            <ul class="tabs-content">
+              <!-- ALL :: 전체 -->
+              <li class="tab-content-list" data-idx="0">
+                <section class="cart-table-wrap">
+                  <!-- 1. 장바구니 제품 없을때 -->
+                  <!-- <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>상품정보</div>
+                      <div>선택옵션</div>
+                      <div>상품가</div>
+                      <div>수량</div>
+                      <div>최종금액</div>
+                    </div>
+                    <div class="basic-table__empty-text">장바구니에 제품이 없습니다.</div>
+                  </article> -->
+                  <!-- 2. 장바구니 제품 있을때 -->
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>상품정보</div>
+                      <div>선택옵션</div>
+                      <div>상품가</div>
+                      <div>수량</div>
+                      <div>최종금액</div>
+                    </div>
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="item01" />
+                            <label for="item01"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div class="cart-item td-left">
+                          <a href="" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="cart-item__info">
+                            <div class="cart-item__market">
+                              <figure class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </figure>
+                              <p>야후경매 <span class="cart-item__code">- 상품코드 : kccbrand:10000055</span></p>
+                            </div>
+                            <a href="" class="cart-item__name p_2"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー …</a
+                            >
+                          </div>
+                        </div>
+                        <div class="">OOOOO<br />OOOOO</div>
+                        <div><strong>¥ 46,000</strong></div>
+                        <div class="td-select">
+                          <div class="basic-select-box gray">
+                            <select name="" id="num" required>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                          </div>
+                          <button type="button" class="basic-button__gray">변경</button>
+                        </div>
+                        <div><strong>¥ 92,000</strong></div>
+                      </div>
+                      <!-- 2 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="item02" />
+                            <label for="item02"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div class="cart-item td-left">
+                          <a href="" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="cart-item__info">
+                            <div class="cart-item__market">
+                              <figure class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </figure>
+                              <p>야후경매 <span class="cart-item__code">- 상품코드 : kccbrand:10000055</span></p>
+                            </div>
+                            <a href="" class="cart-item__name p_2">【 公式 】 父の日 ギフト スイーツ クッキント</a>
+                          </div>
+                        </div>
+                        <div class="">OOOOO</div>
+                        <div><strong>¥ 46,000</strong></div>
+                        <div class="td-select">
+                          <div class="basic-select-box gray">
+                            <select name="" id="num" required>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                          </div>
+                          <button type="button" class="basic-button__gray">변경</button>
+                        </div>
+                        <div><strong>¥ 92,000</strong></div>
+                      </div>
+                      <!-- 3 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="item03" />
+                            <label for="item03"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div class="cart-item td-left">
+                          <a href="" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="cart-item__info">
+                            <div class="cart-item__market">
+                              <figure class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </figure>
+                              <p>야후경매 <span class="cart-item__code">- 상품코드 : kccbrand:10000055</span></p>
+                            </div>
+                            <a href="" class="cart-item__name p_2"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー …</a
+                            >
+                          </div>
+                        </div>
+                        <div class="">OOOOO<br />OOOOO</div>
+                        <div><strong>¥ 46,000</strong></div>
+                        <div class="td-select">
+                          <div class="basic-select-box gray">
+                            <select name="" id="num" required>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                          </div>
+                          <button type="button" class="basic-button__gray">변경</button>
+                        </div>
+                        <div><strong>¥ 92,000</strong></div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- 장바구니 선택 버튼 & 페이지네이션 -->
+                  <div class="cart-utils">
+                    <div class="cart-table__button-wrap">
+                      <button type="button" class="basic-button__gray">전체선택</button>
+                      <button type="button" class="basic-button__gray-line font-weight: 500;">전체삭제</button>
+                    </div>
+                    <div class="basic-pagination">
+                      <button class="first-button" type="button"></button>
+                      <button class="prev-button" type="button"></button>
+
+                      <div class="basic-pagination__button-wrap">
+                        <button class="page-button" type="button">1</button>
+                        <button class="page-button active" ype="button">2</button>
+                        <button class="page-button" type="button">3</button>
+                        <button class="page-button" type="button">4</button>
+                        <button class="page-button" type="button">5</button>
+                      </div>
+
+                      <button class="next-button" type="button"></button>
+                      <button class="last-button" type="button"></button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+              <!-- TAB:1 -->
+              <li class="tab-content-list" data-idx="1" style="display: none">
+                <section class="cart-table-wrap">
+                  <!-- 장바구니 테이블 -->
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>상품정보</div>
+                      <div>선택옵션</div>
+                      <div>상품가</div>
+                      <div>수량</div>
+                      <div>최종금액</div>
+                    </div>
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="item01" />
+                            <label for="item01"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div class="cart-item td-left">
+                          <a href="" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="cart-item__info">
+                            <div class="cart-item__market">
+                              <figure class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </figure>
+                              <p>야후경매 <span class="cart-item__code">- 상품코드 : kccbrand:10000055</span></p>
+                            </div>
+                            <a href="" class="cart-item__name p_2"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー …</a
+                            >
+                          </div>
+                        </div>
+                        <div class="">OOOOO<br />OOOOO</div>
+                        <div><strong>¥ 46,000</strong></div>
+                        <div class="td-select">
+                          <div class="basic-select-box gray">
+                            <select name="" id="num" required>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                          </div>
+                          <button type="button" class="basic-button__gray">변경</button>
+                        </div>
+                        <div><strong>¥ 92,000</strong></div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- 장바구니 선택 버튼 & 페이지네이션 -->
+                  <div class="cart-utils">
+                    <div class="cart-table__button-wrap">
+                      <button type="button" class="basic-button__gray">전체선택</button>
+                      <button type="button" class="basic-button__gray-line font-weight: 500;">전체삭제</button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+              <!-- TAB:2 -->
+              <li class="tab-content-list" data-idx="2" style="display: none">
+                <section class="cart-table-wrap">
+                  <!-- 장바구니 테이블 -->
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>상품정보</div>
+                      <div>선택옵션</div>
+                      <div>상품가</div>
+                      <div>수량</div>
+                      <div>최종금액</div>
+                    </div>
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="item01" />
+                            <label for="item01"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div class="cart-item td-left">
+                          <a href="" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="cart-item__info">
+                            <div class="cart-item__market">
+                              <figure class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </figure>
+                              <p>야후경매 <span class="cart-item__code">- 상품코드 : kccbrand:10000055</span></p>
+                            </div>
+                            <a href="" class="cart-item__name p_2"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー …</a
+                            >
+                          </div>
+                        </div>
+                        <div class="">OOOOO<br />OOOOO</div>
+                        <div><strong>¥ 46,000</strong></div>
+                        <div class="td-select">
+                          <div class="basic-select-box gray">
+                            <select name="" id="num" required>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                          </div>
+                          <button type="button" class="basic-button__gray">변경</button>
+                        </div>
+                        <div><strong>¥ 92,000</strong></div>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- 장바구니 선택 버튼 & 페이지네이션 -->
+                  <div class="cart-utils">
+                    <div class="cart-table__button-wrap">
+                      <button type="button" class="basic-button__gray">전체선택</button>
+                      <button type="button" class="basic-button__gray-line font-weight: 500;">전체삭제</button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+              <!-- TAB:3 -->
+              <li class="tab-content-list" data-idx="3" style="display: none">
+                <section class="cart-table-wrap">
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>상품정보</div>
+                      <div>선택옵션</div>
+                      <div>상품가</div>
+                      <div>수량</div>
+                      <div>최종금액</div>
+                    </div>
+                    <div class="basic-table__empty-text">장바구니에 제품이 없습니다.</div>
+                  </article>
+                </section>
+              </li>
+              <!-- TAB:4 -->
+              <li class="tab-content-list" data-idx="4" style="display: none">
+                <section class="cart-table-wrap">
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>상품정보</div>
+                      <div>선택옵션</div>
+                      <div>상품가</div>
+                      <div>수량</div>
+                      <div>최종금액</div>
+                    </div>
+                    <div class="basic-table__empty-text">장바구니에 제품이 없습니다.</div>
+                  </article>
+                </section>
+              </li>
+            </ul>
+
+            <section class="cart-banner">
+              <h3>주문 신청 총 구매금액</h3>
+              <p class="total-price"><strong>¥ 192,000</strong> (백구십이천엔) ￦ 215,000</p>
+
+              <div class="cart-banner__button-wrap">
+                <a href="" class="basic-button__gray-line">계속쇼핑하기</a>
+                <a href="../auctions/order.html" class="basic-button__blue">1차 결제하기</a>
+              </div>
+            </section>
+          </section>
+        </div>
+      </div>
+
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

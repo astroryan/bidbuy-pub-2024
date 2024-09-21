@@ -51,9 +51,9 @@
 
   <body>
     <div id="content-wrap">
-      <!-- MODAL :: 배송지목록  -->
+      <!-- MODAL :: 배송지 선택  -->
       <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="address"></button> -->
-      <div class="modal-address modal">
+      <div class="modal-address modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
           <div class="modal__header">
@@ -62,17 +62,77 @@
               <span class="blind">모달 닫기</span>
             </button>
           </div>
-          <div class="modal__body default">
+          <div class="modal__body">
             <div class="modal__content">
-              <!-- 1. 등록된 배송지가 없을때 -->
-              <div class="empty-text">등록된 배송지가 없습니다.</div>
-              <!-- 2. 등록된 배송지 있을때, -->
-              <table>
-                <thead></thead>
-              </table>
+              <!-- 1. 등록된 배송지 없을때 -->
+              <!-- <article class="basic-table">
+                <div class="basic-table__header">
+                  <div> 배송지명 </div>
+                  <div> 수취인명 </div>
+                  <div> 주소 </div>
+                  <div> 휴대폰/연락처 </div>
+                  <div>
+                    개인통관고유부호<br />
+                    (사업자등록번호)
+                  </div>
+                  <div></div>
+                </div>
+                <div class="basic-table__empty-text">등록된 배송지가 없습니다.</div>
+              </article> -->
+              <!-- 2. 등록된 배송지 있을때 -->
+              <article class="basic-table">
+                <div class="basic-table__header">
+                  <div>배송지명</div>
+                  <div>수취인명</div>
+                  <div>주소</div>
+                  <div>휴대폰/연락처</div>
+                  <div>
+                    개인통관고유부호<br />
+                    (사업자등록번호)
+                  </div>
+                  <div></div>
+                </div>
+                <div class="basic-table__body">
+                  <!-- PUB:: 기본배송지일 경우 main-address 클래스 추가 -->
+                  <div class="basic-table__row main-address">
+                    <div>서울집</div>
+                    <div>박비드</div>
+                    <div class="td-left">04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호</div>
+                    <div>010-9999-8888</div>
+                    <div>P1131245r2</div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div>서울집</div>
+                    <div>박비드</div>
+                    <div class="td-left">
+                      04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호동산빌라 201동 3104호
+                    </div>
+                    <div>010-9999-8888</div>
+                    <div>P1131245r2</div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div>경기도</div>
+                    <div>박비드</div>
+                    <div class="td-left">04530 경기도 성남시 처인구 강송로33</div>
+                    <div>010-9999-8888</div>
+                    <div>P1131245r2</div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div>경기도</div>
+                    <div>박비드</div>
+                    <div class="td-left">04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호</div>
+                    <div>010-9999-8888</div>
+                    <div>P1131245r2</div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="modal-button-wrap">
-              <a href="" class="basic-button__black-line" onclick="closeModal(this)">배송지관리</a>
+            <div class="modal-bottom-wrap">
+              <a href="" class="basic-button__black-line">배송지관리</a>
               <div class="basic-pagination">
                 <button class="first-button" type="button"></button>
                 <button class="prev-button" type="button"></button>
@@ -92,6 +152,84 @@
           </div>
         </section>
       </div>
+      <!-- MODAL :: 보유쿠폰내역  -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="coupon-list"></button> -->
+      <div class="modal-coupon-list modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">보유쿠폰내역</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__content">
+              <!-- 1. 등록된 쿠폰이 없을때 -->
+              <!-- <article class="basic-table">
+                <div class="basic-table__header">
+                  <div> 쿠폰코드 </div>
+                  <div> 쿠폰사용범위 및 혜택 </div>
+                  <div> 할인금액 </div>
+                  <div> 사용기한 </div>
+                  <div> </div>
+                </div>
+                <div class="basic-table__empty-text">등록된 쿠폰이 없습니다.</div>
+              </article> -->
+              <!-- 2. 등록된 쿠폰이 있을때 -->
+              <article class="basic-table">
+                <div class="basic-table__header">
+                  <div>쿠폰코드</div>
+                  <div>쿠폰사용범위 및 혜택</div>
+                  <div>할인금액</div>
+                  <div>사용기한</div>
+                  <div></div>
+                </div>
+                <div class="basic-table__body">
+                  <div class="basic-table__row">
+                    <div>01030230423</div>
+                    <div class="td-left">
+                      대행수수료 할인<br />
+                      경매 입찰 조건 : 동시입찰 3건, 결제대기 2건
+                    </div>
+                    <div>￦ 2,000</div>
+                    <div>2024-06-01 ~ 2024-06-30</div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div>01030230423</div>
+                    <div class="td-left">
+                      대행수수료 할인<br />
+                      경매 입찰 조건 : 동시입찰 3건, 결제대기 2건
+                    </div>
+                    <div>￦ 2,000</div>
+                    <div>2024-06-01 ~ 2024-06-30</div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="modal-bottom-wrap">
+              <a href="" class="basic-button__black-line">쿠폰내역관리</a>
+              <!-- <div class="basic-pagination">
+                <button class="first-button" type="button"></button>
+                <button class="prev-button" type="button"></button>
+
+                <div class="basic-pagination__button-wrap">
+                  <button class="page-button" type="button">1</button>
+                  <button class="page-button active" ype="button">2</button>
+                  <button class="page-button" type="button">3</button>
+                  <button class="page-button" type="button">4</button>
+                  <button class="page-button" type="button">5</button>
+                </div>
+
+                <button class="next-button" type="button"></button>
+                <button class="last-button" type="button"></button>
+              </div> -->
+            </div>
+          </div>
+        </section>
+      </div>
 
       <!-- START :: HEADER -->
       <header id="header"></header>
@@ -103,7 +241,7 @@
             <h2 class="title">주문·결제</h2>
             <p class="sub-title">(1차 주문결제 단계)</p>
             <ol class="order-step">
-              <li class="order-step-list active">
+              <li class="order-step-list">
                 <div class="order-step__num">Step<br /><b>01</b></div>
                 <p class="order-step__text">
                   1차 주문결제<br />
@@ -332,7 +470,14 @@
                         <input type="checkbox" name="" id="same" />
                         <label for="same"> <span class="basic-check-box__squire-icon black"></span>주문자와 동일</label>
                       </div>
-                      <button type="button" class="modal-button order-title__sub">배송지 선택</button>
+                      <button
+                        type="button"
+                        class="modal_button order-title__sub"
+                        onclick="openModal(this, event)"
+                        data-modal="address"
+                      >
+                        배송지 선택
+                      </button>
                     </span>
                   </h3>
                   <article class="order-list-box">
@@ -421,7 +566,14 @@
                             <span class="basic-check-box__squire-icon black"></span>할인쿠폰 사용 (사용가능 쿠폰 :
                             4매)</label
                           >
-                          <button type="button" class="modal-button order__coupon-link">쿠폰내역보기</button>
+                          <button
+                            type="button"
+                            class="modal_button order__coupon-link"
+                            onclick="openModal(this, event)"
+                            data-modal="coupon-list"
+                          >
+                            쿠폰내역보기
+                          </button>
                         </div>
                         <p class="order__info-desc">
                           ※ 쿠폰의 사용가능 금액보다 대행수수료가 적을 경우, 남은 차액은 환불 되지 않습니다.
@@ -429,7 +581,7 @@
                       </div>
                     </div>
                     <!-- 정액권 (1개월) -->
-                    <div class="order__table-group">
+                    <div class="order__table-group ticket-group">
                       <div class="order__selection">
                         <p class="order__title">정액권 (1개월)</p>
                       </div>
@@ -442,7 +594,7 @@
                               >(보유 ￦300,000권 / 10회 / 5일남음)</small
                             ></label
                           >
-                          <button type="button" class="modal-button order__coupon-link">상세보기</button>
+                          <button type="button" class="order__coupon-link toggle-button">상세보기</button>
                         </div>
                         <ul class="order__info-desc order__list-style">
                           <li>
@@ -463,10 +615,7 @@
 
                 <!-- 결제 정보 -->
                 <li class="order-list">
-                  <h3 class="order-title">
-                    <b>결제 정보<small>(즉시 낙찰은 예치금 또는 카드결제만 가능 합니다.)</small></b
-                    ><a href="" class="order-title__sub">예치금 충전</a>
-                  </h3>
+                  <h3 class="order-title"><b>결제 정보</b><a href="" class="order-title__sub">예치금 충전</a></h3>
                   <article class="order-list-box">
                     <!-- 예치금 결제 -->
                     <div class="order__table-group">
@@ -489,6 +638,7 @@
                           <div class="basic-input">
                             <input id="deposit" type="number" placeholder="0" inputmode="numeric" />
                           </div>
+                          <!-- ???? -->
                           <button type="button" class="order__check-deposit">최근 예치금 조회</button>
                         </div>
                         <p class="order__deposit-desc">* 예치금 부족 시 예치금 충전 후 결제해 주세요.</p>
@@ -535,7 +685,7 @@
                               <div class="basic-select-box gray">
                                 <select name="" id="" required>
                                   <option>휴대폰 번호로 발급</option>
-                                  <option>aaa</option>
+                                  <option>현금영수증카드번호</option>
                                 </select>
                               </div>
                               <div class="basic-input">
@@ -551,7 +701,6 @@
                               <div class="basic-select-box gray">
                                 <select name="" id="" required>
                                   <option>사업자등록번호</option>
-                                  <option>aaa</option>
                                 </select>
                               </div>
                               <div class="basic-input">
@@ -568,9 +717,10 @@
                   </article>
                 </li>
 
-                <!-- <li class="order-list">
+                <!-- 결제 정보 (즉시 낙찰) -->
+                <li class="order-list">
                   <h3 class="order-title">
-                    <b>결제 정보<small>(즉시 낙찰은 예치금 또는 카드결제만 가능 합니다.)</small></b
+                    <b>결제 정보<small class="little">(즉시 낙찰은 예치금 또는 카드결제만 가능 합니다.)</small></b
                     ><a href="" class="order-title__sub">예치금 충전</a>
                   </h3>
                   <article class="order-list-box">
@@ -609,12 +759,7 @@
                             <input type="radio" name="payment" id="card" checked />
                             <label for="card">카드결제</label>
                           </div>
-                          <div class="payment-radio-tab">
-                            <input type="radio" name="payment" id="cash" />
-                            <label for="cash">무통장입금(가상계좌)</label>
-                          </div>
                         </div>
-                        <ul class="payment-tab-contents"></ul>
                       </div>
                     </div>
                     <div class="order__table-group">
@@ -635,53 +780,57 @@
                       </div>
                     </div>
                   </article>
-                </li> -->
+                </li>
 
                 <!-- 주문·결제 동의 사항 -->
                 <li class="order-list">
                   <h3 class="order-title"><b>주문·결제 동의 사항</b></h3>
                   <article class="order-list-box">
-                    <div class="order__notice-header">
-                      <p class="order__notice-title">전자보증안내 및 개인정보 동의</p>
-                      <div class="order__notice-utils">
-                        <p class="order__notice-title">개인정보 이용동의</p>
-                        <div class="order__notice-utils-radio">
-                          <div class="radio-check-button">
-                            <input type="radio" name="notes1" id="aa1" checked />
-                            <label for="aa1"><span class="radio-check-button-icon"></span>동의</label>
-                          </div>
-                          <div class="radio-check-button">
-                            <input type="radio" name="notes1" id="2" />
-                            <label for="2"><span class="radio-check-button-icon"></span>동의 안함</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="notice__content">
-                      <pre>
-전자보증안내 및 개인정보 동의 (100% 매매보호 안전결제) 가상계좌 또는 온라인입금으로 결제하시는 고객께는 물품대금결제 시 구매자의 피해 보호를 위해 “(주)서울보증보험”의 보증보험증권이 발급됩니다. 증권이 발급되는 것의 의미는, 물품대금 결제 시에 소비자에게 서울보증보험의 쇼핑몰보증보험 계약체결서를 인터넷상으로 자동 발급하며, 피해발생 시 쇼핑몰보증보험으로써 완벽하게 보호받을 수 있습니다. 또한,</pre
-                      >
-                    </div>
-                    <div class="order__notice-header">
-                      <p class="order__notice-title">비드바이 서비스 내용 동의</p>
-                      <div class="order__notice-utils">
-                        <p class="order__notice-title">개인정보 이용동의</p>
-                        <div class="order__notice-utils-radio">
-                          <div class="radio-check-button">
-                            <input type="radio" name="notes2" id="aa1" checked />
-                            <label for="aa1"><span class="radio-check-button-icon"></span>동의</label>
-                          </div>
-                          <div class="radio-check-button">
-                            <input type="radio" name="notes2" id="bb2" />
-                            <label for="bb2"><span class="radio-check-button-icon"></span>동의 안함</label>
+                    <div class="order__input-group">
+                      <div class="order__notice-header">
+                        <p class="order__notice-title">전자보증안내 및 개인정보 동의</p>
+                        <div class="order__notice-utils">
+                          <p class="order__notice-title">개인정보 이용동의</p>
+                          <div class="order__notice-utils-radio">
+                            <div class="radio-check-button">
+                              <input type="radio" name="notes1" id="aa1" checked />
+                              <label for="aa1"><span class="radio-check-button-icon"></span>동의</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="notes1" id="2" />
+                              <label for="2"><span class="radio-check-button-icon"></span>동의 안함</label>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="notice__content">
-                      <pre>
+                      <div class="notice__content">
+                        <pre>
 전자보증안내 및 개인정보 동의 (100% 매매보호 안전결제) 가상계좌 또는 온라인입금으로 결제하시는 고객께는 물품대금결제 시 구매자의 피해 보호를 위해 “(주)서울보증보험”의 보증보험증권이 발급됩니다. 증권이 발급되는 것의 의미는, 물품대금 결제 시에 소비자에게 서울보증보험의 쇼핑몰보증보험 계약체결서를 인터넷상으로 자동 발급하며, 피해발생 시 쇼핑몰보증보험으로써 완벽하게 보호받을 수 있습니다. 또한,</pre
-                      >
+                        >
+                      </div>
+                    </div>
+                    <div class="order__input-group">
+                      <div class="order__notice-header">
+                        <p class="order__notice-title">비드바이 서비스 내용 동의</p>
+                        <div class="order__notice-utils">
+                          <p class="order__notice-title">개인정보 이용동의</p>
+                          <div class="order__notice-utils-radio">
+                            <div class="radio-check-button">
+                              <input type="radio" name="notes2" id="aa1" checked />
+                              <label for="aa1"><span class="radio-check-button-icon"></span>동의</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="notes2" id="bb2" />
+                              <label for="bb2"><span class="radio-check-button-icon"></span>동의 안함</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notice__content">
+                        <pre>
+전자보증안내 및 개인정보 동의 (100% 매매보호 안전결제) 가상계좌 또는 온라인입금으로 결제하시는 고객께는 물품대금결제 시 구매자의 피해 보호를 위해 “(주)서울보증보험”의 보증보험증권이 발급됩니다. 증권이 발급되는 것의 의미는, 물품대금 결제 시에 소비자에게 서울보증보험의 쇼핑몰보증보험 계약체결서를 인터넷상으로 자동 발급하며, 피해발생 시 쇼핑몰보증보험으로써 완벽하게 보호받을 수 있습니다. 또한,</pre
+                        >
+                      </div>
                     </div>
                   </article>
                 </li>
@@ -915,7 +1064,7 @@
                           <span class="platform-name">야후경매 - 출품자ID</span>
                         </div>
                         <p class="item-name p_2">イタリア製 テーラードジャケット 薄手羽織り やや伸びる</p>
-                        <p class="item-code">상품코드 : BJP0194326506</p>
+                        <p class="item-code p_1">상품코드 : BJP0194326506</p>
                       </div>
                     </div>
                     <ul class="order-info">
@@ -958,7 +1107,7 @@
                           イタリア製 テーラードジャケット 薄手羽織り やや伸びるイタリア製 テーラードジャケット
                           薄手羽織り やや伸びる
                         </p>
-                        <p class="item-code">상품코드 : BJP0194326506</p>
+                        <p class="item-code p_1">상품코드 : BJP0194326506</p>
                       </div>
                     </div>
                     <ul class="order-info">
@@ -1053,15 +1202,8 @@
               </div>
 
               <div class="order-button-wrap">
-                <button onclick="history.back();" class="basic-button__light-gray-line">주문취소</button>
-                <button
-                  type="button"
-                  class="basic-button__blue modal_button"
-                  onclick="openModal(this, event)"
-                  data-modal="address"
-                >
-                  1차 결제하기
-                </button>
+                <button onclick="history.back();" class="basic-button__gray-line">주문취소</button>
+                <button type="button" class="basic-button__blue">1차 결제하기</button>
               </div>
             </article>
           </section>

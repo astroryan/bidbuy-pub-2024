@@ -1295,6 +1295,7 @@ let $HEADER_CONT = `
           <div class="swiper in-progress-items-swiper item-list">
             <div class="swiper-wrapper">
               <li class="swiper-slide item-box simple">
+                <a href="">
                 <figure class="item__img img-wrap">
                   <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                 </figure>
@@ -1308,10 +1309,11 @@ let $HEADER_CONT = `
                   <div class="item__name">
                     あすつく ビール 送料無料 アサヒ スーパル 送料無料 アサヒ スーパ
                   </div>
-                </div>
-              </li>
-
-              <li class="swiper-slide item-box simple">
+                </div></a>
+                </li>
+                
+                <li class="swiper-slide item-box simple">
+                <a href="">
                 <figure class="item__img img-wrap">
                   <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                 </figure>
@@ -1325,10 +1327,12 @@ let $HEADER_CONT = `
                   <div class="item__name">
                     あすつく ビール 送料無料 アサヒ スーパル 送料無料 アサヒ スーパ
                   </div>
-                </div>
-              </li>
-
-              <li class="swiper-slide item-box simple">
+                </div></a>
+            
+                </li>
+                
+                <li class="swiper-slide item-box simple">
+                <a href="">
                 <figure class="item__img img-wrap">
                   <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                 </figure>
@@ -1342,10 +1346,12 @@ let $HEADER_CONT = `
                   <div class="item__name">
                     あすつく ビール 送料無料 アサヒ スーパル 送料無料 アサヒ スーパ
                   </div>
-                </div>
-              </li>
-
-              <li class="swiper-slide item-box simple">
+                </div></a>
+            
+                </li>
+                
+                <li class="swiper-slide item-box simple">
+                <a href="">
                 <figure class="item__img img-wrap">
                   <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                 </figure>
@@ -1359,7 +1365,8 @@ let $HEADER_CONT = `
                   <div class="item__name">
                     あすつく ビール 送料無料 アサヒ スーパル 送料無料 アサヒ スーパ
                   </div>
-                </div>
+                </div></a>
+             
               </li>
             </div>
           </div>

@@ -96,15 +96,16 @@ textarea::placeholder {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background-color: #fff;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-color: #e6e6e6;
+  border-radius: 3px;
 }
 /* ::selection {
   background: #d4c951;
@@ -353,6 +354,7 @@ input:read-only {
 .basic-button__gray-line {
   background-color: #fff;
   color: #707070;
+  font-weight: 400;
   border: 1px solid #707070;
 }
 .basic-button__light-gray {
@@ -708,6 +710,65 @@ input[type="radio"] label {
 .radio-check-button input[type="radio"]:checked ~ label .radio-check-button-icon {
   background-image: url("../images/icon/radio_checked_circle.svg");
 }
+
+/* 기본 테이블 레이아웃 */
+.basic-table {
+  border-top: 1px solid #d8d8d8;
+}
+.basic-table__header > div,
+.basic-table__row > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.basic-table div.td-left {
+  justify-content: flex-start;
+}
+
+.basic-table__header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.basic-table__header > div {
+  height: 60px;
+  font-size: 14px;
+  line-height: 1.71;
+  font-weight: bold;
+  letter-spacing: -0.14px;
+}
+.basic-table__row {
+  display: flex;
+  border-bottom: solid 1px #d8d8d8;
+}
+.basic-table__row > div {
+  line-height: 1.86;
+  letter-spacing: -0.01em;
+  padding: 20px 5px;
+  color: #000;
+}
+.basic-table__empty-text {
+  display: grid;
+  place-content: center;
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  color: #333;
+  padding: 80px 0;
+  border-bottom: solid 1px #d8d8d8;
+}
+/* .basic-table__row small {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.58;
+  letter-spacing: -0.24px;
+  color: #707070;
+} */
+/* .basic-table__row .td-center {
+  text-align: center;
+} */
+
 /* 번역 등록 버튼 */
 .translation-button {
   position: relative;
@@ -2006,7 +2067,7 @@ input[type="radio"] label {
 .tabs-content__guide {
   height: calc(100vh - 103px);
   overflow-y: auto;
-  margin-top: 30px;
+  padding: 30px 0;
 }
 /* 카테고리 - 카테고리 */
 .tabs-content__category {
@@ -2140,7 +2201,6 @@ input[type="radio"] label {
 }
 
 /* 카테고리 - 맞춤쇼핑 */
-
 .in-progress__title {
   font-size: 16px;
   font-weight: 400;
@@ -2269,9 +2329,9 @@ input[type="radio"] label {
   letter-spacing: -0.02em;
   border-radius: 24px;
 }
-.custom-shopping__button-wrap .basic-button__gray-line {
+/* .custom-shopping__button-wrap .basic-button__gray-line {
   font-weight: 400;
-}
+} */
 /* 맞춤쇼핑 - 로그인 후 */
 .in-progress-items-swiper {
   padding: 20px 0 30px;

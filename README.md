@@ -2,23 +2,25 @@
 
 ## 페이지 정리
 
-| 폴더 명    | 파일 명                       | 페이지 명                  |
-| ---------- | ----------------------------- | -------------------------- |
-| /index     |                               | 메인페이지                 |
-| /search    |                               | 검색페이지                 |
-| /list      | exhibition_category_list.html | 전시 카테고리 목록 화면    |
-| /list      | system_category_list.html     | 시스템 카테고리 목록 화면  |
-| /auctions  |                               | 경매대행상세               |
-| /auctions  | complete.html                 | 입찰완료                   |
-| /auctions  | order.html                    | 주문결제 (1차결제)         |
-| /purchases |                               | 구매대행상세               |
-| /purchases | order.html                    | 구매대행신청               |
-| /auth      |                               | 로그인                     |
-| /auth      | forgot.html                   | 아이디 비밀번호 찾기       |
-| /signup    |                               | 회원가입 (멤버십혜택 약관) |
-| /signup    | join.html                     | 회원가입 (가입정보입력)    |
-| /signup    | complete.html                 | 회원가입 (가입완료)        |
-| /signup    | sns.html                      | 간편회원가입               |
+| 폴더 명     | 파일 명                       | 페이지 명                  | 작업상태        |
+| ----------- | ----------------------------- | -------------------------- | --------------- |
+| "index"     | index.html                    | 메인페이지                 | 100% ()         |
+| "search"    | index.html                    | 검색페이지                 | 100% ()         |
+| "list"      | exhibition_category_list.html | 전시 카테고리 목록 화면    | 100% ()         |
+| "list"      | system_category_list.html     | 시스템 카테고리 목록 화면  | 100% ()         |
+| "auctions"  | index.html                    | 경매대행상세               | 100% ( 240919 ) |
+| "auctions"  | complete.html                 | 입찰완료                   | 100% ( 240920 ) |
+| "auctions"  | order.html                    | 1차결제                    | 100% ( 240921 ) |
+| "auctions"  | order-confirmation.html       | 주문결제완료 상세화면      | 80% ( 240921 )  |
+| "purchases" | index.html                    | 구매대행상세               | 100% ( 240919 ) |
+| "purchases" | order.html                    | 구매대행신청               | 100% ( 240919 ) |
+| "auth"      | index.html                    | 로그인                     | 100% ( 240920 ) |
+| "auth"      | forgot.html                   | 아이디 비밀번호 찾기       | 100% ( 240920 ) |
+| "signup"    | index.html                    | 회원가입 (멤버십혜택 약관) | 100% ( 240920 ) |
+| "signup"    | join.html                     | 회원가입 (가입정보입력)    | 100% ( 240920 ) |
+| "signup"    | complete.html                 | 회원가입 (가입완료)        | 100% ( 240920 ) |
+| "signup"    | sns.html                      | 간편회원가입               | 100% ( 240920 ) |
+| "cart"      | index.html                    | 장바구니                   | 100% ( 240921 ) |
 
 <!-- /cs/guide/auction -->
 
