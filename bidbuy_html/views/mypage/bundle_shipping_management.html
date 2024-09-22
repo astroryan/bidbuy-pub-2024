@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/mypage.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- MODAL :: 개별배송처리안내 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="div-delivery"></button> -->
+      <div class="modal-div-delivery modal-delivery modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">개별배송처리안내</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body default">
+            <div class="modal__content">
+              <p class="modal__text">
+                <b
+                  ><span class="delivery_num">00</span>건의 배송대기 주문이<br />
+                  개별배송으로 정상 전환 처리 되었습니다.</b
+                >
+              </p>
+              <p class="modal__small-text">마이페이지 1차결제/현지도착 목록에서 확인 가능 합니다.</p>
+            </div>
+            <div class="modal-button-wrap">
+              <button type="button" class="basic-button__black-line">전환 취소</button>
+              <button type="button" class="basic-button__black" onclick="closeModal(this)">확인</button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 묶음배송처리안내 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="bundle-delivery"></button> -->
+      <div class="modal-bundle-delivery modal-delivery modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">묶음배송처리안내</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body default">
+            <div class="modal__content">
+              <p class="modal__text">
+                <b
+                  ><span class="delivery_num">00</span>건의 배송대기 주문이<br />
+                  묶음배송 신청이 정상 처리 되었습니다.</b
+                >
+              </p>
+              <div class="model-bundle-box">
+                <p>묶음 총 무게 : <b>21kg</b></p>
+                <p>2차 결제금액<b>￦560,000원</b></p>
+              </div>
+              <p class="modal__small-text">마이페이지 1차결제/현지도착 목록에서 확인 가능 합니다.</p>
+            </div>
+            <div class="modal-button-wrap">
+              <button type="button" class="basic-button__black-line">묶음 신청 취소</button>
+              <button type="button" class="basic-button__black" onclick="closeModal(this)">확인</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- START :: HEADER -->
+      <header id="header"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="my-page bundle-shipping-page">
+        <!-- 마이페이지 DASHBOARD -->
+        <section id="myDashBoard" class="dashboard"></section>
+
+        <div class="inner-width">
+          <!-- 마이페이지 :: 관심 상품, 관심 판매자, 관심 키워드, 최근 본 상품  -->
+          <section class="bundle-shipping tabs-container">
+            <h3 class="my-title">
+              <b>묶음배송관리</b>
+              <div class="title-utils">
+                <button type="button" class="basic-button__light-gray-line">묶음배송 신청목록</button>
+              </div>
+            </h3>
+            <div class="bundle-shipping__tabs tabs">
+              <button type="button" class="active" data-idx="0">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                </figure>
+                가능주문<small>(4건)</small>
+              </button>
+              <button type="button" data-idx="1">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_usa.png" alt="usa" />
+                </figure>
+                가능주문<small>(4건)</small>
+              </button>
+              <button type="button" data-idx="2">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_uk.png" alt="uk" />
+                </figure>
+                가능주문<small>(0건)</small>
+              </button>
+            </div>
+            <ul class="bundle-shipping__tabs-content tabs-content">
+              <!-- 1 -->
+              <li data-ids="0" class="bundle-item__tab">
+                <section class="bundle-shipping-table-wrap">
+                  <!-- 1. 묶음배송관리 제품 없을때 -->
+                  <!-- <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>주문상태</div>
+                      <div>주문일자</div>
+                      <div>상품정보</div>
+                      <div>수취인</div>
+                      <div>무게/부피</div>
+                      <div class="table-th">
+                        1차 결제금액<br />
+                        수입신고금액
+                      </div>
+                      <div>선택</div>
+                    </div>
+                    <p class="basic-table__empty-text">묶음배송관리 상품이 없습니다</p>
+                  </article> -->
+                  <!-- 2. 묶음배송관리 제품 있을때 -->
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>주문상태</div>
+                      <div>주문일자</div>
+                      <div>상품정보</div>
+                      <div>수취인</div>
+                      <div>무게/부피</div>
+                      <div class="table-th">
+                        1차 결제금액<br />
+                        수입신고금액
+                      </div>
+                      <div>선택</div>
+                    </div>
+
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div><b>현지도착</b></div>
+                        <div>2023-06-06</div>
+                        <div class="table-item td-left">
+                          <a href="../auctions/index.html" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="table-item__info">
+                            <div class="table-item__market">
+                              <a href="../auctions/index.html" class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </a>
+                              <p class="p_1">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                            </div>
+                            <a href="../auctions/index.html" class="table-item__name p_1"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー</a
+                            >
+                            <p class="table-item__price">¥ 92,000</p>
+                          </div>
+                        </div>
+                        <div>박비드</div>
+                        <div>1kg</div>
+                        <div class="td-column">
+                          <b>￦34,000</b>
+                          <span>￦34,000</span>
+                        </div>
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="1" />
+                            <label for="1"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 2 -->
+                      <div class="basic-table__row">
+                        <div><b>1차 결제완료</b></div>
+                        <div>2023-06-06</div>
+                        <div class="table-item td-left">
+                          <a href="../auctions/index.html" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="table-item__info">
+                            <div class="table-item__market">
+                              <a href="../auctions/index.html" class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </a>
+                              <p class="p_1">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                            </div>
+                            <a href="../auctions/index.html" class="table-item__name p_1"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー</a
+                            >
+                            <p class="table-item__price">¥ 92,000</p>
+                          </div>
+                        </div>
+                        <div>박비드</div>
+                        <div>1kg</div>
+                        <div class="td-column">
+                          <b>￦34,000</b>
+                          <span>￦34,000</span>
+                        </div>
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="2" />
+                            <label for="2"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 3 -->
+                      <div class="basic-table__row">
+                        <div><b>현지도착</b></div>
+                        <div>2023-06-06</div>
+                        <div class="table-item td-left">
+                          <a href="../auctions/index.html" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="table-item__info">
+                            <div class="table-item__market">
+                              <a href="../auctions/index.html" class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </a>
+                              <p class="p_1">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                            </div>
+                            <a href="../auctions/index.html" class="table-item__name p_1"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー</a
+                            >
+                            <p class="table-item__price">¥ 92,000</p>
+                          </div>
+                        </div>
+                        <div>박비드</div>
+                        <div>1kg</div>
+                        <div class="td-column">
+                          <b>￦34,000</b>
+                          <span>￦34,000</span>
+                        </div>
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="3" />
+                            <label for="3"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 4 -->
+                      <div class="basic-table__row">
+                        <div><b>1차 결제완료</b></div>
+                        <div>2023-06-06</div>
+                        <div class="table-item td-left">
+                          <a href="../auctions/index.html" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="table-item__info">
+                            <div class="table-item__market">
+                              <a href="../auctions/index.html" class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </a>
+                              <p class="p_1">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                            </div>
+                            <a href="../auctions/index.html" class="table-item__name p_1"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー</a
+                            >
+                            <p class="table-item__price">¥ 92,000</p>
+                          </div>
+                        </div>
+                        <div>박비드</div>
+                        <div>1kg</div>
+                        <div class="td-column">
+                          <b>￦34,000</b>
+                          <span>￦34,000</span>
+                        </div>
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="4" />
+                            <label for="4"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <div class="bundle-shipping-utils">
+                    <ul class="bundle-shipping__text">
+                      <li>* 무게/부피값은 주문시 입력값 기준입니다.</li>
+                      <li>* 수입신고금액 은 다음 항목 입니다. (상품가격 + TAX + 현지비용)</li>
+                    </ul>
+                    <div class="bundle-shipping-utils__button-wrap">
+                      <button
+                        type="button"
+                        class="basic-button__gray-line modal_button"
+                        onclick="openModal(this, event)"
+                        data-modal="div-delivery"
+                      >
+                        선택 개별배송 전환
+                      </button>
+                      <button
+                        type="button"
+                        class="basic-button__blue modal_button"
+                        onclick="openModal(this, event)"
+                        data-modal="bundle-delivery"
+                      >
+                        선택 묶음배송 신청
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+              <!-- 2 -->
+              <li data-ids="1" class="bundle-item__tab" style="display: none">
+                <section class="bundle-shipping-table-wrap">
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>주문상태</div>
+                      <div>주문일자</div>
+                      <div>상품정보</div>
+                      <div>수취인</div>
+                      <div>무게/부피</div>
+                      <div class="table-th">
+                        1차 결제금액<br />
+                        수입신고금액
+                      </div>
+                      <div>선택</div>
+                    </div>
+
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div><b>현지도착</b></div>
+                        <div>2023-06-06</div>
+                        <div class="table-item td-left">
+                          <a href="../auctions/index.html" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="table-item__info">
+                            <div class="table-item__market">
+                              <a href="../auctions/index.html" class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </a>
+                              <p class="p_1">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                            </div>
+                            <a href="../auctions/index.html" class="table-item__name p_1"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー</a
+                            >
+                            <p class="table-item__price">¥ 92,000</p>
+                          </div>
+                        </div>
+                        <div>박비드</div>
+                        <div>1kg</div>
+                        <div class="td-column">
+                          <b>￦34,000</b>
+                          <span>￦34,000</span>
+                        </div>
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="1" />
+                            <label for="1"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 2 -->
+                      <div class="basic-table__row">
+                        <div><b>1차 결제완료</b></div>
+                        <div>2023-06-06</div>
+                        <div class="table-item td-left">
+                          <a href="../auctions/index.html" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="table-item__info">
+                            <div class="table-item__market">
+                              <a href="../auctions/index.html" class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </a>
+                              <p class="p_1">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                            </div>
+                            <a href="../auctions/index.html" class="table-item__name p_1"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー</a
+                            >
+                            <p class="table-item__price">¥ 92,000</p>
+                          </div>
+                        </div>
+                        <div>박비드</div>
+                        <div>1kg</div>
+                        <div class="td-column">
+                          <b>￦34,000</b>
+                          <span>￦34,000</span>
+                        </div>
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="2" />
+                            <label for="2"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 3 -->
+                      <div class="basic-table__row">
+                        <div><b>현지도착</b></div>
+                        <div>2023-06-06</div>
+                        <div class="table-item td-left">
+                          <a href="../auctions/index.html" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="table-item__info">
+                            <div class="table-item__market">
+                              <a href="../auctions/index.html" class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </a>
+                              <p class="p_1">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                            </div>
+                            <a href="../auctions/index.html" class="table-item__name p_1"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー</a
+                            >
+                            <p class="table-item__price">¥ 92,000</p>
+                          </div>
+                        </div>
+                        <div>박비드</div>
+                        <div>1kg</div>
+                        <div class="td-column">
+                          <b>￦34,000</b>
+                          <span>￦34,000</span>
+                        </div>
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="3" />
+                            <label for="3"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 4 -->
+                      <div class="basic-table__row">
+                        <div><b>1차 결제완료</b></div>
+                        <div>2023-06-06</div>
+                        <div class="table-item td-left">
+                          <a href="../auctions/index.html" class="img-wrap">
+                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                          </a>
+                          <div class="table-item__info">
+                            <div class="table-item__market">
+                              <a href="../auctions/index.html" class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </a>
+                              <p class="p_1">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                            </div>
+                            <a href="../auctions/index.html" class="table-item__name p_1"
+                              >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                              10枚入 アソー</a
+                            >
+                            <p class="table-item__price">¥ 92,000</p>
+                          </div>
+                        </div>
+                        <div>박비드</div>
+                        <div>1kg</div>
+                        <div class="td-column">
+                          <b>￦34,000</b>
+                          <span>￦34,000</span>
+                        </div>
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="4" />
+                            <label for="4"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <div class="bundle-shipping-utils">
+                    <ul class="bundle-shipping__text">
+                      <li>* 무게/부피값은 주문시 입력값 기준입니다.</li>
+                      <li>* 수입신고금액 은 다음 항목 입니다. (상품가격 + TAX + 현지비용)</li>
+                    </ul>
+                    <div class="bundle-shipping-utils__button-wrap">
+                      <button
+                        type="button"
+                        class="basic-button__gray-line modal_button"
+                        onclick="openModal(this, event)"
+                        data-modal="div-delivery"
+                      >
+                        선택 개별배송 전환
+                      </button>
+                      <button
+                        type="button"
+                        class="basic-button__blue modal_button"
+                        onclick="openModal(this, event)"
+                        data-modal="bundle-delivery"
+                      >
+                        선택 묶음배송 신청
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+              <li data-ids="2" class="bundle-item__tab" style="display: none">
+                <section class="bundle-shipping-table-wrap">
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>주문상태</div>
+                      <div>주문일자</div>
+                      <div>상품정보</div>
+                      <div>수취인</div>
+                      <div>무게/부피</div>
+                      <div class="table-th">
+                        1차 결제금액<br />
+                        수입신고금액
+                      </div>
+                      <div>선택</div>
+                    </div>
+                    <p class="basic-table__empty-text">묶음배송관리 상품이 없습니다</p>
+                  </article>
+                </section>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

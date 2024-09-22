@@ -3330,42 +3330,15 @@
 .modal-bid-charge .modal-button-wrap {
   margin-top: 25px;
 }
-/* MODAL :: 바로입찰 3depth */
-.modal-bid-now {
-}
-
-/* MODAL :: 예약입찰 3depth */
-.modal-bid-scheduled {
-}
-/* MODAL :: 즉시낙찰 3depth */
-.modal-buy-now {
-}
-.modal-buy-now__price {
-  font-weight: bold;
-  color: #030000;
-}
-/* MODAL :: 흥정낙찰 3depth */
-.modal-negotiation-purchase {
-}
-/* MODAL :: 재입찰 2depth */
-.modal-re-bid {
-}
 /* MODAL :: 장바구니담기 */
-.modal-add-to-cart {
-}
 .modal-add-to-cart .modal-button-wrap {
   margin-top: 60px;
 }
 /* MODAL :: 구매신청완료 */
-.modal-purchase-complete {
-}
-
 .modal-purchase-complete .modal-button-wrap {
   margin-top: 53px;
 }
 /* MODAL :: 구매대행신청 */
-.modal-proxy-purchase {
-}
 .modal-proxy-purchase .purchase_num {
   color: #579ee5;
 }
@@ -6328,6 +6301,10 @@
     padding: 36px 0 40px;
   }
 
+  & .dashboard.simple .shopping-status {
+    display: none;
+  }
+
   & .dashboard:not(:has(.shopping-status)) {
     background-image: url("../images/banner/mypage_short_banner.jpg");
   }
@@ -7291,13 +7268,16 @@
     width: 150px;
     gap: 12px;
   }
-  & .basic-table__header > div:nth-child(7),
-  & .basic-table__row > div:nth-child(7) {
-    flex: unset;
-    width: 135px;
-  }
   & .basic-table__row > div:nth-child(1) {
     color: var(--mainMint);
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 13px;
+    color: #999;
+  }
+  & .basic-table__row > div:nth-child(6) .basic-button__light-gray-line {
+    width: 90px;
+    padding: 0;
   }
   & .my-order-utils-button {
     display: grid;
@@ -7390,5 +7370,631 @@
   & .my-order__aution-price {
     display: flex;
     gap: 10px;
+  }
+
+  & .my-order-utils-button {
+    display: grid;
+    place-content: center;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 400;
+    height: 40px;
+    font-size: 15px;
+    letter-spacing: -0.15px;
+    border: solid 1px #e6e6e6;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+}
+
+.table-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.table-item .img-wrap {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  background-color: #e6e6e6;
+  overflow: hidden;
+}
+
+.table-item__market {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.table-item__market p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+.table-item__name {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+  color: #000;
+  margin-top: 9px;
+}
+.table-item__code {
+  font-size: 13px;
+  font-weight: normal;
+  color: #666;
+}
+.table-item__price {
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+/* 마이페이지 :: 관심상품, 관심판매자, 관심키워드, 최근 본 상품 */
+.wish-page {
+  & .my-wish {
+    padding-top: 80px;
+  }
+
+  & .wish__tabs {
+    height: 60px;
+    margin-bottom: 46px;
+  }
+  & .wish__tabs button {
+    font-size: 16px;
+  }
+  & .title-utils {
+    gap: 10px;
+  }
+  & .my-title .basic-select-box {
+    width: 145px;
+    height: 40px;
+  }
+  & .my-title .basic-select-box select {
+    font-size: 13px;
+  }
+  & .my-title .basic-input input {
+    width: 234px;
+    height: 40px;
+  }
+  & .my-title .basic-button__gray {
+    width: 98px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  /* title-utils */
+  & .my-wish-utils-button {
+  }
+
+  /* 관심 목록 테이블 */
+  & .my-wish-button-td {
+    gap: 10px;
+  }
+
+  & .my-wish-button-td > [class^="basic-button"] {
+    font-size: 13px;
+    height: 30px;
+    padding: 0 20px;
+    font-weight: 500;
+  }
+
+  & .my-wish-button-td :is(a, button) {
+    min-width: 85px;
+    height: 30px;
+    padding: 0 16px;
+  }
+  /* 페이지네이션 등 유틸 */
+  & .my-wish-utils {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  & .my-wish-utils .basic-pagination {
+    justify-content: center;
+  }
+  & .my-wish-utils:has(.my-wish-utils__button-wrap) {
+    flex-direction: column;
+    gap: 60px;
+  }
+  & .my-wish-utils__button-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  & .my-wish-utils__button-wrap > * {
+    width: 174px;
+    height: 45px;
+    border-radius: 22.5px;
+  }
+}
+
+/* 관심 상품 */
+.wish-item__tab {
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__row > div {
+    min-height: 113px;
+  }
+  & .basic-table__row > div.td-column {
+    line-height: 1;
+  }
+
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 84px;
+  }
+
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 136px;
+    margin-right: 50px;
+  }
+
+  & .basic-table__header > div:nth-child(3),
+  & .basic-table__row > div:nth-child(3) {
+    flex: unset;
+    width: 320px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .basic-table__header > div:nth-child(4),
+  & .basic-table__row > div:nth-child(4) {
+    text-align: center;
+  }
+
+  & .basic-table__header > div:nth-child(5),
+  & .basic-table__row > div:nth-child(5) {
+    flex: unset;
+    width: 200px;
+    text-align: center;
+  }
+  & .basic-table__header > div:nth-child(6),
+  & .basic-table__row > div:nth-child(6) {
+    flex: unset;
+    width: 195px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    color: #707070;
+  }
+}
+
+/* 관심 판매자 */
+.wish-seller__tab {
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__row > div {
+    min-height: 80px;
+  }
+  & .basic-table__row > div.td-column {
+    line-height: 1;
+  }
+
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 84px;
+  }
+
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 136px;
+    margin-right: 30px;
+  }
+
+  & .basic-table__header > div:nth-child(3),
+  & .basic-table__row > div:nth-child(3) {
+    flex: unset;
+    width: 320px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+  & .basic-table__header > div:nth-child(4),
+  & .basic-table__row > div:nth-child(4) {
+    flex: unset;
+    width: 415px;
+  }
+
+  & .basic-table__row > div:nth-child(2) {
+    color: #707070;
+  }
+  & .table-item__market p,
+  & .table-item__market span {
+    font-size: 14px;
+  }
+  & .basic-table__row > div:nth-child(4) .basic-input {
+    width: 100%;
+  }
+
+  & .basic-table__row > div:nth-child(4) input {
+    width: 100%;
+    height: 48px;
+    font-size: 15px;
+    padding: 0 14px;
+  }
+  & .basic-table__row > div:nth-child(5) {
+    justify-content: flex-end;
+  }
+  & .td-empty-area {
+    width: 121px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+  }
+}
+
+.wish-keyword__tab {
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__row > div {
+    min-height: 80px;
+  }
+
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 84px;
+  }
+
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 136px;
+    margin-right: 50px;
+  }
+
+  & .basic-table__header > div:nth-child(3),
+  & .basic-table__row > div:nth-child(3) {
+    flex: unset;
+    width: 150px;
+    justify-content: flex-start;
+  }
+
+  & .basic-table__header > div:nth-child(4),
+  & .basic-table__row > div:nth-child(4) {
+    flex: unset;
+    width: 300px;
+  }
+
+  & .basic-table__row > div:nth-child(2) {
+    color: #707070;
+  }
+  & .basic-table__row > div:nth-child(3) {
+    padding-left: 0;
+  }
+
+  & .keyword-text {
+    text-decoration: underline;
+  }
+}
+
+/* 최근 본 상품 */
+.recent-item__tab {
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__row > div {
+    min-height: 113px;
+  }
+  & .basic-table__row > div.td-column {
+    line-height: 1;
+  }
+
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 84px;
+  }
+
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 240px;
+    margin-right: 50px;
+  }
+
+  & .basic-table__row > div:nth-child(2) {
+    color: #707070;
+  }
+
+  & .recent-text {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    color: #707070;
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+}
+
+/* MODAL :: 판매자 등록 상품 보기 */
+.modal-seller-item-list {
+  & .modal__box {
+    width: 683px;
+  }
+  & .modal__body {
+    padding: 25px 30px 48px;
+  }
+
+  & .modal-seller-item-list__title {
+    margin-bottom: 33px;
+    text-align: center;
+  }
+
+  & .seller-item-list {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  & .seller-item-list > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+  }
+  & .seller-item-list > li + li {
+    border-top: 1px solid #e6e6e6;
+  }
+  & .seller-item-list .table-item {
+    flex-shrink: 0;
+    width: 320px;
+  }
+  & .seller-item-list .item-status {
+    flex-shrink: 0;
+    width: 100px;
+    text-align: center;
+  }
+
+  & .basic-pagination {
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+
+/* 마이페이지 :: 묶음배송 관리 */
+/* MODAL :: 묶음배송처리안내 */
+.modal-delivery {
+  & .modal__text {
+    line-height: 1.53;
+  }
+  & .delivery_num {
+    color: #82c2bd;
+  }
+  & .model-bundle-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 9px 37px;
+    border-radius: 17.5px;
+    background-color: rgba(230, 230, 230, 0.4);
+    margin-top: 19px;
+  }
+  & .model-bundle-box p {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  & .model-bundle-box p + p:after {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 1px;
+    height: 12px;
+    content: "";
+    background-color: #d8d8d8;
+    transform: translateY(-50%);
+  }
+  & .modal__small-text {
+    margin-top: 19px;
+  }
+  & .modal-button-wrap {
+    margin-top: 40px;
+  }
+  & .modal-button-wrap > * {
+    width: 170px;
+  }
+}
+
+/* 묶음배송관리 페이지 */
+.bundle-shipping-page {
+  & .bundle-shipping {
+    margin-top: 60px;
+  }
+  & .bundle-shipping__tabs {
+    height: 60px;
+  }
+  & .bundle-shipping__tabs button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+  }
+  & .bundle-shipping__tabs .item__country {
+    flex-shrink: 0;
+    width: 23px;
+    height: 23px;
+
+    margin-right: 7px;
+  }
+  & .bundle-shipping__tabs small {
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 2px;
+  }
+
+  & .title-utils {
+    gap: 10px;
+  }
+  & .my-title .basic-button__light-gray-line {
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
+    padding: 12px 16px;
+  }
+  & .bundle-shipping__tabs-content {
+    margin-top: 30px;
+  }
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__row > div {
+    min-height: 125px;
+  }
+  & .basic-table__row > div.td-column {
+    line-height: 1;
+    gap: 10px;
+  }
+
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 84px;
+    margin-right: 30px;
+  }
+
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 150px;
+    margin-right: 50px;
+  }
+  & .basic-table__header > div:nth-child(3),
+  & .basic-table__row > div:nth-child(3) {
+    flex: unset;
+    width: 320px;
+  }
+
+  & .basic-table__row > div:nth-child(1) {
+    color: #707070;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    color: #999;
+  }
+
+  & .basic-table__header > div {
+    height: 50px;
+  }
+  & .table-th {
+    line-height: 1.29;
+  }
+  & .table-item .img-wrap {
+    width: 72px;
+    height: 72px;
+  }
+  & .table-item {
+    gap: 14px;
+  }
+
+  & .bundle-shipping-utils {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  & .bundle-shipping__text {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: #707070;
+  }
+  & .bundle-shipping-utils {
+  }
+  & .bundle-shipping-utils__button-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  & .bundle-shipping-utils__button-wrap > * {
+    width: 174px;
+    height: 45px;
+    border-radius: 22.5px;
+  }
+
+  /* 묶음배송 신청목록 */
+  & .table-group {
+    border: solid 1px #579ee5;
+  }
+
+  & .table-group + .table-group {
+    margin-top: 40px;
+  }
+  & .group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(87, 158, 229, 0.1);
+    padding: 17px 40px;
+  }
+  & .group__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  & .group__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  & .group__utils {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  & .group-header .basic-button__blue {
+    padding: 14px 36px;
+    border-radius: 22.5px;
+  }
+  & .table-group .basic-table__body {
+    background-color: #f7f7f9;
+  }
+
+  & .table-group .basic-table__header > div:nth-child(1),
+  & .table-group .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 120px;
+    margin-right: 10px;
+  }
+
+  & .table-group .basic-table__header > div:nth-child(2),
+  & .table-group .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 150px;
+    margin-right: 30px;
+  }
+  & .table-group .basic-table__header > div:nth-child(3),
+  & .table-group .basic-table__row > div:nth-child(3) {
+    flex: unset;
+    width: 350px;
+    margin-right: 20px;
+  }
+  & .table-group .basic-table__header > div:nth-child(7),
+  & .table-group .basic-table__row > div:nth-child(7) {
+    flex: unset;
+    width: 95px;
+  }
+
+  & .table-group-wrap ~ .bundle-shipping-utils {
+    justify-content: flex-end;
+  }
+  & .table-group-wrap ~ .bundle-shipping-utils .basic-button__light-gray-line {
+    font-weight: 400;
   }
 }

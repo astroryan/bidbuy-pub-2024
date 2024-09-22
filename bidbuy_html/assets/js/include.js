@@ -1982,7 +1982,7 @@ const $DASHBOARD_CONT = `
 </article>
 
 <!-- 나의 쇼핑 현황 -->
-<article class="shopping-status">
+<article class="shopping-status" >
   <div class="shopping-status__header">
     <h2>나의 쇼핑 현황</h2>
     <div class="shopping-status__utils">
@@ -2011,7 +2011,7 @@ const $DASHBOARD_CONT = `
         </a>
       </li>
       <li class="shopping-status__list">
-        <a href="../mypage/wait_pay.html" class="shopping-status__link active">
+        <a href="../mypage/payment_pending.html" class="shopping-status__link active">
           <span class="status-title"
             >1차<br />
             결제대기</span
@@ -2056,8 +2056,8 @@ const $DASHBOARD_CONT = `
       </li>
     </ul>
     <div class="shopping-status__actions">
-      <a href="" class="shopping-status__action my-box box-shadow">묶음배송 관리</a>
-      <a href="" class="shopping-status__action my-box box-shadow">배송지 관리</a>
+      <a href="../mypage/bundle_shipping_management.html" class="shopping-status__action my-box box-shadow">묶음배송 관리</a>
+      <a href="../mypage/shipping.html" class="shopping-status__action my-box box-shadow">배송지 관리</a>
     </div>
   </div>
 

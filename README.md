@@ -2,32 +2,39 @@
 
 ## 페이지 정리
 
-| 폴더 명     | 파일 명                       | 페이지 명                            | 작업상태        |
-| ----------- | ----------------------------- | ------------------------------------ | --------------- |
-| "index"     | index.html                    | 메인페이지                           | 100% ()         |
-| "search"    | index.html                    | 검색페이지                           | 100% ()         |
-| "list"      | exhibition_category_list.html | 전시 카테고리 목록 화면              | 100% ()         |
-| "list"      | system_category_list.html     | 시스템 카테고리 목록 화면            | 100% ()         |
-| "auctions"  | index.html                    | 경매대행상세                         | 100% ( 240919 ) |
-| "auctions"  | complete.html                 | 경매대행상세 > 입찰완료              | 100% ( 240920 ) |
-| "auctions"  | order.html                    | 경매대행상세 > 1차결제               | 100% ( 240921 ) |
-| "auctions"  | order-confirmation.html       | 경매대행상세 > 주문결제완료 상세화면 | 100% ( 240921 ) |
-| "purchases" | index.html                    | 구매대행상세                         | 100% ( 240919 ) |
-| "purchases" | order.html                    | 구매대행상세 > 구매대행신청          | 100% ( 240919 ) |
-| "auth"      | index.html                    | 로그인                               | 100% ( 240920 ) |
-| "auth"      | forgot.html                   | 로그인 > 아이디 비밀번호 찾기        | 100% ( 240920 ) |
-| "signup"    | index.html                    | 회원가입 > 멤버십혜택 약관           | 100% ( 240920 ) |
-| "signup"    | join.html                     | 회원가입 > 가입정보입력              | 100% ( 240920 ) |
-| "signup"    | complete.html                 | 회원가입 > 가입완료                  | 100% ( 240920 ) |
-| "signup"    | sns.html                      | 회원가입 > 간편회원가입              | 100% ( 240920 ) |
-| "cart"      | index.html                    | 장바구니                             | 100% ( 240921 ) |
-| "mypage"    | index.html                    | 마이페이지                           | 100% ( 240922 ) |
-| "mypage"    | order.html                    | 마이페이지 > 주문전체목록            | 100% ( 240922 ) |
-| "mypage"    | order_bid_list.html           | 마이페이지 > 입찰상품(목록)          | 100% ( 240922 ) |
-| "mypage"    | order_auction_list.html       | 마이페이지 > 경매낙찰상품(목록)      | 100% ( 240922 ) |
-| "mypage"    | wait_pay.html                 | 마이페이지 > 1차 결제대기            | 100% ( 240922 ) |
+| 폴더 명     | 파일 명                           | 페이지 명                                                   | 작업상태        |
+| ----------- | --------------------------------- | ----------------------------------------------------------- | --------------- |
+| "index"     | index.html                        | 메인페이지                                                  | 100% ()         |
+| "search"    | index.html                        | 검색페이지                                                  | 100% ()         |
+| "list"      | exhibition_category_list.html     | 전시 카테고리 목록 화면                                     | 100% ()         |
+| "list"      | system_category_list.html         | 시스템 카테고리 목록 화면                                   | 100% ()         |
+| "auctions"  | index.html                        | 경매대행상세                                                | 100% ( 240919 ) |
+| "auctions"  | complete.html                     | 경매대행상세 > 입찰완료                                     | 100% ( 240920 ) |
+| "auctions"  | order.html                        | 경매대행상세 > 1차결제                                      | 100% ( 240921 ) |
+| "auctions"  | order-confirmation.html           | 경매대행상세 > 주문결제완료 상세화면                        | 100% ( 240921 ) |
+| "purchases" | index.html                        | 구매대행상세                                                | 100% ( 240919 ) |
+| "purchases" | order.html                        | 구매대행상세 > 구매대행신청                                 | 100% ( 240919 ) |
+| "auth"      | index.html                        | 로그인                                                      | 100% ( 240920 ) |
+| "auth"      | forgot.html                       | 로그인 > 아이디 비밀번호 찾기                               | 100% ( 240920 ) |
+| "signup"    | index.html                        | 회원가입 > 멤버십혜택 약관                                  | 100% ( 240920 ) |
+| "signup"    | join.html                         | 회원가입 > 가입정보입력                                     | 100% ( 240920 ) |
+| "signup"    | complete.html                     | 회원가입 > 가입완료                                         | 100% ( 240920 ) |
+| "signup"    | sns.html                          | 회원가입 > 간편회원가입                                     | 100% ( 240920 ) |
+| "cart"      | index.html                        | 장바구니                                                    | 100% ( 240921 ) |
+| "mypage"    | index.html                        | 마이페이지                                                  | 100% ( 240922 ) |
+| "mypage"    | order.html                        | 마이페이지 > 주문전체목록                                   | 100% ( 240922 ) |
+| "mypage"    | order_bid_list.html               | 마이페이지 > 입찰상품(목록)                                 | 100% ( 240922 ) |
+| "mypage"    | order_auction_list.html           | 마이페이지 > 경매낙찰상품(목록)                             | 100% ( 240922 ) |
+| "mypage"    | payment_pending.html              | 마이페이지 > 1차 결제대기                                   | 100% ( 240922 ) |
+| "mypage"    | wish.html                         | 마이페이지 > 관심상품, 관심판매자, 관심키워드, 최근 본 상품 | 100% ( 240923 ) |
+| "mypage"    | bundle_shipping_management.html   | 마이페이지 > 묶음배송 관리                                  | 100% ( 240923 ) |
+| "mypage"    | bundle_shipping_management_2.html | 마이페이지 > 묶음배송 관리2                                 | 100% ( 240923 ) |
+| "mypage"    | shipping.html                     | 마이페이지 > 배송지 관리                                    | 0% ( 2409 )     |
 
 <!-- /cs/guide/auction -->
+<!-- recently-viewed-products 최근 -->
+<!-- keep-products 찜한 -->
+<!-- keep-stores 관심 -->
 
 # 사이트 메뉴 구조
 
