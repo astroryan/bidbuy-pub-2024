@@ -39,10 +39,13 @@
     <title>Bidbuy</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
 
     <!-- JS -->
     <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
     <script src="../../assets/js/include.js" defer></script>
     <script src="../../assets/js/common.js" defer></script>
   </head>
@@ -51,78 +54,21 @@
     <div id="content-wrap">
       <!-- START :: HEADER -->
       <header id="header"></header>
-
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
-      <div id="main" class="auth-page login-page">
+      <main id="main" class="cs-page details-page cs-qna-details-page">
+        <!-- 고객센터 DASHBOARD -->
+        <section id="csDashboard" class="cs-dashboard cs-box"></section>
+
         <div class="inner-width">
-          <form class="login-box">
-            <legend class="title">로그인</legend>
-
-            <div class="input-inner-width">
-              <div class="basic-input">
-                <input type="text" placeholder="아이디" required />
-              </div>
-              <div class="basic-input">
-                <input type="password" placeholder="비밀번호" required />
-              </div>
-              <div class="login-options">
-                <div class="basic-check-box__squire gray">
-                  <input type="checkbox" name="" id="saveId" />
-                  <label for="saveId"> <span class="basic-check-box__squire-icon"></span>아이디 저장</label>
-                </div>
-
-                <div class="login-utils">
-                  <a href="../auth/forgot.html">ID/PW찾기</a>
-                  <a href="">이용가이드</a>
-                  <a href="../signup/">회원가입</a>
-                </div>
-              </div>
-              <button type="button" class="basic-button__blue">로그인</button>
-            </div>
-
-            <section class="social-login">
-              <h4><span>소셜간편로그인</span></h4>
-              <div class="social-login-list">
-                <a href="" class="sns-naver">
-                  <p>네이버 로그인</p>
-                </a>
-                <a href="" class="sns-kakao">
-                  <p>카카오 로그인</p>
-                </a>
-                <a href="" class="sns-google">
-                  <p>구글 로그인</p>
-                </a>
-                <a href="" class="sns-apple">
-                  <p>애플 로그인</p>
-                </a>
-              </div>
-            </section>
-          </form>
-
-          <section class="login-banner">
-            <ul>
-              <li>
-                <p>꼼꼼한 현지 서비스</p>
-                <p><b>제품 검수 비용 무료!</b></p>
-              </li>
-              <li>
-                <p>국제 운송비 절감을 위한</p>
-                <p><b>묶음배송비 0원!</b></p>
-              </li>
-              <li>
-                <p>안전한 국제 운송을 위해</p>
-                <p><b>재포장비 전액 무료!</b></p>
-              </li>
-              <li>
-                <p>업계 최고! 최대 45dlf</p>
-                <p><b>창고보관료 무료!</b></p>
-              </li>
-            </ul>
+          <!-- 1:1 문의하기-->
+          <section class="cs-notice-details">
+            <h3 class="cs-title">
+              <b>1:1 문의하기</b>
+            </h3>
           </section>
         </div>
-      </div>
-
+      </main>
       <!-- END :: MAIN -->
       <!-- START :: FOOTER -->
       <footer id="footer"></footer>

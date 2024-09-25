@@ -1,0 +1,741 @@
+@charset "utf-8";
+/* 고객센터 공통 */
+.cs-page {
+  padding-bottom: 126px;
+
+  & .cs-title {
+    font-size: 20px;
+    color: #000;
+    padding-bottom: 20px;
+  }
+  & .cs-title:has(:is(.cs-title__sub, .title-utils)) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  & .title-utils {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+  & .cs-title .basic-select-box {
+    width: 145px;
+    height: 40px;
+  }
+  & .cs-title .basic-select-box select {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  & .cs-title .basic-input input {
+    width: 234px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 15px;
+  }
+
+  & .cs-title .basic-button__gray {
+    width: 98px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  & .cs-sub-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.39;
+    color: #000;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  & .small-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #707070;
+  }
+  & .cs-box {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  & .cs-box.line {
+    border: solid 1px #dedede;
+  }
+  & .cs-box.box-shadow {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  & .cs-dashboard {
+    background-color: #f7f7f9;
+  }
+  & .cs-dashboard .inner-width {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 43px;
+  }
+  & .cs-dashboard__card-banner {
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+    height: 259px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.36;
+    color: #fff;
+    padding: 46px 21px;
+    background: url("../images/banner/cs_card.png") no-repeat center / cover;
+  }
+  & .cs-dashboard__card-banner:after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    content: "";
+    width: 41px;
+    height: 41px;
+    background: url("../images/icon/arrow_cs_arrow.svg") no-repeat center / contain;
+  }
+
+  & .cs-menu {
+    flex: 0 0 933px;
+    gap: 46px;
+    display: flex;
+  }
+
+  & .cs-menu-box {
+    position: relative;
+    flex: 1;
+    padding: 20px 16px;
+    overflow: unset;
+  }
+  & .cs-menu-box + .cs-menu-box:after {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: -23px;
+    content: "";
+    background: url(../images/icon/arrow_right_gray.svg) no-repeat center / contain;
+    transform: translateX(-50%);
+  }
+  & .cs-menu__title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #82c2bd;
+    margin-bottom: 8px;
+  }
+  & .cs-menu__sub-title {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  & .cs-menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  & .cs-menu-list > a {
+    display: grid;
+    place-content: center;
+    width: calc(100% / 2 - 10px / 2);
+    height: 70px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    text-align: center;
+    letter-spacing: -0.28px;
+    color: #707070;
+    border-radius: 10px;
+    border: solid 1px #e6e6e6;
+    background-color: #f7f7f9;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  & .cs-menu-list > a:hover {
+    color: #000;
+    border: solid 1.5px #82c2bd;
+  }
+
+  & .tabs button {
+    height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  & .cs-table-utils {
+    margin-top: 50px;
+  }
+  & .basic-pagination {
+    justify-content: center;
+  }
+}
+
+/* 고객센터 :: 메인 */
+.cs-main-page {
+  & .cs-main-wrap {
+    display: flex;
+    gap: 20px;
+    padding-top: 40px;
+  }
+  & .cs-qna-box {
+    flex-shrink: 0;
+    width: 257px;
+    background-color: rgba(87, 158, 229, 0.1);
+    padding: 34px 23px 30px;
+  }
+  & .cs-qna-box h3 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: #579ee5;
+    margin-bottom: 38px;
+  }
+  & .qna-list-button,
+  & .qua-submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 14px 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.11);
+  }
+  & .qua-submit-button {
+    margin-top: 20px;
+  }
+  & .qna-list-button:after,
+  & .qua-submit-button:after {
+    content: "";
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+  & .qna-list-button:after {
+    background: url("../images/icon/qna.svg") no-repeat center / contain;
+  }
+  & .qua-submit-button:after {
+    background: url("../images/icon/qna_submit.svg") no-repeat center / contain;
+  }
+  & .cs-news-box {
+    flex-shrink: 0;
+    width: 430px;
+    padding: 25px;
+  }
+
+  & .cs-news-inner {
+    padding-top: 22px;
+  }
+  & .cs-news__item + .cs-news__item {
+    margin-top: 18px;
+  }
+  & .cs-news__list .item__country {
+    margin-right: 15px;
+  }
+
+  & .cs-news__item {
+    display: flex;
+    align-items: center;
+  }
+  & .cs-news__title {
+    flex-shrink: 0;
+    width: 275px;
+    padding-right: 20px;
+  }
+  & .cs-news__date {
+    font-size: 12px;
+    text-align: right;
+    color: #707070;
+  }
+  & .cs-contact-box {
+    flex: 1;
+    padding: 25px 20px 30px;
+  }
+  & .cs-contact-inner {
+    padding-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 34px;
+  }
+  & .cs-contact-box dl {
+    display: flex;
+    align-items: center;
+    width: calc(100% / 2 - 34px / 2);
+  }
+
+  & .cs-contact-box dt {
+    position: relative;
+    flex-shrink: 0;
+    width: 136px;
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+  }
+  & .cs-contact-box dt::before {
+    content: "";
+    flex-shrink: 0;
+    width: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  & .cs-contact-box dd {
+    flex: 1;
+    font-size: 13px;
+    color: #000;
+  }
+
+  /* 자주하는 질문 */
+  & .cs-faq {
+    margin-top: 58px;
+  }
+  & .faq__tabs {
+    flex-wrap: wrap;
+  }
+  & .faq__tabs button {
+    flex: unset;
+    flex-shrink: 0;
+    width: 25%;
+  }
+  & .faq__tabs button:nth-child(n + 5) {
+    border-top: 1px solid #e6e6e6;
+  }
+  & .faq__tabs-content {
+    margin-top: 30px;
+  }
+
+  & .faq-list__item {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  & .faq__accordion-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: -0.15px;
+    padding: 17px 0;
+  }
+
+  & .faq__accordion-button:after {
+    content: "";
+    width: 29px;
+    height: 29px;
+    background: url("../images/icon/arrow_down_gray.svg") no-repeat center / contain;
+  }
+  & .faq__content {
+    display: none;
+    background-color: #f7f7f9;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.14px;
+    padding: 20px;
+    overflow: hidden;
+    transition: all 0.5s linear;
+  }
+  & .faq__accordion-button.active:after {
+    transform: rotate(-180deg);
+  }
+  & .faq__accordion-button.active ~ .faq__content {
+    display: block;
+  }
+  & .cs-faq__utils {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+  & .cs-faq__utils .basic-button__light-gray-line {
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 23px;
+  }
+  & .cs-faq__utils .basic-button__light-gray-line:after {
+    content: "";
+    width: 12.6px;
+    height: 13.1px;
+    background: url("../images/icon/sort.svg") no-repeat center / contain;
+  }
+}
+
+/* 고객센터 :: 이용안내 = 비드바이 배송·통관·관세 안내 */
+.cs-guide-page {
+  & .cs-guide {
+    margin-top: 50px;
+  }
+
+  & .cs-title {
+    padding-bottom: 30px;
+  }
+
+  & .guide__sub-tabs {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  & .guide__sub-tabs button {
+    position: relative;
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: #707070;
+    padding: 19px 0;
+  }
+  & .guide__sub-tabs button + button:after {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 1px;
+    height: 13px;
+    background-color: #dedede;
+    content: "";
+    transform: translateY(-50%);
+  }
+  & .guide__sub-tabs-content {
+    padding-bottom: 30px;
+  }
+  & .sub-content-wrap {
+    padding: 30px 0;
+  }
+  & .sub-content-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2.13;
+    letter-spacing: -0.32px;
+    color: #000;
+  }
+  & .sub-content-desc {
+    font-size: 14px;
+    line-height: 1.57;
+    letter-spacing: -0.14px;
+    color: #333;
+    margin-top: 19px;
+  }
+  & .guide-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 21px;
+  }
+  & .guide-list__item {
+    flex: 1;
+  }
+  & .guide-list__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95px;
+    font-size: 16px;
+    color: #000;
+    padding: 22px;
+    background-color: rgba(87, 158, 229, 0.1);
+  }
+
+  & .guide-list__details {
+    counter-reset: guideList;
+  }
+  & .guide-list__details li {
+    display: flex;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid #dedede;
+  }
+  & .guide-list__details > li:before {
+    display: grid;
+    place-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: #579ee5;
+    color: #fff;
+    counter-increment: guideList 1;
+    content: counter(guideList);
+    margin-right: 12px;
+    border-radius: 50%;
+  }
+}
+
+/* 고객센터 :: 공지사항 목록 */
+.cs-notice-page {
+  & .cs-notice {
+    padding-top: 40px;
+  }
+
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__header > div {
+    height: 50px;
+  }
+  & .basic-table__row > div {
+    height: 50px;
+    padding: 0 5px;
+  }
+
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 90px;
+    margin-right: 80px;
+  }
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 680px;
+    margin-right: 20px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    gap: 7.5px;
+    color: #707070;
+  }
+  & .notice-badge {
+    display: grid;
+    place-content: center;
+    width: 58px;
+    height: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #579ee5;
+  }
+}
+
+/* 고객센터 :: 1:1문의 */
+.qna-page {
+  & .cs-qna {
+    padding-top: 50px;
+  }
+
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__header > div {
+    height: 50px;
+  }
+  & .basic-table__row > div {
+    height: 50px;
+    padding: 0 5px;
+  }
+
+  & .basic-table__header > div:nth-child(4),
+  & .basic-table__row > div:nth-child(4) {
+    flex: unset;
+    width: 680px;
+    margin-right: 20px;
+  }
+
+  & .add-answer .answer-text {
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    text-align: center;
+    color: #579ee5;
+    text-decoration: underline;
+  }
+}
+
+/* 글 상세페이지 */
+.details-page {
+  & .cs-notice-details {
+    padding-top: 50px;
+  }
+  & .details-header {
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  & .details-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
+  }
+  & .details-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 0;
+    border-top: 1px solid #d8d8d8;
+  }
+  & .details-title__wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  & .details-title__wrap b {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.16px;
+    white-space: nowrap;
+    color: #707070;
+    margin-right: 10px;
+  }
+  & .details-title {
+    font-size: 16px;
+    font-weight: bold;
+    word-break: break-all;
+    letter-spacing: -0.16px;
+    padding-right: 30px;
+  }
+
+  & .details-title__utils {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  & .details-title__utils p {
+    position: relative;
+    letter-spacing: -0.28px;
+    color: #707070;
+    white-space: nowrap;
+  }
+  & .details-title__utils p + p:after {
+    position: absolute;
+    top: 50%;
+    left: -14px;
+    width: 1px;
+    height: 13px;
+    background-color: #dedede;
+    content: "";
+    transform: translateY(-50%);
+  }
+  & .details-id {
+    letter-spacing: -0.28px;
+    text-align: left;
+    color: #707070;
+  }
+  & .answer-status {
+    color: #707070;
+    text-decoration: underline;
+  }
+  & .details-wrap {
+    padding: 38px 0;
+  }
+
+  & .answer-wrap {
+    padding: 23px 20px;
+    background-color: #f7f7f9;
+    margin-top: 20px;
+  }
+  & :is(.details-wrap, .answer-wrap) p {
+    font-size: 14px;
+    line-height: 1.57;
+    letter-spacing: -0.14px;
+    color: #000;
+  }
+  & .details-list {
+    margin-top: 38px;
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  & .details-list__item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+  }
+  & .details-list__item + .details-list__item {
+    border-top: 1px solid #d8d8d8;
+  }
+  & .details-list__num {
+    flex-shrink: 0;
+    width: 80px;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+    margin-right: 80px;
+  }
+
+  & .details-list__title {
+    width: 700px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    letter-spacing: -0.14px;
+    color: #707070;
+  }
+  & .details-list__item > p:not(.details-views) {
+    flex: 1;
+    text-align: center;
+  }
+  & .details-views {
+    flex-shrink: 0;
+    text-align: center;
+    width: 80px;
+  }
+
+  & .details-bottom-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  & .details-bottom__button-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  & .details-bottom__button-wrap > * {
+    width: 150px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 22.5px;
+  }
+  & .details-bottom__button-wrap .basic-button__light-gray-line {
+    font-weight: 400;
+  }
+
+  & .list-button {
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    padding: 10px 23px;
+    border-radius: 4px;
+    border: solid 1px #d8d8d8;
+  }
+  & .list-button:after {
+    content: "";
+    width: 12.6px;
+    height: 13.1px;
+    background: url("../images/icon/sort.svg") no-repeat center / contain;
+  }
+}
+
+.notice-details__bottom {
+  margin-top: 40px;
+
+  & .details-list {
+    margin-top: 20px;
+  }
+
+  & .details-list__item > p {
+    flex: unset !important;
+    flex-shrink: 0;
+    width: 100px;
+  }
+  & .details-list__item .details-list__title {
+    margin-left: 30px;
+  }
+  & .answer-status {
+    margin-left: auto;
+    text-decoration: none;
+  }
+  & .answer-status.complete {
+    text-decoration: underline;
+    color: #579ee5;
+  }
+}

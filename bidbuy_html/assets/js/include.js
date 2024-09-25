@@ -99,7 +99,7 @@ const $HEADER_CONT = `
     </button>
   </li>
   <li>
-    <a href="" class="header__util util-cart">
+    <a href="../cart/index.html" class="header__util util-cart">
       <span class="blind">장바구니</span>
       <span class="util-card-num"><b>7</b></span>
     </a>
@@ -625,8 +625,8 @@ const $HEADER_CONT = `
           </li>
         </ul>
         <ul class="header__gnb-utils">
-          <li><a href="">커뮤니티</a></li>
-          <li><a href="">고객센터</a></li>
+          <li><a href="../community/index.html">커뮤니티</a></li>
+          <li><a href="../cs/index.html">고객센터</a></li>
           <li><a href="">구매대행요청</a></li>
         </ul>
       </div>
@@ -1295,7 +1295,7 @@ const $HEADER_CONT = `
           <div class="swiper in-progress-items-swiper item-list">
             <div class="swiper-wrapper">
               <li class="swiper-slide item-box simple">
-                <a href="">
+                <a href="../auctions/index.html">
                 <figure class="item__img img-wrap">
                   <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                 </figure>
@@ -1313,7 +1313,7 @@ const $HEADER_CONT = `
                 </li>
                 
                 <li class="swiper-slide item-box simple">
-                <a href="">
+                <a href="../auctions/index.html">
                 <figure class="item__img img-wrap">
                   <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
                 </figure>
@@ -1897,84 +1897,84 @@ const $FOOTER_CONT = `
 `;
 
 // 공통 마이페이지 대쉬보드
-const $DASHBOARD_CONT = `
+const $MYPAGE_DASHBOARD_CONT = `
 <div class="inner-width">
-<article class="dashboard__profile">
-  <div class="dashboard-left-box my-box box-shadow">
-    <div class="dashboard__profile-links">
+<article class="my-dashboard__profile">
+  <div class="my-dashboard-left-box my-box box-shadow">
+    <div class="my-dashboard__profile-links">
       <a href="" class="profile-link">개인정보관리</a>
       <a href="" class="profile-link">로그아웃</a>
     </div>
-    <div class="dashboard__profile-info">
-      <div class="dashboard__img-wrap img-wrap">
+    <div class="my-dashboard__profile-info">
+      <div class="my-dashboard__img-wrap img-wrap">
         <img src="../../assets/images/dummy/user.png" alt="프로필이미지" />
       </div>
-      <div class="dashboard__profile-box">
-        <p class="dashboard__username"><b>홍길동</b>님</p>
-        <div class="dashboard-progress">
-          <p class="dashboard__user-rank">우수회원</p>
-          <div class="dashboard-progress-bar">
+      <div class="my-dashboard__profile-box">
+        <p class="my-dashboard__username"><b>홍길동</b>님</p>
+        <div class="my-dashboard-progress">
+          <p class="my-dashboard__user-rank">우수회원</p>
+          <div class="my-dashboard-progress-bar">
             <progress value="100" max="190"></progress>
           </div>
-          <p class="dashboard-progress__percentage"><span>80%</span> 진행</p>
-          <div class="dashboard__membership-status">
+          <p class="my-dashboard-progress__percentage"><span>80%</span> 진행</p>
+          <div class="my-dashboard__membership-status">
             <figure><img src="../../assets/images/icon/rank_premium.png" alt="premium" /></figure>
             프리미엄
           </div>
         </div>
       </div>
     </div>
-    <div class="dashboard__menu">
+    <div class="my-dashboard__menu">
       <a href="">
-        <div class="dashboard__menu-icon">
-          <span class="dashboard__menu-notification">2</span>
+        <div class="my-dashboard__menu-icon">
+          <span class="my-dashboard__menu-notification">2</span>
         </div>
         <b>1:1문의</b>
       </a>
 
       <a href="">
-        <div class="dashboard__menu-icon"></div>
+        <div class="my-dashboard__menu-icon"></div>
         <b>메모알림</b>
       </a>
 
-      <a href="">
-        <div class="dashboard__menu-icon"></div>
+      <a href="../mypage/wish.html">
+        <div class="my-dashboard__menu-icon"></div>
         <b>관심상품</b>
       </a>
 
-      <a href="">
-        <div class="dashboard__menu-icon"></div>
+      <a href="../mypage/wish.html">
+        <div class="my-dashboard__menu-icon"></div>
         <b>최근 본 상품</b>
       </a>
 
-      <a href="">
-        <div class="dashboard__menu-icon"></div>
+      <a href="../mypage/wish.html">
+        <div class="my-dashboard__menu-icon"></div>
         <b>나의 즐겨찾기</b>
       </a>
     </div>
   </div>
-  <div class="dashboard-side-box my-box box-shadow">
-    <a href="" class="dashboard__bid-point">
+  <div class="my-dashboard-side-box my-box box-shadow">
+    <a href="../mypage/management.html" class="my-dashboard__bid-point">
       <p class="side-title">등급포인트</p>
       <p class="side-value p_1"><b>180</b>점</p>
     </a>
-    <a href="" class="dashboard__coupon">
+    <a href="../mypage/management.html" class="my-dashboard__coupon">
       <p class="side-title">쿠폰</p>
       <p class="side-value p_1"><b>8</b>장</p>
     </a>
-    <a href="" class="dashboard__ticket">
+    <a href="../mypage/management.html" class="my-dashboard__ticket">
       <p class="side-title">정액권</p>
       <p class="side-value p_1"><b>1</b>개월 (잔여 20회)</p>
     </a>
-    <a href="" class="dashboard__deposit">
+    <a href="../mypage/management.html" class="my-dashboard__deposit">
       <p class="side-title">예치금</p>
       <p class="side-value p_1"><b>100</b></p>
     </a>
-    <a href="" class="dashboard__yahoo-point">
+    <a href="../mypage/management.html" class="my-dashboard__yahoo-point">
       <p class="side-title">야후보증금</p>
       <p class="side-value p_1"><b>3,000,000</b>원</p>
     </a>
-    <a href="" class="dashboard__ebay-point">
+    <a href="../mypage/management.html" class="my-dashboard__ebay-point">
       <p class="side-title">이베이보증금</p>
       <p class="side-value p_1"><b>30,000</b></p>
     </a>
@@ -2118,15 +2118,69 @@ const $DASHBOARD_CONT = `
 </div>
 `;
 
+// 공통 고객센터 대쉬보드
+const $CS_DASHBOARD_CONT = `
+<div class="inner-width">
+<a class="cs-dashboard__card-banner cs-box box-shadow">
+  <h2>
+    비드바이 4대<br />
+    무료서비스안내
+  </h2>
+</a>
+
+<!-- 쇼핑하기 | 국제배송 | 배송완료 -->
+<article class="cs-menu">
+  <div class="cs-menu-box cs-box box-shadow">
+    <h3 class="cs-menu__title">쇼핑하기</h3>
+    <p class="cs-menu__sub-title">입찰참여 & 해외구매</p>
+    <div class="cs-menu-list">
+      <a href="" class="active">경매입찰<br />안내</a>
+      <a href="">해외구매<br />안내</a>
+      <a href="">1차-결제<br />안내</a>
+      <a href="">각종<br />주의사항</a>
+    </div>
+  </div>
+  <div class="cs-menu-box cs-box box-shadow">
+    <h3 class="cs-menu__title">국제배송</h3>
+    <p class="cs-menu__sub-title">물품검수 & 2차-결제</p>
+    <div class="cs-menu-list">
+      <a href="">묶음배송<br />신청</a>
+      <a href="">BIDBUY<br />혜택</a>
+      <a href="">2차-결제<br />안내</a>
+      <a href="">운송스케줄/<br />통관안내</a>
+    </div>
+  </div>
+  <div class="cs-menu-box cs-box box-shadow">
+    <h3 class="cs-menu__title">배송완료</h3>
+    <p class="cs-menu__sub-title">수입통관 & 물품수령</p>
+    <div class="cs-menu-list">
+      <a href="">수입통관<br />조회</a>
+      <a href="">각종신고<br />납부안내</a>
+      <a href="">관부가세<br />안내</a>
+      <a href="">후기평가<br />혜택</a>
+    </div>
+  </div>
+</article>
+</div>
+`;
+
 const $HEADER = document.getElementById("header");
 const $FOOTER = document.getElementById("footer");
 const $MYPAGE = document.getElementById("myDashBoard");
-if ($HEADER) {
-  $HEADER.innerHTML = $HEADER_CONT;
-}
-if ($FOOTER) {
-  $FOOTER.innerHTML = $FOOTER_CONT;
-}
-if ($MYPAGE) {
-  $MYPAGE.innerHTML = $DASHBOARD_CONT;
-}
+const $CS = document.getElementById("csDashboard");
+
+window.addEventListener("DOMContentLoaded", () => {
+  if ($HEADER) {
+    $HEADER.innerHTML = $HEADER_CONT;
+  }
+  if ($FOOTER) {
+    $FOOTER.innerHTML = $FOOTER_CONT;
+  }
+  if ($MYPAGE) {
+    $MYPAGE.innerHTML = $MYPAGE_DASHBOARD_CONT;
+  }
+  if ($CS) {
+    $CS.innerHTML = $CS_DASHBOARD_CONT;
+  }
+  console.log($CS);
+});

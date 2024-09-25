@@ -77,19 +77,6 @@ body.overflow-hidden {
   padding-right: var(--scrollbar-width);
 }
 
-/* input,
-select,
-textarea,
-button {
-  font-family: "Pretendard", sans-serif;
-  color: #fff;
-}
-
-input,
-textarea {
-  color: #444;
-} */
-
 input::placeholder,
 textarea::placeholder {
   color: #898989;
@@ -103,13 +90,9 @@ textarea::placeholder {
   background-color: #fff;
 }
 ::-webkit-scrollbar-thumb {
-  /* background-color: rgba(0, 0, 0, 0.2); */
   background-color: #e6e6e6;
   border-radius: 3px;
 }
-/* ::selection {
-  background: #d4c951;
-} */
 
 /* 더블클릭시 선택 기능 막기*/
 .unable {
@@ -156,8 +139,8 @@ textarea::placeholder {
 }
 
 /* COMMON */
-input:disabled,
-input:read-only {
+.disabled input:disabled,
+.disabled input:read-only {
   background-color: #d8d8d8 !important;
   color: #898989 !important;
 }
@@ -268,10 +251,6 @@ input:read-only {
   padding: 60px 20px 40px;
   text-align: center;
 }
-.modal__content {
-}
-.modal__text {
-}
 .modal__text b {
   font-size: 17px;
   font-weight: bold;
@@ -381,43 +360,6 @@ input:read-only {
 .basic-button__blue:hover {
   background-color: #6aa9f0;
 }
-/* .basic-button__blue-line:hover {
-  color: var(--mainBlue);
-  background-color: var(--white);
-  border: 1px solid var(--mainBlue);
-}
-.basic-button__blue-bg-line:hover {
-  color: var(--mainBlue);
-  background-color: rgba(87, 158, 229, 0.1);
-  border: 1px solid var(--mainBlue);
-}
-.basic-button__dark-gray:hover {
-  color: var(--white);
-  background-color: #646464;
-}
-.basic-button__gray:hover {
-  color: var(--white);
-  background-color: #707070;
-}
-.basic-button__gray-line:hover {
-  background-color: #fff;
-  color: #707070;
-  border: 1px solid #707070;
-}
-.basic-button__light-gray-line:hover {
-  background-color: #fff;
-  border: 1px solid #dedede;
-}
-.basic-button__black:hover {
-  background-color: #000;
-  color: #fff;
-}
-.basic-button__black-line:hover {
-  color: #000;
-  background-color: #fff;
-  font-weight: 400;
-  border: solid 1px #000;
-} */
 /* INPUT */
 .basic-input {
   position: relative;
@@ -543,11 +485,6 @@ input[type="date"]:valid::before {
   border: 1px solid var(--mainBlue);
 }
 
-.tabs-content {
-}
-.tabs-content > li {
-}
-
 /* Pagination */
 .basic-pagination {
   display: flex;
@@ -647,14 +584,6 @@ input[type="radio"] label {
   background-color: #fff;
   white-space: nowrap;
 }
-/* .tab-check-button label::after {
-  content: attr(title);
-  display: block;
-  font-weight: bold;
-  height: 0px;
-  visibility: hidden;
-} */
-
 .tab-check-button input:checked ~ label {
   font-weight: bold;
   color: #579ee5;
@@ -781,16 +710,6 @@ input[type="radio"] label {
   padding: 80px 0;
   border-bottom: solid 1px #d8d8d8;
 }
-/* .basic-table__row small {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 1.58;
-  letter-spacing: -0.24px;
-  color: #707070;
-} */
-/* .basic-table__row .td-center {
-  text-align: center;
-} */
 
 /* 번역 등록 버튼 */
 .translation-button {
@@ -815,30 +734,6 @@ input[type="radio"] label {
   background: url("../images/icon/translation.svg") no-repeat center / contain;
 }
 /* 관심키워드 등록 버튼 */
-/* .like-keyword-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  font-size: 14px;
-  white-space: nowrap;
-  font-weight: 500;
-  color: #666;
-  padding: 12px 18px;
-  border-radius: 4px;
-  border: solid 1px #dedede;
-  background-color: #fff;
-}
-.like-keyword-button:after {
-  content: "";
-  flex-shrink: 0;
-  width: 12px;
-  height: 12px;
-  background: url("../images/icon/star_gray_empty.svg") no-repeat center / contain;
-}
-.like-keyword-button.active:after {
-  background-image: url("../images/icon/star_blue.svg");
-} */
 .like-keyword-button {
   align-items: center;
   padding: 12px 18px;
@@ -918,8 +813,6 @@ input[type="radio"] label {
 }
 
 /* ITEM LIST */
-.item-list {
-}
 .item-box {
   position: relative;
   border: 1px solid #dedede;
@@ -949,7 +842,6 @@ input[type="radio"] label {
   max-width: 100%;
   overflow: hidden;
 }
-
 .item__info {
   padding: 12px 17px 22px;
 }
@@ -1007,7 +899,6 @@ input[type="radio"] label {
   margin-top: 17px;
 }
 .item__price p {
-  /* flex: 0; */
   color: #000;
   font-size: 18px;
   font-weight: 700;
@@ -1082,12 +973,7 @@ input[type="radio"] label {
   letter-spacing: -0.24px;
 }
 .item-button__cart {
-  /* @@@@ */
   background: var(--mainBlue) url("../images/icon/cart_white.svg") no-repeat center / 20px 19px;
-}
-.item-button__bid {
-}
-.item-button__buy {
 }
 .item-button__check {
   background: #646464 url("../images/icon/item_check.svg") no-repeat center / 16px 22px;
@@ -1146,10 +1032,6 @@ input[type="radio"] label {
 }
 
 /* ITEM LIST [SIMPLE] */
-
-.item-list {
-}
-
 .item-box.simple .item__img {
   height: 117px;
 }
@@ -1287,9 +1169,6 @@ input[type="radio"] label {
 
 /* HEADER */
 #header {
-  /* position: sticky;
-  top: 0;
-  left: 0; */
   width: 100%;
   background-color: var(--white);
   z-index: 15;
@@ -1878,9 +1757,6 @@ input[type="radio"] label {
   border-radius: 0px 0px 12px 12px;
   z-index: 5;
 }
-.dropdown-menu {
-}
-
 [class^="dropdown-menu__depth"] {
   display: flex;
   flex-shrink: 0;
@@ -1970,7 +1846,6 @@ input[type="radio"] label {
 
 .dropdown-menu__items .item-box {
   flex-shrink: 0;
-  /* width: calc(50% - 15px); */
   width: 224px;
 }
 /* 알림 */
@@ -2243,7 +2118,6 @@ input[type="radio"] label {
 .in-progress__title {
   font-size: 16px;
   font-weight: 400;
-  /* padding: 15px 0 8px; */
   padding-bottom: 8px;
   border-bottom: 1px solid #dedede;
 }
@@ -2312,8 +2186,6 @@ input[type="radio"] label {
   height: 33px;
   background: url("../images/icon/custom_shopping.svg") no-repeat center / contain;
 }
-.custom-shopping__box {
-}
 .custom-shopping__list {
   max-height: 50vh;
   overflow-y: scroll;
@@ -2336,10 +2208,6 @@ input[type="radio"] label {
   border: 1.5px solid var(--mainBlue);
   transition: all 0.3s;
   opacity: 0;
-}
-.custom-shopping__list li:hover:after {
-}
-.custom-shopping__list li.active {
 }
 .custom-shopping__list li.active:after {
   opacity: 1;
@@ -2368,20 +2236,9 @@ input[type="radio"] label {
   letter-spacing: -0.02em;
   border-radius: 24px;
 }
-/* .custom-shopping__button-wrap .basic-button__gray-line {
-  font-weight: 400;
-} */
 /* 맞춤쇼핑 - 로그인 후 */
 .in-progress-items-swiper {
   padding: 20px 0 30px;
-}
-/* .in-progress__items {
-  display: flex;
-  gap: 14px;
-  padding: 20px 0 30px;
-} */
-
-.custom-shopping__tab-wrap {
 }
 .custom-shopping__tabs {
   height: 45px;
@@ -2396,9 +2253,6 @@ input[type="radio"] label {
 .like-item-swiper .swiper-slide {
   height: calc((100% - 20px) / 3) !important;
 }
-/* .like-item__list .item-list-box + .item-list-box {
-  margin-top: 10px;
-} */
 .item-list-box a {
   display: flex;
   align-items: center;
@@ -2472,10 +2326,6 @@ input[type="radio"] label {
   border-radius: 5px;
   border: solid 1px #dedede;
 }
-
-.custom-shopping__board-wrap {
-  /* display: none; */
-}
 .custom-shopping__board + .custom-shopping__board {
   margin-top: 32px;
 }
@@ -2498,21 +2348,6 @@ input[type="radio"] label {
 .custom-shopping__board-wrap > li:nth-child(3) .in-progress__title::before {
   background-image: url("../images/icon/category_board_03.svg");
 }
-.custom-shopping__board-title {
-}
-/* .custom-shopping__board-title {
-  display: flex;
-}
-.custom-shopping__board-title h4 {
-  font-size: 16px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.44;
-  letter-spacing: -0.32px;
-  text-align: left;
-  color: #000;
-} */
 .custom-shopping__board-title span {
   font-weight: 400;
 }

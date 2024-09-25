@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- START :: HEADER -->
+      <header id="header"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="my-page info-page">
+        <!-- 마이페이지 DASHBOARD -->
+        <section id="myDashBoard" class="my-dashboard simple"></section>
+
+        <div class="inner-width">
+          <div class="info-edit-wrap">
+            <div class="info-edit-left-con">
+              <!-- 기본정보관리 -->
+              <article class="info-manage">
+                <h3 class="my-title"><b>기본정보관리</b>(필수)</h3>
+                <ul class="my-box line">
+                  <li class="info-edit__input-group">
+                    <label for="" class="info-edit__input-title">아이디</label>
+                    <div class="info-edit__input-value">
+                      <div class="basic-input half-input disabled">
+                        <input id="" type="text" value="identity" required disabled />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="info-edit__input-group">
+                    <label for="" class="info-edit__input-title">비밀번호</label>
+                    <div class="info-edit__input-value">
+                      <div class="basic-input half-input">
+                        <input id="" type="password" required />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="info-edit__input-group">
+                    <label for="" class="info-edit__input-title">비밀번호확인</label>
+                    <div class="info-edit__input-value">
+                      <div class="basic-input half-input">
+                        <input id="" type="password" required />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="info-edit__input-group">
+                    <label for="" class="info-edit__input-title">성명</label>
+                    <div class="info-edit__input-value">
+                      <div class="basic-input half-input">
+                        <input id="" type="text" required />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="info-edit__input-group">
+                    <label for="" class="info-edit__input-title">생년월일</label>
+                    <div class="info-edit__input-value overflow-text">
+                      <div class="basic-input half-input disabled">
+                        <input id="" type="text" value="1977년 01월 01일(음력)" required disabled />
+                      </div>
+                      <div class="info-edit__gray-text">생년월일은 최초 한 번만 등록 가능</div>
+                    </div>
+                  </li>
+                  <li class="info-edit__input-group">
+                    <label for="" class="info-edit__input-title">이메일</label>
+                    <div class="info-edit__input-value">
+                      <div class="basic-input half-input">
+                        <input id="" type="text" required />
+                      </div>
+                      <button type="button" class="basic-button__light-gray-line">인증하기</button>
+                    </div>
+                  </li>
+                  <li class="info-edit__input-group">
+                    <label for="" class="info-edit__input-title">휴대전화번호</label>
+                    <div class="info-edit__input-value">
+                      <div class="basic-input half-input">
+                        <input id="" type="text" inputmode="numeric" required />
+                      </div>
+                      <button type="button" class="basic-button__light-gray-line">인증하기</button>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+              <!-- 소셜계정 연동 (소셜간편 로그인 및 회원가입) -->
+              <article class="info-social">
+                <h3 class="my-title"><b>소셜계정 연동</b>(소셜간편 로그인 및 회원가입)</h3>
+                <ul class="my-box line info-edit__sns">
+                  <li class="info-edit__naver">
+                    <div class="info-edit__sns-icon"></div>
+                    <div class="toggle-check-button">
+                      <input id="naver" type="checkbox" checked />
+                      <label for="naver"><span class="toggle-check-button__circle"></span></label>
+                    </div>
+                  </li>
+                  <li class="info-edit__kakao">
+                    <div class="info-edit__sns-icon"></div>
+                    <div class="toggle-check-button">
+                      <input id="kakao" type="checkbox" checked />
+                      <label for="kakao"><span class="toggle-check-button__circle"></span></label>
+                    </div>
+                  </li>
+                  <li class="info-edit__goggle">
+                    <div class="info-edit__sns-icon"></div>
+                    <div class="toggle-check-button">
+                      <input id="goggle" type="checkbox" />
+                      <label for="goggle"><span class="toggle-check-button__circle"></span></label>
+                    </div>
+                  </li>
+                  <li class="info-edit__apple">
+                    <div class="info-edit__sns-icon"></div>
+                    <div class="toggle-check-button">
+                      <input id="apple" type="checkbox" />
+                      <label for="apple"><span class="toggle-check-button__circle"></span></label>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+            </div>
+            <!-- 추가정보관리(선택) -->
+            <article class="info-extra">
+              <h3 class="my-title"><b>추가정보관리</b>(선택)</h3>
+              <ul class="my-box line">
+                <li class="info-edit__input-group">
+                  <label for="" class="info-edit__input-title">일반전화번호</label>
+                  <div class="info-edit__input-value">
+                    <div class="basic-input half-input">
+                      <input id="" type="text" />
+                    </div>
+                  </div>
+                </li>
+                <li class="info-edit__input-group">
+                  <label for="" class="info-edit__input-title">주소</label>
+                  <div class="info-edit__input-value">
+                    <div class="basic-input half-input">
+                      <input id="" type="text" disabled />
+                    </div>
+                    <button type="button" class="basic-button__light-gray-line">우편번호검색</button>
+                  </div>
+                </li>
+                <li class="info-edit__input-group">
+                  <p class="info-edit__input-title"></p>
+                  <div class="info-edit__input-value">
+                    <div class="basic-input">
+                      <input id="" type="text" />
+                    </div>
+                  </div>
+                </li>
+                <li class="info-edit__input-group">
+                  <p class="info-edit__input-title"></p>
+                  <div class="info-edit__input-value">
+                    <div class="basic-input">
+                      <input id="" type="text" />
+                    </div>
+                  </div>
+                </li>
+                <li class="info-edit__input-group">
+                  <p class="info-edit__input-title"></p>
+                  <div class="info-edit__input-value">
+                    <div class="basic-check-box__squire gray">
+                      <input type="checkbox" name="" id="default-addr" />
+                      <label for="default-addr">
+                        <span class="basic-check-box__squire-icon black"></span>기본배송지 지정(추가)</label
+                      >
+                    </div>
+                  </div>
+                </li>
+                <li class="info-edit__input-group">
+                  <label for="" class="info-edit__input-title">개인통관보유부호</label>
+                  <div class="info-edit__input-value">
+                    <div class="basic-input half-input">
+                      <input id="" type="text" />
+                    </div>
+                  </div>
+                </li>
+                <li class="info-edit__input-group">
+                  <label for="" class="info-edit__input-title">환불계좌</label>
+                  <div class="info-edit__input-value">
+                    <div class="basic-input">
+                      <input id="" type="text" inputmode="numeric" />
+                    </div>
+                  </div>
+                </li>
+                <li class="info-edit__input-group">
+                  <p class="info-edit__input-title"></p>
+                  <div class="info-edit__input-value">
+                    <p class="info-edit__gray-text">환불시 필요한 정보 입니다. 꼭 입력해주시기 바랍니다.</p>
+                  </div>
+                </li>
+                <li class="info-edit__input-group special-margin">
+                  <p class="info-edit__input-title">자동결제시스템</p>
+                  <div class="info-edit__input-value">
+                    <p class="info-edit__radio-title">예치금으로 2차 결제 자동 승인을 할 수 있습니다.</p>
+                    <div class="info-edit__option-desc">
+                      <div class="radio-check-button">
+                        <input type="radio" name="auto" id="auto1" checked />
+                        <label for="auto1"><span class="radio-check-button-icon"></span>사용</label>
+                      </div>
+                      <div class="radio-check-button">
+                        <input type="radio" name="auto" id="auto2" />
+                        <label for="auto2"><span class="radio-check-button-icon"></span>사용하지 않음</label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="info-edit__input-group special-margin">
+                  <p class="info-edit__input-title add-text">기본국제운송방법</p>
+                  <div class="info-edit__input-value">
+                    <p class="info-edit__radio-title">예치금으로 2차 결제 자동 승인을 할 수 있습니다.</p>
+                    <div class="info-edit__option-desc">
+                      <div class="radio-check-button">
+                        <input type="radio" name="deleivery" id="deleivery1" checked />
+                        <label for="deleivery1"
+                          ><span class="radio-check-button-icon"></span>비드바이특송(로토스특송)</label
+                        >
+                      </div>
+                      <div class="radio-check-button">
+                        <input type="radio" name="deleivery" id="deleivery2" />
+                        <label for="deleivery2"><span class="radio-check-button-icon"></span>비드바이선편특송</label>
+                      </div>
+                      <div class="radio-check-button">
+                        <input type="radio" name="deleivery" id="deleivery3" />
+                        <label for="deleivery3"
+                          ><span class="radio-check-button-icon"></span>비드바이 특송(사가와특송)</label
+                        >
+                      </div>
+                      <div class="radio-check-button">
+                        <input type="radio" name="deleivery" id="deleivery4" />
+                        <label for="deleivery4"><span class="radio-check-button-icon"></span>EMS국제우편</label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </article>
+          </div>
+          <!-- 기타 -->
+          <article class="info-etc my-box line">
+            <ul class="">
+              <li class="info-edit__input-group">
+                <label for="" class="info-edit__input-title">거래알림 설정</label>
+                <div class="info-edit__input-value">
+                  <ul class="etc-sub-list">
+                    <li>
+                      <p class="etc-title">SNS알림</p>
+                      <div class="info-edit__option-desc">
+                        <div class="radio-check-button">
+                          <input type="radio" name="snss" id="snss1" checked />
+                          <label for="snss1"><span class="radio-check-button-icon"></span>예</label>
+                        </div>
+                        <div class="radio-check-button">
+                          <input type="radio" name="snss" id="snss2" />
+                          <label for="snss1"><span class="radio-check-button-icon"></span>아니요</label>
+                        </div>
+                        <p class="etc-desc">(경매 종료 30분 전, 낙찰/결제 안내 서비스를 받으시겠습니까?)</p>
+                      </div>
+                    </li>
+                    <li>
+                      <p class="etc-title">E-Mail알림</p>
+                      <div class="info-edit__option-desc">
+                        <div class="radio-check-button">
+                          <input type="radio" name="email" id="email1" checked />
+                          <label for="email1"><span class="radio-check-button-icon"></span>예</label>
+                        </div>
+                        <div class="radio-check-button">
+                          <input type="radio" name="email" id="email2" />
+                          <label for="email2"><span class="radio-check-button-icon"></span>아니요</label>
+                        </div>
+                        <p class="etc-desc">(거래 알림 및 비드바이 뉴스레터를 받으시겠습니까?)</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="info-edit__input-group">
+                <label for="" class="info-edit__input-title">관심분야</label>
+                <div class="info-edit__input-value">
+                  <ul class="etc-check-box-list">
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="1" />
+                        <label for="1"><span class="basic-check-box__squire-icon"></span>컴퓨터</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="2" />
+                        <label for="2"><span class="basic-check-box__squire-icon"></span>가전, AV, 카메라</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="3" />
+                        <label for="3"><span class="basic-check-box__squire-icon"></span>음악</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="4" />
+                        <label for="4"><span class="basic-check-box__squire-icon"></span>책, 잡지</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="5" />
+                        <label for="5"><span class="basic-check-box__squire-icon"></span>티켓, 복권</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="6" />
+                        <label for="6"><span class="basic-check-box__squire-icon"></span>영화, 비디오</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="7" />
+                        <label for="7"><span class="basic-check-box__squire-icon"></span>완구, 게임</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="8" />
+                        <label for="8"><span class="basic-check-box__squire-icon"></span>취미, 문화</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="9" />
+                        <label for="9"><span class="basic-check-box__squire-icon"></span>수집, 컬렉션</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="10" />
+                        <label for="10"><span class="basic-check-box__squire-icon"></span>스포츠, 레져</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="11" />
+                        <label for="11"><span class="basic-check-box__squire-icon"></span>자동차</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="12" />
+                        <label for="12"><span class="basic-check-box__squire-icon"></span>패션</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="13" />
+                        <label for="13"><span class="basic-check-box__squire-icon"></span>악세서리, 시계</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="14" />
+                        <label for="14"><span class="basic-check-box__squire-icon"></span>미용, 건강</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="15" />
+                        <label for="15"><span class="basic-check-box__squire-icon"></span>식품, 음료</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="16" />
+                        <label for="16"><span class="basic-check-box__squire-icon"></span>리빙, 인테리어</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="17" />
+                        <label for="17"><span class="basic-check-box__squire-icon"></span>사무, 점포 용품</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="18" />
+                        <label for="18"><span class="basic-check-box__squire-icon"></span>꽃, 원예</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="19" />
+                        <label for="19"><span class="basic-check-box__squire-icon"></span>베이비 용품</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="20" />
+                        <label for="20"><span class="basic-check-box__squire-icon"></span>연예인 상품</label>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="21" />
+                        <label for="21"><span class="basic-check-box__squire-icon"></span>코믹, 애니메이션 상품</label>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </article>
+          <div class="info-edit-button-wrap">
+            <button type="button" class="basic-button__blue">저장</button>
+          </div>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>
