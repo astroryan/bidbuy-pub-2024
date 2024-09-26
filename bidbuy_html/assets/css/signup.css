@@ -15,7 +15,7 @@
   & .basic-input label {
     display: inline-block;
     font-size: 14px;
-    color: #333;
+    color: var(--col_black_2);
     margin-bottom: 10px;
   }
   & .basic-input input {
@@ -31,9 +31,9 @@
 .login-page {
   & .login-box {
     width: 100%;
-    background-color: #fff;
+    background-color: var(--col_white);
     border-radius: 12px;
-    border: solid 1px #dedede;
+    border: solid 1px var(--col_gray_4);
     padding: 50px 0 58px;
   }
 
@@ -52,7 +52,7 @@
     position: relative;
     font-size: 14px;
     font-weight: 500;
-    color: #707070;
+    color: var(--col_gray_6);
   }
   & .login-utils a + a::before {
     position: absolute;
@@ -78,7 +78,7 @@
     position: relative;
     font-size: 15px;
     text-align: center;
-    color: #000;
+    color: var(--col_black_1);
     margin: 70px 0 25px;
   }
   & .social-login h4:before {
@@ -88,14 +88,14 @@
     width: 100%;
     height: 1px;
     content: "";
-    background-color: #d8d8d8;
+    background-color: var(--col_gray_4);
     transform: translateY(-50%);
   }
   & .social-login h4 span {
     position: relative;
     display: inline-block;
     padding: 0 22px;
-    background-color: #fff;
+    background-color: var(--col_white);
   }
   & .social-login-list {
     display: flex;
@@ -121,7 +121,7 @@
   }
   & .social-login-list p {
     font-size: 14px;
-    color: #707070;
+    color: var(--col_gray_6);
     white-space: nowrap;
   }
   & .sns-naver:before {
@@ -157,33 +157,33 @@
     gap: 10px;
   }
   & .login-banner li:is(:nth-child(1), :nth-child(4)) {
-    background-image: linear-gradient(to left, #90ddd7 97%, #8bd5d0 50%);
+    background-color: var(--mainMint);
   }
   & .login-banner li:is(:nth-child(2), :nth-child(3)) {
-    background-image: linear-gradient(to left, #579ee5, #6aa3dd 50%);
+    background-color: var(--mainBlue);
   }
   & .login-banner p {
     font-size: 16px;
     letter-spacing: -0.32px;
-    color: #fff;
+    color: var(--col_white);
   }
   & .login-banner b {
     font-size: 18px;
     font-weight: bold;
     letter-spacing: -0.36px;
-    color: #fff;
+    color: var(--col_white);
   }
 }
 .forgot-page {
   & .forgot-box {
     padding: 50px;
     border-radius: 12px;
-    border: solid 1px #dedede;
-    background-color: #fff;
+    border: solid 1px var(--col_gray_4);
+    background-color: var(--col_white);
   }
   & .find-id,
   & .find-pwd {
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid var(--col_gray_4);
     padding-bottom: 40px;
     margin-bottom: 40px;
   }
@@ -203,7 +203,7 @@
   & .forgot-box h3 {
     font-size: 16px;
     font-weight: bold;
-    color: #000;
+    color: var(--col_black_1);
   }
   & .forgot-box h4 {
     font-size: 13px;
@@ -211,7 +211,7 @@
     letter-spacing: -0.26px;
     text-align: center;
 
-    color: #666;
+    color: var(--col_gray_5);
     margin-top: 9px;
   }
 
@@ -226,7 +226,7 @@
   & .forget-desc {
     font-size: 12px;
     letter-spacing: -0.26px;
-    color: #000;
+    color: var(--col_black_1);
   }
 
   & .auth-input-fields {
@@ -289,14 +289,14 @@
   & .signup-title {
     font-size: 20px;
     line-height: 1.25;
-    color: #000;
+    color: var(--col_black_1);
     margin-bottom: 20px;
   }
 
   & .signup-list-box {
     padding: 30px;
     border-radius: 12px;
-    border: solid 1px #dedede;
+    border: solid 1px var(--col_gray_4);
   }
   & .signup-list-box > li + li {
     margin-top: 15px;
@@ -311,7 +311,7 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 1.57;
-    color: #000;
+    color: var(--col_black_1);
   }
   & .consent-options {
   }
@@ -327,7 +327,7 @@
     flex-shrink: 0;
     font-size: 14px;
     line-height: 1.57;
-    color: #000;
+    color: var(--col_black_1);
   }
 
   & .consent-options .radio-check-button + .radio-check-button {
@@ -352,13 +352,13 @@
   & .signup-desc {
     font-size: 14px;
     letter-spacing: -0.28px;
-    color: #707070;
+    color: var(--col_gray_6);
   }
 
   & .signup-path-title {
     display: inline-block;
     font-size: 14px;
-    color: #000;
+    color: var(--col_black_1);
     margin-bottom: 23px;
   }
   & .signup-path .radio-button-wrap {
@@ -400,14 +400,14 @@
     padding: 35px 0;
     object-fit: contain;
     border-radius: 11px;
-    background-color: #fff;
+    background-color: var(--col_white);
   }
   & .social-banner b {
     display: inline-block;
     font-size: 18px;
     font-weight: bold;
     line-height: 1.39;
-    color: #000;
+    color: var(--col_black_1);
     margin-bottom: 18px;
   }
   & .social-banner p {
@@ -415,7 +415,7 @@
     line-height: 1.38;
     letter-spacing: -0.32px;
     text-align: center;
-    color: #707070;
+    color: var(--col_gray_6);
   }
 
   & .top-content {
@@ -432,7 +432,7 @@
     font-weight: 600;
     line-height: 2.13;
     letter-spacing: -0.32px;
-    color: #707070;
+    color: var(--col_gray_6);
     margin-bottom: 10px;
   }
   & .signup-inner {
@@ -455,7 +455,7 @@
     height: 150px;
     padding: 28px 0;
     border-radius: 11px;
-    background-color: #fff;
+    background-color: var(--col_white);
     margin-top: 38px;
   }
   & .signup-order .signup-order-list + .signup-order-list::before {
@@ -479,10 +479,10 @@
     font-size: 14px;
     line-height: 1.21;
     letter-spacing: -0.28px;
-    color: #fff;
+    color: var(--col_white);
     border-radius: 50%;
     padding: 10px;
-    background-color: #82c2bd;
+    background-color: var(--mainMint);
     margin-bottom: 19px;
   }
 
@@ -494,10 +494,10 @@
     font-weight: 500;
     line-height: 1.47;
     letter-spacing: -0.43px;
-    color: #000;
+    color: var(--col_black_1);
   }
   & .signup-order .signup-order-list.active {
-    box-shadow: 0 0 0 1.5px #82c2bd inset;
+    box-shadow: 0 0 0 1.5px var(--mainMint) inset;
   }
 
   & .signup-banner {
@@ -523,13 +523,13 @@
     color: var(--mainMint);
   }
   & .signup-banner li:is(:nth-child(1), :nth-child(4)) {
-    background-image: linear-gradient(to right, #90ddd7 41%, #8bd5d0 91%);
+    background-color: var(--mainMint);
   }
   & .signup-banner li:is(:nth-child(2), :nth-child(3)) .badge {
     color: var(--mainBlue);
   }
   & .signup-banner li:is(:nth-child(2), :nth-child(3)) {
-    background-image: linear-gradient(to right, #579ee5 41%, #6aa3dd 91%);
+    background-color: var(--mainBlue);
   }
   & .signup-banner .badge {
     font-size: 12px;
@@ -540,19 +540,19 @@
     margin-bottom: 10px;
     padding: 5px 17px;
     border-radius: 12px;
-    background-color: #fff;
+    background-color: var(--col_white);
   }
   & .signup-banner p {
     font-size: 13px;
     letter-spacing: -0.26px;
-    color: #fff;
+    color: var(--col_white);
     margin-bottom: 4px;
   }
   & .signup-banner b {
     font-size: 16px;
     font-weight: bold;
     letter-spacing: -0.32px;
-    color: #fff;
+    color: var(--col_white);
   }
 
   & .terms-section {
@@ -561,7 +561,7 @@
 
   & .terms-list {
     border-radius: 12px;
-    border: solid 1px #dedede;
+    border: solid 1px var(--col_gray_4);
     padding: 35px 30px 40px;
   }
   & .terms-list + .terms-list {
@@ -581,18 +581,14 @@
   & .terms-title {
     font-size: 14px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.57;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000;
+    color: var(--col_black_1);
   }
   & .terms-content {
     padding: 17px 29px 20px 21px;
     object-fit: contain;
     border-radius: 5px;
-    background-color: #f7f7f9;
+    background-color: var(--col_gray_2);
   }
   & .terms-content pre {
     width: 686px;
@@ -600,7 +596,7 @@
     font-size: 13px;
     line-height: 1.69;
     letter-spacing: -0.26px;
-    color: #707070;
+    color: var(--col_gray_6);
     overflow: auto;
   }
   & .signup-utils {
@@ -685,7 +681,7 @@
   & .signup-complete-banner p {
     font-size: 14px;
     letter-spacing: -0.28px;
-    color: #fff;
+    color: var(--col_white);
   }
   & .signup-complete-banner b {
     font-size: 20px;
@@ -704,18 +700,16 @@
     margin-top: 30px;
   }
   & .signup-complete__coupon > li:nth-child(1) span {
-    background-color: #579ee5;
+    background-color: var(--mainBlue);
   }
   & .signup-complete__coupon > li:nth-child(1) .coupon-img {
     background: url("../images/signup/coupon_01.png") no-repeat center / cover;
-    /* background: url("../images/signup/coupon_01.svg") no-repeat center / cover; */
   }
   & .signup-complete__coupon > li:nth-child(2) span {
-    background-color: #82c2bd;
+    background-color: var(--mainMint);
   }
   & .signup-complete__coupon > li:nth-child(2) .coupon-img {
     background: url("../images/signup/coupon_02.png") no-repeat center / cover;
-    /* background: url("../images/signup/coupon_02.svg") no-repeat center / cover; */
   }
   & .signup-complete__coupon .coupon-img {
     width: 335px;
@@ -735,22 +729,22 @@
     display: inline-block;
     font-size: 11px;
     font-weight: bold;
-    color: #fff;
+    color: var(--col_white);
     padding: 3px 10px 5px;
     border-radius: 11px;
-    background-color: #579ee5;
+    background-color: var(--mainBlue);
     margin-bottom: 10px;
   }
   & .signup-complete__coupon p {
     font-size: 14px;
     letter-spacing: -0.14px;
-    color: #333;
+    color: var(--col_black_2);
   }
   & .signup-complete__coupon strong {
     display: inline-block;
     font-size: 23px;
     font-weight: bold;
-    color: #333;
+    color: var(--col_black_2);
     margin-top: 8px;
   }
   & .signup-complete__coupon .basic-button__light-gray-line {
@@ -759,10 +753,8 @@
     font-size: 13px;
     font-weight: 500;
     line-height: 1.54;
-    color: #333;
+    color: var(--col_black_2);
     margin-top: 10px;
-  }
-  & .coupon-desc {
   }
   & .coupon-desc > li {
     position: relative;
@@ -776,11 +768,11 @@
     content: "·";
     font-size: 15px;
     letter-spacing: -0.02em;
-    color: #898989;
+    color: var(--col_gray_7);
   }
   & .coupon-desc li {
     letter-spacing: -0.35px;
-    color: #000;
+    color: var(--col_black_1);
   }
   & .coupon-desc li + li {
     margin-top: 20px;
@@ -798,10 +790,6 @@
   & .complete-buttons .basic-button__black-line {
     width: 220px;
   }
-  /* & .signup-complete-button-wrap > * {
-    width: 220px;
-    font-size: 16px;
-  } */
 }
 
 /* MODAL :: 소셜계정 이메일 중복체크 */
@@ -812,7 +800,7 @@
   line-height: 1.57;
   letter-spacing: -0.28px;
   text-align: center;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .modal-social-email-check__desc .modal-button-wrap > *,
 .modal-button-wrap > [class^="basic-button__"] {

@@ -19,7 +19,7 @@
 .main-title :is(p, b) {
   font-size: calc(100vw * (11 / 375));
   font-weight: 500;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .inner-width:has(.main-visual) {
   justify-content: space-between;
@@ -55,7 +55,6 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: red;
 }
 
 .main-slider__navigation {
@@ -103,7 +102,7 @@
 .main-side__online {
   width: 100%;
   border-radius: 12px;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   overflow: hidden;
 }
 
@@ -112,7 +111,7 @@
 }
 .main-side__offline p {
   padding: 30px 0 23px;
-  color: #000;
+  color: var(--col_black_1);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
@@ -149,7 +148,7 @@
 .offline-utils a {
   font-size: 14px;
   font-weight: 500;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .offline-banner {
   height: 80px;
@@ -194,7 +193,7 @@
   width: 1px;
   height: 11px;
   content: "";
-  background-color: #e6e6e6;
+  background-color: var(--col_gray_3);
   transform: translateY(-50%);
 }
 
@@ -209,7 +208,7 @@
   flex-shrink: 0;
   width: 70px;
   height: 70px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid var(--col_gray_3);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -234,7 +233,7 @@
 .user-info-box__rank b {
   font-size: 14px;
   font-weight: 700;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 
 .user-info-box__progress {
@@ -269,14 +268,14 @@
   display: flex;
   align-items: center;
   padding-bottom: 23px;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid var(--col_gray_3);
 }
 .user-info-box__points a {
   position: relative;
   flex: 1 0 0;
 }
 .user-info-box__points a + a {
-  border-left: 1px solid #e6e6e6;
+  border-left: 1px solid var(--col_gray_3);
 }
 .user-info-box__points a::before {
   display: block;
@@ -299,7 +298,7 @@
   background-image: url("../images/icon/my_ebay.png");
 }
 .user-info-box__points p {
-  color: #707070;
+  color: var(--col_gray_6);
   font-size: 12px;
   font-weight: 700;
   text-align: center;
@@ -318,7 +317,7 @@
   font-weight: 700;
   /* @@@@ */
   font-size: 16px;
-  color: #333333;
+  color: var(--col_black_2);
 }
 .user-info-box__benefits {
   display: grid;
@@ -367,11 +366,11 @@
 .main-side__sidebar {
   width: 100%;
 }
-/* border: 1px solid #dedede; */
+/* border: 1px solid var(--col_gray_4); */
 .main-side__notice {
   height: 240px;
   padding: 25px;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 12px;
   margin-bottom: 25px;
 }
@@ -383,7 +382,7 @@
 .main-side__notice .main-title a {
   font-size: 14px;
   font-weight: 500;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .main-notice-list {
   margin-top: 32px;
@@ -408,20 +407,20 @@
   max-width: 220px;
   font-size: 14px;
   letter-spacing: -0.28px;
-  color: #000000;
+  color: var(--col_black_1);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .main-notice__date {
   font-size: 12px;
-  color: #707070;
+  color: var(--col_gray_6);
   margin-left: auto;
 }
 .main-side__auction {
   min-height: 681px;
   padding: 25px;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 12px;
 }
 
@@ -459,7 +458,7 @@
   height: 122px;
   overflow: hidden;
   border-radius: 12px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--col_gray_1);
   margin-right: 25px;
 }
 
@@ -486,7 +485,7 @@
   height: 2lh;
   letter-spacing: -0.26px;
   line-height: 1.4;
-  color: #000;
+  color: var(--col_black_1);
 
   text-overflow: ellipsis;
   overflow: hidden;
@@ -537,7 +536,7 @@
   flex-shrink: 0;
   width: calc(100vw * (102 / 375));
   gap: calc(100vw * (6 / 375));
-  background-color: #fff;
+  background-color: var(--col_white);
   border-radius: calc(100vw * (45 / 375));
   padding: calc(100vw * (8 / 375)) 0 calc(100vw * (11 / 375));
 }
@@ -567,7 +566,7 @@
   background-color: var(--mainMint);
 }
 .main-nav__list > li:nth-child(6) p {
-  color: #fff;
+  color: var(--col_white);
 }
 .main-nav__list > li:nth-child(6) a:before {
   background: url("../images/icon/main_banner_nav_07.svg") no-repeat center / contain;
@@ -589,7 +588,7 @@
 .main-service > article {
   flex-shrink: 0;
   width: calc(100vw * (160 / 375));
-  border: 1px solid rgba(222, 222, 222, 1);
+  border: 1px solid var(--col_gray_4);
   border-radius: 12px;
 }
 .main-service .main-title {
@@ -604,7 +603,7 @@
   position: relative;
 }
 .main-service__center .main-title {
-  background-color: rgba(130, 194, 189, 0.1);
+  background-color: var(--mainMintOpacity);
 }
 .main-service__center ul {
   padding: 24px 25px 14px;
@@ -645,12 +644,12 @@
   font-size: 14px;
   letter-spacing: -0.02em;
   font-weight: 700;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .center__desc {
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .center__status {
   position: absolute;
@@ -665,15 +664,15 @@
   width: 78px;
   height: 25px;
   border-radius: 15px;
-  border: 1px solid #82c2bd;
+  border: 1px solid var(--mainMint);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #82c2bd;
+  color: var(--mainMint);
 }
 .center__status-badge.end {
-  background-color: #f0f0f0;
-  color: #707070;
+  background-color: var(--col_gray_1);
+  color: var(--col_gray_6);
   border: none;
 }
 .center__status button {
@@ -681,8 +680,8 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  border: 1px solid #707070;
-  background: #fff url("../images/icon/calendar.svg") no-repeat center/ 11px 12px;
+  border: 1px solid var(--col_gray_6);
+  background: var(--col_white) url("../images/icon/calendar.svg") no-repeat center/ 11px 12px;
 }
 
 /* 한국 출고 스케줄 모달 */
@@ -711,7 +710,7 @@
 .modal-schedule__title {
   font-size: 18px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--col_white);
 }
 .modal-schedule__body {
   padding: 19px 7px 17px;
@@ -729,10 +728,8 @@
 }
 
 /* 비드바이 고시환율 */
-.main-service__exchange {
-}
 .main-service__exchange .main-title {
-  background-color: rgba(87, 158, 229, 0.1);
+  background-color: var(--mainBlueOpacity);
 }
 .main-service__exchange .service-inner {
   padding: 30px 25px 20px 23px;
@@ -741,16 +738,12 @@
   display: flex;
   justify-content: space-between;
   font-size: 13px;
-  color: #707070;
-}
-.main-service__exchange ul {
+  color: var(--col_gray_6);
 }
 .main-service__exchange li {
   position: relative;
   padding: 20px 0;
-  border-bottom: 1px dashed #dedede;
-}
-.main-service__exchange li + li {
+  border-bottom: 1px dashed var(--col_gray_4);
 }
 .exchange__county {
   width: 25px;
@@ -779,7 +772,7 @@
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #000;
+  color: var(--col_black_1);
   margin-left: auto;
 }
 
@@ -788,7 +781,7 @@
   align-items: center;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: #707070;
+  color: var(--col_gray_6);
   gap: 3px;
   padding-left: 41px;
   margin-top: 7px;
@@ -817,7 +810,7 @@
   letter-spacing: -0.28px;
   line-height: 1.4;
   text-align: center;
-  color: #707070;
+  color: var(--col_gray_6);
   padding-top: 13px;
 }
 .exchange__bottom b {
@@ -827,7 +820,7 @@
 .main-service__cs {
 }
 .main-service__cs .main-title {
-  background-color: #f0f0f0;
+  background-color: var(--col_gray_1);
 }
 .main-service__cs .service-inner {
   padding: 32px 22px 35px;
@@ -837,7 +830,7 @@
   align-items: center;
   gap: 16px;
   padding-bottom: 26px;
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid var(--col_gray_4);
 }
 .cs__main-number-img {
   flex-shrink: 0;
@@ -848,14 +841,14 @@
 .cs__main-number {
   font-size: 16px;
   font-weight: 700;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .cs__main-number b {
   display: inline-block;
   margin-top: 3px;
   font-size: 27px;
   font-weight: 700;
-  color: #000;
+  color: var(--col_black_1);
 }
 .cs__main-cs-box {
   margin-top: 23px;
@@ -872,12 +865,12 @@
   min-width: 52px;
   font-size: 16px;
   font-weight: 700;
-  color: #000;
+  color: var(--col_black_1);
   padding-right: 3px;
 }
 .cs__main-cs-box dd {
   font-size: 14px;
-  color: #000;
+  color: var(--col_black_1);
 }
 .cs__business-hours {
   margin-top: 28px;
@@ -892,24 +885,24 @@
 }
 .cs__business-hours dt {
   font-size: 15px;
-  color: #707070;
+  color: var(--col_gray_6);
   font-weight: 700;
 }
 .cs__business-hours dd {
   font-size: 15px;
-  color: #000;
+  color: var(--col_black_1);
   font-weight: 700;
 }
 .cs__business-hours p {
   font-size: 14px;
-  color: #707070;
+  color: var(--col_gray_6);
   margin-top: 6px;
 }
 /* 편의연락정보 */
 .main-service__contact {
 }
 .main-service__contact .main-title {
-  background-color: #f0f0f0;
+  background-color: var(--col_gray_1);
 }
 
 .main-service__contact .service-inner {
@@ -969,7 +962,7 @@
 }
 .main-service__contact hr {
   border: none;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 12px;
   margin: 24px 0;
 }
@@ -988,7 +981,7 @@
   display: flex;
   gap: 25px;
   justify-content: space-between;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 12px;
   padding: 35px 25px 43px;
 }
@@ -1001,7 +994,7 @@
 }
 .review-box {
   position: relative;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 12px;
   padding: 23px 26px 26px;
 }
@@ -1032,7 +1025,7 @@
 }
 .review__name {
   font-size: 14px;
-  color: #000;
+  color: var(--col_black_1);
   margin-bottom: 7px;
 }
 .review__star {
@@ -1049,23 +1042,23 @@
   font-size: 16px;
   line-height: 1;
   font-weight: 700;
-  color: #000;
+  color: var(--col_black_1);
 }
 .reviews__rank {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .reviews__img {
   position: relative;
   flex-shrink: 0;
   width: 97px;
   height: 97px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--col_gray_1);
   border-radius: 12px;
   overflow: hidden;
-  background-color: #fff;
+  background-color: var(--col_white);
 }
 
 .review-box__content {
@@ -1074,7 +1067,7 @@
 .review-box__title {
   font-size: 17px;
   letter-spacing: -0.02em;
-  color: #000;
+  color: var(--col_black_1);
   font-weight: 700;
 
   overflow: hidden;
@@ -1087,7 +1080,7 @@
   line-height: 1.5;
   height: 2lh;
   letter-spacing: -0.02em;
-  color: #707070;
+  color: var(--col_gray_6);
   margin-top: 16px;
 
   text-overflow: ellipsis;
@@ -1134,8 +1127,8 @@
 .recent-item-box {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #dedede;
-  background-color: #fff;
+  border: 1px solid var(--col_gray_4);
+  background-color: var(--col_white);
   border-radius: 12px;
   padding: 16px 20px 18px;
 }
@@ -1159,7 +1152,7 @@
 .recent-item__channel p {
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: #707070;
+  color: var(--col_gray_6);
   font-weight: 700;
 }
 .recent-item__name {
@@ -1168,7 +1161,7 @@
   height: 2lh;
   line-height: 1.4;
   letter-spacing: -0.02em;
-  color: #000;
+  color: var(--col_black_1);
   margin-top: 15px;
 
   text-overflow: ellipsis;
@@ -1183,20 +1176,20 @@
   align-items: center;
   gap: 5px;
   font-size: 14px;
-  color: #707070;
+  color: var(--col_gray_6);
   margin-top: 18px;
 }
 .recent-item__price b {
   font-size: 14px;
   font-weight: 700;
-  color: #000;
+  color: var(--col_black_1);
 }
 .recent-items__img {
   flex-shrink: 0;
-  background-color: #fff;
+  background-color: var(--col_white);
   width: 78px;
   height: 78px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--col_gray_1);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -1204,7 +1197,7 @@
 .main-customer__reporter {
   flex-shrink: 0;
   width: 412px;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 12px;
   padding: 35px 25px 38px;
 }
@@ -1223,7 +1216,7 @@
   flex-shrink: 0;
   width: 109px;
   height: 100%;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--col_gray_1);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -1233,7 +1226,7 @@
 .reporter__title {
   font-size: 16px;
   letter-spacing: -0.02em;
-  color: #000;
+  color: var(--col_black_1);
   font-weight: 700;
 
   overflow: hidden;
@@ -1250,7 +1243,7 @@
 .reporter__post span {
   font-size: 13px;
   letter-spacing: -0.02em;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .reporter__post span + span {
   position: relative;
@@ -1270,7 +1263,7 @@
   font-size: 13px;
   height: 2lh;
   letter-spacing: -0.02em;
-  color: #000;
+  color: var(--col_black_1);
   margin-top: 14px;
   line-height: 1.5;
 

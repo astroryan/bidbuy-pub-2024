@@ -56,80 +56,479 @@
       <header id="header"></header>
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
-      <main id="main" class="cs-page qna-page">
+      <main id="main" class="cs-page qna-form-page">
+        <!-- MODAL :: 내역ID(경매) 등록  -->
+        <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="id-auction"></button> -->
+        <div class="modal-id-auction inquiry-modal modal" style="display: none">
+          <div class="modal__dim" onclick="closeModal(this)"></div>
+          <section class="modal__box">
+            <div class="modal__header">
+              <div class="modal__title">내역ID(경매) 등록</div>
+              <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+                <span class="blind">모달 닫기</span>
+              </button>
+            </div>
+            <div class="modal__body">
+              <div class="modal__content">
+                <p class="modal-qna-text">나의 경매 관련 물품에서 선택해 주세요.</p>
+                <!-- 1. 내역 없을때 -->
+                <!-- <article class="basic-table">
+                <div class="basic-table__header">
+                  <div> 현재상태 </div>
+                  <div> 물품 정보 </div>
+                  <div> 남은시간 </div>
+                  <div></div>
+                </div>
+                <div class="basic-table__empty-text">내역이 없습니다.</div>
+              </article> -->
+                <!-- 2. 내역 있을때 -->
+                <article class="basic-table">
+                  <div class="basic-table__header">
+                    <div>현재상태</div>
+                    <div>물품 정보</div>
+                    <div>남은시간</div>
+                    <div></div>
+                  </div>
+                  <div class="basic-table__body">
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>관심물품</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          [YAHOO] j1134177132<br />
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div>12시간 전</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>관심물품</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          [YAHOO] j1134177132<br />
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div>12시간 전</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>관심물품</div>
+                      <div class="td-left">[YAHOO] j1134177132</div>
+                      <div>종료</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>관심물품</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          [YAHOO] j1134177132<br />
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div>종료</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>관심물품</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          [YAHOO] j1134177132<br />
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div>12시간 전</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="modal-bottom-wrap">
+                <div class="basic-pagination">
+                  <button class="first-button" type="button"></button>
+                  <button class="prev-button" type="button"></button>
+
+                  <div class="basic-pagination__button-wrap">
+                    <button class="page-button" type="button">1</button>
+                    <button class="page-button active" ype="button">2</button>
+                    <button class="page-button" type="button">3</button>
+                    <button class="page-button" type="button">4</button>
+                    <button class="page-button" type="button">5</button>
+                  </div>
+
+                  <button class="next-button" type="button"></button>
+                  <button class="last-button" type="button"></button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- MODAL :: 내역ID(구매) 등록  -->
+        <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="id-purchase"></button> -->
+        <div class="modal-id-purchase inquiry-modal modal" style="display: none">
+          <div class="modal__dim" onclick="closeModal(this)"></div>
+          <section class="modal__box">
+            <div class="modal__header">
+              <div class="modal__title">내역ID(구매) 등록</div>
+              <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+                <span class="blind">모달 닫기</span>
+              </button>
+            </div>
+            <div class="modal__body">
+              <div class="modal__content">
+                <p class="modal-qna-text">나의 구매 관련 물품에서 선택해 주세요.</p>
+                <!-- 1. 내역 없을때 -->
+                <!-- <article class="basic-table">
+                <div class="basic-table__header">
+                    <div>현재상태</div>
+                    <div>물품 정보</div>
+                    <div>사이트</div>
+                    <div>구매신청일</div>
+                    <div></div>
+                </div>
+                <div class="basic-table__empty-text">내역이 없습니다.</div>
+              </article> -->
+                <!-- 2. 내역 있을때 -->
+                <article class="basic-table">
+                  <div class="basic-table__header">
+                    <div>현재상태</div>
+                    <div>물품 정보</div>
+                    <div>사이트</div>
+                    <div>구매신청일</div>
+                    <div></div>
+                  </div>
+                  <div class="basic-table__body">
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>접수완료</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          [YAHOO] j1134177132<br />
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div>www.yahoo.jp/doo Dd/34/</div>
+                      <div>2024-06-06</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>접수완료</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS 닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS 닌텐도 3
+                          DS미스티핀크 닌텐도 Nintendo 3 DS 닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS 닌텐도 3
+                          DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div>www.yahoo.jp/doo Dd/34/</div>
+                      <div>2024-06-06</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>접수완료</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS닌텐도 3
+                          DS미스티핀크 닌텐도 Nintendo 3 DS닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div>www.yahoo.jp/doo Dd/34/</div>
+                      <div>2024-06-06</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>접수완료</div>
+                      <div class="td-left">
+                        <p class="p_2">닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS</p>
+                      </div>
+                      <div>www.yahoo.jp/doo Dd/34/</div>
+                      <div>2024-06-06</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="basic-table__row">
+                      <div>접수완료</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          [YAHOO] j1134177132<br />
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div>www.yahoo.jp/doo Dd/34/</div>
+                      <div>2024-06-06</div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="modal-bottom-wrap">
+                <div class="basic-pagination">
+                  <button class="first-button" type="button"></button>
+                  <button class="prev-button" type="button"></button>
+
+                  <div class="basic-pagination__button-wrap">
+                    <button class="page-button" type="button">1</button>
+                    <button class="page-button active" ype="button">2</button>
+                    <button class="page-button" type="button">3</button>
+                    <button class="page-button" type="button">4</button>
+                    <button class="page-button" type="button">5</button>
+                  </div>
+
+                  <button class="next-button" type="button"></button>
+                  <button class="last-button" type="button"></button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- MODAL :: 주문번호로등록  -->
+        <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="search-order"></button> -->
+        <div class="modal-search-order inquiry-modal modal" style="display: none">
+          <div class="modal__dim" onclick="closeModal(this)"></div>
+          <section class="modal__box">
+            <div class="modal__header">
+              <div class="modal__title">주문번호로등록</div>
+              <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+                <span class="blind">모달 닫기</span>
+              </button>
+            </div>
+            <div class="modal__body">
+              <div class="modal__content">
+                <p class="modal-qna-text">경매 또는 구매를 구분하여 주문번호를 검색해 보세요.</p>
+                <div class="search-order-num-wrap">
+                  <p>주문번호 직접입력</p>
+                  <div class="basic-select-box">
+                    <select name="" id="">
+                      <option value="" disabled selected>코드 선택</option>
+                      <option>운송장번호</option>
+                      <option>주문번호</option>
+                      <option>경매번호</option>
+                    </select>
+                  </div>
+                  <div class="basic-input">
+                    <input type="search" />
+                    <button type="button" class="search-order-button">검색</button>
+                  </div>
+                </div>
+                <!-- 0. 검색 전 -->
+                <div class="basic-table__default">채널 선택 후 주문번호 검색 후 선택 해 주세요.</div>
+                <!-- 1. 내역 없을때 -->
+                <!-- <div class="basic-table__empty-text">내역이 없습니다.</div> -->
+                <!-- 2. 내역 있을때 -->
+                <!-- <article class="basic-table">
+                  <div class="basic-table__body">
+
+                    <div class="basic-table__row">
+                      <div>2024-05-09</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          [YAHOO] j1134177132<br />
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+
+                    <div class="basic-table__row">
+                      <div>2024-05-09</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS닌텐도 3
+                          DS미스티핀크 닌텐도 Nintendo 3 DS닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+
+                    <div class="basic-table__row">
+                      <div>2024-05-09</div>
+                      <div class="td-left">
+                        <p class="p_2">
+                          [YAHOO] j1134177132<br />
+                          닌텐도 3 DS미스티핀크 닌텐도 Nintendo 3 DS
+                        </p>
+                      </div>
+                      <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                    </div>
+                  </div>
+                </article> -->
+              </div>
+            </div>
+          </section>
+        </div>
+
         <!-- 고객센터 DASHBOARD -->
         <section id="csDashboard" class="cs-dashboard cs-box"></section>
 
         <div class="inner-width">
-          <!-- 1:1 문의내역-->
-          <section class="cs-qna tabs-container">
+          <!-- 1:1 문의하기-->
+          <section class="cs-qna-form">
             <h3 class="cs-title">
-              <b>1:1 문의내역</b>
+              <b>1:1 문의하기</b>
             </h3>
-            <article class="basic-table">
-              <div class="basic-table__header">
-                <div>문의일</div>
-                <div>국가</div>
-                <div>구분</div>
-                <div>제목</div>
-                <div>상태</div>
-              </div>
-              <div class="basic-table__body">
-                <!-- PUB :: 답변완료시 basic-table__row에 add-answer클래스 추가 -->
-                <!-- 1 -->
-                <a href="../cs/qna_details.html" class="basic-table__row">
-                  <div>2024-06-01</div>
-                  <div>일본</div>
-                  <div>배송문의</div>
-                  <div class="td-left"><p class="nowrap">경매 상품에 대한 배송문의를 자세히 해주세요.</p></div>
-                  <div class="answer-text">답변준비</div>
-                </a>
-                <!-- 1 -->
-                <a href="../cs/qna_details.html" class="basic-table__row">
-                  <div>2024-06-01</div>
-                  <div>일본</div>
-                  <div>배송문의</div>
-                  <div class="td-left"><p class="nowrap">경매 상품에 대한 배송문의를 자세히 해주세요.</p></div>
-                  <div class="answer-text">답변준비</div>
-                </a>
-                <!-- 1 -->
-                <a href="../cs/qna_details.html" class="basic-table__row add-answer">
-                  <div>2024-06-01</div>
-                  <div>일본</div>
-                  <div>배송문의</div>
-                  <div class="td-left">
-                    <p class="nowrap">
-                      경매 상품에 대한 배송문의를 자세히 해주세요.경매 상품에 대한 배송문의를 자세히 해주세요.경매
-                      상품에 대한 배송문의를 자세히 해주세요.경매 상품에 대한 배송문의를 자세히 해주세요.
-                    </p>
-                  </div>
-                  <div class="answer-text">답변완료</div>
-                </a>
-                <!-- 1 -->
-                <a href="../cs/qna_details.html" class="basic-table__row add-answer">
-                  <div>2024-06-01</div>
-                  <div>일본</div>
-                  <div>배송문의</div>
-                  <div class="td-left"><p class="nowrap">경매 상품에 대한 배송문의를 자세히 해주세요.</p></div>
-                  <div class="answer-text">답변완료</div>
-                </a>
-              </div>
-            </article>
-            <div class="cs-table-utils">
-              <div class="basic-pagination">
-                <button class="first-button" type="button"></button>
-                <button class="prev-button" type="button"></button>
-
-                <div class="basic-pagination__button-wrap">
-                  <button class="page-button" type="button">1</button>
-                  <button class="page-button active" ype="button">2</button>
-                  <button class="page-button" type="button">3</button>
-                  <button class="page-button" type="button">4</button>
-                  <button class="page-button" type="button">5</button>
+            <div class="cs-box line">
+              <!-- 1. 질문유형 -->
+              <div class="qna-form__group">
+                <div class="qna-form__label">
+                  <label for="">질문유형</label>
                 </div>
+                <div class="qna-form__content">
+                  <div class="qna-form__radio">
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaOption" id="1" checked />
+                      <label for="1"><span class="radio-check-button-icon"></span>입찰해제</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaOption" id="2" />
+                      <label for="2"><span class="radio-check-button-icon"></span>회원문의</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaOption" id="3" />
+                      <label for="3"><span class="radio-check-button-icon"></span>경매문의</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaOption" id="4" />
+                      <label for="4"><span class="radio-check-button-icon"></span>구매문의</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaOption" id="5" />
+                      <label for="5"><span class="radio-check-button-icon"></span>결제문의</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaOption" id="6" />
+                      <label for="6"><span class="radio-check-button-icon"></span>배송문의</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaOption" id="7" />
+                      <label for="7"><span class="radio-check-button-icon"></span>반품환불문의</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaOption" id="8" />
+                      <label for="8"><span class="radio-check-button-icon"></span>기타문의</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                <button class="next-button" type="button"></button>
-                <button class="last-button" type="button"></button>
+              <!-- 2. 나라선택 -->
+              <div class="qna-form__group">
+                <div class="qna-form__label">
+                  <label for="">국가선택</label>
+                </div>
+                <div class="qna-form__content">
+                  <div class="qna-form__radio">
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaCountry" id="a" checked />
+                      <label for="a"><span class="radio-check-button-icon"></span>한국</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaCountry" id="b" />
+                      <label for="b"><span class="radio-check-button-icon"></span>일본</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaCountry" id="c" />
+                      <label for="c"><span class="radio-check-button-icon"></span>미국</label>
+                    </div>
+                    <div class="radio-check-button">
+                      <input type="radio" name="qnaCountry" id="d" />
+                      <label for="d"><span class="radio-check-button-icon"></span>영국</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. 문의물품(선택) -->
+              <div class="qna-form__group">
+                <div class="qna-form__label">
+                  <label for="">문의물품(선택)</label>
+                </div>
+                <div class="qna-form__content">
+                  <div class="qna-form__select-buttons">
+                    <button
+                      type="button"
+                      class="gray-tab modal_button"
+                      onclick="openModal(this, event)"
+                      data-modal="id-auction"
+                    >
+                      나의 경매 관련 물품
+                    </button>
+                    <button
+                      type="button"
+                      class="blue-tab modal_button"
+                      onclick="openModal(this, event)"
+                      data-modal="id-purchase"
+                    >
+                      나의 구매 관련 물품
+                    </button>
+                    <button
+                      type="button"
+                      class="gray-tab modal_button"
+                      onclick="openModal(this, event)"
+                      data-modal="search-order"
+                    >
+                      주문번호로 등록
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. 제목 -->
+              <div class="qna-form__group">
+                <div class="qna-form__label">
+                  <label for="">제목</label>
+                </div>
+                <div class="qna-form__content">
+                  <div class="basic-input qna-form__title">
+                    <input type="text" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. 내용 -->
+              <div class="qna-form__group">
+                <div class="qna-form__label">
+                  <label for="">제목</label>
+                </div>
+                <div class="qna-form__content">
+                  <div class="basic-textarea qna-form__textarea">
+                    <textarea name="" id=""></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 6. 첨부파일 -->
+              <div class="qna-form__group">
+                <div class="qna-form__label">
+                  <label for="">첨부파일</label>
+                </div>
+                <div class="qna-form__content">
+                  <div class="qna-file">
+                    <div class="basic-input-file">
+                      <label for="qndFile" class="file-button">사진</label>
+                      <input id="qndFile" type="file" name="" />
+                    </div>
+                    <div class="basic-input">
+                      <input type="text" />
+                    </div>
+                  </div>
+                  <p class="qna-small-text">등록파일 Type : jpg, gif| 최대 용량 : 1MB 이하</p>
+                </div>
+              </div>
+
+              <div class="qna-form__button-wrap">
+                <div class="qna-form__label"></div>
+                <button type="button" class="basic-button__light-gray-line">취소하기</button>
+                <button type="button" class="basic-button__blue">문의하기</button>
               </div>
             </div>
           </section>

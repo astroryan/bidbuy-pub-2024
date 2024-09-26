@@ -131,8 +131,7 @@ function openModal(button, event) {
   }
 
   // 알림모달은 스크롤 블럭제거
-  if (!selectedModal.classList.contains("modal-notify")) {
-    console.log(selectedModal);
+  if (!selectedModal.classList.contains("side-modal")) {
     blockBodyScroll();
   }
   document.removeEventListener("keydown", () => {
@@ -386,6 +385,25 @@ function likeItemSlide() {
   }
 }
 
+function reviewSlide() {
+  if (document.querySelector(".review-swiper")) {
+    const reviewSwiper = new Swiper(".review-swiper", {
+      watchOverflow: true, // 슬라이드가 1개 일 때 pager, button 숨김 여부 설정,
+      a11y: {
+        prevSlideMessage: "이전 슬라이드",
+        nextSlideMessage: "다음 슬라이드",
+        slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+      },
+      slidesPerView: 3,
+      spaceBetween: 24,
+      navigation: {
+        nextEl: ".review-swiper-button-next",
+        prevEl: ".review-swiper-button-prev",
+      },
+    });
+  }
+}
+
 function recentItemSlide() {
   if (document.querySelector(".recent-item-swiper")) {
     const recentItemSwiper = new Swiper(".recent-item-swiper", {
@@ -451,4 +469,5 @@ window.addEventListener("DOMContentLoaded", () => {
   likeItemSlide();
   recentItemSlide();
   ItemDetailSlide();
+  reviewSlide();
 });

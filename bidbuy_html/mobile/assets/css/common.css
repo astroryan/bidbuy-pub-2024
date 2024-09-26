@@ -69,15 +69,15 @@ html,
 body {
   width: 100%;
   margin: 0 auto;
-  background-color: var(--white);
-  color: #333;
+  background-color: var(--col_white);
+  color: var(--col_black_2);
 
   font: 400 14px/1 "Pretendard", "Malgun Gothic", "돋움", "Dotum", Arial, Sans-serif;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #898989;
+  color: var(--col_gray_7);
 }
 
 ::-webkit-scrollbar {
@@ -85,7 +85,7 @@ textarea::placeholder {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #fff;
+  background-color: var(--col_white);
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
@@ -160,8 +160,8 @@ textarea::placeholder {
   width: 100%;
   height: 100%;
   font-size: 13px;
-  color: #898989;
-  border: 1px solid #d8d8d8;
+  color: var(--col_gray_7);
+  border: 1px solid var(--col_gray_4);
   border-radius: 4px;
   background: url("../images/icon/arrow_select.svg") no-repeat 95% center / 17px 18px;
   padding: 0 10px;
@@ -181,7 +181,7 @@ textarea::placeholder {
 .modal__box {
   position: absolute;
   border-radius: 12px;
-  background: var(--white);
+  background: var(--col_white);
   overflow: hidden;
 }
 .modal__header {
@@ -201,29 +201,29 @@ textarea::placeholder {
 /* BUTTON */
 .basic-button__blue {
   font-weight: 700;
-  color: var(--white);
+  color: var(--col_white);
   text-align: center;
   background-color: var(--mainBlue);
 }
 .basic-button__dark-gray {
   font-weight: 700;
-  color: var(--white);
+  color: var(--col_white);
   text-align: center;
   background-color: #646464;
 }
 /* TABS */
 .tabs {
   display: flex;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--col_gray_1);
 }
 .tabs button {
   position: relative;
   flex: 1;
   font-weight: 700;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .tabs button + button {
-  border-left: 1px solid #f0f0f0;
+  border-left: 1px solid var(--col_gray_1);
 }
 .tabs button.active {
   color: var(--mainBlue);
@@ -243,7 +243,7 @@ textarea::placeholder {
 }
 .item-box {
   position: relative;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -256,7 +256,7 @@ textarea::placeholder {
   content: "";
   border-radius: 50%;
   border: 1px solid #d0d0d0;
-  background: #fff url("../images/icon/star_blue.svg") no-repeat center / 12px 11px;
+  background: var(--col_white) url("../images/icon/star_blue.svg") no-repeat center / 12px 11px;
   pointer-events: none;
 }
 .item__img {
@@ -278,7 +278,7 @@ textarea::placeholder {
   margin-bottom: 10px;
 }
 .item__market.line {
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 5px;
   padding: 4px 8px;
 }
@@ -292,7 +292,7 @@ textarea::placeholder {
   overflow: hidden;
 }
 .item__market p {
-  color: #707070;
+  color: var(--col_gray_6);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.22px;
@@ -306,7 +306,7 @@ textarea::placeholder {
   height: 2lh;
   letter-spacing: -0.28px;
   line-height: 1.6;
-  color: #000;
+  color: var(--col_black_1);
 
   text-overflow: ellipsis;
   overflow: hidden;
@@ -323,7 +323,7 @@ textarea::placeholder {
 }
 .item__price p {
   /* flex: 0; */
-  color: #000;
+  color: var(--col_black_1);
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.36px;
@@ -342,12 +342,12 @@ textarea::placeholder {
   font-weight: 500;
   font-size: 13px;
   letter-spacing: -0.26px;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .item__discount-percent {
   font-size: 13px;
   letter-spacing: -0.26px;
-  color: #707070;
+  color: var(--col_gray_6);
 }
 .item-tags {
   display: flex;
@@ -364,7 +364,7 @@ textarea::placeholder {
   letter-spacing: -0.24px;
   color: var(--mainBlue);
   border-radius: 3px;
-  background-color: rgba(87, 158, 229, 0.1);
+  background-color: var(--mainBlueOpacity);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -376,7 +376,7 @@ textarea::placeholder {
   margin-top: 30px;
 }
 .item__bottom p {
-  color: #707070;
+  color: var(--col_gray_6);
   font-size: 14px;
   letter-spacing: -0.28px;
 }
@@ -416,8 +416,8 @@ textarea::placeholder {
   height: 16px;
   padding: 2px 5px;
   border-radius: 50%;
-  background-color: var(--black);
-  color: #fff;
+  background-color: var(--col_black_1);
+  color: var(--col_white);
   font-size: 10px;
   letter-spacing: -0.2px;
 }
@@ -524,7 +524,7 @@ textarea::placeholder {
   gap: 10px;
 }
 .search__filter > li + li {
-  border-left: 1px solid #e6e6e6;
+  border-left: 1px solid var(--col_gray_3);
   padding-left: 24px;
   margin-left: 24px;
 }
@@ -534,14 +534,14 @@ textarea::placeholder {
   position: sticky;
   top: 0;
   left: 100%;
-  background-color: var(--white);
+  background-color: var(--col_white);
   z-index: 15;
   width: 100%;
 }
 .header__simple {
   align-items: center;
   padding: calc(100vw * (20 / 375)) 0;
-  background-color: var(--white);
+  background-color: var(--col_white);
 }
 .header__logo {
   flex-shrink: 0;
@@ -554,7 +554,7 @@ textarea::placeholder {
 .search-box {
   position: relative;
   border-radius: 29px;
-  background-color: var(--white);
+  background-color: var(--col_white);
 }
 .search-box:after {
   position: absolute;
@@ -582,7 +582,7 @@ textarea::placeholder {
   flex-shrink: 0;
   width: calc(100vw * (31 / 375));
   height: calc(100vw * (31 / 375));
-  background: url("../images/icon/serach.svg") no-repeat center / contain;
+  background: url("../images/icon/search.svg") no-repeat center / contain;
   transition: all 0.2s;
 }
 
@@ -592,9 +592,9 @@ textarea::placeholder {
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--col_white);
   box-shadow: 1px 4px 6px rgba(var(--black), 0.3);
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-top: none;
   border-radius: 0 0 29px 29px;
   padding-bottom: 25px;
@@ -608,7 +608,7 @@ textarea::placeholder {
 }
 .search-box:has(input:focus):after {
   border-radius: 29px 29px 0 0;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-bottom: none;
 }
 .search-box:has(input:focus) .search-input__icon {
@@ -629,7 +629,7 @@ textarea::placeholder {
   width: 400px;
   height: 1px;
   content: "";
-  background-color: #f0f0f0;
+  background-color: var(--col_gray_1);
   transform: translateX(-50%);
 }
 .search-box__info-list:has(.search-banner) {
@@ -649,7 +649,7 @@ textarea::placeholder {
   margin-top: 20px;
 }
 .recent-searches__all-delete {
-  color: #898989;
+  color: var(--col_gray_7);
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -667,7 +667,7 @@ textarea::placeholder {
   align-items: center;
   gap: 11px;
   padding: 0 15px 0 16px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid var(--col_gray_3);
   border-radius: 15px;
 }
 .recent-searches__text {
@@ -695,14 +695,14 @@ textarea::placeholder {
 .recommended-search__list > li:before {
   content: counter(list-number);
   font-size: 15px;
-  color: #666666;
+  color: var(--col_gray_5);
   margin-right: 5px;
 }
 
 .recommended-search__text {
   font-size: 15px;
   line-height: 1.85;
-  color: #666666;
+  color: var(--col_gray_5);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -719,7 +719,7 @@ textarea::placeholder {
   justify-content: space-between;
   width: 407px;
   height: 55px;
-  background-color: rgba(130, 194, 189, 0.05);
+  background-color: var(--mainMintOpacity);
   padding: 20px 20px 20px 16px;
   border-radius: 8px;
 }
@@ -733,7 +733,7 @@ textarea::placeholder {
 .search-banner__text span {
   font-size: 14px;
   font-weight: 700;
-  color: #707070;
+  color: var(--col_gray_6);
   flex: 1;
 }
 
@@ -789,7 +789,7 @@ textarea::placeholder {
 .util-card-num b {
   font-size: 10px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--col_white);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -838,7 +838,7 @@ textarea::placeholder {
   height: 100%;
   font-size: calc(100vw * (14 / 375));
   font-weight: 700;
-  color: var(--white);
+  color: var(--col_white);
   padding: 0 calc(100vw * (17 / 375));
 }
 
@@ -856,7 +856,7 @@ textarea::placeholder {
 .header__gnb-utils a {
   font-size: 16px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--col_white);
 }
 
 /* 알림 */
@@ -864,9 +864,9 @@ textarea::placeholder {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: var(--white);
+  background-color: var(--col_white);
   box-shadow: 0px 3px 6px rgba(var(--black), 0.3);
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--col_gray_1);
   border-radius: 12px 0px 0px 12px;
   z-index: 5;
 }
@@ -894,19 +894,19 @@ textarea::placeholder {
   padding: 15px 0;
 }
 .notify-list {
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid var(--col_black_2);
+  border-bottom: 1px solid var(--col_gray_1);
   max-height: 300px;
   overflow-y: auto;
 }
 .notify-list > li:not(:last-child) {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--col_gray_1);
 }
 .notify-box {
-  background-color: #fff;
+  background-color: var(--col_white);
 }
 .notify-box.active {
-  background-color: rgba(87, 158, 229, 0.1);
+  background-color: var(--mainBlueOpacity);
 }
 .notify-box > a {
   display: flex;
@@ -932,7 +932,7 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #898989;
+  color: var(--col_gray_7);
   font-size: 13px;
   line-height: 1;
   margin-bottom: 6px;
@@ -948,7 +948,7 @@ textarea::placeholder {
 
   font-size: 14px;
   line-height: 1.4;
-  color: #000;
+  color: var(--col_black_1);
 }
 
 .notify-box-right figure {
@@ -966,7 +966,7 @@ textarea::placeholder {
 .notify__more-button {
   font-size: 13px;
   font-weight: 500;
-  color: #666;
+  color: var(--col_gray_5);
   padding: 10px 28px;
   border: 1px solid #eaeaea;
   border-radius: 4px;
@@ -981,9 +981,9 @@ textarea::placeholder {
   width: 360px;
   height: 100vh;
   box-shadow: 0px 3px 6px #00000029;
-  border: 1px solid #dedede;
+  border: 1px solid var(--col_gray_4);
   border-radius: 0px 12px 12px 0px;
-  background-color: #fff;
+  background-color: var(--col_white);
 }
 .category .modal__close-button {
   top: 15px;
@@ -1003,8 +1003,6 @@ textarea::placeholder {
   margin-top: 18px;
 }
 /* 카테고리 - 카테고리 */
-.category__list {
-}
 .category__list-inner {
   position: relative;
 }
@@ -1045,7 +1043,7 @@ textarea::placeholder {
   font-size: 16px;
   letter-spacing: -0.02em;
   font-weight: 500;
-  color: #000000;
+  color: var(--col_black_1);
 }
 .category__sub-button {
   display: flex;
@@ -1083,7 +1081,7 @@ textarea::placeholder {
   content: "·";
   font-size: 15px;
   letter-spacing: -0.02em;
-  color: #898989;
+  color: var(--col_gray_7);
 }
 
 .category__sub-list :is(a, button).star::after {

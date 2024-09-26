@@ -3,9 +3,36 @@
 .community-page {
   padding-bottom: 84px;
 
+  & .community-sub-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  & .community-sub-title b {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--col_black_1);
+  }
+  & .community-sub-title small {
+    font-weight: 400;
+  }
+
+  & .community-sub-title:has(small) b {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  & .small-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col_gray_6);
+  }
+
   & .community-title {
     font-size: 20px;
-    color: #000;
+    color: var(--col_black_1);
     padding-bottom: 20px;
   }
   & .community-title:has(:is(.community-title__sub, .title-utils)) {
@@ -42,29 +69,14 @@
     font-weight: 500;
   }
 
-  & .community-sub-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.39;
-    color: #000;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #d8d8d8;
-  }
-  & .small-text {
-    font-size: 14px;
-    font-weight: 500;
-    color: #707070;
-  }
   & .community-box {
-    background-color: #fff;
+    background-color: var(--col_white);
     border-radius: 12px;
+
     overflow: hidden;
   }
   & .community-box.line {
-    border: solid 1px #dedede;
+    border: solid 1px var(--col_gray_4);
   }
   & .community-box.box-shadow {
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
@@ -76,19 +88,28 @@
   & .community-dashboard .inner-width {
     display: flex;
     justify-content: space-between;
+    gap: 25px;
+
     padding: 40px 0 43px;
+  }
+
+  & .community-dashboard__banner {
+    flex-shrink: 0;
+    width: 492px;
+    height: 189px;
   }
   & .community-dashboard__card-banner {
     position: relative;
     flex-shrink: 0;
     width: 269px;
     height: 189px;
+    padding: 30px;
+  }
+  & .community-dashboard__card-banner h2 {
     font-size: 13px;
     line-height: 1.62;
     letter-spacing: -0.26px;
-    color: #707070;
-    padding: 30px;
-    background: url("../images/banner/community_card.png") no-repeat center / cover;
+    color: var(--col_gray_6);
   }
   & .community-dashboard__card-banner:after {
     position: absolute;
@@ -97,78 +118,48 @@
     content: "";
     width: 20px;
     height: 20px;
-    background: url("../images/icon/arrow_right_light_gray.svg") no-repeat center / contain;
+    background: url("../images/icon/arrow_right_gray.svg") no-repeat center / contain;
   }
   & .community-dashboard__card-banner b {
-    font-weight: 400;
-    color: #707070;
-    margin-bottom: 14px;
-  }
-  & .community-menu {
-    flex: 0 0 933px;
-    gap: 46px;
-    display: flex;
-  }
-
-  & .community-menu-box {
-    position: relative;
-    flex: 1;
-    padding: 20px 16px;
-    overflow: unset;
-  }
-  & .community-menu-box + .community-menu-box:after {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 50%;
-    left: -23px;
-    content: "";
-    background: url(../images/icon/arrow_right_gray.svg) no-repeat center / contain;
-    transform: translateX(-50%);
-  }
-  & .community-menu__title {
+    display: inline-block;
     font-size: 18px;
     font-weight: bold;
-    text-align: center;
-    color: #82c2bd;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
+    color: var(--mainBlue);
   }
-  & .community-menu__sub-title {
-    text-align: center;
-    margin-bottom: 22px;
-  }
-  & .community-menu-list {
+  & .community-utils {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 175px;
+    gap: 13px;
   }
-  & .community-menu-list > a {
-    display: grid;
-    place-content: center;
-    width: calc(100% / 2 - 10px / 2);
-    height: 70px;
-    font-size: 14px;
+
+  & .event-button,
+  & .review-button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    gap: 3px;
+    padding: 20px;
     font-weight: 500;
-    line-height: 1.43;
-    text-align: center;
-    letter-spacing: -0.28px;
-    color: #707070;
-    border-radius: 10px;
-    border: solid 1px #e6e6e6;
-    background-color: #f7f7f9;
-    overflow: hidden;
-    transition: all 0.2s;
+    color: var(--col_black_1);
   }
 
-  & .community-menu-list > a:hover {
-    color: #000;
-    border: solid 1.5px #82c2bd;
+  & .event-button::before {
+    content: "";
+    width: 29px;
+    height: 29px;
+    background: url("../images/icon/event.svg") no-repeat center/ contain;
   }
-
-  & .tabs button {
-    height: 60px;
-    font-size: 16px;
-    font-weight: bold;
+  & .review-button::before {
+    content: "";
+    width: 29px;
+    height: 29px;
+    background: url("../images/icon/review.svg") no-repeat center/ contain;
   }
   & .community-table-utils {
     margin-top: 50px;
@@ -176,493 +167,610 @@
   & .basic-pagination {
     justify-content: center;
   }
+
+  & .review__comment-num {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-left: auto;
+    gap: 3px;
+    font-size: 12px;
+    letter-spacing: -0.24px;
+    color: var(--col_gray_6);
+  }
+  & .review__comment-num::before {
+    width: 14.6px;
+    height: 14.5px;
+    content: "";
+    background: url("../images/icon/comment.svg") no-repeat center / contain;
+  }
+  & .review__views-num {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-left: auto;
+    gap: 3px;
+    font-size: 12px;
+    letter-spacing: -0.24px;
+    color: var(--col_gray_6);
+  }
+  & .review__views-num::before {
+    width: 19px;
+    height: 14.3px;
+    content: "";
+    background: url("../images/icon/views.svg") no-repeat center / contain;
+  }
+
+  /* 이용후기 */
+  & .review__user {
+    display: flex;
+    align-items: center;
+  }
+  & .review__user-img {
+    flex-shrink: 0;
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 21px;
+  }
+  & .review__user-info {
+    flex: 1;
+  }
+  & .review__user-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  & .review__user-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_black_1);
+  }
+  & .review__user-status {
+    position: relative;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_gray_6);
+  }
+  & .review__user-status::before {
+    position: absolute;
+    top: 50%;
+    left: -13px;
+    width: 1px;
+    height: 10px;
+    background-color: var(--col_gray_4);
+    content: "";
+    transform: translateY(-50%);
+  }
+  & .review__rating {
+    margin-top: 10px;
+  }
+  & .review__star {
+    gap: 3px;
+  }
+
+  & .review-box .item__market {
+    display: inline-flex;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  & .review__title {
+    font-size: 17px;
+    font-weight: bold;
+    height: 2lh;
+    line-height: 1.5;
+    letter-spacing: -0.34px;
+    color: var(--col_black_1);
+  }
+  & .review__text {
+    font-size: 14px;
+    line-height: 1.5;
+    height: 2lh;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    margin-top: 14px;
+  }
+  & .review__date {
+    font-size: 13px;
+    color: var(--col_gray_7);
+    margin-top: 14px;
+  }
+
+  & .review__img {
+    width: 100%;
+    height: 134px;
+    border-radius: 10px;
+    border: solid 1px var(--col_gray_4);
+    margin-top: 21px;
+  }
 }
 
-/* 고객센터 :: 메인 */
 .community-main-page {
   & .community-main-wrap {
     display: flex;
-    gap: 20px;
-    padding-top: 40px;
+    padding-top: 35px;
+    gap: 30px;
   }
-  & .community-qna-box {
+  & .community-review-box {
     flex-shrink: 0;
-    width: 257px;
-    background-color: rgba(87, 158, 229, 0.1);
-    padding: 34px 23px 30px;
+    width: 726px;
   }
-  & .community-qna-box h3 {
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-    color: #579ee5;
-    margin-bottom: 38px;
-  }
-  & .qna-list-button,
-  & .qua-submit-button {
+  & .community-review__list {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 15px;
-    padding: 14px 16px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.11);
+    flex-wrap: wrap;
+    gap: 20px;
   }
-  & .qua-submit-button {
+  & .review__item {
+    width: calc(100% / 2 - 20px / 2);
+    padding: 20px 20px 25px;
+  }
+
+  /* 비바 특파원 */
+  & .global_news-box {
+    flex-shrink: 0;
+    width: 524px;
+  }
+  & .global_news-inner {
+    padding: 20px 44px 22px 20px;
+  }
+  & .global_news-list + .global_news-list {
     margin-top: 20px;
   }
-  & .qna-list-button:after,
-  & .qua-submit-button:after {
-    content: "";
+  & .global_news-list a {
+    display: flex;
+    gap: 25px;
+  }
+  & .global_news-img {
+    flex-shrink: 0;
+    width: 203px;
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  & .global_news-title {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: -0.34px;
+    color: var(--col_black_1);
+  }
+  & .global_news-info {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+    margin-top: 8px;
+  }
+
+  & .global_news-writer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  & .item__country {
     flex-shrink: 0;
     width: 20px;
     height: 20px;
   }
-  & .qna-list-button:after {
-    background: url("../images/icon/qna.svg") no-repeat center / contain;
-  }
-  & .qua-submit-button:after {
-    background: url("../images/icon/qna_submit.svg") no-repeat center / contain;
-  }
-  & .community-news-box {
-    flex-shrink: 0;
-    width: 430px;
-    padding: 25px;
-  }
-
-  & .community-news-inner {
-    padding-top: 22px;
-  }
-  & .community-news__item + .community-news__item {
-    margin-top: 18px;
-  }
-  & .community-news__list .item__country {
-    margin-right: 15px;
-  }
-
-  & .community-news__item {
-    display: flex;
-    align-items: center;
-  }
-  & .community-news__title {
-    flex-shrink: 0;
-    width: 275px;
-    padding-right: 20px;
-  }
-  & .community-news__date {
-    font-size: 12px;
-    text-align: right;
-    color: #707070;
-  }
-  & .community-contact-box {
-    flex: 1;
-    padding: 25px 20px 30px;
-  }
-  & .community-contact-inner {
-    padding-top: 26px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px 34px;
-  }
-  & .community-contact-box dl {
-    display: flex;
-    align-items: center;
-    width: calc(100% / 2 - 34px / 2);
-  }
-
-  & .community-contact-box dt {
-    position: relative;
-    flex-shrink: 0;
-    width: 136px;
-    display: flex;
-    gap: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #000;
-  }
-  & .community-contact-box dt::before {
-    content: "";
-    flex-shrink: 0;
-    width: 18px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-  & .community-contact-box dd {
-    flex: 1;
+  & .global_news-writer p {
     font-size: 13px;
-    color: #000;
+    font-weight: bold;
+    color: var(--col_black_1);
   }
-}
-
-/* 고객센터 :: 이용안내 = 비드바이 배송·통관·관세 안내 */
-.community-guide-page {
-  & .community-guide {
-    margin-top: 50px;
-  }
-
-  & .community-title {
-    padding-bottom: 30px;
-  }
-
-  & .guide__sub-tabs {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    border-bottom: 1px solid #e6e6e6;
-  }
-  & .guide__sub-tabs button {
+  & .global_news-date {
     position: relative;
-    font-size: 14px;
-    letter-spacing: -0.28px;
-    color: #707070;
-    padding: 19px 0;
+    font-size: 13px;
+    white-space: nowrap;
+    color: var(--col_gray_7);
   }
-  & .guide__sub-tabs button + button:after {
+  & .global_news-date::before {
     position: absolute;
     top: 50%;
-    left: -20px;
+    left: -13px;
     width: 1px;
-    height: 13px;
-    background-color: #dedede;
+    height: 10px;
+    background-color: var(--col_gray_4);
     content: "";
     transform: translateY(-50%);
   }
-  & .guide__sub-tabs-content {
-    padding-bottom: 30px;
-  }
-  & .sub-content-wrap {
-    padding: 30px 0;
-  }
-  & .sub-content-title {
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 2.13;
-    letter-spacing: -0.32px;
-    color: #000;
-  }
-  & .sub-content-desc {
+  & .global_news-contents {
     font-size: 14px;
-    line-height: 1.57;
-    letter-spacing: -0.14px;
-    color: #333;
-    margin-top: 19px;
+    line-height: 1.5;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    margin-top: 5px;
   }
-  & .guide-list {
-    display: flex;
-    justify-content: space-between;
-    gap: 21px;
-  }
-  & .guide-list__item {
-    flex: 1;
-  }
-  & .guide-list__title {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 95px;
-    font-size: 16px;
-    color: #000;
-    padding: 22px;
-    background-color: rgba(87, 158, 229, 0.1);
-  }
-
-  & .guide-list__details {
-    counter-reset: guideList;
-  }
-  & .guide-list__details li {
+  & .global_news-utils {
     display: flex;
     align-items: center;
-    padding: 22px 0;
-    border-bottom: 1px solid #dedede;
+    gap: 8px;
+    margin-top: 11px;
   }
-  & .guide-list__details > li:before {
-    display: grid;
-    place-content: center;
-    width: 20px;
-    height: 20px;
-    background-color: #579ee5;
-    color: #fff;
-    counter-increment: guideList 1;
-    content: counter(guideList);
-    margin-right: 12px;
-    border-radius: 50%;
+  & .global_news-utils p {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--col_gray_6);
   }
 }
-
-/* 고객센터 :: 공지사항 목록 */
-.community-notice-page {
-  & .community-notice {
+/* 비바특파원 (리스트) */
+.global-news-page {
+  & .community-title {
+    padding-bottom: 0;
+  }
+  & .global-news-details {
     padding-top: 40px;
   }
-
-  & .basic-table__header > div,
-  & .basic-table__row > div {
-    flex-shrink: 0;
-  }
-  & .basic-table__header > div {
-    height: 50px;
-  }
-  & .basic-table__row > div {
-    height: 50px;
-    padding: 0 5px;
-  }
-
-  & .basic-table__header > div:nth-child(1),
-  & .basic-table__row > div:nth-child(1) {
-    flex: unset;
-    width: 90px;
-    margin-right: 80px;
-  }
-  & .basic-table__header > div:nth-child(2),
-  & .basic-table__row > div:nth-child(2) {
-    flex: unset;
-    width: 680px;
-    margin-right: 20px;
-  }
-  & .basic-table__row > div:nth-child(2) {
-    gap: 7.5px;
-    color: #707070;
-  }
-  & .notice-badge {
-    display: grid;
-    place-content: center;
-    width: 58px;
-    height: 30px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 5px;
-    background-color: #579ee5;
-  }
-}
-
-/* 고객센터 :: 1:1문의 */
-.qna-page {
-  & .community-qna {
-    padding-top: 50px;
-  }
-
-  & .basic-table__header > div,
-  & .basic-table__row > div {
-    flex-shrink: 0;
-  }
-  & .basic-table__header > div {
-    height: 50px;
-  }
-  & .basic-table__row > div {
-    height: 50px;
-    padding: 0 5px;
-  }
-
-  & .basic-table__header > div:nth-child(4),
-  & .basic-table__row > div:nth-child(4) {
-    flex: unset;
-    width: 680px;
-    margin-right: 20px;
-  }
-
-  & .add-answer .answer-text {
-    font-weight: 500;
-    letter-spacing: -0.14px;
-    text-align: center;
-    color: #579ee5;
-    text-decoration: underline;
-  }
-}
-
-/* 글 상세페이지 */
-.details-page {
-  & .community-notice-details {
-    padding-top: 50px;
-  }
-  & .details-header {
-    border-top: 1px solid #d8d8d8;
-    border-bottom: 1px solid #d8d8d8;
-  }
-  & .details-info {
+  & .global-news__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 0;
+    margin-bottom: 22px;
   }
-  & .details-meta {
+  & .global-news-list {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 21px 0;
-    border-top: 1px solid #d8d8d8;
+    flex-wrap: wrap;
+    gap: 23px;
   }
-  & .details-title__wrap {
+  & .filter-search-wrap {
     display: flex;
     align-items: center;
     gap: 10px;
   }
-  & .details-title__wrap b {
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: -0.16px;
-    white-space: nowrap;
-    color: #707070;
-    margin-right: 10px;
-  }
-  & .details-title {
-    font-size: 16px;
-    font-weight: bold;
-    word-break: break-all;
-    letter-spacing: -0.16px;
-    padding-right: 30px;
-  }
 
-  & .details-title__utils {
+  & .basic-input input {
+    width: 234px;
+    height: 40px;
+    padding: 0 12px;
+  }
+  & .filter-search-wrap .basic-button__gray {
+    width: 98px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  & .global-news-box {
+    flex-shrink: 0;
+    width: calc((100% - 23px) / 2);
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 20px;
+    padding: 30px 50px 30px 30px;
   }
-  & .details-title__utils p {
+  & .global-news-box .img-wrap {
+    flex-shrink: 0;
+    width: 203px;
+    height: 186px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  & .global-news__content {
+    flex: 1;
+  }
+  & .global-news__title {
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    color: var(--col_black_1);
+    line-height: 1.59;
+    letter-spacing: -0.34px;
+    color: var(--col_black_1);
+  }
+  & .global-news__post {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+    margin-top: 12px;
+  }
+  & .global-news__user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  & .item__country {
+    width: 23px;
+    height: 23px;
+  }
+  & .global-news__name {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_black_1);
+  }
+  & .global-news__date {
     position: relative;
-    letter-spacing: -0.28px;
-    color: #707070;
-    white-space: nowrap;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+    color: var(--col_gray_6);
   }
-  & .details-title__utils p + p:after {
+  & .global-news__date:after {
     position: absolute;
     top: 50%;
     left: -14px;
-    width: 1px;
-    height: 13px;
-    background-color: #dedede;
     content: "";
+    width: 1px;
+    height: 10px;
+    background-color: var(--col_gray_4);
     transform: translateY(-50%);
   }
-  & .details-id {
-    letter-spacing: -0.28px;
-    text-align: left;
-    color: #707070;
-  }
-  & .answer-status {
-    color: #707070;
-    text-decoration: underline;
-  }
-  & .details-wrap {
-    padding: 38px 0;
-  }
-
-  & .answer-wrap {
-    padding: 23px 20px;
-    background-color: #f7f7f9;
-    margin-top: 20px;
-  }
-  & :is(.details-wrap, .answer-wrap) p {
-    font-size: 14px;
-    line-height: 1.57;
-    letter-spacing: -0.14px;
-    color: #000;
-  }
-  & .details-list {
-    margin-top: 38px;
-    border-top: 1px solid #d8d8d8;
-    border-bottom: 1px solid #d8d8d8;
-  }
-  & .details-list__item {
-    display: flex;
-    align-items: center;
-    padding: 16px 0;
-  }
-  & .details-list__item + .details-list__item {
-    border-top: 1px solid #d8d8d8;
-  }
-  & .details-list__num {
-    flex-shrink: 0;
-    width: 80px;
-    text-align: center;
+  & .global-news__desc {
+    width: 100%;
     font-size: 13px;
-    color: #999;
-    margin-right: 80px;
-  }
+    height: 3lh;
+    letter-spacing: -0.02em;
+    color: var(--col_gray_6);
+    margin-top: 11px;
+    line-height: 1.5;
 
-  & .details-list__title {
-    width: 700px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    letter-spacing: -0.14px;
-    color: #707070;
-  }
-  & .details-list__item > p:not(.details-views) {
-    flex: 1;
-    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
   }
   & .details-views {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 17px;
+  }
+  & .details-views > * {
+    margin-left: 0;
+  }
+  & .basic-pagination {
+    margin-top: 60px;
+  }
+}
+/* 비바특파원 (상세페이지) */
+.global-news-details-page {
+  & .global-news-details {
+    margin-top: 50px;
+  }
+
+  & .details-list__item .details-header {
+    border-top-width: 2px;
+  }
+
+  & .details-list__item .details-list__num {
+    margin-right: 20px;
+  }
+  & .details-list__date {
     flex-shrink: 0;
-    text-align: center;
-    width: 80px;
+    width: 120px;
   }
-
+  & .details-views {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    margin-left: auto;
+  }
   & .details-bottom-wrap {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
+  }
+  & .details-bottom-wrap .list-button {
+    color: var(--col_gray_5);
+  }
+  & .details-list {
     margin-top: 30px;
-  }
-  & .details-bottom__button-wrap {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  & .details-bottom__button-wrap > * {
-    width: 150px;
-    height: 45px;
-    font-size: 16px;
-    border-radius: 22.5px;
-  }
-  & .details-bottom__button-wrap .basic-button__light-gray-line {
-    font-weight: 400;
-  }
-
-  & .list-button {
-    position: relative;
-    font-size: 13px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 23px;
-    padding: 10px 23px;
-    border-radius: 4px;
-    border: solid 1px #d8d8d8;
-  }
-  & .list-button:after {
-    content: "";
-    width: 12.6px;
-    height: 13.1px;
-    background: url("../images/icon/sort.svg") no-repeat center / contain;
   }
 }
 
-.notice-details__bottom {
-  margin-top: 40px;
-
-  & .details-list {
-    margin-top: 20px;
+/* 이벤트 페이지 */
+.event-page {
+  & .event__warp {
+    padding-top: 35px;
   }
-
-  & .details-list__item > p {
-    flex: unset !important;
+  & .event__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid var(--col_gray_3);
+    padding: 15px 0;
+  }
+  & .event__into {
+    display: flex;
+    align-items: center;
+  }
+  & .event__cate {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.16px;
+    color: var(--col_gray_6);
+  }
+  & .item__country {
+    margin-right: 7px;
+    margin-left: 14px;
+  }
+  & .event__title {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.16px;
+    color: var(--col_black_2);
+  }
+  & .event__date {
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+  }
+  & .event__contents {
+    padding: 18px 0;
+  }
+  & .event__main-banner img {
+    width: 100%;
+  }
+  & .event__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 39px 20px;
+    margin-top: 37px;
+  }
+  & .event__item {
+    position: relative;
     flex-shrink: 0;
-    width: 100px;
+    width: calc((100% - 60px) / 4);
   }
-  & .details-list__item .details-list__title {
-    margin-left: 30px;
+
+  & .event__item .img-wrap {
+    width: 100%;
+    height: 215px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
   }
-  & .answer-status {
-    margin-left: auto;
-    text-decoration: none;
+  & .event__item-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_black_1);
+    padding: 4px 11px;
+    border-radius: 12.5px;
+    border: solid 1px #d8d8d8;
+    background-color: var(--col_white);
   }
-  & .answer-status.complete {
-    text-decoration: underline;
-    color: #579ee5;
+  & .event__item-badge.end {
+    color: var(--col_gray_6);
+    background-color: #d1d1d1;
+  }
+  & .event__item-date {
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    margin-top: 14px;
+  }
+}
+
+/* 리뷰 페이지 */
+.community-review-page {
+  & .weekly-best-review {
+    padding: 50px 0;
+    background-color: var(--mainBlueOpacity);
+  }
+
+  & .review-box {
+    padding: 20px 24px 25px;
+  }
+  & .review-swiper {
+    /* overflow: unset; */
+  }
+  & .review-swiper-wrap {
+    position: relative;
+  }
+
+  & .review-swiper-button-next,
+  & .review-swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 53px;
+    height: 53px;
+    object-fit: contain;
+    background-color: var(--col_white);
+    background: url("../images/icon/arrow_swiper.png") no-repeat center / contain;
+    transform: translate(100%, -50%);
+    z-index: 2;
+  }
+  & .review-swiper-button-next {
+    right: -30px;
+  }
+  & .review-swiper-button-prev {
+    left: -30px;
+    transform: translate(-100%, -50%) rotate(-180deg);
+  }
+  & .swiper-button-disabled {
+    opacity: 0.5;
+  }
+
+  /* 프리미엄후기 */
+  & .premium-review {
+    padding-top: 40px;
+  }
+  & .premium-review__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  & .premium-review__list > li {
+    flex-shrink: 0;
+    width: calc((100% - 15px) / 2);
+  }
+  & .premium-review-box {
+    display: flex;
+    align-items: flex-start;
+    padding: 18px 20px 24px 21px;
+  }
+  & .premium-review__left {
+    flex-shrink: 0;
+    width: 150px;
+  }
+  & .premium-review__name {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_black_1);
+  }
+  & .premium-review__status {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_gray_6);
+    margin-top: 6px;
+  }
+  & .premium-review__desc {
+    margin-top: 38px;
+  }
+  & .premium-review__date {
+    font-size: 13px;
+    color: var(--col_gray_7);
+    margin-bottom: 10px;
+  }
+
+  & .premium-review__content {
+    padding-right: 10px;
+  }
+  & .premium-review__content .item__market {
+    display: inline-flex;
+    margin: 0;
+  }
+  & .premium-review__title {
+    font-size: 17px;
+    font-weight: bold;
+    height: 2lh;
+    line-height: 1.59;
+    letter-spacing: -0.34px;
+    color: var(--col_black_1);
+    margin-top: 5px;
+  }
+
+  & .premium-review__con {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    margin-top: 14px;
+  }
+  & .premium-review__img {
+    flex-shrink: 0;
+    width: 117px;
+    height: 118px;
+    border-radius: 10px;
+    border: solid 1px var(--col_gray_4);
+    overflow: hidden;
+  }
+  & .basic-pagination {
+    margin-top: 40px;
+  }
+
+  /* 일반 후기 */
+  & .basic-review {
+    padding-top: 48px;
+  }
+  & .basic-review__list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  & .basic-review__list > li {
+    flex-shrink: 0;
+    width: calc((100% - 45px) / 4);
   }
 }

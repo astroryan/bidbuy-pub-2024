@@ -31,25 +31,24 @@
 | "mypage"    | bundle_shipping_management_2.html | 마이페이지 > 묶음배송 관리2                                              | 100% ( 240923 ) |
 | "mypage"    | shipping.html                     | 마이페이지 > 배송지 관리                                                 | 100% ( 240924 ) |
 | "mypage"    | management.html                   | 마이페이지 > 예치금 관리, 경매보증금 관리 ,수수료 정액권 관리 ,쿠폰 관리 | 100% ( 240924 ) |
-| "mypage"    | coupon.html                       | 마이페이지 > 쿠폰                                                        | 100% ( 240924 ) |
+| "mypage"    | rank.html                         | 마이페이지 > 등급포인트                                                  | 100% ( 240924 ) |
 | "mypage"    | refund.html                       | 마이페이지 > 환불                                                        | 100% ( 240924 ) |
 | "mypage"    | info.html                         | 마이페이지 > 개인정보관리                                                | 100% ( 240924 ) |
 | "mypage"    | info_edit.html                    | 마이페이지 > 개인정보관리 [수정]                                         | 100% ( 240924 ) |
-| "mypage"    | coupon.html                       | 마이페이지 > 쿠폰                                                        | 100% ( 240924 ) |
 | "cs"        | index.html                        | 고객센터 > 메인                                                          | 100% ( 240925 ) |
 | "cs"        | guide.html                        | 고객센터 > 이용안내 [비드바이 배송·통관·관세 안내]                       | 100% ( 240925 ) |
 | "cs"        | notice.html                       | 고객센터 > 공지사항 목록                                                 | 100% ( 240925 ) |
 | "cs"        | notice_details.html               | 고객센터 > 공지사항 상세                                                 | 100% ( 240925 ) |
 | "cs"        | faq.html                          | 고객센터 > 자주하는질문                                                  | 100% ( 240925 ) |
-| "cs"        | qna_form.html                     | 고객센터 > 1:1문의                                                       | 0% ( )          |
+| "cs"        | qna_form.html                     | 고객센터 > 1:1문의                                                       | 100% ( 240926 ) |
 | "cs"        | qna.html                          | 고객센터 > 1:1문의 목록                                                  | 100% ( 240925 ) |
 | "cs"        | qna_details.html                  | 고객센터 > 1:1문의 상세                                                  | 100% ( 240925 ) |
-| "community" | index.html                        | 커뮤니티 > 메인                                                          | 0% ( )          |
-
-<!-- /cs/guide/auction -->
-<!-- recently-viewed-products 최근 -->
-<!-- keep-products 찜한 -->
-<!-- keep-stores 관심 -->
+| "community" | index.html                        | 커뮤니티 > 메인                                                          | 100% ( 240926 ) |
+| "community" | event.html                        | 커뮤니티 > 이벤트                                                        | 100% ( 240927 ) |
+| "community" | review.html                       | 커뮤니티 > 이용후기 - 리스트                                             | 100% ( 240927 ) |
+| "community" | review_details.html               | 커뮤니티 > 이용후기 상세                                                 | 100% ( 240927 ) |
+| "community" | global_news.html                  | 커뮤니티 > 비바특파원 - 리스트                                           | 100% ( 240927 ) |
+| "community" | global_news_details.html          | 커뮤니티 > 비바특파원 - 상세                                             | 100% ( 240927 ) |
 
 # 사이트 메뉴 구조
 

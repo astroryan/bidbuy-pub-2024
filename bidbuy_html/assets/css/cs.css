@@ -5,7 +5,7 @@
 
   & .cs-title {
     font-size: 20px;
-    color: #000;
+    color: var(--col_black_1);
     padding-bottom: 20px;
   }
   & .cs-title:has(:is(.cs-title__sub, .title-utils)) {
@@ -49,29 +49,29 @@
     font-size: 18px;
     font-weight: bold;
     line-height: 1.39;
-    color: #000;
+    color: var(--col_black_1);
     padding-bottom: 10px;
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid var(--col_gray_4);
   }
   & .small-text {
     font-size: 14px;
     font-weight: 500;
-    color: #707070;
+    color: var(--col_gray_6);
   }
   & .cs-box {
-    background-color: #fff;
+    background-color: var(--col_white);
     border-radius: 12px;
     overflow: hidden;
   }
   & .cs-box.line {
-    border: solid 1px #dedede;
+    border: solid 1px var(--col_gray_4);
   }
   & .cs-box.box-shadow {
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
   }
 
   & .cs-dashboard {
-    background-color: #f7f7f9;
+    background-color: var(--col_gray_2);
   }
   & .cs-dashboard .inner-width {
     display: flex;
@@ -86,7 +86,7 @@
     font-size: 22px;
     font-weight: bold;
     line-height: 1.36;
-    color: #fff;
+    color: var(--col_white);
     padding: 46px 21px;
     background: url("../images/banner/cs_card.png") no-repeat center / cover;
   }
@@ -119,14 +119,14 @@
     top: 50%;
     left: -23px;
     content: "";
-    background: url(../images/icon/arrow_right_gray.svg) no-repeat center / contain;
+    background: url(../images/icon/arrow_right_light_gray_thin.svg) no-repeat center / contain;
     transform: translateX(-50%);
   }
   & .cs-menu__title {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    color: #82c2bd;
+    color: var(--mainMint);
     margin-bottom: 8px;
   }
   & .cs-menu__sub-title {
@@ -148,17 +148,17 @@
     line-height: 1.43;
     text-align: center;
     letter-spacing: -0.28px;
-    color: #707070;
+    color: var(--col_gray_6);
     border-radius: 10px;
-    border: solid 1px #e6e6e6;
-    background-color: #f7f7f9;
+    border: solid 1px var(--col_gray_3);
+    background-color: var(--col_gray_2);
     overflow: hidden;
     transition: all 0.2s;
   }
 
-  & .cs-menu-list > a:hover {
-    color: #000;
-    border: solid 1.5px #82c2bd;
+  & .cs-menu-list > a.active {
+    color: var(--col_black_1);
+    border: solid 1.5px var(--mainMint);
   }
 
   & .tabs button {
@@ -184,14 +184,14 @@
   & .cs-qna-box {
     flex-shrink: 0;
     width: 257px;
-    background-color: rgba(87, 158, 229, 0.1);
+    background-color: var(--mainBlueOpacity);
     padding: 34px 23px 30px;
   }
   & .cs-qna-box h3 {
     font-size: 18px;
     text-align: center;
     font-weight: bold;
-    color: #579ee5;
+    color: var(--mainBlue);
     margin-bottom: 38px;
   }
   & .qna-list-button,
@@ -201,7 +201,7 @@
     justify-content: space-between;
     font-size: 15px;
     padding: 14px 16px;
-    background-color: #fff;
+    background-color: var(--col_white);
     border-radius: 4px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.11);
   }
@@ -249,7 +249,7 @@
   & .cs-news__date {
     font-size: 12px;
     text-align: right;
-    color: #707070;
+    color: var(--col_gray_6);
   }
   & .cs-contact-box {
     flex: 1;
@@ -275,7 +275,7 @@
     gap: 5px;
     font-size: 14px;
     font-weight: bold;
-    color: #000;
+    color: var(--col_black_1);
   }
   & .cs-contact-box dt::before {
     content: "";
@@ -288,7 +288,7 @@
   & .cs-contact-box dd {
     flex: 1;
     font-size: 13px;
-    color: #000;
+    color: var(--col_black_1);
   }
 
   /* 자주하는 질문 */
@@ -304,15 +304,15 @@
     width: 25%;
   }
   & .faq__tabs button:nth-child(n + 5) {
-    border-top: 1px solid #e6e6e6;
+    border-top: 1px solid var(--col_gray_3);
   }
   & .faq__tabs-content {
     margin-top: 30px;
   }
 
   & .faq-list__item {
-    border-top: 1px solid #e6e6e6;
-    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid var(--col_gray_3);
+    border-bottom: 1px solid var(--col_gray_3);
   }
   & .faq__accordion-button {
     position: relative;
@@ -333,7 +333,7 @@
   }
   & .faq__content {
     display: none;
-    background-color: #f7f7f9;
+    background-color: var(--col_gray_2);
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: -0.14px;
@@ -383,13 +383,13 @@
     display: flex;
     gap: 40px;
     align-items: center;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid var(--col_gray_3);
   }
   & .guide__sub-tabs button {
     position: relative;
     font-size: 14px;
     letter-spacing: -0.28px;
-    color: #707070;
+    color: var(--col_gray_6);
     padding: 19px 0;
   }
   & .guide__sub-tabs button + button:after {
@@ -398,7 +398,7 @@
     left: -20px;
     width: 1px;
     height: 13px;
-    background-color: #dedede;
+    background-color: var(--col_gray_4);
     content: "";
     transform: translateY(-50%);
   }
@@ -413,13 +413,13 @@
     font-weight: bold;
     line-height: 2.13;
     letter-spacing: -0.32px;
-    color: #000;
+    color: var(--col_black_1);
   }
   & .sub-content-desc {
     font-size: 14px;
     line-height: 1.57;
     letter-spacing: -0.14px;
-    color: #333;
+    color: var(--col_black_2);
     margin-top: 19px;
   }
   & .guide-list {
@@ -436,9 +436,9 @@
     justify-content: space-between;
     height: 95px;
     font-size: 16px;
-    color: #000;
+    color: var(--col_black_1);
     padding: 22px;
-    background-color: rgba(87, 158, 229, 0.1);
+    background-color: var(--mainBlueOpacity);
   }
 
   & .guide-list__details {
@@ -448,15 +448,15 @@
     display: flex;
     align-items: center;
     padding: 22px 0;
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid var(--col_gray_4);
   }
   & .guide-list__details > li:before {
     display: grid;
     place-content: center;
     width: 20px;
     height: 20px;
-    background-color: #579ee5;
-    color: #fff;
+    background-color: var(--mainBlue);
+    color: var(--col_white);
     counter-increment: guideList 1;
     content: counter(guideList);
     margin-right: 12px;
@@ -496,7 +496,7 @@
   }
   & .basic-table__row > div:nth-child(2) {
     gap: 7.5px;
-    color: #707070;
+    color: var(--col_gray_6);
   }
   & .notice-badge {
     display: grid;
@@ -505,12 +505,14 @@
     height: 30px;
     font-size: 13px;
     font-weight: bold;
-    color: #fff;
+    color: var(--col_white);
     border-radius: 5px;
-    background-color: #579ee5;
+    background-color: var(--mainBlue);
   }
 }
-
+.cs-notice-details {
+  padding-top: 50px;
+}
 /* 고객센터 :: 1:1문의 */
 .qna-page {
   & .cs-qna {
@@ -540,178 +542,290 @@
     font-weight: 500;
     letter-spacing: -0.14px;
     text-align: center;
-    color: #579ee5;
+    color: var(--mainBlue);
     text-decoration: underline;
   }
 }
 
-/* 글 상세페이지 */
-.details-page {
-  & .cs-notice-details {
+/* 고객센터 :: 1:1문의하기 */
+& .qna-form-page {
+  & .cs-qna-form {
     padding-top: 50px;
   }
-  & .details-header {
-    border-top: 1px solid #d8d8d8;
-    border-bottom: 1px solid #d8d8d8;
-  }
-  & .details-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 0;
-  }
-  & .details-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 21px 0;
-    border-top: 1px solid #d8d8d8;
-  }
-  & .details-title__wrap {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  & .details-title__wrap b {
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: -0.16px;
-    white-space: nowrap;
-    color: #707070;
-    margin-right: 10px;
-  }
-  & .details-title {
-    font-size: 16px;
-    font-weight: bold;
-    word-break: break-all;
-    letter-spacing: -0.16px;
-    padding-right: 30px;
+
+  & .cs-qna-form .cs-box {
+    padding: 30px;
   }
 
-  & .details-title__utils {
+  & .qna-form__group {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 6px;
   }
-  & .details-title__utils p {
-    position: relative;
-    letter-spacing: -0.28px;
-    color: #707070;
-    white-space: nowrap;
-  }
-  & .details-title__utils p + p:after {
-    position: absolute;
-    top: 50%;
-    left: -14px;
-    width: 1px;
-    height: 13px;
-    background-color: #dedede;
-    content: "";
-    transform: translateY(-50%);
-  }
-  & .details-id {
-    letter-spacing: -0.28px;
-    text-align: left;
-    color: #707070;
-  }
-  & .answer-status {
-    color: #707070;
-    text-decoration: underline;
-  }
-  & .details-wrap {
-    padding: 38px 0;
-  }
-
-  & .answer-wrap {
-    padding: 23px 20px;
-    background-color: #f7f7f9;
-    margin-top: 20px;
-  }
-  & :is(.details-wrap, .answer-wrap) p {
-    font-size: 14px;
-    line-height: 1.57;
-    letter-spacing: -0.14px;
-    color: #000;
-  }
-  & .details-list {
-    margin-top: 38px;
-    border-top: 1px solid #d8d8d8;
-    border-bottom: 1px solid #d8d8d8;
-  }
-  & .details-list__item {
-    display: flex;
-    align-items: center;
-    padding: 16px 0;
-  }
-  & .details-list__item + .details-list__item {
-    border-top: 1px solid #d8d8d8;
-  }
-  & .details-list__num {
-    flex-shrink: 0;
-    width: 80px;
-    text-align: center;
-    font-size: 13px;
-    color: #999;
-    margin-right: 80px;
-  }
-
-  & .details-list__title {
-    width: 700px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    letter-spacing: -0.14px;
-    color: #707070;
-  }
-  & .details-list__item > p:not(.details-views) {
-    flex: 1;
-    text-align: center;
-  }
-  & .details-views {
-    flex-shrink: 0;
-    text-align: center;
-    width: 80px;
-  }
-
-  & .details-bottom-wrap {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  & .qna-form__group + .qna-form__group {
     margin-top: 30px;
   }
-  & .details-bottom__button-wrap {
+  & .qna-form__label {
+    flex-shrink: 0;
+    width: 200px;
+    font-weight: 500;
+  }
+  & .qna-form__content {
+    flex: 1;
+  }
+  & .qna-form__radio {
+    display: flex;
+    gap: 10px;
+  }
+  & .qna-form__select-buttons {
     display: flex;
     align-items: center;
     gap: 10px;
   }
-  & .details-bottom__button-wrap > * {
+  & .qna-form__select-buttons button {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: var(--col_black_2);
+  }
+  & .qna-form__select-buttons .gray-tab {
+    border: solid 1px #d8d8d8;
+    background-color: #f5f5f5;
+  }
+  & .qna-form__select-buttons .blue-tab {
+    background-color: var(--mainBlue);
+    color: var(--col_white);
+  }
+  & .basic-input input[type="text"] {
+    width: 569px;
+  }
+  & .qna-form__textarea {
+    width: 803px;
+    height: 163px;
+  }
+
+  & .qna-file {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  & .basic-input-file input {
+    display: none;
+  }
+
+  & .file-button {
+    display: grid;
+    place-content: center;
+    min-width: 130px;
+    height: 48px;
+    padding: 0 30px;
+    border-radius: 4px;
+    border: solid 1px #d8d8d8;
+    background-color: var(--col_gray_1);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--col_gray_5);
+    cursor: pointer;
+  }
+
+  & .basic-input input {
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+  }
+
+  & .qna-small-text {
+    font-size: 13px;
+    letter-spacing: -0.26px;
+    color: var(--col_gray_6);
+    margin-top: 20px;
+  }
+  & .qna-form__button-wrap {
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+  }
+  & .qna-form__button-wrap > :is(button, a) {
     width: 150px;
     height: 45px;
     font-size: 16px;
     border-radius: 22.5px;
   }
-  & .details-bottom__button-wrap .basic-button__light-gray-line {
+  & .qna-form__button-wrap .basic-button__light-gray-line {
     font-weight: 400;
   }
+}
 
-  & .list-button {
-    position: relative;
+/* MODAL :: 문의 물품ID(경매) ,문의 물품ID(구매) */
+.inquiry-modal {
+  & .modal__box {
+    width: 900px;
+  }
+  & .modal__body {
+    padding: 30px 30px 35px;
+  }
+  & .modal-qna-text {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2.13;
+    letter-spacing: -0.32px;
+    text-align: center;
+    color: var(--col_gray_6);
+    margin-bottom: 30px;
+  }
+  & .basic-table {
+    margin-bottom: 40px;
+  }
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__row > div {
+    min-height: 81px;
+  }
+  & .basic-table span.td-left {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  & .basic-button__light-gray-line {
+    width: 100%;
     font-size: 13px;
+    height: 30px;
     font-weight: 500;
+  }
+  & .modal-bottom-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+}
+/* MODAL :: 문의 물품ID(경매)  */
+.modal-id-auction {
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 100px;
+    margin-right: 53px;
+  }
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 380px;
+    margin-right: 100px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+}
+/* MODAL :: 문의 물품ID(구매) */
+.modal-id-purchase {
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 100px;
+    margin-right: 20px;
+  }
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 280px;
+    margin-right: 10px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+}
+/* MODAL :: 주문번호로등록 */
+.modal-search-order {
+  & .modal__box {
+    width: 750px;
+  }
+  & .search-order-num-wrap {
     display: flex;
     align-items: center;
-    gap: 23px;
-    padding: 10px 23px;
+    padding: 20px 0;
+    border-top: 1px solid #d8d8d8;
+  }
+  & .search-order-num-wrap p {
+    flex-shrink: 0;
+    width: 130px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.14px;
+    color: var(--col_black_2);
+  }
+
+  & .basic-select-box {
+    width: 168px;
+    height: 48px;
+    margin-right: 10px;
+  }
+  & .search-order-num-wrap .basic-input {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+  }
+  & .search-order-num-wrap .basic-input input {
+    flex: 1;
+    padding: 0 12px;
+  }
+  & .search-order-button {
+    display: grid;
+    place-content: center;
+    width: 83px;
+    height: 48px;
+    font-weight: bold;
+    line-height: 1.57;
+    letter-spacing: -0.28px;
+    text-align: center;
+    color: var(--col_black_1);
     border-radius: 4px;
     border: solid 1px #d8d8d8;
+    background-color: var(--col_white);
   }
-  & .list-button:after {
-    content: "";
-    width: 12.6px;
-    height: 13.1px;
-    background: url("../images/icon/sort.svg") no-repeat center / contain;
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 187px;
+    justify-content: flex-start;
+    margin-right: 20px;
+  }
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 300px;
+  }
+  & .basic-table__header > div:nth-child(3),
+  & .basic-table__row > div:nth-child(3) {
+    flex: unset;
+    flex-shrink: 0;
+    width: 85px;
+    margin-left: auto;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+  & .basic-table__default {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    text-align: center;
+    color: var(--col_gray_6);
+    padding-top: 30px;
+    border-top: solid 1px #d8d8d8;
   }
 }
 
@@ -736,6 +850,6 @@
   }
   & .answer-status.complete {
     text-decoration: underline;
-    color: #579ee5;
+    color: var(--mainBlue);
   }
 }

@@ -1,10 +1,20 @@
 @charset "utf-8";
 
 :root {
-  --white: #fff;
-  --black: #000;
+  --col_white: #fff;
+  --col_black_1: #000;
+  --col_black_2: #333;
+  --col_gray_1: #f0f0f0;
+  --col_gray_2: #f7f7f9;
+  --col_gray_3: #e6e6e6;
+  --col_gray_4: #dedede;
+  --col_gray_5: #666;
+  --col_gray_6: #707070;
+  --col_gray_7: #898989;
   --mainMint: #82c2bd;
   --mainBlue: #579ee5;
+  --mainMintOpacity: rgba(130, 194, 189, 0.1);
+  --mainBlueOpacity: rgba(87, 158, 229, 0.1);
 }
 
 :root[color-theme="dark"] {
