@@ -1,0 +1,855 @@
+@charset "utf-8";
+/* 고객센터 공통 */
+.cs-page {
+  padding-bottom: 126px;
+
+  & .cs-title {
+    font-size: 20px;
+    color: var(--col_black_1);
+    padding-bottom: 20px;
+  }
+  & .cs-title:has(:is(.cs-title__sub, .title-utils)) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  & .title-utils {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+  & .cs-title .basic-select-box {
+    width: 145px;
+    height: 40px;
+  }
+  & .cs-title .basic-select-box select {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  & .cs-title .basic-input input {
+    width: 234px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 15px;
+  }
+
+  & .cs-title .basic-button__gray {
+    width: 98px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  & .cs-sub-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.39;
+    color: var(--col_black_1);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--col_gray_4);
+  }
+  & .small-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col_gray_6);
+  }
+  & .cs-box {
+    background-color: var(--col_white);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  & .cs-box.line {
+    border: solid 1px var(--col_gray_4);
+  }
+  & .cs-box.box-shadow {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  & .cs-dashboard {
+    background-color: var(--col_gray_2);
+  }
+  & .cs-dashboard .inner-width {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 43px;
+  }
+  & .cs-dashboard__card-banner {
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+    height: 259px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.36;
+    color: var(--col_white);
+    padding: 46px 21px;
+    background: url("../images/banner/cs_card.png") no-repeat center / cover;
+  }
+  & .cs-dashboard__card-banner:after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    content: "";
+    width: 41px;
+    height: 41px;
+    background: url("../images/icon/arrow_cs_arrow.svg") no-repeat center / contain;
+  }
+
+  & .cs-menu {
+    flex: 0 0 933px;
+    gap: 46px;
+    display: flex;
+  }
+
+  & .cs-menu-box {
+    position: relative;
+    flex: 1;
+    padding: 20px 16px;
+    overflow: unset;
+  }
+  & .cs-menu-box + .cs-menu-box:after {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: -23px;
+    content: "";
+    background: url(../images/icon/arrow_right_light_gray_thin.svg) no-repeat center / contain;
+    transform: translateX(-50%);
+  }
+  & .cs-menu__title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--mainMint);
+    margin-bottom: 8px;
+  }
+  & .cs-menu__sub-title {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  & .cs-menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  & .cs-menu-list > a {
+    display: grid;
+    place-content: center;
+    width: calc(100% / 2 - 10px / 2);
+    height: 70px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    text-align: center;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    border-radius: 10px;
+    border: solid 1px var(--col_gray_3);
+    background-color: var(--col_gray_2);
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  & .cs-menu-list > a.active {
+    color: var(--col_black_1);
+    border: solid 1.5px var(--mainMint);
+  }
+
+  & .tabs button {
+    height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  & .cs-table-utils {
+    margin-top: 50px;
+  }
+  & .basic-pagination {
+    justify-content: center;
+  }
+}
+
+/* 고객센터 :: 메인 */
+.cs-main-page {
+  & .cs-main-wrap {
+    display: flex;
+    gap: 20px;
+    padding-top: 40px;
+  }
+  & .cs-qna-box {
+    flex-shrink: 0;
+    width: 257px;
+    background-color: var(--mainBlueOpacity);
+    padding: 34px 23px 30px;
+  }
+  & .cs-qna-box h3 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--mainBlue);
+    margin-bottom: 38px;
+  }
+  & .qna-list-button,
+  & .qua-submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 14px 16px;
+    background-color: var(--col_white);
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.11);
+  }
+  & .qua-submit-button {
+    margin-top: 20px;
+  }
+  & .qna-list-button:after,
+  & .qua-submit-button:after {
+    content: "";
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+  & .qna-list-button:after {
+    background: url("../images/icon/qna.svg") no-repeat center / contain;
+  }
+  & .qua-submit-button:after {
+    background: url("../images/icon/qna_submit.svg") no-repeat center / contain;
+  }
+  & .cs-news-box {
+    flex-shrink: 0;
+    width: 430px;
+    padding: 25px;
+  }
+
+  & .cs-news-inner {
+    padding-top: 22px;
+  }
+  & .cs-news__item + .cs-news__item {
+    margin-top: 18px;
+  }
+  & .cs-news__list .item__country {
+    margin-right: 15px;
+  }
+
+  & .cs-news__item {
+    display: flex;
+    align-items: center;
+  }
+  & .cs-news__title {
+    flex-shrink: 0;
+    width: 275px;
+    padding-right: 20px;
+  }
+  & .cs-news__date {
+    font-size: 12px;
+    text-align: right;
+    color: var(--col_gray_6);
+  }
+  & .cs-contact-box {
+    flex: 1;
+    padding: 25px 20px 30px;
+  }
+  & .cs-contact-inner {
+    padding-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 34px;
+  }
+  & .cs-contact-box dl {
+    display: flex;
+    align-items: center;
+    width: calc(100% / 2 - 34px / 2);
+  }
+
+  & .cs-contact-box dt {
+    position: relative;
+    flex-shrink: 0;
+    width: 136px;
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--col_black_1);
+  }
+  & .cs-contact-box dt::before {
+    content: "";
+    flex-shrink: 0;
+    width: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  & .cs-contact-box dd {
+    flex: 1;
+    font-size: 13px;
+    color: var(--col_black_1);
+  }
+
+  /* 자주하는 질문 */
+  & .cs-faq {
+    margin-top: 58px;
+  }
+  & .faq__tabs {
+    flex-wrap: wrap;
+  }
+  & .faq__tabs button {
+    flex: unset;
+    flex-shrink: 0;
+    width: 25%;
+  }
+  & .faq__tabs button:nth-child(n + 5) {
+    border-top: 1px solid var(--col_gray_3);
+  }
+  & .faq__tabs-content {
+    margin-top: 30px;
+  }
+
+  & .faq-list__item {
+    border-top: 1px solid var(--col_gray_3);
+    border-bottom: 1px solid var(--col_gray_3);
+  }
+  & .faq__accordion-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: -0.15px;
+    padding: 17px 0;
+  }
+
+  & .faq__accordion-button:after {
+    content: "";
+    width: 29px;
+    height: 29px;
+    background: url("../images/icon/arrow_down_gray.svg") no-repeat center / contain;
+  }
+  & .faq__content {
+    display: none;
+    background-color: var(--col_gray_2);
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.14px;
+    padding: 20px;
+    overflow: hidden;
+    transition: all 0.5s linear;
+  }
+  & .faq__accordion-button.active:after {
+    transform: rotate(-180deg);
+  }
+  & .faq__accordion-button.active ~ .faq__content {
+    display: block;
+  }
+  & .cs-faq__utils {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+  & .cs-faq__utils .basic-button__light-gray-line {
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 23px;
+  }
+  & .cs-faq__utils .basic-button__light-gray-line:after {
+    content: "";
+    width: 12.6px;
+    height: 13.1px;
+    background: url("../images/icon/sort.svg") no-repeat center / contain;
+  }
+}
+
+/* 고객센터 :: 이용안내 = 비드바이 배송·통관·관세 안내 */
+.cs-guide-page {
+  & .cs-guide {
+    margin-top: 50px;
+  }
+
+  & .cs-title {
+    padding-bottom: 30px;
+  }
+
+  & .guide__sub-tabs {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    border-bottom: 1px solid var(--col_gray_3);
+  }
+  & .guide__sub-tabs button {
+    position: relative;
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    padding: 19px 0;
+  }
+  & .guide__sub-tabs button + button:after {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 1px;
+    height: 13px;
+    background-color: var(--col_gray_4);
+    content: "";
+    transform: translateY(-50%);
+  }
+  & .guide__sub-tabs-content {
+    padding-bottom: 30px;
+  }
+  & .sub-content-wrap {
+    padding: 30px 0;
+  }
+  & .sub-content-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2.13;
+    letter-spacing: -0.32px;
+    color: var(--col_black_1);
+  }
+  & .sub-content-desc {
+    font-size: 14px;
+    line-height: 1.57;
+    letter-spacing: -0.14px;
+    color: var(--col_black_2);
+    margin-top: 19px;
+  }
+  & .guide-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 21px;
+  }
+  & .guide-list__item {
+    flex: 1;
+  }
+  & .guide-list__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95px;
+    font-size: 16px;
+    color: var(--col_black_1);
+    padding: 22px;
+    background-color: var(--mainBlueOpacity);
+  }
+
+  & .guide-list__details {
+    counter-reset: guideList;
+  }
+  & .guide-list__details li {
+    display: flex;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--col_gray_4);
+  }
+  & .guide-list__details > li:before {
+    display: grid;
+    place-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: var(--mainBlue);
+    color: var(--col_white);
+    counter-increment: guideList 1;
+    content: counter(guideList);
+    margin-right: 12px;
+    border-radius: 50%;
+  }
+}
+
+/* 고객센터 :: 공지사항 목록 */
+.cs-notice-page {
+  & .cs-notice {
+    padding-top: 40px;
+  }
+
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__header > div {
+    height: 50px;
+  }
+  & .basic-table__row > div {
+    height: 50px;
+    padding: 0 5px;
+  }
+
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 90px;
+    margin-right: 80px;
+  }
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 680px;
+    margin-right: 20px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    gap: 7.5px;
+    color: var(--col_gray_6);
+  }
+  & .notice-badge {
+    display: grid;
+    place-content: center;
+    width: 58px;
+    height: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_white);
+    border-radius: 5px;
+    background-color: var(--mainBlue);
+  }
+}
+.cs-notice-details {
+  padding-top: 50px;
+}
+/* 고객센터 :: 1:1문의 */
+.qna-page {
+  & .cs-qna {
+    padding-top: 50px;
+  }
+
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__header > div {
+    height: 50px;
+  }
+  & .basic-table__row > div {
+    height: 50px;
+    padding: 0 5px;
+  }
+
+  & .basic-table__header > div:nth-child(4),
+  & .basic-table__row > div:nth-child(4) {
+    flex: unset;
+    width: 680px;
+    margin-right: 20px;
+  }
+
+  & .add-answer .answer-text {
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    text-align: center;
+    color: var(--mainBlue);
+    text-decoration: underline;
+  }
+}
+
+/* 고객센터 :: 1:1문의하기 */
+& .qna-form-page {
+  & .cs-qna-form {
+    padding-top: 50px;
+  }
+
+  & .cs-qna-form .cs-box {
+    padding: 30px;
+  }
+
+  & .qna-form__group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  & .qna-form__group + .qna-form__group {
+    margin-top: 30px;
+  }
+  & .qna-form__label {
+    flex-shrink: 0;
+    width: 200px;
+    font-weight: 500;
+  }
+  & .qna-form__content {
+    flex: 1;
+  }
+  & .qna-form__radio {
+    display: flex;
+    gap: 10px;
+  }
+  & .qna-form__select-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  & .qna-form__select-buttons button {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: var(--col_black_2);
+  }
+  & .qna-form__select-buttons .gray-tab {
+    border: solid 1px #d8d8d8;
+    background-color: #f5f5f5;
+  }
+  & .qna-form__select-buttons .blue-tab {
+    background-color: var(--mainBlue);
+    color: var(--col_white);
+  }
+  & .basic-input input[type="text"] {
+    width: 569px;
+  }
+  & .qna-form__textarea {
+    width: 803px;
+    height: 163px;
+  }
+
+  & .qna-file {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  & .basic-input-file input {
+    display: none;
+  }
+
+  & .file-button {
+    display: grid;
+    place-content: center;
+    min-width: 130px;
+    height: 48px;
+    padding: 0 30px;
+    border-radius: 4px;
+    border: solid 1px #d8d8d8;
+    background-color: var(--col_gray_1);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--col_gray_5);
+    cursor: pointer;
+  }
+
+  & .basic-input input {
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+  }
+
+  & .qna-small-text {
+    font-size: 13px;
+    letter-spacing: -0.26px;
+    color: var(--col_gray_6);
+    margin-top: 20px;
+  }
+  & .qna-form__button-wrap {
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+  }
+  & .qna-form__button-wrap > :is(button, a) {
+    width: 150px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 22.5px;
+  }
+  & .qna-form__button-wrap .basic-button__light-gray-line {
+    font-weight: 400;
+  }
+}
+
+/* MODAL :: 문의 물품ID(경매) ,문의 물품ID(구매) */
+.inquiry-modal {
+  & .modal__box {
+    width: 900px;
+  }
+  & .modal__body {
+    padding: 30px 30px 35px;
+  }
+  & .modal-qna-text {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2.13;
+    letter-spacing: -0.32px;
+    text-align: center;
+    color: var(--col_gray_6);
+    margin-bottom: 30px;
+  }
+  & .basic-table {
+    margin-bottom: 40px;
+  }
+  & .basic-table__header > div,
+  & .basic-table__row > div {
+    flex-shrink: 0;
+  }
+  & .basic-table__row > div {
+    min-height: 81px;
+  }
+  & .basic-table span.td-left {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  & .basic-button__light-gray-line {
+    width: 100%;
+    font-size: 13px;
+    height: 30px;
+    font-weight: 500;
+  }
+  & .modal-bottom-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+}
+/* MODAL :: 문의 물품ID(경매)  */
+.modal-id-auction {
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 100px;
+    margin-right: 53px;
+  }
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 380px;
+    margin-right: 100px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+}
+/* MODAL :: 문의 물품ID(구매) */
+.modal-id-purchase {
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 100px;
+    margin-right: 20px;
+  }
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 280px;
+    margin-right: 10px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+}
+/* MODAL :: 주문번호로등록 */
+.modal-search-order {
+  & .modal__box {
+    width: 750px;
+  }
+  & .search-order-num-wrap {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #d8d8d8;
+  }
+  & .search-order-num-wrap p {
+    flex-shrink: 0;
+    width: 130px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.14px;
+    color: var(--col_black_2);
+  }
+
+  & .basic-select-box {
+    width: 168px;
+    height: 48px;
+    margin-right: 10px;
+  }
+  & .search-order-num-wrap .basic-input {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+  }
+  & .search-order-num-wrap .basic-input input {
+    flex: 1;
+    padding: 0 12px;
+  }
+  & .search-order-button {
+    display: grid;
+    place-content: center;
+    width: 83px;
+    height: 48px;
+    font-weight: bold;
+    line-height: 1.57;
+    letter-spacing: -0.28px;
+    text-align: center;
+    color: var(--col_black_1);
+    border-radius: 4px;
+    border: solid 1px #d8d8d8;
+    background-color: var(--col_white);
+  }
+  & .basic-table__header > div:nth-child(1),
+  & .basic-table__row > div:nth-child(1) {
+    flex: unset;
+    width: 187px;
+    justify-content: flex-start;
+    margin-right: 20px;
+  }
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: unset;
+    width: 300px;
+  }
+  & .basic-table__header > div:nth-child(3),
+  & .basic-table__row > div:nth-child(3) {
+    flex: unset;
+    flex-shrink: 0;
+    width: 85px;
+    margin-left: auto;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+  & .basic-table__default {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    text-align: center;
+    color: var(--col_gray_6);
+    padding-top: 30px;
+    border-top: solid 1px #d8d8d8;
+  }
+}
+
+.notice-details__bottom {
+  margin-top: 40px;
+
+  & .details-list {
+    margin-top: 20px;
+  }
+
+  & .details-list__item > p {
+    flex: unset !important;
+    flex-shrink: 0;
+    width: 100px;
+  }
+  & .details-list__item .details-list__title {
+    margin-left: 30px;
+  }
+  & .answer-status {
+    margin-left: auto;
+    text-decoration: none;
+  }
+  & .answer-status.complete {
+    text-decoration: underline;
+    color: var(--mainBlue);
+  }
+}
