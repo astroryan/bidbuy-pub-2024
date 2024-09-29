@@ -178,7 +178,8 @@ textarea::placeholder {
   color: var(--col_gray_7);
   border: 1px solid var(--col_gray_4);
   border-radius: 4px;
-  background: var(--col_white) url("../images/icon/arrow_select.svg") no-repeat 95% center / 17px 18px;
+  background: var(--col_white) url("../images/icon/arrow_select.svg") no-repeat 98% center / 20px 20px;
+  /* background: var(--col_white) url("../images/icon/arrow_select.svg") no-repeat 95% center / 17px 18px; */
   padding: 0 10px;
 }
 .basic-select-box.gray select {
@@ -207,7 +208,8 @@ textarea::placeholder {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 480px;
+  width: 90%;
+  max-width: 480px;
   border-radius: 12px;
   background: var(--col_white);
   overflow: hidden;
@@ -244,7 +246,7 @@ textarea::placeholder {
   background-image: url("../images/icon/close_modal_white.svg");
 }
 .modal__body {
-  max-height: 90vh;
+  max-height: 80dvh;
   overflow-y: auto;
 }
 .modal__body.default {
@@ -263,7 +265,8 @@ textarea::placeholder {
   font-size: 14px;
   font-weight: normal;
   letter-spacing: -0.28px;
-  text-align: left;
+  line-height: 1.4;
+  text-align: center;
   color: var(--col_gray_6);
   margin-top: 9px;
 }
@@ -284,7 +287,7 @@ textarea::placeholder {
 }
 .modal-button-wrap > *,
 .modal-button-wrap > [class^="basic-button__"] {
-  width: 170px;
+  width: 120px;
   height: 45px;
   font-size: 14px;
   font-weight: bold;
@@ -363,11 +366,17 @@ textarea::placeholder {
   border-radius: 4px;
   border: solid 1px var(--col_gray_4);
   background-color: var(--col_white);
+  color: inherit;
 }
 
+.basic-input:has(input[type="date"]) {
+  display: flex;
+}
 .basic-input input[type="date"] {
   font: inherit;
   font-size: 13px;
+  text-align: center;
+  color: inherit;
 }
 /* date 기본 placeholder 지우기 */
 input[type="date"]:invalid::-webkit-datetime-edit-text {
@@ -405,11 +414,11 @@ input[type="date"]:invalid::-webkit-datetime-edit-year-field {
 .basic-input:has(input[type="date"]):after {
   position: absolute;
   top: 50%;
-  left: 85%;
+  right: 8%;
   content: "";
-  width: 14px;
-  height: 15.5px;
-  background: var(--col_white) url("../images/icon/calendar.svg") center center / contain;
+  width: 11px;
+  height: 12px;
+  background: var(--col_white) url("../images/icon/calendar.svg") no-repeat center / contain;
   transform: translateY(-50%);
   z-index: 0;
 }
@@ -418,7 +427,7 @@ input[type="date"]::before {
   top: 50%;
   left: 12px;
   content: attr(data-placeholder);
-  width: 100%;
+  width: calc(100% -12px);
   font-size: 13px;
   letter-spacing: -0.26px;
   color: var(--col_gray_6);
@@ -654,16 +663,25 @@ input[type="radio"] label {
 }
 
 /* 기본 테이블 레이아웃 */
+.basic-table-warp {
+}
 .basic-table {
   border-top: 1px solid var(--col_gray_4);
+
+  white-space: nowrap;
+  overflow-y: visible;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
 }
 .basic-table__header > div,
 .basic-table__row > div {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  flex: 1 0 100px;
 }
+
 .basic-table div.td-left {
   justify-content: flex-start;
 }
@@ -708,24 +726,23 @@ input[type="radio"] label {
 /* 번역 등록 버튼 */
 .translation-button {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 11px;
   font-size: 14px;
   white-space: nowrap;
   font-weight: 500;
   color: var(--col_gray_5);
-  padding: 12px 18px;
-  border-radius: 4px;
-  border: solid 1px var(--col_gray_4);
-  background-color: var(--col_white);
 }
-.translation-button:after {
+/* .translation-button:after {
   content: "";
   flex-shrink: 0;
   width: 15.2px;
   height: 15.2px;
   background: url("../images/icon/translation.svg") no-repeat center / contain;
+} */
+.option-like-keyword-button,
+.option-like-keyword-button {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--col_gray_5);
 }
 /* 관심키워드 등록 버튼 */
 .like-keyword-button {
@@ -1050,7 +1067,8 @@ input[type="radio"] label {
 }
 .item-box.simple .item__price {
   display: flex;
-  align-items: center;
+  /* background-color: red; */
+  align-items: flex-start;
   justify-content: space-between;
   margin-top: 15px;
 }
@@ -2160,7 +2178,7 @@ input[type="radio"] label {
 .recent-item-swiper {
   display: flex;
   flex-wrap: wrap;
-  height: 214px;
+  height: 222px;
   margin-bottom: 18px;
 }
 .recent-item-swiper .item-list-box {
@@ -2396,7 +2414,33 @@ a.guide-content__accordion-button .guide-content__title:after {
   background: url("../images/icon/arrow_right_gray.svg") no-repeat center / contain;
   margin-left: auto;
 }
-
+/* 모바일 SIMPLE HEADER */
+#header.simple {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-back-button {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 23px;
+  height: 23px;
+  background: url("../../assets/images/icon/arrow_back.svg") no-repeat center / contain;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+#header.simple h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--col_black_1);
+  justify-self: center;
+}
 /* 글 상세페이지 */
 .details-page .details-header {
   border-top: 1px solid var(--col_gray_4);

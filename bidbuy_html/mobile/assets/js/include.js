@@ -1568,33 +1568,33 @@ const $FOOTER_CONT = `
 `;
 
 // 공통 마이페이지 대쉬보드
-const $MYPAGE_DASHBOARD_CONT = `
-<div class="inner-width">
+const $MYPAGE_DASHBOARD_CONT = `  <div class="inner-width">
 <article class="my-dashboard__profile">
-  <div class="my-dashboard-left-box my-box box-shadow">
-    <div class="my-dashboard__profile-links">
-      <a href="../my/info.html" class="profile-link">개인정보관리</a>
-      <a href="" class="profile-link">로그아웃</a>
-    </div>
+  <div class="my-dashboard-left-box">
     <div class="my-dashboard__profile-info">
       <div class="my-dashboard__img-wrap img-wrap">
         <img src="../../assets/images/dummy/user.png" alt="프로필이미지" />
       </div>
       <div class="my-dashboard__profile-box">
         <p class="my-dashboard__username"><b>홍길동</b>님</p>
-        <div class="my-dashboard-progress">
-          <p class="my-dashboard__user-rank">우수회원</p>
-          <div class="my-dashboard-progress-bar">
-            <progress value="100" max="190"></progress>
-          </div>
-          <p class="my-dashboard-progress__percentage"><span>80%</span> 진행</p>
-          <div class="my-dashboard__membership-status">
-            <figure><img src="../../assets/images/icon/rank_premium.png" alt="premium" /></figure>
-            프리미엄
-          </div>
-        </div>
+        <p class="my-dashboard__user-rank">우수회원</p>
+      </div>
+      <div class="my-dashboard__profile-links">
+        <a href="" class="profile-link">로그아웃</a>
+        <a href="../my/info.html" class="profile-link">개인정보관리</a>
       </div>
     </div>
+    <div class="my-dashboard-progress">
+      <div class="my-dashboard-progress-bar">
+        <progress value="100" max="190"></progress>
+      </div>
+      <p class="my-dashboard-progress__percentage"><span>80%</span> 진행</p>
+      <div class="my-dashboard__membership-status">
+        <figure><img src="../../assets/images/icon/rank_premium.png" alt="premium" /></figure>
+        프리미엄
+      </div>
+    </div>
+
     <div class="my-dashboard__menu">
       <a href="../cs/qna.html">
         <div class="my-dashboard__menu-icon">
@@ -1624,54 +1624,52 @@ const $MYPAGE_DASHBOARD_CONT = `
       </a>
     </div>
   </div>
-  <div class="my-dashboard-side-box my-box box-shadow">
-    <a href="../mypage/coupon.html" class="my-dashboard__bid-point">
+  <div class="my-dashboard-side-box">
+    <a href="../mypage/coupon.html" class="my-dashboard__bid-point my-box line">
       <p class="side-title">등급포인트</p>
       <p class="side-value p_1"><b>180</b>점</p>
     </a>
-    <a href="../mypage/management.html" class="my-dashboard__coupon">
+    <a href="../mypage/management.html" class="my-dashboard__coupon my-box line">
       <p class="side-title">쿠폰</p>
       <p class="side-value p_1"><b>8</b>장</p>
     </a>
-    <a href="../mypage/management.html" class="my-dashboard__ticket">
+    <a href="../mypage/management.html" class="my-dashboard__ticket my-box line">
       <p class="side-title">정액권</p>
       <p class="side-value p_1"><b>1</b>개월 (잔여 20회)</p>
     </a>
-    <a href="../mypage/management.html" class="my-dashboard__deposit">
+    <a href="../mypage/management.html" class="my-dashboard__deposit my-box line">
       <p class="side-title">예치금</p>
       <p class="side-value p_1"><b>100</b></p>
     </a>
-    <a href="../mypage/management.html" class="my-dashboard__yahoo-point">
+    <a href="../mypage/management.html" class="my-dashboard__yahoo-point my-box line">
       <p class="side-title">야후보증금</p>
       <p class="side-value p_1"><b>3,000,000</b>원</p>
     </a>
-    <a href="../mypage/management.html" class="my-dashboard__ebay-point">
+    <a href="../mypage/management.html" class="my-dashboard__ebay-point my-box line">
       <p class="side-title">이베이보증금</p>
-      <p class="side-value p_1"><b>30,000</b></p>
+      <p class="side-value p_1"><b>30,000</b>원</p>
     </a>
   </div>
 </article>
 
 <!-- 나의 쇼핑 현황 -->
-<article class="shopping-status" >
+<article class="shopping-status">
   <div class="shopping-status__header">
     <h2>나의 쇼핑 현황</h2>
     <div class="shopping-status__utils">
-      <a href="" class="shopping-status__utils-button basic-button__light-gray-line"> 전체목록보기 </a>
+      <a href="" class="shopping-status__utils-button basic-button__light-gray-line"></a>
       <!-- PUB ::  주문상세검색모드 <-> 주문배송절차 모드 토글 -->
       <button
         type="button"
         class="shopping-status__utils-button basic-button__light-gray-line"
         onclick="changModeButton(this)"
-      >
-        상세검색 모드
-      </button>
+      ></button>
     </div>
   </div>
 
   <!-- A ::나의 쇼핑 현황 (주문배송절차 모드) -->
   <div class="shopping-status__summary-box">
-    <ul class="shopping-status__list-wrap my-box box-shadow">
+    <ul class="shopping-status__list-wrap">
       <!-- PUB :: shopping-status__link에 active 클래스 넣으면 active 효과 추가 -->
       <li class="shopping-status__list first-status-list">
         <a href="../mypage/order_bid_list.html" class="shopping-status__link active">
@@ -1681,7 +1679,7 @@ const $MYPAGE_DASHBOARD_CONT = `
           <span class="status-title">구매 신청상품</span><span class="status-value"><b>5</b>건</span>
         </a>
       </li>
-      <li class="shopping-status__list">
+      <li class="shopping-status__list mid-status-list">
         <a href="../mypage/payment_pending.html" class="shopping-status__link active">
           <span class="status-title"
             >1차<br />
@@ -1689,8 +1687,7 @@ const $MYPAGE_DASHBOARD_CONT = `
           >
           <span class="status-value"><b>5</b>건</span>
         </a>
-      </li>
-      <li class="shopping-status__list">
+
         <a href="" class="shopping-status__link">
           <span class="status-title"
             >1차<br />
@@ -1698,8 +1695,7 @@ const $MYPAGE_DASHBOARD_CONT = `
           >
           <span class="status-value"><b>5</b>건</span>
         </a>
-      </li>
-      <li class="shopping-status__list">
+
         <a href="" class="shopping-status__link">
           <span class="status-title"
             >2차<br />
@@ -1707,8 +1703,7 @@ const $MYPAGE_DASHBOARD_CONT = `
           >
           <span class="status-value"> <b>5</b>건</span>
         </a>
-      </li>
-      <li class="shopping-status__list">
+
         <a href="" class="shopping-status__link">
           <span class="status-title"
             >2차<br />
@@ -1727,20 +1722,19 @@ const $MYPAGE_DASHBOARD_CONT = `
       </li>
     </ul>
     <div class="shopping-status__actions">
-      <a href="../mypage/bundle_shipping_management.html" class="shopping-status__action my-box box-shadow">묶음배송 관리</a>
-      <a href="../mypage/shipping.html" class="shopping-status__action my-box box-shadow">배송지 관리</a>
+      <a href="../mypage/bundle_shipping_management.html" class="shopping-status__action my-box line"
+        >묶음배송 관리</a
+      >
+      <a href="../mypage/shipping.html" class="shopping-status__action my-box line">배송지 관리</a>
     </div>
   </div>
 
   <!-- B ::나의 쇼핑 현황 (주문내역 상세검색 모드) -->
-  <div class="shopping-status__filters my-box box-shadow" style="display: none">
-    <a href="../mypage/order.html" class="shopping-status__card">
-      나의 쇼핑 목록<br />
-      전체 보기
-    </a>
+  <div class="shopping-status__filters" style="display: none">
+    <a href="../mypage/order.html" class="shopping-status__card"> 나의 쇼핑 목록 전체 보기 </a>
     <div class="shopping-status__search">
       <!-- 검색조건 -->
-      <p class="shopping-status__search-title">검색 조건<br />상세 검색</p>
+      <p class="shopping-status__search-title">검색 조건 상세 검색</p>
       <div class="shopping-status__search-option">
         <div class="shopping-status__filter-row">
           <div class="basic-select-box">
@@ -1777,6 +1771,8 @@ const $MYPAGE_DASHBOARD_CONT = `
           <div class="basic-input date-input">
             <input id="" type="date" data-placeholder="종료날짜" required aria-required="true" />
           </div>
+        </div>
+        <div class="shopping-status__filter-row">
           <div class="basic-input text-input">
             <input id="text" type="text" placeholder="키워드 검색" />
           </div>
@@ -1793,10 +1789,7 @@ const $MYPAGE_DASHBOARD_CONT = `
 const $CS_DASHBOARD_CONT = `
 <div class="inner-width">
 <a href="" class="cs-dashboard__card-banner cs-box box-shadow">
-  <h2>
-    비드바이 4대<br />
-    무료서비스안내
-  </h2>
+  <h2>비드바이 4대 무료서비스안내</h2>
 </a>
 
 <!-- 쇼핑하기 | 국제배송 | 배송완료 -->
@@ -1859,6 +1852,13 @@ const $COMMUNITY_CONT = `<div class="inner-width">
 </div>
 </div>`;
 
+const $SIMPLE_HEADER_CONT = (title) => `
+<button type="button" onclick="history.back()" class="header-back-button">
+  <span class="blind">뒤로가기</span>
+</button>
+<h1>${title}</h1>
+`;
+
 const $HEADER = document.getElementById("header");
 const $FOOTER = document.getElementById("footer");
 const $MYPAGE = document.getElementById("myDashBoard");
@@ -1867,7 +1867,14 @@ const $COMMUNITY = document.getElementById("communityDashboard");
 
 window.addEventListener("DOMContentLoaded", () => {
   if ($HEADER) {
-    $HEADER.innerHTML = $HEADER_CONT;
+    const isSimpleHeader = $HEADER.classList.contains("simple");
+    const headerTitle = $HEADER.dataset.title || "";
+
+    if (isSimpleHeader) {
+      $HEADER.innerHTML = $SIMPLE_HEADER_CONT(headerTitle);
+    } else {
+      $HEADER.innerHTML = $HEADER_CONT;
+    }
   }
   if ($FOOTER) {
     $FOOTER.innerHTML = $FOOTER_CONT;

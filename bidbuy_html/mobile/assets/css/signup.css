@@ -431,15 +431,15 @@
   }
   & .social-banner b {
     display: inline-block;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 1.39;
     color: var(--col_black_1);
     margin-bottom: 18px;
   }
   & .social-banner p {
-    font-size: 16px;
-    line-height: 1.38;
+    font-size: 12px;
+    line-height: 1.5;
     letter-spacing: -0.32px;
     text-align: center;
     color: var(--col_gray_6);
@@ -672,15 +672,12 @@
   /* 가입완료 */
   & .signup-complete-banner {
     width: 100%;
-    height: 198px;
-    background: url("../../assets/images/banner/signup_banner_blue.jpg") no-repeat center / cover;
-    margin-top: 50px;
+    padding: 50px 0;
+    background: url("../../assets/images/banner/signup_banner_blue.jpg") no-repeat left bottom / cover;
   }
   & .signup-complete-banner__text {
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
-    justify-content: center;
     gap: 10px;
     width: 100%;
     height: 100%;
@@ -689,6 +686,7 @@
   & .signup-complete-banner p {
     font-size: 14px;
     letter-spacing: -0.28px;
+    text-align: right;
     color: var(--col_white);
   }
   & .signup-complete-banner b {
@@ -697,13 +695,13 @@
     font-weight: bold;
   }
   & .signup-complete__coupon {
-    margin-top: 65px;
+    margin-top: 30px;
   }
   & .signup-complete__coupon > li {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
   }
   & .signup-complete__coupon > li + li {
     margin-top: 30px;
@@ -721,8 +719,9 @@
     background: url("../images/signup/coupon_02.png") no-repeat center / cover;
   }
   & .signup-complete__coupon .coupon-img {
-    width: 335px;
-    height: 166px;
+    align-self: center;
+    width: calc(335px / 4 * 3);
+    height: calc(166px / 4 * 3);
   }
   & .signup-complete__coupon .coupon-text {
     display: flex;
@@ -731,51 +730,52 @@
     justify-content: center;
     flex-direction: column;
     flex-shrink: 0;
-    width: 202px;
+    width: calc(202px / 4 * 3);
     margin-left: auto;
   }
   & .signup-complete__coupon span {
     display: inline-block;
-    font-size: 11px;
+    font-size: calc(11px / 4 * 3);
     font-weight: bold;
     color: var(--col_white);
     padding: 3px 10px 5px;
     border-radius: 11px;
     background-color: var(--mainBlue);
-    margin-bottom: 10px;
+    margin-bottom: calc(10px / 4 * 3);
   }
   & .signup-complete__coupon p {
-    font-size: 14px;
+    font-size: calc(14px / 4 * 3);
     letter-spacing: -0.14px;
     color: var(--col_black_2);
   }
   & .signup-complete__coupon strong {
     display: inline-block;
-    font-size: 23px;
+    font-size: calc(23px / 4 * 3);
     font-weight: bold;
     color: var(--col_black_2);
-    margin-top: 8px;
+    margin-top: calc(8px / 4 * 3);
   }
   & .signup-complete__coupon .basic-button__light-gray-line {
-    width: 92px;
-    height: 28px;
-    font-size: 13px;
+    width: calc(92px / 4 * 3);
+    height: calc(28px / 4 * 3);
+    font-size: calc(13px / 4 * 3);
     font-weight: 500;
     line-height: 1.54;
     color: var(--col_black_2);
-    margin-top: 10px;
+    margin-top: calc(10px / 4 * 3);
   }
   & .coupon-desc > li {
     position: relative;
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 15px;
+    font-size: 12px;
+    line-height: 1.4;
     letter-spacing: -0.02em;
   }
   & .coupon-desc > li::before {
     content: "·";
-    font-size: 15px;
+    font-size: 12px;
     letter-spacing: -0.02em;
     color: var(--col_gray_7);
   }
@@ -784,7 +784,7 @@
     color: var(--col_black_1);
   }
   & .coupon-desc li + li {
-    margin-top: 20px;
+    margin-top: 8px;
   }
   & .coupon-desc b {
   }
@@ -794,7 +794,7 @@
     gap: 10px;
   }
   & .complete-buttons {
-    margin-top: 106px;
+    margin-top: 50px;
   }
   & .complete-buttons .basic-button__black-line {
     width: 220px;
@@ -803,7 +803,7 @@
 
 /* MODAL :: 소셜계정 이메일 중복체크 */
 .modal-social-email-check__desc {
-  margin: 29px 0 75px;
+  margin: 30px 0 50px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -811,7 +811,11 @@
   text-align: center;
   color: var(--col_gray_6);
 }
+.modal-social-email-check .modal-button-wrap {
+  flex-direction: column;
+}
 .modal-social-email-check__desc .modal-button-wrap > *,
-.modal-button-wrap > [class^="basic-button__"] {
-  width: 200px;
+.modal-social-email-check .modal-button-wrap > [class^="basic-button__"] {
+  min-width: 0;
+  width: 100%;
 }

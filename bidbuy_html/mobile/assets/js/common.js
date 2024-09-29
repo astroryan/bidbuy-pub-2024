@@ -7,7 +7,7 @@ const onClickGnbMenu = () => {
   const dim = document.querySelector(".dropdown__dim");
   const threeDepthMenuBox = document.querySelectorAll(".dropdown-menu__depth_three");
   let currentIdx;
-
+  if (gnbMenu.length === 0) return;
   gnbMenu.forEach((gnb, index) => {
     gnb.addEventListener("click", () => {
       currentIdx = index;
@@ -232,44 +232,35 @@ function toggleKeyword(button, event) {
   }
 }
 
-// 상세페이지 문의 답변 보기 / 닫기
-function openAnswer(button) {
-  const listEl = button.closest(".inquiry-list");
-  const answer = listEl.querySelector(".inquiry-answer");
-
-  if (answer) {
-    if (answer.style.display === "none") {
-      answer.style.display = "flex"; // 답변 열기
-    }
-  }
-}
-function closeAnswer(button) {
-  const listEl = button.closest(".inquiry-list");
-  const answer = listEl.querySelector(".inquiry-answer");
-
-  if (answer) {
-    if (answer.style.display === "flex") {
-      answer.style.display = "none"; // 답변 닫기
-    }
-  }
-}
-
 // 상세페이지 문의 답변 보기 / 닫기 + 텍스트 변경
 function openPublicAnswer(button) {
   const listEl = button.closest(".inquiry-list");
   const answer = listEl.querySelector(".inquiry-answer");
 
+  const buttonText = button.innerText;
+
   if (answer) {
     if (answer.style.display === "flex") {
+      listEl.classList.remove("show");
       answer.style.display = "none"; // 답변 닫기
       button.classList.remove("basic-button__blue-bg-line");
       button.classList.add("basic-button__gray-line");
-      button.innerText = "답변 보기";
+
+      if (buttonText === "출품자 답변 닫기") {
+        button.innerText = "출품자 답변 보기";
+      } else {
+        button.innerText = "답변 보기";
+      }
     } else {
+      listEl.classList.add("show");
       answer.style.display = "flex"; // 답변 보기
       button.classList.remove("basic-button__gray-line");
       button.classList.add("basic-button__blue-bg-line");
-      button.innerText = "답변 닫기";
+      if (buttonText === "출품자 답변 보기") {
+        button.innerText = "출품자 답변 닫기";
+      } else {
+        button.innerText = "답변 닫기";
+      }
     }
   }
 }
@@ -292,15 +283,13 @@ function changModeButton(button) {
   const deliveryModeContent = document.querySelector(".shopping-status__filters");
 
   if (button.classList.contains("show-search-mode")) {
-    button.innerText = "상세검색 모드";
     button.classList.remove("show-search-mode");
-    searchModeContent.style.display = "flex";
+    searchModeContent.style.display = "block";
     deliveryModeContent.style.display = "none";
   } else {
-    button.innerText = "주문배송절차 모드";
     button.classList.add("show-search-mode");
     searchModeContent.style.display = "none";
-    deliveryModeContent.style.display = "flex";
+    deliveryModeContent.style.display = "block";
   }
 }
 

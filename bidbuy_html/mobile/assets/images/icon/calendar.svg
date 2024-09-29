@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="12.1" height="13.3" viewBox="0 0 12.1 13.3">
-  <g id="Icon_feather-calendar" data-name="Icon feather-calendar" transform="translate(-3.85 -2.35)">
-    <path id="패스_79" data-name="패스 79" d="M5.7,6h8.4a1.2,1.2,0,0,1,1.2,1.2v8.4a1.2,1.2,0,0,1-1.2,1.2H5.7a1.2,1.2,0,0,1-1.2-1.2V7.2A1.2,1.2,0,0,1,5.7,6Z" transform="translate(0 -1.8)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/>
-    <path id="패스_80" data-name="패스 80" d="M12.3,3V5.4M7.5,3V5.4m-3,2.4H15.3" transform="translate(0 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="11.19" height="12.434" viewBox="0 0 11.19 12.434">
+    <g data-name="Icon feather-calendar">
+        <g data-name="패스 79" style="fill:none">
+            <path d="M5.743 6h8.7a1.243 1.243 0 0 1 1.247 1.243v8.7a1.243 1.243 0 0 1-1.243 1.243h-8.7A1.243 1.243 0 0 1 4.5 15.947v-8.7A1.243 1.243 0 0 1 5.743 6z" style="stroke:none" transform="translate(-4.5 -4.757)"/>
+            <path d="M5.743 7a.244.244 0 0 0-.243.243v8.704c0 .134.11.243.243.243h8.704c.134 0 .243-.109.243-.243V7.243A.244.244 0 0 0 14.447 7H5.743m0-1h8.704c.687 0 1.243.557 1.243 1.243v8.704c0 .687-.556 1.243-1.243 1.243H5.743A1.243 1.243 0 0 1 4.5 15.947V7.243C4.5 6.557 5.057 6 5.743 6z" style="fill:#898989;stroke:none" transform="translate(-4.5 -4.757)"/>
+        </g>
+        <path data-name="패스 80" d="M12.582 3v2.487M7.608 3v2.487M4.5 7.973h11.19" transform="translate(-4.5 -3)" style="stroke:#898989;fill:none"/>
+    </g>
 </svg>
