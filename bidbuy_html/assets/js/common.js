@@ -35,7 +35,6 @@ const onClickGnbMenu = () => {
 const stickyHeader = () => {
   const header = document.getElementById("header"); // header 섹션
   const headerHeight = header.getBoundingClientRect().height; // navigation bar 높이
-  let lastScrollTop = 8;
 
   window.addEventListener("scroll", () => {
     let scrollTop = document.documentElement.scrollTop;

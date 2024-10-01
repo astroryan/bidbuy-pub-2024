@@ -78,6 +78,12 @@
 .main-slider__button--prev {
   transform: rotate(-180deg);
 }
+.main-slider__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
 .main-slider .main-slider__pagination,
 .main-slider .swiper-pagination-fraction {
   font-size: 14px;
@@ -91,7 +97,9 @@
 .swiper-pagination-current {
   font-weight: 700;
 }
-
+.main-slider__pagination .swiper-pagination-current {
+  font-weight: 700;
+}
 /* 메인 비주얼 유저박스 */
 .main-side__offline,
 .main-side__online {

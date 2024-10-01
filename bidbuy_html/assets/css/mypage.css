@@ -1115,7 +1115,6 @@
     font-size: 15px;
     font-weight: 400;
     height: 40px;
-    font-size: 15px;
     letter-spacing: -0.15px;
     border: solid 1px var(--col_gray_3);
     background-color: var(--col_white);
@@ -1995,6 +1994,9 @@
 
 /* 경매보증금 관리, 보증금 거래 내역 */
 .auction-deposit-management__tab {
+  & .auction-deposit-management__section + .auction-deposit-management__section {
+    margin-top: 40px;
+  }
   /* 경매보증금 관리 */
   & .auction-deposit-table .basic-table__header > div {
     height: 50px;
@@ -2044,6 +2046,7 @@
     margin-top: 12px;
   }
   & .info-list > li:before {
+    flex-shrink: 0;
     content: "";
     width: 16.8px;
     height: 16.8px;

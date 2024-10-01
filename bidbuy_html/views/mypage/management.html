@@ -428,17 +428,18 @@
 
               <!-- 2. 경매보증금 관리, 보증금 거래 내역 -->
               <li data-ids="1" class="auction-deposit-management__tab" style="display: none">
-                <h3 class="my-title">
-                  <b>경매보증금 관리</b>
-                  <div class="title-utils">
-                    <button type="button" class="basic-button__light-gray-line">보증금 환불</button>
-                  </div>
-                </h3>
-
                 <!-- 경매보증금 관리 -->
-                <section class="my-management-table-wrap auction-deposit-table">
-                  <!-- 1. 경매보증금 관리 없을때 -->
-                  <!-- <article class="basic-table">
+                <div class="auction-deposit-management__section">
+                  <h3 class="my-title">
+                    <b>경매보증금 관리</b>
+                    <div class="title-utils">
+                      <button type="button" class="basic-button__light-gray-line">보증금 환불</button>
+                    </div>
+                  </h3>
+
+                  <section class="my-management-table-wrap auction-deposit-table">
+                    <!-- 1. 경매보증금 관리 없을때 -->
+                    <!-- <article class="basic-table">
                     <div class="basic-table__header">
                       <div>서비스 채널</div>
                       <div>현재 보증금</div>
@@ -448,76 +449,77 @@
                     </div>
                     <p class="basic-table__empty-text">내역이 없습니다</p>
                   </article> -->
-                  <!-- 2. 경매보증금 관리 있을때 -->
-                  <article class="basic-table">
-                    <div class="basic-table__header">
-                      <div>서비스 채널</div>
-                      <div>현재 보증금</div>
-                      <div>이용 안내 ID</div>
-                      <div>이용 안내</div>
-                      <div>서비스채널 변경</div>
-                    </div>
-                    <div class="basic-table__body">
-                      <!-- 1 -->
-                      <div class="basic-table__row">
-                        <div>
-                          <figure class="channel-img img-wrap">
-                            <img src="" alt="" />
-                          </figure>
-                          <p class="channel-text">야후경매</p>
+                    <!-- 2. 경매보증금 관리 있을때 -->
+                    <article class="basic-table">
+                      <div class="basic-table__header">
+                        <div>서비스 채널</div>
+                        <div>현재 보증금</div>
+                        <div>이용 안내 ID</div>
+                        <div>이용 안내</div>
+                        <div>서비스채널 변경</div>
+                      </div>
+                      <div class="basic-table__body">
+                        <!-- 1 -->
+                        <div class="basic-table__row">
+                          <div>
+                            <figure class="channel-img img-wrap">
+                              <img src="" alt="" />
+                            </figure>
+                            <p class="channel-text">야후경매</p>
+                          </div>
+                          <div>￦ 110,850</div>
+                          <div class="td-left">
+                            <ul class="info-list">
+                              <li>입찰가능 총액 (30,000 엔) 까지 입찰가능</li>
+                              <li>구매대행 이용가능</li>
+                            </ul>
+                          </div>
+                          <div>
+                            <button type="button" class="basic-button__light-gray-line">보증금 변경</button>
+                          </div>
+                          <div>
+                            <button type="button" class="basic-button__light-gray-line">이베이로 변경</button>
+                          </div>
                         </div>
-                        <div>￦ 110,850</div>
-                        <div class="td-left">
-                          <ul class="info-list">
-                            <li>입찰가능 총액 (30,000 엔) 까지 입찰가능</li>
-                            <li>구매대행 이용가능</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <button type="button" class="basic-button__light-gray-line">보증금 변경</button>
-                        </div>
-                        <div>
-                          <button type="button" class="basic-button__light-gray-line">이베이로 변경</button>
+                        <!-- 1 -->
+                        <div class="basic-table__row">
+                          <div>
+                            <figure class="channel-img img-wrap">
+                              <img src="" alt="" />
+                            </figure>
+                            <p class="channel-text">야후경매</p>
+                          </div>
+                          <div>￦ 110,850</div>
+                          <div class="td-left">
+                            <ul class="info-list">
+                              <li>입찰가능 총액 (30,000 엔) 까지 입찰가능</li>
+                              <li>구매대행 이용가능</li>
+                            </ul>
+                          </div>
+                          <div>
+                            <button
+                              type="button"
+                              class="basic-button__light-gray-line modal_button"
+                              onclick="openModal(this, event)"
+                              data-modal="auction-deposit-charge"
+                            >
+                              보증금 결제
+                            </button>
+                          </div>
+                          <div>-</div>
                         </div>
                       </div>
-                      <!-- 1 -->
-                      <div class="basic-table__row">
-                        <div>
-                          <figure class="channel-img img-wrap">
-                            <img src="" alt="" />
-                          </figure>
-                          <p class="channel-text">야후경매</p>
-                        </div>
-                        <div>￦ 110,850</div>
-                        <div class="td-left">
-                          <ul class="info-list">
-                            <li>입찰가능 총액 (30,000 엔) 까지 입찰가능</li>
-                            <li>구매대행 이용가능</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <button
-                            type="button"
-                            class="basic-button__light-gray-line modal_button"
-                            onclick="openModal(this, event)"
-                            data-modal="auction-deposit-charge"
-                          >
-                            보증금 결제
-                          </button>
-                        </div>
-                        <div>-</div>
-                      </div>
-                    </div>
-                  </article>
-                </section>
-
+                    </article>
+                  </section>
+                </div>
                 <!-- 보증금 거래 내역 -->
-                <h3 class="my-title">
-                  <b>보증금 거래 내역</b>
-                </h3>
-                <section class="my-management-table-wrap deposit-table">
-                  <!-- 1. 보증금 거래 없을때 -->
-                  <!-- <article class="basic-table">
+                <div class="auction-deposit-management__section">
+                  <h3 class="my-title">
+                    <b>보증금 거래 내역</b>
+                  </h3>
+                  <section class="my-management-table-wrap deposit-table">
+                    <!-- 1. 보증금 거래 없을때 -->
+                    <!-- <article class="basic-table">
                     <div class="basic-table__header">
                       <div>거래일자</div>
                       <div>거래내용</div>
@@ -528,70 +530,71 @@
                     </div>
                     <p class="basic-table__empty-text">내역이 없습니다</p>
                   </article> -->
-                  <!-- 2. 보증금 거래 있을때 -->
-                  <article class="basic-table">
-                    <div class="basic-table__header">
-                      <div>거래일자</div>
-                      <div>거래내용</div>
-                      <div>국가</div>
-                      <div>거래금액(결제/환불)</div>
-                      <div>결제방법</div>
-                      <div>상태</div>
-                    </div>
-                    <div class="basic-table__body">
-                      <!-- 1 -->
-                      <div class="basic-table__row">
-                        <div>2024-05-05</div>
-                        <div>
-                          <b>환불신청</b>
-                        </div>
-                        <div>일본</div>
-                        <div>￦ 30,000</div>
-                        <div>계좌송금</div>
-                        <div>처리대기</div>
+                    <!-- 2. 보증금 거래 있을때 -->
+                    <article class="basic-table">
+                      <div class="basic-table__header">
+                        <div>거래일자</div>
+                        <div>거래내용</div>
+                        <div>국가</div>
+                        <div>거래금액(결제/환불)</div>
+                        <div>결제방법</div>
+                        <div>상태</div>
                       </div>
-                      <!-- 2 -->
-                      <div class="basic-table__row">
-                        <div>2024-05-05</div>
-                        <div>
-                          <b>이월작업</b>
+                      <div class="basic-table__body">
+                        <!-- 1 -->
+                        <div class="basic-table__row">
+                          <div>2024-05-05</div>
+                          <div>
+                            <b>환불신청</b>
+                          </div>
+                          <div>일본</div>
+                          <div>￦ 30,000</div>
+                          <div>계좌송금</div>
+                          <div>처리대기</div>
                         </div>
-                        <div>미국 > 일본</div>
-                        <div>-</div>
-                        <div>-</div>
-                        <div>완료</div>
-                      </div>
-                      <!-- 3 -->
-                      <div class="basic-table__row">
-                        <div>2024-05-05</div>
-                        <div>
-                          <b>보증금 결제</b>
+                        <!-- 2 -->
+                        <div class="basic-table__row">
+                          <div>2024-05-05</div>
+                          <div>
+                            <b>이월작업</b>
+                          </div>
+                          <div>미국 > 일본</div>
+                          <div>-</div>
+                          <div>-</div>
+                          <div>완료</div>
                         </div>
-                        <div>미국</div>
-                        <div>￦ 30,000</div>
-                        <div>온라인결제</div>
-                        <div>완료</div>
+                        <!-- 3 -->
+                        <div class="basic-table__row">
+                          <div>2024-05-05</div>
+                          <div>
+                            <b>보증금 결제</b>
+                          </div>
+                          <div>미국</div>
+                          <div>￦ 30,000</div>
+                          <div>온라인결제</div>
+                          <div>완료</div>
+                        </div>
                       </div>
-                    </div>
-                  </article>
-                  <div class="my-management-utils">
-                    <div class="basic-pagination">
-                      <button class="first-button" type="button"></button>
-                      <button class="prev-button" type="button"></button>
+                    </article>
+                    <div class="my-management-utils">
+                      <div class="basic-pagination">
+                        <button class="first-button" type="button"></button>
+                        <button class="prev-button" type="button"></button>
 
-                      <div class="basic-pagination__button-wrap">
-                        <button class="page-button" type="button">1</button>
-                        <button class="page-button active" ype="button">2</button>
-                        <button class="page-button" type="button">3</button>
-                        <button class="page-button" type="button">4</button>
-                        <button class="page-button" type="button">5</button>
-                      </div>
+                        <div class="basic-pagination__button-wrap">
+                          <button class="page-button" type="button">1</button>
+                          <button class="page-button active" ype="button">2</button>
+                          <button class="page-button" type="button">3</button>
+                          <button class="page-button" type="button">4</button>
+                          <button class="page-button" type="button">5</button>
+                        </div>
 
-                      <button class="next-button" type="button"></button>
-                      <button class="last-button" type="button"></button>
+                        <button class="next-button" type="button"></button>
+                        <button class="last-button" type="button"></button>
+                      </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                </div>
 
                 <section class="deposit-info my-box line">
                   <h3>보증금 안내</h3>

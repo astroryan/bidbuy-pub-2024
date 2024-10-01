@@ -441,7 +441,10 @@ input[type="date"]:valid::before {
   background-color: var(--col_white);
   padding: 15px 12px;
 }
-
+.basic-textarea textarea {
+  width: 100%;
+  height: 100%;
+}
 /* TABS */
 .tabs {
   display: flex;
@@ -909,6 +912,7 @@ input[type="radio"] label {
 .item__discount-price {
   display: flex;
   align-items: center;
+  height: 1lh;
   gap: 3px;
 }
 .item__total-price {
@@ -1968,9 +1972,9 @@ input[type="radio"] label {
   margin-top: 30px;
 } */
 .tabs-content__category {
-  height: calc(100vh - 103px);
+  height: calc(100vh - 135px);
   overflow-y: auto;
-  margin-top: 20px;
+  padding-top: 20px;
 }
 .tabs-content__custom-shopping,
 .tabs-content__guide {
@@ -2042,6 +2046,7 @@ input[type="radio"] label {
 
 .category__sub-list {
   padding-left: 30px;
+  padding-bottom: 20px;
 }
 .category__sub-list :is(a, button) {
   position: relative;
@@ -2051,7 +2056,7 @@ input[type="radio"] label {
   gap: 6px;
   font-size: 15px;
   letter-spacing: -0.02em;
-  padding: 11px;
+  padding: 11px 0;
 }
 .category__sub-list :is(a, button)::before {
   content: "·";
@@ -2858,7 +2863,7 @@ a.guide-content__accordion-button .guide-content__title:after {
   background: url(../images/icon/footer_logo.svg) no-repeat center / contain;
   margin-right: 40px;
 }
-.footer_bottom {
+.footer__bottom {
   padding: 30px 0;
 }
 .footer__info-top {
@@ -2878,7 +2883,9 @@ a.guide-content__accordion-button .guide-content__title:after {
   align-items: center;
   gap: 5px;
 }
-
+.footer__info-top dl a {
+  text-decoration: underline;
+}
 .footer__info-mid {
   font-size: 11px;
   line-height: 1.5;
