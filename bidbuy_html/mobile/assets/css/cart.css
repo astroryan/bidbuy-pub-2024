@@ -30,15 +30,15 @@
     padding-top: 30px;
   }
 
-  & .basic-table__header > div,
+  /* & .basic-table__header > div,
   & .basic-table__row > div {
     flex-shrink: 0;
   }
   & .basic-table__row > div {
     min-height: 113px;
-  }
+  } */
 
-  & .basic-table__header > div:nth-child(1),
+  /* & .basic-table__header > div:nth-child(1),
   & .basic-table__row > div:nth-child(1) {
     flex: unset;
     width: 98px;
@@ -64,7 +64,7 @@
   & .basic-table__row > div:nth-child(5) {
     flex: unset;
     width: 76px;
-  }
+  } */
 
   & .cart-item {
     display: flex;
@@ -192,11 +192,11 @@
     font-size: 13px;
     letter-spacing: -0.26px;
     color: var(--col_gray_5);
-    margin-left: 10px;
     text-decoration: underline;
+    margin-left: 10px;
   }
   & .order-list-box {
-    padding: 30px;
+    padding: 20px 15px;
   }
 
   & .order-list + .order-list {
@@ -207,29 +207,24 @@
   }
   & .order__left-container,
   & .order__right-container {
-    width: 615px;
   }
   & .order-item {
-    display: flex;
-    align-items: flex-start;
   }
   & .order-item__image {
     flex-shrink: 0;
-    width: 240px;
-    height: 190px;
+    width: 100%;
+    aspect-ratio: 1.6/1;
     border-radius: 12px;
     border: solid 1px var(--col_gray_4);
-    margin-right: 38px;
+    overflow: hidden;
+    margin-bottom: 20px;
   }
   & .order-item__details {
-    flex-shrink: 0;
-    max-width: 438px;
-    margin-right: 20px;
   }
   & .order-item__platform {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     border-radius: 5px;
     border: solid 1px #e8e8e8;
     background-color: var(--col_white);
@@ -242,24 +237,26 @@
     border-radius: 50%;
     overflow: hidden;
   }
+
   & .order-item__platform p {
+    flex: 1;
+    min-width: 0;
     display: flex;
     align-items: center;
-    gap: 25px;
-    font-size: 18px;
+    gap: 8px;
+    font-size: 14px;
     font-weight: bold;
     letter-spacing: -0.36px;
     color: var(--col_gray_6);
   }
   & .order-item__platform span {
-    max-width: 50%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: -0.32px;
+    max-width: 60%;
   }
 
   & .order-item__name {
-    width: 409px;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.56;
@@ -307,30 +304,32 @@
   }
 
   & .order-item__status-card {
-    flex-shrink: 0;
-    width: 414px;
-    min-height: 268px;
+    padding: 20px 15px;
     border-radius: 12px;
-    border: solid 1px var(--col_gray_4);
-    background: url("../images/banner/order_card.jpg") no-repeat center / cover;
+    background-color: var(--col_gray_2);
     overflow: hidden;
-    padding: 37px 30px;
-    margin-left: auto;
+    margin-top: 20px;
   }
   & .status-card__desc {
     font-size: 16px;
     font-weight: bold;
     line-height: 2.25;
     letter-spacing: -0.4px;
-    color: var(--col_black_1);
+    color: var(--mainBlue);
+    padding-left: 4px;
   }
   & .status-card-details {
-    margin-top: 32px;
+    padding-top: 17px;
+    margin-top: 14px;
+    border-top: 1px dashed var(--col_gray_4);
   }
 
   & .order-list__line {
     display: flex;
     align-items: center;
+  }
+  & .order-list__line:has(.toggle-button) {
+    align-items: flex-start;
   }
   & .order-list__line + .order-list__line {
     margin-top: 20px;
@@ -339,6 +338,7 @@
     position: relative;
     flex-shrink: 0;
     width: 143px;
+    font-size: 14px;
     font-weight: bold;
     color: var(--col_black_1);
   }
@@ -347,11 +347,13 @@
     width: 82px;
   }
   & .order-list__details .order-list__label {
-    width: 143px;
+    width: 110px;
   }
   & .payment__summary__details .order-list__label {
+    font-size: 11px;
     width: 160px;
   }
+
   & .order-list__label:not(:empty):before {
     content: "·";
     font-size: 14px;
@@ -362,12 +364,26 @@
   }
   & .order-list__value {
     display: flex;
-    align-items: baseline;
+    font-size: 14px;
     letter-spacing: -0.35px;
     color: var(--col_black_1);
     word-break: break-all;
   }
-
+  & .order-list__value:has(.toggle-button) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+  }
+  & .order-list__value:has(.toggle-button) .small-gary-text {
+    margin-left: 0;
+  }
+  & .payment__summary__details .order-list__value {
+    font-size: 11px;
+  }
+  & .order-list:has(.payment__summary__header) .order-title {
+    padding: 20px 15px;
+    margin-bottom: 0;
+  }
   & .order-list-box:has(.payment__summary__header) {
     padding: 0;
     overflow: hidden;
@@ -376,17 +392,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
+    height: 38px;
     background-color: #f5f5f5;
   }
   & .payment__summary__header p {
     flex-shrink: 0;
-    font-size: 16px;
+    font-size: 11px;
     font-weight: bold;
     color: var(--col_black_1);
   }
   & .payment__summary__details {
-    padding: 28px 0 20px;
+    padding: 28px 0;
   }
   & .payment__summary__header p:nth-child(1) {
     text-align: center;
@@ -398,23 +414,28 @@
   & .payment__summary__header p:nth-child(1),
   & .payment-list__line > span:nth-child(1),
   & .payment__summary__total > p:nth-child(1) {
-    width: 160px;
+    width: 85px;
   }
   & .payment__summary__header p:nth-child(2),
   & .payment-list__line > span:nth-child(2),
   & .payment__summary__total > p:nth-child(2) {
-    width: 200px;
+    /* width: 110px;
+    text-align: right;
+    background-color: red; */
+    flex: 1;
+    min-width: 0;
     text-align: right;
   }
   & .payment__summary__header p:nth-child(3),
   & .payment-list__line > span:nth-child(3),
   & .payment__summary__total > p:nth-child(3) {
-    width: 220px;
+    flex: 1;
+    min-width: 0;
     text-align: right;
-    padding-right: 50px;
+    padding-right: 7px;
   }
   & .payment-list__line > span:nth-child(1) {
-    padding-left: 30px;
+    padding-left: 10px;
   }
   & .payment-list__line > span:nth-child(2) {
     justify-content: flex-end;
@@ -433,7 +454,7 @@
 
   & .total-payment-list__line {
     position: relative;
-    padding: 22px 0;
+    padding: 15px 0;
   }
 
   & .total-payment-list__line:after {
@@ -441,7 +462,7 @@
     top: 5px;
     left: 50%;
     content: "";
-    width: 535px;
+    width: 100%;
     height: 1px;
     background-color: var(--col_gray_4);
     transform: translateX(-50%);
@@ -451,14 +472,14 @@
     bottom: 5px;
     left: 50%;
     content: "";
-    width: 535px;
+    width: 100%;
     height: 1px;
     background-color: var(--col_gray_4);
     transform: translateX(-50%);
   }
 
   & .payment-list__line + .payment-list__line {
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   & .payment__label:not(:empty):before {
@@ -474,7 +495,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--col_gray_7);
-    padding: 22px 0;
+    padding: 15px 0;
   }
   & .payment__summary__total p {
     font-weight: bold;
@@ -482,41 +503,32 @@
     color: var(--col_white);
   }
   & .payment__summary__total strong {
-    font-size: 18px;
+    font-size: 13px;
     letter-spacing: -0.45px;
     color: var(--col_white);
   }
   & .payment__summary__total p:nth-child(1) {
-    padding-left: 40px;
-  }
-
-  & .order-info-article {
-    min-height: 403px;
+    padding-left: 10px;
   }
 
   & .bundle-list-wrap {
-    height: 430px;
-    max-height: 403px;
+    max-height: 406px;
     overflow-y: auto;
   }
   & .bundle-list {
-    counter-reset: list;
   }
   & .bundle-item__box {
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-rows: 74px 40px;
+    grid-template-columns: 74px 1fr;
+    gap: 15px 13px;
   }
 
   & .bundle-item__box + .bundle-item__box {
-    margin-top: 35px;
+    margin-top: 20px;
   }
-  & .bundle-item__box:before {
-    align-self: center;
-    color: var(--col_black_1);
-    counter-increment: list 1;
-    content: counter(list);
-    margin-right: 33px;
-  }
+
   & .bundle-item__box .img-wrap {
     flex-shrink: 0;
     width: 74px;
@@ -524,17 +536,13 @@
     border-radius: 12px;
     border: solid 1px var(--col_gray_4);
     overflow: hidden;
-    margin-right: 19px;
   }
   & .bundle-item__details {
-    flex-shrink: 0;
-    width: 300px;
-    padding-right: 15px;
   }
   & .bundle-item__market {
     display: flex;
     align-items: center;
-    margin-bottom: 13px;
+    margin-bottom: 12px;
   }
   & .bundle-item__country {
     flex-shrink: 0;
@@ -551,7 +559,7 @@
     color: var(--col_gray_5);
   }
   & .bundle-item__market p {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: normal;
     color: var(--col_gray_5);
   }
@@ -571,17 +579,18 @@
   }
   & .bundle-item__desc b {
     flex-shrink: 0;
-    width: 65px;
+    width: 50px;
   }
 
   & .bundle-item__delivery-status {
-    padding-top: 15px;
-    margin-left: auto;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
   }
   & .bundle-item__delivery-status > * {
     font-size: 13px;
     font-weight: 500;
-    padding: 7px 20px;
+    width: 100%;
+    height: 100%;
   }
 
   & .empty-text {
@@ -600,21 +609,20 @@
 
   /* 주문 메모 */
   & .order-memo-box {
-    display: flex;
-    gap: 18px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
   & .basic-textarea {
     flex-shrink: 0;
-    width: 435px;
-    height: 100px;
+    width: 100%;
+    height: 93px;
   }
   & .basic-button__gray {
-    width: 105px;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
   }
   & .order-memo-list {
-    height: 505px;
-    padding: 16px 0;
+    height: 610px;
     overflow-y: auto;
   }
 
@@ -656,7 +664,7 @@
     line-height: 1.71;
     letter-spacing: -0.35px;
     color: var(--col_gray_6);
-    margin-top: 20px;
+    margin-top: 14px;
   }
 
   & .order-memo-answer {
@@ -674,44 +682,40 @@
     color: var(--col_black_1);
     margin-top: 9px;
   }
+
+  & .order-button-wrap {
+    margin-top: 30px;
+  }
 }
 
 /* MODAL :: 본 경매 입찰내역 */
 .modal-auction-list {
-  & .modal__body {
-    padding: 40px 30px;
-  }
-  & .basic-table__header > div,
+  /* & .basic-table__header > div,
   & .basic-table__row > div {
     flex-shrink: 0;
-  }
-  & .basic-table__header > div {
+  } */
+  /* & .basic-table__header > div {
     min-height: 60px;
-  }
+  } */
   & .basic-table__row > div {
-    min-height: 83px;
-    text-align: center;
+    min-height: 73px;
+    /* text-align: center; */
   }
 
   & .basic-table__header > div:nth-child(1),
   & .basic-table__row > div:nth-child(1) {
-    flex: 2;
+    flex: 0 0 200px;
   }
   & .basic-table__header > div:nth-child(2),
   & .basic-table__row > div:nth-child(2) {
-    flex: unset;
-    width: 160px;
+    flex: 0 0 150px;
   }
 }
 
 /* MODAL :: 인보이스 출력 */
 .modal-print-invoice {
-  & .modal__body {
-    padding: 40px 30px;
-  }
-
   & .modal__content {
-    width: 415px;
+    width: 100%;
     height: 293px;
     border: 1px solid;
   }

@@ -323,11 +323,11 @@ function mainSlide() {
         slideLabelMessage: "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
       },
       loop: false, // 슬라이드 반복 여부
-      // autoplay: {
-      //   // 자동 슬라이드 설정 , 비 활성화 시 false
-      //   delay: 3000, // 시간 설정
-      //   disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
-      // },
+      autoplay: {
+        // 자동 슬라이드 설정 , 비 활성화 시 false
+        delay: 3000, // 시간 설정
+        disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
+      },
       pagination: {
         el: ".main-slider__pagination",
         type: "fraction",

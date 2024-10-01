@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://contents.sixshop.com/uploadedFiles/212543/default/image_1654248056167.png"
+    />
+    <link rel="stylesheet" type="text/css" href="./inc/style.css" />
+    <link rel="stylesheet" type="text/css" href="./inc/guide.css" />
+    <script src="./inc/include.js" type="text/javascript" defer></script>
+    <title>퍼블리싱 가이드</title>
+  </head>
+  <body>
+    <div class="guide">
+      <!--헤더 영역-->
+      <section class="guide-head"></section>
+
+      <!--콘텐츠 영역-->
+      <section class="guide-body">
+        <div class="guide-side">
+          <h2 class="guide-subtitle">개발 산출물</h2>
+          <ul>
+            <li>
+              <a href="./guide_02_web.html" class="on">Pc 화면</a>
+            </li>
+            <li>
+              <a href="./guide_02_mobile.html">Mobild 화면</a>
+            </li>
+          </ul>
+        </div>
+        <div class="guide-cont">
+          <div class="print-area">
+            <h2 class="guide-title">Web 화면</h2>
+
+            <!-- ##### 산출물 목록 ##### -->
+            <h3 class="guide-subtitle">산출물 목록</h3>
+            <table class="guide-table" id="pub_list">
+              <colgroup>
+                <col width="5%" />
+                <col width="10%" />
+                <col width="30%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>분류</th>
+                  <th>페이지명</th>
+                  <th>링크</th>
+                  <th>착수일</th>
+                  <th>완료일</th>
+                  <th>비고</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <button class="guide-print" onclick="print_guide()">프린트</button>
+          <a class="guide-print disabled" href="../bidbuy__v0.0.1.zip" download>다운로드</a>
+          <script>
+            const $DISABLED_BTN = document.querySelector(".guide-print.disabled");
+            $DISABLED_BTN.removeAttribute("href");
+            $DISABLED_BTN.removeAttribute("download");
+          </script>
+          <br /><br /><br /><br /><br />
+
+          <!-- ##### 버전 체크 ##### -->
+          <h3 class="guide-subtitle">히스토리</h3>
+          <table class="guide-table" id="his_list">
+            <colgroup>
+              <col width="15%" />
+            </colgroup>
+            <tbody></tbody>
+          </table>
+
+          <script type="text/javascript">
+            /* ##### 산출물 목록 ##### */
+            // prettier-ignore
+            const PAGES = [
+                { section: "index", name: "메인페이지", directory: "./bidbuy_html/pc/views/index/", id: "index", date_start: "2023-09-13", date_end: "2023-09-16", memo: "" },
+                { section: "search", name: "검색페이지", directory: "./bidbuy_html/pc/views/search/", id: "index", date_start: "2023-09-16", date_end: "2023-09-18", memo: "" },
+                { section: "list", name: "전시 카테고리 목록 화면", directory: "./bidbuy_html/pc/views/list/", id: "exhibition_category_list", date_start: "2023-09-16", date_end: "2023-09-18", memo: "" },
+                { section: "list", name: "시스템 카테고리 목록 화면", directory: "./bidbuy_html/pc/views/list/", id: "system_category_list", date_start: "2023-09-16", date_end: "2023-09-18", memo: "" },
+                { section: "auctions", name: "경매대행상세", directory: "./bidbuy_html/pc/views/auctions/", id: "index", date_start: "2023-09-19", date_end: "2023-09-19", memo: "" },
+                { section: "auctions", name: "경매대행상세 > 입찰완료", directory: "./bidbuy_html/pc/views/auctions/", id: "complete", date_start: "2023-09-20", date_end: "2023-09-20", memo: "" },
+                { section: "auctions", name: "경매대행상세 > 1차결제", directory: "./bidbuy_html/pc/views/auctions/", id: "order", date_start: "2023-09-21", date_end: "2023-09-21", memo: "" },
+                { section: "auctions", name: "경매대행상세 > 주문결제완료 상세화면", directory: "./bidbuy_html/pc/views/auctions/", id: "order-confirmation", date_start: "2023-09-21", date_end: "2023-09-21", memo: "" },
+                { section: "purchases", name: "구매대행상세", directory: "./bidbuy_html/pc/views/purchases/", id: "index", date_start: "2023-09-19", date_end: "2023-09-19", memo: "" },
+                { section: "purchases", name: "구매대행상세 > 구매대행신청", directory: "./bidbuy_html/pc/views/purchases/", id: "order", date_start: "2023-09-19", date_end: "2023-09-19", memo: "" },
+                { section: "auth", name: "로그인", directory: "./bidbuy_html/pc/views/auth/", id: "index", date_start: "2023-09-20", date_end: "2023-09-20", memo: "" },
+                { section: "auth", name: "로그인 > 아이디 비밀번호 찾기", directory: "./bidbuy_html/pc/views/auth/", id: "forgot", date_start: "2023-09-20", date_end: "2023-09-20", memo: "" },
+                { section: "signup", name: "회원가입 > 멤버십혜택 약관", directory: "./bidbuy_html/pc/views/signup/", id: "index", date_start: "2023-09-20", date_end: "2023-09-20", memo: "" },
+                { section: "signup", name: "회원가입 > 가입정보입력", directory: "./bidbuy_html/pc/views/signup/", id: "join", date_start: "2023-09-20", date_end: "2023-09-20", memo: "" },
+                { section: "signup", name: "회원가입 > 가입완료", directory: "./bidbuy_html/pc/views/signup/", id: "complete", date_start: "2023-09-20", date_end: "2023-09-20", memo: "" },
+                { section: "signup", name: "회원가입 > 간편회원가입", directory: "./bidbuy_html/pc/views/signup/", id: "sns", date_start: "2023-09-20", date_end: "2023-09-20", memo: "" },
+                { section: "cart", name: "장바구니", directory: "./bidbuy_html/pc/views/cart/", id: "index", date_start: "2023-09-21", date_end: "2023-09-21", memo: "" },
+                { section: "mypage", name: "마이페이지", directory: "./bidbuy_html/pc/views/mypage/", id: "index", date_start: "2023-09-22", date_end: "2023-09-22", memo: "" },
+                { section: "mypage", name: "마이페이지 > 주문전체목록", directory: "./bidbuy_html/pc/views/mypage/", id: "order", date_start: "2023-09-22", date_end: "2023-09-22", memo: "" },
+                { section: "mypage", name: "마이페이지 > 입찰상품(목록)", directory: "./bidbuy_html/pc/views/mypage/", id: "order_bid_list", date_start: "2023-09-22", date_end: "2023-09-22", memo: "" },
+                { section: "mypage", name: "마이페이지 > 경매낙찰상품(목록)", directory: "./bidbuy_html/pc/views/mypage/", id: "order_auction_list", date_start: "2023-09-22", date_end: "2023-09-22", memo: "" },
+                { section: "mypage", name: "마이페이지 > 1차 결제대기", directory: "./bidbuy_html/pc/views/mypage/", id: "payment_pending", date_start: "2023-09-22", date_end: "2023-09-22", memo: "" },
+                { section: "mypage", name: "마이페이지 > 관심상품, 관심판매자, 관심키워드, 최근 본 상품", directory: "./bidbuy_html/pc/views/mypage/", id: "wish", date_start: "2023-09-23", date_end: "2023-09-23", memo: "" },
+                { section: "mypage", name: "마이페이지 > 묶음배송 관리", directory: "./bidbuy_html/pc/views/mypage/", id: "bundle_shipping_management", date_start: "2023-09-23", date_end: "2023-09-23", memo: "" },
+                { section: "mypage", name: "마이페이지 > 묶음배송 관리2", directory: "./bidbuy_html/pc/views/mypage/", id: "bundle_shipping_management_2", date_start: "2023-09-23", date_end: "2023-09-23", memo: "" },
+                { section: "mypage", name: "마이페이지 > 배송지 관리", directory: "./bidbuy_html/pc/views/mypage/", id: "shipping", date_start: "2023-09-24", date_end: "2023-09-24", memo: "" },
+                { section: "mypage", name: "마이페이지 > 예치금 관리, 경매보증금 관리, 수수료 정액권 관리, 폰 관리", directory: "./bidbuy_html/pc/views/mypage/", id: "management", date_start: "2023-09-24", date_end: "2023-09-24", memo: "" },
+                { section: "mypage", name: "마이페이지 > 등급포인트", directory: "./bidbuy_html/pc/views/mypage/", id: "rank", date_start: "2023-09-24", date_end: "2023-09-24", memo: "" },
+                { section: "mypage", name: "마이페이지 > 환불", directory: "./bidbuy_html/pc/views/mypage/", id: "refund", date_start: "2023-09-24", date_end: "2023-09-24", memo: "" },
+                { section: "mypage", name: "마이페이지 > 개인정보관리", directory: "./bidbuy_html/pc/views/mypage/", id: "info", date_start: "2023-09-24", date_end: "2023-09-24", memo: "" },
+                { section: "mypage", name: "마이페이지 > 개인정보관리 [수정]", directory: "./bidbuy_html/pc/views/mypage/", id: "info_edit", date_start: "2023-09-24", date_end: "2023-09-24", memo: "" },
+                { section: "cs", name: "고객센터 > 메인", directory: "./bidbuy_html/pc/views/cs/", id: "index", date_start: "2023-09-25", date_end: "2023-09-25", memo: "" },
+                { section: "cs", name: "고객센터 > 이용안내 [비드바이 배송·통관·관세 안내]", directory: "./bidbuy_html/pc/views/cs/", id: "guide", date_start: "2023-09-25", date_end: "2023-09-25", memo: "" },
+                { section: "cs", name: "고객센터 > 공지사항 목록", directory: "./bidbuy_html/pc/views/cs/", id: "notice", date_start: "2023-09-25", date_end: "2023-09-25", memo: "" },
+                { section: "cs", name: "고객센터 > 공지사항 상세", directory: "./bidbuy_html/pc/views/cs/", id: "notice_details", date_start: "2023-09-25", date_end: "2023-09-25", memo: "" },
+                { section: "cs", name: "고객센터 > 자주하는질문", directory: "./bidbuy_html/pc/views/cs/", id: "faq", date_start: "2023-09-25", date_end: "2023-09-25", memo: "" },
+                { section: "cs", name: "고객센터 > 1:1문의", directory: "./bidbuy_html/pc/views/cs/", id: "qna_form", date_start: "", date_end: "", memo: "" },
+                { section: "cs", name: "고객센터 > 1:1문의 목록", directory: "./bidbuy_html/pc/views/cs/", id: "qna", date_start: "2023-09-25", date_end: "2023-09-25", memo: "" },
+                { section: "cs", name: "고객센터 > 1:1문의 상세", directory: "./bidbuy_html/pc/views/cs/", id: "qna_details", date_start: "2023-09-25", date_end: "2023-09-25", memo: "" },
+                { section: "community", name: "커뮤니티 > 메인", directory: "./bidbuy_html/pc/views/community/", id: "index", date_start: "", date_end: "", memo: "" },
+                { section: "community", name: "커뮤니티 > 이벤트", directory: "./bidbuy_html/pc/views/community/", id: "event", date_start: "", date_end: "", memo: "" },
+                { section: "community", name: "커뮤니티 > 이용후기 - 리스트", directory: "./bidbuy_html/pc/views/community/", id: "review", date_start: "", date_end: "", memo: "" },
+                { section: "community", name: "커뮤니티 > 이용후기 상세", directory: "./bidbuy_html/pc/views/community/", id: "review_details", date_start: "", date_end: "", memo: "" },
+                { section: "community", name: "커뮤니티 > 비바특파원 - 리스트", directory: "./bidbuy_html/pc/views/community/", id: "global_news", date_start: "", date_end: "", memo: "" },
+                { section: "community", name: "커뮤니티 > 비바특파원 - 상세", directory: "./bidbuy_html/pc/views/community/", id: "global_news_details", date_start: "", date_end: "", memo: "" }
+              ];
+
+            const $PAGE_TARGET = document.querySelector("#pub_list tbody");
+            PAGES.forEach((key, index) => {
+              let log = ``;
+              log = log += `<tr>`;
+              log = log += `<td>${index + 1}</td>`;
+              log = log += `<td>${key.section}</td>`;
+              log = log += `<td>${key.name}<br/><small>${key.directory}${key.id}.html</small></td>`;
+              if (key.directory !== "" && key.id !== "") {
+                log = log += `<td><a href=".${key.directory}${key.id}.html" target="_blank">바로가기</a></td>`;
+              } else {
+                log = log += `<td>페이지 생성중</td>`;
+              }
+              log = log += `<td>${key.date_start}</td>`;
+              log = log += `<td>${key.date_end}</td>`;
+              log = log += `<td>${key.memo}</td>`;
+              log = log += `</tr>`;
+              $PAGE_TARGET.innerHTML = $PAGE_TARGET.innerHTML += log;
+            });
+
+            /* ##### 버전 체크 ##### */
+            // prettier-ignore
+            const HISTORY = [
+              { date: '2024-09-13', ver: '0.0.0', text: '프로젝트 생성' },
+            ];
+            const $HISTORY_TARGET = document.querySelector("#his_list tbody");
+            [...HISTORY].reverse().forEach((key) => {
+              let log = ``;
+              log = log += `<tr>`;
+              log = log += `<th>v${key.ver}</th>`;
+              log = log += `<td><code class="inline-code">${key.date}</code>&nbsp;&nbsp;&nbsp;${key.text}</td>`;
+              log = log += `</tr>`;
+              $HISTORY_TARGET.innerHTML = $HISTORY_TARGET.innerHTML += log;
+            });
+          </script>
+        </div>
+      </section>
+
+      <!--푸터 영역-->
+      <section class="guide-foot"></section>
+    </div>
+  </body>
+</html>

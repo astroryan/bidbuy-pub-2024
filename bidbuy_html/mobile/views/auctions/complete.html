@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- MODAL :: 재입찰 2depth -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="re-bid"></button> -->
+      <div class="modal-re-bid bid-modal modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">재입찰하기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <ol class="bid-modal__depth-list">
+              <!-- 1 DEPTH -->
+              <li class="depth-two">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">재입찰하기</p>
+                      </li>
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">재입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>아이템No, (선택옵션) : v1135509199 (옵션명)</li>
+                      <li>이전 입찰가 :&nbsp;<b>¥1,200</b>&nbsp;(￦10,920)</li>
+                      <li><b>입찰가 입력하기</b>&nbsp;:&nbsp;<b>¥1,300</b>&nbsp;이상으로 입찰 가능합니다.</li>
+                      <li>종료시간 : 2024-05-12 12:12:12</li>
+                    </ul>
+                  </div>
+
+                  <ul class="bid-order__option">
+                    <li>
+                      <label for="num" class="bid-order__option-label">수량</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-select-box gray">
+                          <select name="" id="num" required>
+                            <option>1개</option>
+                            <option>2개</option>
+                            <option>3개</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">재입찰가</label>
+                      <div class="bid-order__option-desc">
+                        <div class="basic-input">
+                          <input id="price" type="text" placeholder="입찰가를  ¥ 단위로 입력해 주세요." />
+                        </div>
+                        <span class="bid-order__price-desc">(구만이천 엔)</span>
+                      </div>
+                    </li>
+                    <li>
+                      <label for="price" class="bid-order__option-label">경매낙찰정보</label>
+                      <div class="bid-order__option-desc">
+                        <div class="radio-check-button">
+                          <input type="radio" name="public2" id="public21" checked />
+                          <label for="public21"><span class="radio-check-button-icon"></span>공개</label>
+                        </div>
+                        <div class="radio-check-button">
+                          <input type="radio" name="public2" id="public22" />
+                          <label for="public22"><span class="radio-check-button-icon"></span>비공개</label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-button-wrap">
+                  <button type="button" class="basic-button__black-line" onclick="onClickNextModal(this)">다음</button>
+                </div>
+              </li>
+              <!-- 2 DEPTH -->
+              <li class="depth-three" style="display: none">
+                <div class="modal__content">
+                  <div class="content-box">
+                    <ol class="bid-order">
+                      <li class="bid-order-list">
+                        <div class="bid-order__num">1st</div>
+                        <p class="bid-order__text">재입찰하기</p>
+                      </li>
+                      <li class="bid-order-list active">
+                        <div class="bid-order__num">2st</div>
+                        <p class="bid-order__text">재입찰확인</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="depth-three__alert-text">재입찰 금액을 확인해 주세요.</div>
+                  <div class="bid-item-details">
+                    <ul>
+                      <li>
+                        <span class="bid-item-details__dt"><b>재입찰급액</b></span>
+                        <span class="bid-item-details__dd"
+                          ><b>¥ 92,000</b><span class="bid-item-details__dd-gray">(￦433,650)</span></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="depth-three__notice">
+                    <p>최고 입찰자로 낙찰된 후에는 낙찰 취소가 불가능 합니다.</p>
+                    <small>(취소 시 보증금이 환수 됩니다.)</small>
+                  </div>
+                </div>
+                <div class="modal-button-wrap">
+                  <a href="" class="basic-button__black-line">재입찰하기</a>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </div>
+
+      <!-- START :: HEADER -->
+      <header id="header" class="simple" data-title="주문완료"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <div id="main" class="bid-complete-page">
+        <section class="top-content">
+          <p class="top-content__timestamp"><small>2024-05-10 21:22:10</small></p>
+          <h2 class="top-content__title">
+            축하합니다.<br />
+            경매물품에 입찰이 완료 되었습니다.
+          </h2>
+          <p class="top-content__bid-amount">입찰금액 : <b>¥ 92,000</b></p>
+        </section>
+        <div class="inner-width">
+          <section class="bid-completion__instructions">
+            <p class="bid-completion__payment-instructions">24시간 내 낙찰금액을 1차 결제 진행해 주세요.</p>
+            <p class="bid-completion__note">
+              (아래 바로 결제하기 진행 또는 최종확인 후 마이페이지에서 진행 가능합니다.)
+            </p>
+            <div class="bid-completion__actions">
+              <button
+                class="basic-button__light-gray-line modal_button"
+                type="button"
+                onclick="openModal(this, event)"
+                data-modal="re-bid"
+              >
+                재입찰하기
+              </button>
+              <button class="basic-button__light-gray-line" type="button">입찰취소</button>
+              <a href="../payment" class="basic-button__light-gray-line">결제하기</a>
+              <a href="../mypage" class="basic-button__light-gray-line">마이페이지</a>
+            </div>
+          </section>
+          <section class="item-details">
+            <div class="item-details__box">
+              <h3 class="item-details__header">
+                <div class="item-platform">
+                  <figure class="img-wrap">
+                    <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                  </figure>
+                  야후경매
+                </div>
+                <p class="item-name">지상·패턴학원(Vol.1) 분카 학원 문화 출판국</p>
+              </h3>
+              <div class="item-details__content">
+                <figure class="img-wrap item-details__image">
+                  <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                </figure>
+                <div class="item-details__info">
+                  <ul>
+                    <li class="item-details__bid-info">
+                      <span class="item-details__label"> 낙찰 금액</span>
+                      <span class="item-details__value"> ¥ 92,000</span>
+                    </li>
+                    <li class="item-details__bid-info">
+                      <span class="item-details__label"> 낙찰 일시</span>
+                      <span class="item-details__value">2024-05-05 21시 30분 00초</span>
+                    </li>
+                    <li class="item-details__bid-info">
+                      <span class="item-details__label"> 아이템No</span>
+                      <span class="item-details__value">v1135509199</span>
+                    </li>
+                    <li class="item-details__bid-info">
+                      <span class="item-details__label"> 입찰 방식</span>
+                      <span class="item-details__value">즉시낙찰</span>
+                    </li>
+                    <li class="item-details__bid-info">
+                      <span class="item-details__label"> 선택 옵션</span>
+                      <span class="item-details__value">OOOOOO</span>
+                    </li>
+                    <li class="item-details__bid-info">
+                      <span class="item-details__label"> 입찰 수량</span>
+                      <span class="item-details__value">1 개</span>
+                    </li>
+                    <li class="item-details__bid-info">
+                      <span class="item-details__label"> Seller 정보</span>
+                      <span class="item-details__value seller-value">
+                        <figure class="img-wrap">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <b>bookoff2014</b> (1,372,983)
+                        <figure class="seller-value__img">
+                          <img src="../../assets/images/icon/review_positive.svg" alt="positive" />
+                        </figure>
+                        <b>648</b> positive
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="item-details__utils">
+                  <a href="../auctions/index.html" type="button" class="more-button"></a>
+                  <button class="share-button" type="button"></button>
+                </div>
+              </div>
+            </div>
+            <div class="item-details__notes">
+              <p class="item-details__note-title">참고사항</p>
+              <ol class="item-details__note-list">
+                <li>낙찰된 후에는 낙찰취소가 불가능 합니다.(취소시 보증금 환수 및 등급하락, 이용제한 됩니다.)</li>
+                <li>
+                  현지배송 및 국제배송 기간은 아래와 같습니다. (현지배송은 출품자의 사정에 따라 약간의 차이가 있을 수
+                  있습니다.)<br />> 미국 : 7~10일 / 영국 : 7~10일 / 일본 : 3~5일<br />> 비드바이특송 : 3~5일 / 일본 EMS
+                  : 3~4일 / 비드바이 선편특송: 5~7일
+                </li>
+              </ol>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

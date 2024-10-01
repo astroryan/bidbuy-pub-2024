@@ -9,6 +9,7 @@
     <meta property="og:locale" content="ko_KR" />
     <meta property="og:title" content="BIDBUY" />
     <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
     <!-- 웹페이지 타입(blog, website 등) -->
     <meta property="og:keywords" content="웹페이지 URL" />
     <meta property="og:description" content="웹페이지 설명" />
@@ -427,10 +428,9 @@
                     <li>
                       <div class="bid-order__option-desc">
                         <div class="basic-input time-input-group">
-                          <input id="date" type="number" /><small>시</small> <input id="date" type="number" /><small
-                            >분</small
-                          >
-                          <input id="date" type="number" /><small>초</small>
+                          <input id="date" type="number" inputmode="numeric" /><small>시</small>
+                          <input id="date" type="number" inputmode="numeric" /><small>분</small>
+                          <input id="date" type="number" inputmode="numeric" /><small>초</small>
                         </div>
                       </div>
                     </li>

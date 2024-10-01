@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://contents.sixshop.com/uploadedFiles/212543/default/image_1654248056167.png">
+    <link rel="stylesheet" type="text/css" href="./inc/style.css" />
+    <script src="./inc/include.js" type="text/javascript" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <title>퍼블리싱 가이드</title>
+  </head>
+  <body>
+    <div class="guide">
+      <!--헤더 영역 : ./inc/include.js 에서 자동작성-->
+      <section class="guide-head"></section>
+
+      <!--콘텐츠 영역-->
+      <section class="guide-body">
+        <div class="guide-side">
+          <h2 class="guide-subtitle">설계 규칙</h2>
+          <ul>
+            <li>
+              <a href="./guide_04_default.html">표준 규칙</a>
+            </li>
+            <li>
+              <a href="./guide_04_code.html" class="on">코드 규칙</a>
+            </li>
+            <li>
+              <a href="./guide_04_name.html">작명 규칙</a>
+            </li>
+          </ul>
+        </div>
+        <div class="guide-cont">
+          <h2 class="guide-title">코드 규칙</h2>
+
+          <!--가이드-->
+          <h3 class="guide-subtitle">HTML 규칙</h3>
+          <ul class="guide-list">
+            <li>
+              시작과 끝을 나타내는 주석은 다음과 같이 한다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-html">
+  &lt;!--주석-->
+  ...
+  &lt;!--//주석--> 
+  </code>
+</pre>
+              </div>
+            </li>
+            <li>
+              반응형 프로젝트는 viewport 속성을 정의한다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-html">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </code>
+</pre>
+              </div>
+            </li>
+            <li>
+              Boolean 속성(disabled, checked, slelected 등)의 ‘값’은 지정하지 않는다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-html">
+  &lt;input type="text" disabled />
+  &lt;input type="checkbox" value="1" checked />    
+  </code>
+</pre>
+              </div>
+            </li>
+            <li>
+              css와 javascript를 불러올 때 'type' 속성을 생략한다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-html">
+  &lt;link rel="stylesheet" href="...">
+  &lt;script src="..."></script>  
+  </code>
+</pre>
+              </div>
+            </li>
+            <li>들여쓰기는 1탭 들여쓰기 하며, 1탭의 크기는 공백 2칸으로 설정한다.</li>
+            <li>속성(attr)값에는 항상 큰 따옴표를 사용한다.</li>
+            <li>속성은 다음 순서로 작성한다
+              <ol class="guide-list">
+                <li>id</li>
+                <li>class</li>
+                <li>name, data-*</li>
+                <li>src, for, type, href, value</li>
+                <li>title, alt</li>
+                <li>aria-*, role</li>
+              </ol>
+            </li>
+            <li>css 스타일이 없어도 html 문서 자체만으로도 내용과 구조를 알 수 있어야 한다.</li>
+            <li>SEO와 웹접근성을 위해 HTML5의 시맨틱 마크업(Semantic Markup)를 사용한다.</li>
+          </ul>
+          <!--//가이드-->
+          <br /><br /><br /><br /><br />
+
+          <!--가이드-->
+          <h3 class="guide-subtitle">CSS 규칙</h3>
+          <ul class="guide-list">
+            <li>속성 선언 순서는 다음을 따른다.
+              <ol class="guide-list">
+                <li>position</li>
+                <li>block 스타일</li>
+                <li>inline, text 스타일</li>
+                <li>visual 스타일 (color, background...)</li>
+                <li>그 외 속성</li>
+              </ol>
+            </li>
+            <li>선택자를 그룹핑하는 경우 쉼표(,) 뒤에서 줄바꿈한다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-css">
+  .item1,
+  .item2 {
+    color: red;
+  }    
+  </code>
+</pre>
+              </div>            
+            </li>
+            <li>한 줄에 하나의 속성만 작성하고, 마지막은 항상 세미콜론(;)으로 끝낸다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-css">
+  div {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    background-image: url(../img/sprite.png);
+  }     
+  </code>
+</pre>
+              </div>            
+            </li>
+            <li>줄임 속성(background, padding, margin 등)을 사용할 때는 속성 순서를 맞춘다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-css">
+  /* 틀린 예시 */
+  div { background: no-repeat url(xxx.png); }
+
+  /* 옳은 예시 */
+  div { background: #fff url(img_tree.png) no-repeat right top; }    
+  </code>
+</pre>
+              </div>            
+            </li>
+            <li>배경에 색상 값만 지정할 때는 background 줄임 속성 대신 backgroud-color 사용을 권장한다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-css">
+  /* 틀린 예시 */
+  div { background: #f00; }
+
+  /* 옳은 예시 */
+  div { background-color: #f00; }    
+  </code>
+</pre>
+              </div>            
+            </li>
+            <li>다중 속성값들은 쉼표(,) 뒤에 공백 또는 줄바꿈을 포함한다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-css">
+  box-shadow: 1px 1px 1px #ccc, -1px -1px 1px #000; 
+  </code>
+</pre>
+              </div>            
+            </li>
+            <li>주석은 다음 형태로 간결하게 작성한다.<br />
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+<pre>
+  <code class="language-css">
+  /* Modal */  
+  </code>
+</pre>
+              </div>            
+            </li>
+            <li>less나 scss로 작업 시 반응형 설정을 위한 미디어쿼리는 별도의 파일이나 파일 하단에 모아놓지 않고 해당 규칙이 있는 자리에 최대한 가까이 위치시킨다.</li>
+            <li>@import 사용을 지양한다. 여러 개의 <code class="inline-code">&lt;link&gt;</code>를 사용하거나, css 전처리기로 하나의 파일로 만든다.</li>
+            <li>css는 모바일을 먼저 작성하고 media query로 태블릿, 데스크톱 해상도 스타일을 작성한다.</li>
+            <li>블록, 섹션, 컴포넌트 단위 별로 코드를 모아서 작성한다.</li>
+            <li>선택자 우선순위를 높이는 조합과 중첩을 과도하게 사용하지 않는다.</li>
+            <li>html 마크업 구조, 혹은 계층 구조의 순서에 따라 작성한다.</li>
+          </ul>
+          <!--//가이드-->
+        </div>
+      </section>
+
+      <!--푸터 영역 : ./inc/include.js 에서 자동작성-->
+      <section class="guide-foot"></section>
+    </div>
+    <script type="text/javascript"></script>
+  </body>
+</html>

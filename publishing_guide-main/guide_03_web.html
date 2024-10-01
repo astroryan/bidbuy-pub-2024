@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://contents.sixshop.com/uploadedFiles/212543/default/image_1654248056167.png"
+    />
+    <link rel="stylesheet" type="text/css" href="./inc/style.css" />
+    <link rel="stylesheet" href="../web/assets/css/_common.css" />
+    <link rel="stylesheet" href="../web/assets/css/popup.css" />
+    <link rel="stylesheet" href="../web/assets/css/login.css" />
+    <script src="./inc/include.js" type="text/javascript" defer></script>
+    <script src="../web/assets/js/common.js" type="text/javascript" defer></script>
+    <script src="../web/assets/js/popup.js" type="text/javascript" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <title>퍼블리싱 가이드</title>
+  </head>
+  <body>
+    <div class="guide">
+      <!--헤더 영역 : ./inc/include.js 에서 자동작성-->
+      <section class="guide-head"></section>
+
+      <!--콘텐츠 영역-->
+      <section class="guide-body">
+        <div class="guide-side">
+          <h2 class="guide-subtitle">공통요소</h2>
+          <ul>
+            <li>
+              <a href="./guide_03_sample.html" class="on">Web 화면</a>
+            </li>
+          </ul>
+        </div>
+        <div class="guide-cont">
+          <h2 class="guide-title">Web 화면</h2>
+
+          <script>
+            window.addEventListener("load", () => {
+              const $URL = window.location.href.split("?type=")[1];
+              document.querySelectorAll(".guide-stab a").forEach((el) => {
+                if (el.classList.contains("stab-" + $URL)) {
+                  el.classList.add("on");
+                }
+              });
+              document.querySelectorAll(".stab-cont").forEach((el) => {
+                if (el.classList.contains("stab-" + $URL)) {
+                  el.classList.add("active");
+                }
+              });
+            });
+          </script>
+
+          <div class="guide-stab">
+            <a href="?type=form" class="stab-form">폼</a>
+            <a href="?type=text" class="stab-text">텍스트</a>
+            <a href="?type=tab" class="stab-tab">탭 메뉴</a>
+            <a href="?type=list" class="stab-list">리스트</a>
+            <a href="?type=table" class="stab-table">테이블</a>
+            <a href="?type=component" class="stab-component">컴포넌트</a>
+            <a href="?type=popup" class="stab-popup">팝업</a>
+            <a href="?type=color" class="stab-color">색상</a>
+          </div>
+
+          <!-- 폼 (Form) -->
+          <div class="stab-cont stab-form">
+            <!--가이드-->
+            <h3 class="guide-subtitle">Button</h3>
+            <div class="guide-wrap grid">
+              <div class="guide-el">
+                <button class="btn-white btn-40 btn-border br-10" style="width: 136px">btn-white</button>
+                <button class="btn-twilight btn-40 btn-border br-10" style="width: 136px">btn-twilight</button>
+                <br /><br />
+                <a href="" class="btn-underline">회원가입 취소</a>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+  &lt;button class="btn-white btn-40 btn-border br-10" style="width: 136px">btn-white&lt;/button>
+  &lt;button class="btn-twilight btn-40 btn-border br-10" style="width: 136px">btn-twilight&lt;/button>
+  &lt;a href="" class="btn-underline">회원가입 취소&lt;/a>
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+            <br /><br /><br /><br /><br />
+
+            <!--가이드-->
+            <h3 class="guide-subtitle">Input</h3>
+            <div class="guide-wrap grid">
+              <div class="guide-el">
+                <label class="s-label">이메일 주소</label>
+                <div class="s-input__box">
+                  <input type="text" name="" id="" placeholder="이메일 주소를 입력해 주세요." />
+                </div>
+                <div class="s-input__box">
+                  <input type="text" name="" id="" placeholder="이메일 주소를 입력해 주세요." />
+                </div>
+                <div class="s-input__box failed">
+                  <input type="text" name="" id="" placeholder="이메일 주소를 입력해 주세요." />
+                </div>
+                <span class="failed-comment">이메일 주소가 올바르지 않습니다.</span>
+                <br /><br />
+                <label class="s-chkbox">
+                  <input type="checkbox" name="" value="아이디 저장" />
+                  <span class="s-chkbox__icon">체크박스</span>
+                  <span class="s-chkbox__label">아이디 저장</span>
+                </label>
+                <br /><br />
+                <div class="s-selectbox">
+                  <button class="s-selectbox__selected">옵션</button>
+                  <ul class="s-selectbox__list">
+                    <li class="s-selectbox__item">
+                      <label>
+                        <input type="radio" name="radio" class="s-selectbox__input" value="옵션" checked />
+                        <span class="s-selectbox__label">옵션</span>
+                      </label>
+                    </li>
+                    <li class="s-selectbox__item">
+                      <label>
+                        <input type="radio" name="radio" class="s-selectbox__input" value="옵션" />
+                        <span class="s-selectbox__label">옵션</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <br /><br />
+                <div class="s-selectbox s-selectbox--underline">
+                  <button class="s-selectbox__selected">옵션</button>
+                  <ul class="s-selectbox__list">
+                    <li class="s-selectbox__item">
+                      <label>
+                        <input type="radio" name="radio" class="s-selectbox__input" value="옵션" checked />
+                        <span class="s-selectbox__label">옵션</span>
+                      </label>
+                    </li>
+                    <li class="s-selectbox__item">
+                      <label>
+                        <input type="radio" name="radio" class="s-selectbox__input" value="옵션" />
+                        <span class="s-selectbox__label">옵션</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+  &lt;!-- 라벨포함 인풋 -->
+   &lt;label class="s-label">이메일 주소 &lt;/label>
+  &lt;div class="s-input__box">
+    &lt;input type="text" name="" id="" placeholder="이메일 주소를 입력해 주세요." />
+  &lt;/div>
+
+  &lt;!-- type: text, password ... - 에러 없을 때 -->
+  &lt;div class="s-input__box">
+    &lt;input type="text" name="" id="" placeholder="이메일 주소를 입력해 주세요." />
+  &lt;/div>
+
+  &lt;!-- type: text, password ... - 에러 있을 때 -->
+  &lt;div class="s-input__box failed">
+    &lt;input type="text" name="" id="" placeholder="이메일 주소를 입력해 주세요." />
+  &lt;/div>
+  &lt;span class="failed-comment">이메일 주소가 올바르지 않습니다.&lt;/span>
+
+  &lt;!-- type: checkbox -->
+  &lt;label class="s-chkbox">
+    &lt;input type="checkbox" name="" value="아이디 저장" />
+    &lt;span class="s-chkbox__icon">체크박스&lt;/span>
+    &lt;span class="s-chkbox__label">아이디 저장&lt;/span>
+  &lt;/label>
+
+  &lt;!-- selectbox : 박스 타입 -->
+  &lt;div class="s-selectbox">
+    &lt;button class="s-selectbox__selected">옵션&lt;/button>
+    &lt;ul class="s-selectbox__list">
+      &lt;li class="s-selectbox__item">
+        &lt;label>
+          &lt;input type="radio" name="radio" class="s-selectbox__input" value="옵션" checked />
+          &lt;span class="s-selectbox__label">옵션&lt;/span>
+        &lt;/label>
+      &lt;/li>
+      &lt;li class="s-selectbox__item">
+        &lt;label>
+          &lt;input type="radio" name="radio" class="s-selectbox__input" value="옵션" />
+          &lt;span class="s-selectbox__label">옵션&lt;/span>
+        &lt;/label>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/div>
+
+  &lt;!-- selectbox : 밑줄 타입 -->
+  &lt;div class="s-selectbox s-selectbox--underline">
+    &lt;button class="s-selectbox__selected">옵션&lt;/button>
+    &lt;ul class="s-selectbox__list">
+      &lt;li class="s-selectbox__item">
+        &lt;label>
+          &lt;input type="radio" name="radio" class="s-selectbox__input" value="옵션" checked />
+          &lt;span class="s-selectbox__label">옵션&lt;/span>
+        &lt;/label>
+      &lt;/li>
+      &lt;li class="s-selectbox__item">
+        &lt;label>
+          &lt;input type="radio" name="radio" class="s-selectbox__input" value="옵션" />
+          &lt;span class="s-selectbox__label">옵션&lt;/span>
+        &lt;/label>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/div>
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+          </div>
+
+          <!-- 텍스트 (Text) -->
+          <div class="stab-cont stab-text">
+            <!--가이드-->
+            <h3 class="guide-subtitle">표시할 내용이 없습니다.</h3>
+            <div class="guide-wrap">
+              <!-- <div class="guide-el">
+                <div class="test">
+                  <p>test</p>
+                </div>
+              </div> -->
+              <!-- prettier-ignore -->
+              <!-- <div class="guide-code">
+  <pre>
+    <code class="language-html">
+    &lt;div class="test">
+    &lt;p>test&lt;/p>
+    &lt;/div>
+    </code>
+  </pre>
+              </div> -->
+            </div>
+            <!--//가이드-->
+          </div>
+
+          <!-- 탭 메뉴 (Tab menu) -->
+          <div class="stab-cont stab-tab">
+            <!--가이드-->
+            <h3 class="guide-subtitle">탭 메뉴 1</h3>
+            <div class="guide-wrap">
+              <div class="guide-el">
+                <div class="s-tab s-tab--underline">
+                  <a href="javascript:;" class="on">프로젝트 요약</a>
+                  <a href="javascript:;">프로젝트 상세</a>
+                  <a href="javascript:;">유의사항</a>
+                </div>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+  &lt;div class="s-tab s-tab--underline">
+    &lt;a href="javascript:;" class="on">프로젝트 요약&lt;/a>
+    &lt;a href="javascript:;">프로젝트 상세&lt;/a>
+    &lt;a href="javascript:;">유의사항&lt;/a>
+  &lt;/div>
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+          </div>
+
+          <!-- 리스트 (List) -->
+          <div class="stab-cont stab-list">
+            <!--가이드-->
+            <h3 class="guide-subtitle">Bullet 리스트</h3>
+            <div class="guide-wrap grid">
+              <div class="guide-el">
+                <ul class="s-list s-list--bullet">
+                  <li>
+                    세모사는 프로젝트를 중개하는 중개 플랫폼으로, 프로젝트를 수행함에 있어 발생하는 분쟁 요인을 세모사가
+                    책임지지 않습니다.
+                  </li>
+                  <li>
+                    프로젝트를 제대로 이수하지 않고 연락두절 또는 업무를 제대로 마무리 하지 못한 경우, 프로젝트를 의뢰한
+                    자가 법적 책임을 물을 수 있으며, 이 사실에 세모사는 아무런 관련이 없습니다.
+                  </li>
+                  <li>
+                    세모사 중개 플랫폼을 통해 거래하지 않고 잘못된 방법으로 프로젝트를 진행 시, 세모사에서 프로젝트
+                    의뢰자와 프로젝트 수락자에게 법적 책임을 물을 수 있으며, 약관에 따라 아이디 해지 및 강제 탈퇴,
+                    영구사용 중지 등의 패널티가 부여될 수 있습니다.
+                  </li>
+                </ul>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+  &lt;ul class="s-list s-list--bullet">
+    &lt;li>
+      세모사는 프로젝트를 중개하는 중개 플랫폼으로, 프로젝트를 수행함에 있어 
+      발생하는 분쟁 요인을 세모사가 책임지지 않습니다.
+    &lt;/li>
+    &lt;li>
+      프로젝트를 제대로 이수하지 않고 연락두절 또는 업무를 제대로 마무리 하지 못한 경우,
+      프로젝트를 의뢰한 자가 법적 책임을 물을 수 있으며,
+      이 사실에 세모사는 아무런 관련이 없습니다.
+    &lt;/li>
+    &lt;li>
+      세모사 중개 플랫폼을 통해 거래하지 않고 잘못된 방법으로 프로젝트를 진행 시,
+      세모사에서 프로젝트 의뢰자와 프로젝트 수락자에게 법적 책임을 물을 수 있으며,
+      약관에 따라 아이디 해지 및 강제 탈퇴,영구사용 중지 등의 패널티가 부여될 수 있습니다.
+    &lt;/li>
+  &lt;/ul>
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+          </div>
+
+          <!-- 테이블 (Table) -->
+          <div class="stab-cont stab-table">
+            <!--가이드-->
+            <h3 class="guide-subtitle">Border 없는 테이블</h3>
+            <div class="guide-wrap">
+              <div class="guide-el">
+                <dl class="s-table s-table--noborder">
+                  <dt>분류</dt>
+                  <dd>양도소득세</dd>
+                  <dt>금액</dt>
+                  <dd>10억원</dd>
+                  <dt>시작일</dt>
+                  <dd>2023.01.01 (시작 10일 전)</dd>
+                  <dt>수수료</dt>
+                  <dd>100만원</dd>
+                  <dt>종료일</dt>
+                  <dd><a href="javascript:;" class="fnc-date">2023.02.28</a></dd>
+                  <dt>근무위치</dt>
+                  <dd>서울시 강남구 (상주/협의가능)</dd>
+                  <dt>기간</dt>
+                  <dd>31일</dd>
+                </dl>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre>
+    <code class="language-html">
+  &lt;dl class="s-table s-table--noborder">
+    &lt;dt>분류&lt;/dt>
+    &lt;dd>양도소득세&lt;/dd>
+    &lt;dt>금액&lt;/dt>
+    &lt;dd>10억원&lt;/dd>
+    &lt;dt>시작일&lt;/dt>
+    &lt;dd>2023.01.01 (시작 10일 전)&lt;/dd>
+    &lt;dt>수수료&lt;/dt>
+    &lt;dd>100만원&lt;/dd>
+    &lt;dt>종료일&lt;/dt>
+    &lt;dd>&lt;a href="javascript:;" class="fnc-date">2023.02.28&lt;/a>&lt;/dd>
+    &lt;dt>근무위치&lt;/dt>
+    &lt;dd>서울시 강남구 (상주/협의가능)&lt;/dd>
+    &lt;dt>기간&lt;/dt>
+    &lt;dd>31일&lt;/dd>
+  &lt;/dl>
+    </code>
+  </pre>
+              </div>
+            </div>
+            <!--//가이드-->
+            <!--가이드-->
+            <h3 class="guide-subtitle">Border 없는 테이블2</h3>
+            <div class="guide-wrap">
+              <div class="guide-el">
+                <article class="s-info-list-article">
+                  <!-- 상세정보 -->
+                  <ul>
+                    <li class="info-list">
+                      <p class="info-title">세무사번호</p>
+                      <div class="txt-02">12345 <span class="auth-button">인증 완료</span></div>
+                    </li>
+                    <li class="info-list">
+                      <p class="info-title">경력</p>
+                      <div class="txt-02">7년</div>
+                    </li>
+                    <li class="info-list">
+                      <p class="info-title">주소</p>
+                      <div class="txt-02">경기도 하남시 미사대로 520 현대지식산업센터 2차 C동 805호</div>
+                    </li>
+                    <li class="info-list">
+                      <p class="info-title">세무사 자격증</p>
+                      <div class="txt-02"><a class="file-link">김세모_세무사_자격증.pdf</a></div>
+                    </li>
+                    <li class="info-list">
+                      <p class="info-title">주요 경력</p>
+                      <div class="txt-02">
+                        <ul class="career-list">
+                          <li class="txt-02">2023 해운대구 재정계획심의회 심의위원</li>
+                          <li class="txt-02">2022년 ARCHITAX 대표세무사</li>
+                          <li class="txt-02">2022년 해운대구 공유재산심의회 힘의위원</li>
+                          <li class="txt-02">2022년 부산세무사고시회 상임총무이사</li>
+                          <li class="txt-02">2022년 미래도시혁신재단 정책자문단</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </article>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre>
+    <code class="language-html">
+   &lt;article class="s-info-list-article">
+              &lt;!-- 상세정보 -->
+              &lt;ul>
+                &lt;li class="info-list">
+                  &lt;p class="info-title">세무사번호&lt;/p>
+                  &lt;div class="txt-02">12345 &lt;span class="auth-button">인증 완료&lt;/span>&lt;/div>
+                &lt;/li>
+                &lt;li class="info-list">
+                  &lt;p class="info-title">경력&lt;/p>
+                  &lt;div class="txt-02">7년&lt;/div>
+                &lt;/li>
+                &lt;li class="info-list">
+                  &lt;p class="info-title">주소&lt;/p>
+                  &lt;div class="txt-02">경기도 하남시 미사대로 520 현대지식산업센터 2차 C동 805호&lt;/div>
+                &lt;/li>
+                &lt;li class="info-list">
+                  &lt;p class="info-title">세무사 자격증&lt;/p>
+                  &lt;div class="txt-02">&lt;a class="file-link">김세모_세무사_자격증.pdf&lt;/a>&lt;/div>
+                &lt;/li>
+                &lt;li class="info-list">
+                  &lt;p class="info-title">주요 경력&lt;/p>
+                  &lt;div class="txt-02">
+                    &lt;ul class="career-list">
+                      &lt;li class="txt-02">2023 해운대구 재정계획심의회 심의위원&lt;/li>
+                      &lt;li class="txt-02">2022년 ARCHITAX 대표세무사&lt;/li>
+                      &lt;li class="txt-02">2022년 해운대구 공유재산심의회 힘의위원&lt;/li>
+                      &lt;li class="txt-02">2022년 부산세무사고시회 상임총무이사&lt;/li>
+                      &lt;li class="txt-02">2022년 미래도시혁신재단 정책자문단&lt;/li>
+                    &lt;/ul>
+                  &lt;/div>
+                &lt;/li>
+              &lt;/ul>
+            &lt;/article>
+    </code>
+  </pre>
+              </div>
+            </div>
+            <!--//가이드-->
+          </div>
+
+          <!-- 컴포넌트 (Component) -->
+          <div class="stab-cont stab-component">
+            <!--가이드-->
+            <h3 class="guide-subtitle">회원가입 > 신청 완료 / 검토중 / 반려</h3>
+            <div class="guide-wrap grid">
+              <div class="guide-el">
+                <div class="s-inner width-400">
+                  <div class="join-result" style="padding: 50px 0">
+                    <h2>담당자가 서류를 검토 중입니다.</h2>
+                    <div class="join-result__desc br-10">
+                      <p class="txt-01">가입 심사 완료 후 활동하실 수 있습니다</p>
+                      <p class="txt-02">
+                        담당자가 회원정보 및 서류를 검토하는 중입니다.<br />
+                        가입 심사는 <span>영업일 기준 약 2~3일 소요</span>됩니다.<br />
+                        신청 결과는 이메일과 카카오 알림톡으로 발송됩니다.
+                      </p>
+                    </div>
+                    <div class="join-result__data">
+                      <p class="txt-01">회원가입일</p>
+                      <p class="txt-02">2023년 2월 20일</p>
+                    </div>
+                    <div class="join-result__etc">
+                      <p>회원가입 기준이 궁금하신가요?</p>
+                      <button class="btn-white btn-40 btn-border br-10">회원가입 기준</button>
+                    </div>
+                    <div class="join-result__etc">
+                      <p>다른 문의사항이 있으신가요?</p>
+                      <button class="btn-white btn-40 btn-border br-10">1:1 문의</button>
+                    </div>
+                    <div class="join-result__btnarea">
+                      <button class="btn-twilight btn-48 btn-border br-10">홈으로</button>
+                    </div>
+                    <a href="" class="btn-underline fnc-join-cancel">회원가입 취소</a>
+                  </div>
+                </div>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+  &lt;!-- 회원가입 > 신청 완료 / 검토중 / 반려 -->
+  &lt;div class="s-inner width-400">
+    &lt;div class="join-result" style="padding: 50px 0">
+      &lt;h2>담당자가 서류를 검토 중입니다.&lt;/h2>
+      &lt;div class="join-result__desc br-10">
+        &lt;p class="txt-01">가입 심사 완료 후 활동하실 수 있습니다&lt;/p>
+        &lt;p class="txt-02">
+          담당자가 회원정보 및 서류를 검토하는 중입니다.&lt;br />
+          가입 심사는 &lt;span>영업일 기준 약 2~3일 소요&lt;/span>됩니다.&lt;br />
+          신청 결과는 이메일과 카카오 알림톡으로 발송됩니다.
+        &lt;/p>
+      &lt;/div>
+      &lt;div class="join-result__data">
+        &lt;p class="txt-01">회원가입일&lt;/p>
+        &lt;p class="txt-02">2023년 2월 20일&lt;/p>
+      &lt;/div>
+      &lt;div class="join-result__etc">
+        &lt;p>회원가입 기준이 궁금하신가요?&lt;/p>
+        &lt;button class="btn-white btn-40 btn-border br-10">회원가입 기준&lt;/button>
+      &lt;/div>
+      &lt;div class="join-result__etc">
+        &lt;p>다른 문의사항이 있으신가요?&lt;/p>
+        &lt;button class="btn-white btn-40 btn-border br-10">1:1 문의&lt;/button>
+      &lt;/div>
+      &lt;div class="join-result__btnarea">
+        &lt;button class="btn-twilight btn-48 btn-border br-10">홈으로&lt;/button>
+      &lt;/div>
+      &lt;a href="" class="btn-underline fnc-join-cancel">회원가입 취소&lt;/a>
+    &lt;/div>
+  &lt;/div>
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+            <br /><br /><br /><br /><br />
+
+            <!--가이드-->
+            <h3 class="guide-subtitle">메인 화면 > 프로젝트 정보</h3>
+            <div class="guide-wrap grid">
+              <div class="guide-el" style="display: flex; justify-content: center; align-items: center">
+                <!-- 프로젝트 리스트 -->
+                <ul class="basic-list-box">
+                  <li class="s-project">
+                    <div class="basic-list-box_project-top">
+                      <div class="basic-list-box_project-category">
+                        <p class="category">증여세</p>
+                        <p class="date">23.01.01 ~ 23.02.28</p>
+                        <div class="basic-list-box_project-btn">
+                          <button class="like-button" type="button" onclick="toggleLikeButton(this)">
+                            <span class="like-bubble"><b>세모사 찜 리스트에 추가되었습니다.</b></span>
+                          </button>
+                          <button class="share-button" type="button" onclick="openShareListModal(this)">
+                            <span class="blind">공유하기</span>
+                          </button>
+                        </div>
+                      </div>
+                      <a href="#" class="basic-list-box_project-title">증여세 관련 경험 있으신 세무사 모십니다.</a>
+                      <ul class="basic-list-box_project-info">
+                        <li>
+                          <p class="txt-01">금액</p>
+                          <p class="txt-02">10억원</p>
+                        </li>
+                        <li>
+                          <p class="txt-01">수수료</p>
+                          <p class="txt-02">150만원</p>
+                        </li>
+                        <li>
+                          <p class="txt-01">근무지</p>
+                          <p class="txt-02">비상주</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="basic-list-box_project-btm">
+                      <figure class="basic-list-box_project-profile">
+                        <img onerror="img_chk(this);" src="#" alt="프로필" />
+                      </figure>
+                      <div class="basic-list-box_project-txt">
+                        <p class="txt-01">김세모 세무사</p>
+                        <p class="txt-02">
+                          <span class="career">경력 10년</span><span>|</span><span class="company">(주)세모컨설팅</span>
+                        </p>
+                      </div>
+                    </div>
+                    <ul class="basic-list-box__share-box" style="display: none">
+                      <li class="share-list-box" style="display: none">
+                        <div class="share-list-box__inner">
+                          <p class="share-list_title">공유하기</p>
+                          <div class="sns-list">
+                            <button class="sns-kakao" type="button" onclick="openSnsShareModal(this)">
+                              <span class="blind">카카오톡으로 공유하기</span>
+                            </button>
+                            <button class="sns-facebook" type="button" onclick="openSnsShareModal(this)">
+                              <span class="blind">페이스북으로 공유하기</span>
+                            </button>
+                            <button class="sns-instagram" type="button" onclick="openSnsShareModal(this)">
+                              <span class="blind">인스타그램으로 공유하기</span>
+                            </button>
+                            <button class="sns-blog" type="button" onclick="openSnsShareModal(this)">
+                              <span class="blind">네이버 블로그로 공유하기</span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="basic-list-box__share-link-box" style="display: none">
+                        <div class="share-list-box__inner">
+                          <!-- DEV :: 각 SNS 마다 분기처리하여 노출 ( 카카오, 페이스북, 인스타, 네이버 블로그),
+                        하단 a 태그에 해당 링크 복사 기능 추가. 
+                     1. 카카오 : <div class="sns-kakao"></div>
+                     2. 페이스북 : <div class="sns-facebook"></div>
+                     3. 인스타 : <div class="sns-instagram"></div>
+                     4. 네이버 블로그 : <div class="sns-blog"></div> -->
+                          <div class="sns-img"></div>
+                          <p class="share-list_title">공유되었습니다!</p>
+                          <div class="link-area">
+                            <a onclick="handleCopyUrl(this)" class="copy-link">JsjeDEK3465F</a>
+                            <a onclick="handleCopyUrl(this)" class="link-copy-button"
+                              ><span class="blind">링크 복사하기</span></a
+                            >
+                            <small class="copy-linked-text" style="display: none">링크가 복사되었습니다.</small>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <!-- //프로젝트 리스트 -->
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+  &lt;!-- 프로젝트 -->
+  &lt;ul class="basic-list-box">
+  &lt;li class="s-project">
+        &lt;div class="basic-list-box_project-top">
+          &lt;div class="basic-list-box_project-category">
+            &lt;p class="category">증여세 &lt;/p>
+            &lt;p class="date">23.01.01 ~ 23.02.28 &lt;/p>
+            &lt;div class="basic-list-box_project-btn">
+              &lt;button class="like-button" type="button" onclick="toggleLikeButton(this)">
+                &lt;span class="like-bubble"> &lt;b>세모사 찜 리스트에 추가되었습니다. &lt;/b> &lt;/span>
+              &lt;/button>
+              &lt;button class="share-button" type="button" onclick="openShareListModal(this)"> &lt;span class="blind">공유하기 &lt;/span> &lt;/button>
+            &lt;/div>
+          &lt;/div>
+          &lt;a href="#" class="basic-list-box_project-title">증여세 관련 경험 있으신 세무사 모십니다. &lt;/a>
+          &lt;ul class="basic-list-box_project-info">
+            &lt;li>
+              &lt;p class="txt-01">금액 &lt;/p>
+              &lt;p class="txt-02">10억원 &lt;/p>
+            &lt;/li>
+            &lt;li>
+              &lt;p class="txt-01">수수료 &lt;/p>
+              &lt;p class="txt-02">150만원 &lt;/p>
+            &lt;/li>
+            &lt;li>
+              &lt;p class="txt-01">근무지 &lt;/p>
+              &lt;p class="txt-02">비상주 &lt;/p>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/div>
+        &lt;div class="basic-list-box_project-btm">
+          &lt;figure class="basic-list-box_project-profile">
+            &lt;img onerror="img_chk(this);" src="#" alt="프로필" />
+          &lt;/figure>
+          &lt;div class="basic-list-box_project-txt">
+            &lt;p class="txt-01">김세모 세무사 &lt;/p>
+            &lt;p class="txt-02">경력 10년&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;(주)세모컨설팅 &lt;/p>
+          &lt;/div>
+        &lt;/div>
+        &lt;ul class="basic-list-box__share-box" style="display: none">
+          &lt;li class="share-list-box" style="display: none">
+            &lt;div class="share-list-box__inner">
+              &lt;p class="share-list_title">공유하기 &lt;/p>
+              &lt;div class="sns-list">
+                &lt;button class="sns-kakao" type="button" onclick="openSnsShareModal(this)">
+                  &lt;span class="blind">카카오톡으로 공유하기 &lt;/span>
+                &lt;/button>
+                &lt;button class="sns-facebook" type="button" onclick="openSnsShareModal(this)">
+                  &lt;span class="blind">페이스북으로 공유하기 &lt;/span>
+                &lt;/button>
+                &lt;button class="sns-instagram" type="button" onclick="openSnsShareModal(this)">
+                  &lt;span class="blind">인스타그램으로 공유하기 &lt;/span>
+                &lt;/button>
+                &lt;button class="sns-blog" type="button" onclick="openSnsShareModal(this)">
+                  &lt;span class="blind">네이버 블로그로 공유하기 &lt;/span>
+                &lt;/button>
+              &lt;/div>
+            &lt;/div>
+          &lt;/li>
+          &lt;li class="basic-list-box__share-link-box" style="display: none">
+            &lt;div class="share-list-box__inner">
+              &lt;!-- DEV :: 각 SNS 마다 분기처리하여 노출 ( 카카오, 페이스북, 인스타, 네이버 블로그),
+              하단 a 태그에 해당 링크 복사 기능 추가. 
+            1. 카카오 :  &lt;div class="sns-kakao"> &lt;/div>
+            2. 페이스북 :  &lt;div class="sns-facebook"> &lt;/div>
+            3. 인스타 :  &lt;div class="sns-instagram"> &lt;/div>
+            4. 네이버 블로그 :  &lt;div class="sns-blog"> &lt;/div> -->
+              &lt;div class="sns-img"> &lt;/div>
+              &lt;p class="share-list_title">공유되었습니다! &lt;/p>
+              &lt;div class="link-area">
+                &lt;a href="" class="copy-link">JsjeDEK3465F &lt;/a>
+                &lt;a onclick="handleCopyUrl(this)" class="link-copy-button"> &lt;span class="blind">링크 복사하기 &lt;/span> &lt;/a>
+                &lt;small class="copy-linked-text" style="display: none">링크가 복사되었습니다. &lt;/small>
+              &lt;/div>
+            &lt;/div>
+          &lt;/li>
+        &lt;/ul>
+      &lt;/li>
+    &lt;/ul>
+  &lt;!-- //프로젝트 리스트 -->
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+
+            <!--가이드-->
+            <h3 class="guide-subtitle">메인 화면 > 세무사 정보</h3>
+            <div class="guide-wrap grid">
+              <div class="guide-el" style="display: flex; justify-content: center; align-items: center">
+                <ul class="basic-list-box">
+                  <!-- 세무사 -->
+                  <li class="s-advisor">
+                    <div class="basic-list-box__profile">
+                      <figure class="basic-list-box__profile-img">
+                        <img onerror="img_chk(this);" src="#" alt="프로필" />
+                      </figure>
+                      <div class="basic-list-box__txt">
+                        <p class="txt-01">김세모 세무사</p>
+                        <p class="txt-02">
+                          <span class="career">경력 10년</span><span>|</span><span class="company">(주)세모컨설팅</span>
+                        </p>
+                      </div>
+                      <div class="basic-list-box__btn">
+                        <button class="share-button" type="button" onclick="openShareListModal(this)">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="basic-list-box__advisor-info">
+                      <li>
+                        <p class="txt-01">리뷰</p>
+                        <p class="txt-02">
+                          <span class="star-img"></span>
+                          <span class="review-score">4.9</span>
+                          <span class="review-score-num">(1,234)</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="txt-01">등급</p>
+                        <p class="txt-02">
+                          <span class="rating-img rating-b">B</span>
+                          <button class="score-info" type="button"></button>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="txt-01">소개</p>
+                        <p class="txt-02">
+                          성실함, 꼼꼼함, 정확함 이 세가지 만 확실하게 지키는 세무사 입니다 수준높은 결과물을
+                          보여드립니다.
+                        </p>
+                      </li>
+                      <li>
+                        <p class="txt-01">키워드</p>
+                        <p class="txt-02">
+                          <span class="keyword-badge">양도소득세</span><span class="keyword-badge">증여세</span>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <ul class="basic-list-box__share-box" style="display: none">
+                      <li class="share-list-box" style="display: none">
+                        <div class="share-list-box__inner">
+                          <p class="share-list_title">공유하기</p>
+                          <div class="sns-list">
+                            <button class="sns-kakao" type="button" onclick="openSnsShareModal(this)">
+                              <span class="blind">카카오톡으로 공유하기</span>
+                            </button>
+                            <button class="sns-facebook" type="button" onclick="openSnsShareModal(this)">
+                              <span class="blind">페이스북으로 공유하기</span>
+                            </button>
+                            <button class="sns-instagram" type="button" onclick="openSnsShareModal(this)">
+                              <span class="blind">인스타그램으로 공유하기</span>
+                            </button>
+                            <button class="sns-blog" type="button" onclick="openSnsShareModal(this)">
+                              <span class="blind">네이버 블로그로 공유하기</span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="basic-list-box__share-link-box" style="display: none">
+                        <div class="share-list-box__inner">
+                          <!-- DEV :: 각 SNS 마다 분기처리하여 노출 ( 카카오, 페이스북, 인스타, 네이버 블로그),
+                        하단 a 태그에 해당 링크 복사 기능 추가. 
+                     1. 카카오 : <div class="sns-kakao"></div>
+                     2. 페이스북 : <div class="sns-facebook"></div>
+                     3. 인스타 : <div class="sns-instagram"></div>
+                     4. 네이버 블로그 : <div class="sns-blog"></div> -->
+                          <div class="sns-img"></div>
+                          <p class="share-list_title">공유되었습니다!</p>
+                          <div class="link-area">
+                            <a onclick="handleCopyUrl(this)" class="copy-link">JsjeDEK3465F</a>
+                            <a onclick="handleCopyUrl(this)" class="link-copy-button"
+                              ><span class="blind">링크 복사하기</span></a
+                            >
+                            <small class="copy-linked-text" style="display: none">링크가 복사되었습니다.</small>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- //세무사 -->
+                </ul>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+     &lt;ul class="basic-list-box">
+       &lt;li class="s-advisor">
+                  &lt;div class="basic-list-box__profile">
+                    &lt;figure class="basic-list-box__profile-img">
+                      &lt;img onerror="img_chk(this);" src="#" alt="프로필" />
+                    &lt;/figure>
+                    &lt;div class="basic-list-box__txt">
+                      &lt;p class="txt-01">김세모 세무사&lt;/p>
+                      &lt;p class="txt-02">&lt;span class="career">경력 10년&lt;/span>&lt;span>|&lt;/span>&lt;span class="company">(주)세모컨설팅&lt;/span>&lt;/p>
+                    &lt;/div>
+                    &lt;div class="basic-list-box__btn">
+                      &lt;button class="share-button" type="button" onclick="openShareListModal(this)">&lt;span class="blind">공유하기&lt;/span>&lt;/button>
+                    &lt;/div>
+                  &lt;/div>
+                  &lt;ul class="basic-list-box__advisor-info">
+                    &lt;li>
+                      &lt;p class="txt-01">리뷰&lt;/p>
+                      &lt;p class="txt-02">
+                        &lt;span class="star-img">&lt;/span>
+                        &lt;span class="review-score">4.9&lt;/span>
+                        &lt;span class="review-score-num">(1,234)&lt;/span>
+                      &lt;/p>
+                    &lt;/li>
+                    &lt;li>
+                      &lt;p class="txt-01">등급&lt;/p>
+                      &lt;p class="txt-02">
+                        &lt;span class="rating-img rating-b">B&lt;/span>
+                        &lt;button class="score-info" type="button">&lt;/button>
+                      &lt;/p>
+                    &lt;/li>
+                    &lt;li>
+                      &lt;p class="txt-01">소개&lt;/p>
+                      &lt;p class="txt-02">성실함, 꼼꼼함, 정확함 이 세가지 만 확실하게 지키는 세무사 입니다 수준높은 결과물을 보여드립니다.&lt;/p>
+                    &lt;/li>
+                    &lt;li>
+                      &lt;p class="txt-01">키워드&lt;/p>
+                      &lt;p class="txt-02">&lt;span class="keyword-badge">양도소득세&lt;/span>&lt;span class="keyword-badge">증여세&lt;/span>&lt;/p>
+                    &lt;/li>
+                  &lt;/ul>
+
+                  &lt;ul class="basic-list-box__share-box" style="display: none">
+                    &lt;li class="share-list-box" style="display: none">
+                      &lt;div class="share-list-box__inner">
+                        &lt;p class="share-list_title">공유하기&lt;/p>
+                        &lt;div class="sns-list">
+                          &lt;button class="sns-kakao" type="button" onclick="openSnsShareModal(this)">
+                            &lt;span class="blind">카카오톡으로 공유하기&lt;/span>
+                          &lt;/button>
+                          &lt;button class="sns-facebook" type="button" onclick="openSnsShareModal(this)">
+                            &lt;span class="blind">페이스북으로 공유하기&lt;/span>
+                          &lt;/button>
+                          &lt;button class="sns-instagram" type="button" onclick="openSnsShareModal(this)">
+                            &lt;span class="blind">인스타그램으로 공유하기&lt;/span>
+                          &lt;/button>
+                          &lt;button class="sns-blog" type="button" onclick="openSnsShareModal(this)">
+                            &lt;span class="blind">네이버 블로그로 공유하기&lt;/span>
+                          &lt;/button>
+                        &lt;/div>
+                      &lt;/div>
+                    &lt;/li>
+                    &lt;li class="basic-list-box__share-link-box" style="display: none">
+                      &lt;div class="share-list-box__inner">
+                        &lt;!-- DEV :: 각 SNS 마다 분기처리하여 노출 ( 카카오, 페이스북, 인스타, 네이버 블로그),
+                        하단 a 태그에 해당 링크 복사 기능 추가. 
+                     1. 카카오 : &lt;div class="sns-kakao">&lt;/div>
+                     2. 페이스북 : &lt;div class="sns-facebook">&lt;/div>
+                     3. 인스타 : &lt;div class="sns-instagram">&lt;/div>
+                     4. 네이버 블로그 : &lt;div class="sns-blog">&lt;/div> -->
+                        &lt;div class="sns-img">&lt;/div>
+                        &lt;p class="share-list_title">공유되었습니다!&lt;/p>
+                        &lt;div class="link-area">
+                          &lt;a onclick="handleCopyUrl(this)" class="copy-link">JsjeDEK3465F&lt;/a>
+                          &lt;a onclick="handleCopyUrl(this)" class="link-copy-button">&lt;span class="blind">링크 복사하기&lt;/span>&lt;/a>
+                          &lt;small class="copy-linked-text" style="display: none">링크가 복사되었습니다.&lt;/small>
+                        &lt;/div>
+                      &lt;/div>
+                    &lt;/li>
+                  &lt;/ul>
+                &lt;/li>
+              &lt;/ul>
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+          </div>
+
+          <!-- 팝업 (Popup) -->
+          <div class="stab-cont stab-popup">
+            <!--가이드-->
+            <h3 class="guide-subtitle">파일 형식이 맞지 않습니다. (.s-popup__file-01)</h3>
+            <div class="guide-wrap grid">
+              <div class="guide-el popup">
+                <!-- 팝업: 파일 형식이 맞지 않습니다 -->
+                <div class="s-popup s-popup__file-01 width-400">
+                  <div class="s-popup__wrap">
+                    <div class="s-popup__content">
+                      <div class="s-popup__header">
+                        <!-- <h2></h2> -->
+                        <button type="button" onclick="close_popup(this)">닫기</button>
+                      </div>
+                      <div class="s-popup__body">
+                        <div>
+                          <p class="s-popup__comment">파일 형식이 맞지 않습니다.</p>
+                        </div>
+                      </div>
+                      <div class="s-popup__btn">
+                        <button type="button" class="btn-confirm" onclick="close_popup(this)">확인</button>
+                        <button type="button" onclick="close_popup(this)">취소</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+  &lt;!-- 팝업 여는 버튼 -->
+  &lt;button onclick="open_popup('.s-popup__file-01')">팝업 열기&lt;/button>
+
+  &lt;!-- 팝업: 파일 형식이 맞지 않습니다. -->
+  &lt;div class="s-popup s-popup__file-01 width-400">
+    &lt;div class="s-popup__wrap">
+      &lt;div class="s-popup__content">
+        &lt;div class="s-popup__header">
+          &lt;!-- &lt;h2>&lt;/h2> -->
+          &lt;button type="button" onclick="close_popup(this)">닫기&lt;/button>
+        &lt;/div>
+        &lt;div class="s-popup__body">
+          &lt;div>
+            &lt;p class="s-popup__comment">파일 형식이 맞지 않습니다.&lt;/p>
+          &lt;/div>
+        &lt;/div>
+        &lt;div class="s-popup__btn">
+          &lt;button type="button" class="btn-confirm" onclick="close_popup(this)">확인&lt;/button>
+          &lt;button type="button" onclick="close_popup(this)">취소&lt;/button>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+            <br /><br /><br /><br /><br />
+
+            <!--가이드-->
+            <h3 class="guide-subtitle">입력정보 확인 (.s-popup__file-02)</h3>
+            <div class="guide-wrap grid">
+              <div class="guide-el popup">
+                <!-- 팝업: 입력정보 확인 -->
+                <div class="s-popup s-popup__file-02 width-400">
+                  <div class="s-popup__wrap">
+                    <div class="s-popup__content">
+                      <div class="s-popup__header">
+                        <h2>입력하신 정보가 맞는지 확인해주세요.</h2>
+                        <!-- <button type="button" onclick="close_popup(this)">닫기</button> -->
+                      </div>
+                      <div class="s-popup__body">
+                        <div class="s-popup__body-cont br-10">
+                          <div>
+                            <p>세무사 자격증</p>
+                            <span>김세모 세무사 자격증.jpg</span>
+                          </div>
+                          <div>
+                            <p>세무사 번호</p>
+                            <span>123456789</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="s-popup__btn">
+                        <button type="button" class="btn-confirm">확인</button>
+                        <button type="button" onclick="close_popup(this)">재입력</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre><code class="language-html">
+  &lt;!-- 팝업 여는 버튼 -->
+  &lt;button onclick="open_popup('.s-popup__file-02')">팝업 열기&lt;/button>
+
+  &lt;!-- 팝업: 입력정보 확인 -->
+  &lt;div class="s-popup s-popup__file-02 width-400">
+    &lt;div class="s-popup__wrap">
+      &lt;div class="s-popup__content">
+        &lt;div class="s-popup__header">
+          &lt;h2>입력하신 정보가 맞는지 확인해주세요.&lt;/h2>
+          &lt;!-- &lt;button type="button" onclick="close_popup(this)">닫기&lt;/button> -->
+        &lt;/div>
+        &lt;div class="s-popup__body">
+          &lt;div class="s-popup__body-cont br-10">
+            &lt;div>
+              &lt;p>세무사 자격증&lt;/p>
+              &lt;span>김세모 세무사 자격증.jpg&lt;/span>
+            &lt;/div>
+            &lt;div>
+              &lt;p>세무사 번호&lt;/p>
+              &lt;span>123456789&lt;/span>
+            &lt;/div>
+          &lt;/div>
+        &lt;/div>
+        &lt;div class="s-popup__btn">
+          &lt;button type="button" class="btn-confirm">확인&lt;/button>
+          &lt;button type="button" onclick="close_popup(this)">재입력&lt;/button>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  </code></pre>
+              </div>
+            </div>
+            <!--//가이드-->
+          </div>
+
+          <!-- 색상 (Color) -->
+          <div class="stab-cont stab-color">
+            <!--가이드-->
+            <h3 class="guide-subtitle">색상 (color, background-color ...)</h3>
+            <div class="guide-wrap">
+              <div class="guide-el">
+                <button class="" style="background-color: var(--col_white)">var(--col_white)</button>
+                <button class="dark" style="background-color: var(--col_black)">var(--col_black)</button>
+                <button class="dark" style="background-color: var(--col_twilight)">var(--col_twilight)</button>
+                <button class="dark" style="background-color: var(--col_lavender)">var(--col_lavender)</button>
+                <button class="dark" style="background-color: var(--col_watermelon)">var(--col_watermelon)</button>
+                <button class="dark" style="background-color: var(--col_green)">var(--col_green)</button>
+                <button class="dark" style="background-color: var(--col_red_1)">var(--col_red_1)</button>
+                <button class="" style="background-color: var(--col_gray_1)">var(--col_gray_1)</button>
+                <button class="" style="background-color: var(--col_gray_2)">var(--col_gray_2)</button>
+                <button class="" style="background-color: var(--col_gray_3)">var(--col_gray_3)</button>
+                <button class="" style="background-color: var(--col_gray_4)">var(--col_gray_4)</button>
+                <button class="" style="background-color: var(--col_gray_5)">var(--col_gray_5)</button>
+                <button class="" style="background-color: var(--col_gray_6)">var(--col_gray_6)</button>
+                <button class="" style="background-color: var(--col_gray_7)">var(--col_gray_7)</button>
+                <button class="" style="background-color: var(--col_gray_8)">var(--col_gray_8)</button>
+                <button class="" style="background-color: var(--col_gray_9)">var(--col_gray_9)</button>
+                <button class="" style="background-color: var(--col_gray_10)">var(--col_gray_10)</button>
+                <button class="" style="background-color: var(--col_gray_11)">var(--col_gray_11)</button>
+              </div>
+              <!-- prettier-ignore -->
+              <div class="guide-code">
+  <pre>
+    <code class="language-css">
+  :root {
+      --col_white: #fff;
+      --col_black: #333;
+      --col_twilight: #36419a;
+      --col_lavender: #6157dc;
+      --col_deep_blue: #11328a;
+      --col_watermelon: #f73f54;
+      --col_green: #77c31e;
+      --col_red_1: #e3494d;
+      --col_pink_1: #ed4f80;
+      --col_gray_1: #e2e2e2;
+      --col_gray_2: #f2f2f2;
+      --col_gray_3: #d6d6d6;
+      --col_gray_4: #9a9a9a;
+      --col_gray_5: #a8a8a8;
+      --col_gray_6: #cecece;
+      --col_gray_7: #a3a5af;
+      --col_gray_8: #eff0f2;
+      --col_gray_9: #f1f2f4;
+      --col_gray_10: #cfd3d7;
+      --col_gray_11: #bbbec3;
+      --col_gray_12: #bcbcbc;
+  }
+    </code>
+  </pre>
+              </div>
+            </div>
+            <!--//가이드-->
+          </div>
+        </div>
+      </section>
+
+      <!--푸터 영역 : ./inc/include.js 에서 자동작성-->
+      <section class="guide-foot"></section>
+
+      <style>
+        .stab-color .guide-el {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+        .stab-color .guide-el button {
+          height: 40px;
+          padding: 0 10px;
+          font-size: 22px;
+          border: 2px solid rgba(0, 0, 0, 0.1);
+        }
+        .stab-color .guide-el button.dark {
+          color: #fff;
+        }
+      </style>
+    </div>
+  </body>
+</html>

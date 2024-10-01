@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- MODAL :: 배송지 선택  -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="address"></button> -->
+      <div class="modal-address modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">배송지 선택</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__content">
+              <!-- 1. 등록된 배송지 없을때 -->
+              <!-- <article class="basic-table">
+                <div class="basic-table__header">
+                  <div> 배송지명 </div>
+                  <div> 수취인명 </div>
+                  <div> 주소 </div>
+                  <div> 휴대폰/연락처 </div>
+                  <div>
+                    개인통관고유부호<br />
+                    (사업자등록번호)
+                  </div>
+                  <div></div>
+                </div>
+                <div class="basic-table__empty-text">등록된 배송지가 없습니다.</div>
+              </article> -->
+              <!-- 2. 등록된 배송지 있을때 -->
+              <article class="basic-table">
+                <div class="basic-table__header">
+                  <div>배송지명</div>
+                  <div>수취인명</div>
+                  <div>주소</div>
+                  <div>휴대폰/연락처</div>
+                  <div>
+                    개인통관고유부호<br />
+                    (사업자등록번호)
+                  </div>
+                  <div></div>
+                </div>
+                <div class="basic-table__body">
+                  <!-- PUB:: 기본배송지일 경우 main-address 클래스 추가 -->
+                  <div class="basic-table__row main-address">
+                    <div><p>서울집</p></div>
+                    <div><p>박비드</p></div>
+                    <div class="td-left">
+                      <p>04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호</p>
+                    </div>
+                    <div><p>010-9999-8888</p></div>
+                    <div><p>P1131245r2</p></div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div><p>서울집</p></div>
+                    <div><p>박비드</p></div>
+                    <div class="td-left">
+                      <p>04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호동산빌라 201동 3104호</p>
+                    </div>
+                    <div><p>010-9999-8888</p></div>
+                    <div><p>P1131245r2</p></div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div><p>서울집</p></div>
+                    <div><p>박비드</p></div>
+                    <div class="td-left"><p>04530 경기도 성남시 처인구 강송로33</p></div>
+                    <div><p>010-9999-8888</p></div>
+                    <div><p>P1131245r2</p></div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div><p>서울집</p></div>
+                    <div><p>박비드</p></div>
+                    <div class="td-left">
+                      <p>04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호</p>
+                    </div>
+                    <div><p>010-9999-8888</p></div>
+                    <div><p>P1131245r2</p></div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="modal-bottom-wrap">
+              <a href="" class="basic-button__black-line">배송지관리</a>
+              <div class="basic-pagination">
+                <button class="first-button" type="button"></button>
+                <button class="prev-button" type="button"></button>
+
+                <div class="basic-pagination__button-wrap">
+                  <button class="page-button" type="button">1</button>
+                  <button class="page-button active" ype="button">2</button>
+                  <button class="page-button" type="button">3</button>
+                  <button class="page-button" type="button">4</button>
+                  <button class="page-button" type="button">5</button>
+                </div>
+
+                <button class="next-button" type="button"></button>
+                <button class="last-button" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 보유쿠폰내역  -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="coupon-list"></button> -->
+      <div class="modal-coupon-list modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">보유쿠폰내역</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__content">
+              <!-- 1. 등록된 쿠폰이 없을때 -->
+              <!-- <article class="basic-table">
+                <div class="basic-table__header">
+                  <div> 쿠폰코드 </div>
+                  <div> 쿠폰사용범위 및 혜택 </div>
+                  <div> 할인금액 </div>
+                  <div> 사용기한 </div>
+                  <div> </div>
+                </div>
+                <div class="basic-table__empty-text">등록된 쿠폰이 없습니다.</div>
+              </article> -->
+              <!-- 2. 등록된 쿠폰이 있을때 -->
+              <article class="basic-table">
+                <div class="basic-table__header">
+                  <div>쿠폰코드</div>
+                  <div>쿠폰사용범위 및 혜택</div>
+                  <div>할인금액</div>
+                  <div>사용기한</div>
+                  <div></div>
+                </div>
+                <div class="basic-table__body">
+                  <!-- 1 -->
+                  <div class="basic-table__row">
+                    <div><p>01030230423</p></div>
+                    <div>
+                      <p>
+                        대행수수료 할인<br />
+                        경매 입찰 조건 : 동시입찰 3건, 결제대기 2건 경매 입찰 조건 : 동시입찰 3건, 결제대기 2건 경매
+                        입찰 조건 : 동시입찰 3건, 결제대기 2건 경매 입찰 조건 : 동시입찰 3건, 결제대기 2건
+                      </p>
+                    </div>
+                    <div><p>￦ 2,000</p></div>
+                    <div><p>2024-06-01 ~ 2024-06-30</p></div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <!-- 2 -->
+                  <div class="basic-table__row">
+                    <div><p>01030230423</p></div>
+                    <div>
+                      <p>
+                        대행수수료 할인<br />
+                        경매 입찰 조건 : 동시입찰 3건, 결제대기 2건
+                      </p>
+                    </div>
+                    <div><p>￦ 2,000</p></div>
+                    <div><p>2024-06-01 ~ 2024-06-30</p></div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="modal-bottom-wrap">
+              <a href="" class="basic-button__black-line">쿠폰내역관리</a>
+              <div class="basic-pagination">
+                <button class="first-button" type="button"></button>
+                <button class="prev-button" type="button"></button>
+
+                <div class="basic-pagination__button-wrap">
+                  <button class="page-button" type="button">1</button>
+                  <button class="page-button active" ype="button">2</button>
+                  <button class="page-button" type="button">3</button>
+                  <button class="page-button" type="button">4</button>
+                  <button class="page-button" type="button">5</button>
+                </div>
+
+                <button class="next-button" type="button"></button>
+                <button class="last-button" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- START :: HEADER -->
+      <header id="header" class="simple" data-title="주문상세정보"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <div id="main" class="order-page auctions-order-page">
+        <section class="top-content">
+          <h2 class="title">주문·결제<span>(1차 주문결제 단계)</span></h2>
+          <ol class="order-step-text">
+            <li>
+              <p class="order-step-title">Step 01</p>
+              <p class="order-step-desc">1차 주문결제 (예상비용 결제)</p>
+            </li>
+            <li>
+              <p class="order-step-title">Step 02</p>
+              <p class="order-step-desc">현지 배송/검수 (포장,국제배송 체크)</p>
+            </li>
+            <li>
+              <p class="order-step-title">Step 03</p>
+              <p class="order-step-desc">2차 최종결제 (추가, 부가 비용 결제)</p>
+            </li>
+            <li>
+              <p class="order-step-title">Step 04</p>
+              <p class="order-step-desc">국제배송 (운송사 출고스케줄)</p>
+            </li>
+            <li>
+              <p class="order-step-title">Step 05</p>
+              <p class="order-step-desc">통관/배송완료</p>
+            </li>
+          </ol>
+        </section>
+        <div class="inner-width">
+          <section class="order__container">
+            <!-- 주문 아이템 -->
+            <article class="order__right-container">
+              <h3 class="order-title"><b>주문 아이템</b><small>2건</small></h3>
+              <section class="order-summary">
+                <ul>
+                  <!-- 1 -->
+                  <li class="order-summary__item">
+                    <div class="order-summary__container">
+                      <figure class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </figure>
+                      <div class="order-summary__details">
+                        <div class="item-platform">
+                          <figure class="img-wrap">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </figure>
+                          <span class="platform-name">야후경매 - 출품자ID</span>
+                        </div>
+                        <p class="item-name p_2">イタリア製 テーラードジャケット 薄手羽織り やや伸びる</p>
+                        <p class="item-code p_1">상품코드 : BJP0194326506</p>
+                      </div>
+                    </div>
+                    <ul class="order-info">
+                      <li class="order-info__row">
+                        <span class="info-title">주문번호</span>
+                        <span class="info-content">0000000000000000</span>
+                      </li>
+                      <li class="order-info__row">
+                        <span class="info-title">주문(낙찰)일</span>
+                        <span class="info-content">2024.05.16 07:45:46</span>
+                      </li>
+                      <li class="order-info__row">
+                        <span class="info-title">옵션명</span>
+                        <span class="info-content">OOOOOOOO</span>
+                      </li>
+                      <li class="order-info__row">
+                        <span class="info-title">수량</span>
+                        <span class="info-content">1개</span>
+                      </li>
+                      <li class="order-info__row">
+                        <span class="info-title">주문(낙찰)금액</span>
+                        <span class="info-content"><b>¥1,300 (일천삼백 엔)</b></span>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- 2 -->
+                  <li class="order-summary__item">
+                    <div class="order-summary__container">
+                      <figure class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </figure>
+                      <div class="order-summary__details">
+                        <div class="item-platform">
+                          <figure class="img-wrap">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </figure>
+                          <span class="platform-name">야후경매 - 출품자ID</span>
+                        </div>
+                        <p class="item-name p_2">イタリア製 テーラード</p>
+                        <p class="item-code p_1">상품코드 : BJP0194326506</p>
+                      </div>
+                    </div>
+                    <ul class="order-info">
+                      <li class="order-info__row">
+                        <span class="info-title">주문번호</span>
+                        <span class="info-content">0000000000000000</span>
+                      </li>
+                      <li class="order-info__row">
+                        <span class="info-title">주문(낙찰)일</span>
+                        <span class="info-content">2024.05.16 07:45:46</span>
+                      </li>
+                      <li class="order-info__row">
+                        <span class="info-title">옵션명</span>
+                        <span class="info-content">OOOOOOOO</span>
+                      </li>
+                      <li class="order-info__row">
+                        <span class="info-title">수량</span>
+                        <span class="info-content">1개</span>
+                      </li>
+                      <li class="order-info__row">
+                        <span class="info-title">주문(낙찰)금액</span>
+                        <span class="info-content"><b>¥1,300 (일천삼백 엔)</b></span>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+              <!-- 1차 결제비용 내역 -->
+              <section class="payment-summary">
+                <div class="payment-summary__header">
+                  <p>1차 결제비용 내역</p>
+                  <button type="button" class="refresh-button">새로고침</button>
+                </div>
+                <div class="payment-summary__details">
+                  <ul>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>(+) 상품가</b></span>
+                      <span class="payment-value"><b>¥ 92,000</b></span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 대행수수료</span>
+                      <span class="payment-value">¥ 2,400</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 송금수수료</span>
+                      <span class="payment-value">¥ 300</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 국제 운송료</span>
+                      <span class="payment-value">¥ 1,400</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 현재 배송료</span>
+                      <span class="payment-value">미정 (2차 결제 시)</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 현지 세금 (소비세)</span>
+                      <span class="payment-value">미정 (2차 결제 시)</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(-) 쿠폰 할인 (대행수수료쿠폰 1건)</span>
+                      <span class="payment-value">¥ 250</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>주문 총액</b></span>
+                      <span class="payment-value"><b>¥ 162,000</b></span>
+                    </li>
+                  </ul>
+                  <p class="exchange-rate">환율 (일본) <b>1 JPY</b> > (한국)<b> 9.1 원</b></p>
+                  <p class="payment-total-amount">
+                    <b>1차 결제 총액</b>
+                    <strong>￦ 910,919</strong>
+                  </p>
+                </div>
+              </section>
+            </article>
+
+            <!-- 국제배송 및 배송형태, 품목별 부가 서비스, 주문자 정보, 수취인 정보, 쿠폰 및 정액권 사용, 주문·결제 동의 사항, 통관 관련 안내  -->
+            <article class="order__left-container">
+              <ul class="order__form">
+                <!-- 국제배송 및 배송형태 -->
+                <li class="order-list">
+                  <h3 class="order-title"><b>국제배송 및 배송형태</b><small>(선택사항)</small></h3>
+                  <article class="order-list-box">
+                    <!-- 현지 운송사 선택 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">현지 운송사 선택</p>
+                        <div class="basic-select-box gray">
+                          <select name="" id="num" required>
+                            <option value="" selected disabled>현지배송 선택</option>
+                            <option>운송사1</option>
+                            <option>운송사2</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="order__info-area">
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">특징</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>배송기간이 길어 파손 위험률 높음</li>
+                                <li>전담관세사가 통관대행처리</li>
+                                <li>매주 화, 목 2일만 출하</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">적용배송물(사이즈기준)</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>중량무게, 부피 제한 없음</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">배송기간</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row td-center">
+                              <ul>
+                                <li>7 ~ 8일</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                      </div>
+                    </div>
+
+                    <!-- 물품 무게 현지배송비 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">물품 무게 현지배송비</p>
+                        <div class="basic-select-box gray">
+                          <select name="" id="num" required>
+                            <option value="" selected disabled>예상무게 선택</option>
+                            <option>1kg</option>
+                            <option>2kg</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="order__info-area">
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">EMS</span>
+                            <span class="order__table-header-title">로토스특송</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <span> ¥ 8,200 </span>
+                              <span> ¥ 6,600 </span>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">사가와특송</span>
+                            <span class="order__table-header-title">선편특송</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <span> ¥ 6,650</span>
+                              <span> ¥ 3,600 </span>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>정확한 무게를 모르실 경우 입력이 필요 없습니다.</li>
+                                <li>무게입력 후 1차 결제 시 국제운임 무게 만큼 청구.</li>
+                                <li>2차결제금액에서 마이너스(-) 로 표시</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                      </div>
+                    </div>
+
+                    <!-- 배송 방식 -->
+                    <div class="order__table-group order__radio-group">
+                      <div class="order__selection">
+                        <p class="order__title">배송 방식</p>
+                        <div class="order-notice__radio">
+                          <div class="radio-check-button">
+                            <input type="radio" name="delivery" id="delia" checked />
+                            <label for="delia"><span class="radio-check-button-icon"></span>개별배송</label>
+                          </div>
+                          <div class="radio-check-button">
+                            <input type="radio" name="delivery" id="delib" />
+                            <label for="delib"><span class="radio-check-button-icon"></span>배송대기</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="order__info-area margin-top">
+                        <p class="order__info-desc">
+                          결제완료시 개별 배송 진행되는 방식 입니다.<br />
+                          배송대기(묶음배송)은 최대 12시간 내, 개별배송은 최대 24시간 이내 결제
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 포장 방법 -->
+                    <div class="order__table-group order__radio-group">
+                      <div class="order__selection">
+                        <p class="order__title">포장 방법</p>
+                        <div class="order-notice__radio">
+                          <div class="radio-check-button">
+                            <input type="radio" name="box" id="a" checked />
+                            <label for="a"><span class="radio-check-button-icon"></span>최소포장</label>
+                          </div>
+                          <div class="radio-check-button">
+                            <input type="radio" name="box" id="b" />
+                            <label for="b"><span class="radio-check-button-icon"></span>파손 안심포장</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="order__info-area margin-top">
+                        <p class="order__info-desc">
+                          물품에 따른 안전 재포장 방법으로 별도 국제운송비가 추가 됩니다.<br />
+                          (단, 포장이 완료된 물품에 대해서는 재포장작업이 불가능)
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 품목별 부가 서비스 -->
+                <li class="order-list">
+                  <h3 class="order-title"><b>품목별 부가 서비스</b><small>(선택사항)</small></h3>
+                  <article class="order-list-box">
+                    <!-- 술술케어 -->
+                    <div class="order__table-group order__radio-group">
+                      <div class="order__selection">
+                        <p class="order__title">술술케어</p>
+                        <div class="order-notice__radio">
+                          <div class="radio-check-button">
+                            <input type="radio" name="alcohol" id="a" checked />
+                            <label for="a"><span class="radio-check-button-icon"></span>선택</label>
+                          </div>
+                          <div class="radio-check-button">
+                            <input type="radio" name="alcohol" id="b" />
+                            <label for="b"><span class="radio-check-button-icon"></span>미신청</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="order__info-area">
+                        <p class="order__info-desc">
+                          - 술술케어는 주류전용으로 주류인 경우에만 신청<br />
+                          - 술술케어 비용은 1,000엔이며, 2차결제 시 청구<br />
+                          <a href="" class="desc-link">술술케어 전용서비스 안내</a>
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 주문자 정보 -->
+                <li class="order-list">
+                  <h3 class="order-title">
+                    <b>주문자 정보</b><a href="../mypage/info.html" class="order-title__sub">회원정보수정</a>
+                  </h3>
+                  <article class="order-list-box">
+                    <div class="order__input-group">
+                      <label for="name">주문자 성명</label>
+                      <div class="basic-input short-input">
+                        <input id="name" type="text" placeholder="회원명" required />
+                      </div>
+                    </div>
+                    <div class="order__input-group">
+                      <label for="address">주문자 주소</label>
+                      <div class="basic-input">
+                        <input id="address" type="text" placeholder="" required />
+                      </div>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 수취인 정보 -->
+                <li class="order-list">
+                  <h3 class="order-title">
+                    <b>수취인 정보</b>
+                    <span class="order-title__left-cont">
+                      <div class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="same" />
+                        <label for="same"> <span class="basic-check-box__squire-icon black"></span>주문자와 동일</label>
+                      </div>
+                      <button
+                        type="button"
+                        class="modal_button order-title__sub"
+                        onclick="openModal(this, event)"
+                        data-modal="address"
+                      >
+                        배송지 선택
+                      </button>
+                    </span>
+                  </h3>
+                  <article class="order-list-box">
+                    <div class="order__input-group">
+                      <label for="name">수취인 성명</label>
+                      <div class="basic-input short-input">
+                        <input id="name" type="text" placeholder="5자리 이내만 가능 합니다." required />
+                      </div>
+                    </div>
+                    <div class="order__input-group">
+                      <label for="address">수령 주소</label>
+                      <div class="basic-input short-input">
+                        <input id="address" type="text" placeholder="우편번호" readonly required />
+                        <a href="" class="basic-button__light-gray-line search-address-button">우편번호검색</a>
+                      </div>
+                    </div>
+                    <div class="order__input-group small-margin">
+                      <div class="basic-input mid-input">
+                        <input id="address" type="text" placeholder="" required />
+                      </div>
+                    </div>
+                    <div class="order__input-group small-margin add-checkbox">
+                      <div class="basic-input mid-input">
+                        <input id="address" type="text" placeholder="" />
+                      </div>
+                    </div>
+                    <div class="order__input-group small-margin add-checkbox">
+                      <div class="basic-check-box__squire gray">
+                        <input type="checkbox" name="" id="default-addr" />
+                        <label for="default-addr">
+                          <span class="basic-check-box__squire-icon black"></span>기본배송지로 지정</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="order__input-group">
+                      <label for="num">휴대전화번호</label>
+                      <div class="order__input-number">
+                        <div class="basic-input">
+                          <input id="num" type="text" placeholder="" inputmode="numeric" required />
+                        </div>
+                        <span>-</span>
+                        <div class="basic-input">
+                          <input id="num" type="text" placeholder="" inputmode="numeric" required />
+                        </div>
+                        <span>-</span>
+                        <div class="basic-input">
+                          <input id="num" type="text" placeholder="" inputmode="numeric" required />
+                        </div>
+                        <!-- <p class="order-text-gray">
+                          ※ 개인통관고유부호 발급시 기재한 전화번호 입력! (불일치시 통관 지연)
+                        </p> -->
+                      </div>
+                    </div>
+                    <div class="order__input-group">
+                      <label for="address">개인통관고유부호 (사업자등록번호)</label>
+                      <div class="basic-input">
+                        <input id="text" type="text" placeholder="" required />
+                      </div>
+                      <div class="basic-input short-input">
+                        <a href="" class="basic-button__light-gray-line clearance-number-button"
+                          >개인통관고유부호 발급방법</a
+                        >
+                      </div>
+                    </div>
+                    <div class="order__input-group">
+                      <ul class="clearance-desc">
+                        <li>개인통관고유부호와 실명 미일치로 과태료 발생시 과태료 청구합니다.</li>
+                        <li>
+                          판매목적일 경우 반드시 사업자등록번호를 입력 바랍니다.<br />
+                          입력 예&#41; 120-06-0000
+                        </li>
+                        <li>
+                          개인의 자가사용목적일 경우엔 개인통관고유부호를 입력 바랍니다. 입력 예&#41; P1234567890000
+                        </li>
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 쿠폰 및 정액권 사용 -->
+                <li class="order-list">
+                  <h3 class="order-title"><b>쿠폰 및 정액권 사용</b></h3>
+                  <article class="order-list-box">
+                    <!-- 대형수수료 할인쿠폰 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">대형수수료 할인쿠폰</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <div class="basic-check-box__squire gray order__coupon-wrap">
+                          <input type="checkbox" name="" id="same" />
+                          <label for="same">
+                            <span class="basic-check-box__squire-icon black"></span>할인쿠폰 사용 (사용가능 쿠폰 :
+                            4매)</label
+                          >
+                          <button
+                            type="button"
+                            class="modal_button order__coupon-link"
+                            onclick="openModal(this, event)"
+                            data-modal="coupon-list"
+                          >
+                            쿠폰내역보기
+                          </button>
+                        </div>
+                        <p class="order__info-desc">
+                          ※ 쿠폰의 사용가능 금액보다 대행수수료가<br />
+                          적을 경우, 남은 차액은 환불 되지 않습니다.
+                        </p>
+                      </div>
+                    </div>
+                    <!-- 정액권 (1개월) -->
+                    <div class="order__table-group ticket-group">
+                      <div class="order__selection">
+                        <p class="order__title">정액권 (1개월)</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <div class="basic-check-box__squire gray order__coupon-wrap">
+                          <input type="checkbox" name="" id="same" />
+                          <label for="same">
+                            <span class="basic-check-box__squire-icon black"></span>정액권 사용<br />
+                          </label>
+                          <small class="order__coupon-desc">(보유 ￦300,000권 / 10회 / 5일남음)</small>
+                          <button type="button" class="order__coupon-link toggle-button">상세보기</button>
+                        </div>
+                        <ul class="order__info-desc order__list-style">
+                          <li>
+                            상품의 구입금액에 상관없이 30만원으로 구매일로부터 <br />
+                            1개월간 총 50회의 경매, 구매대행 이용 시 대행수수료 정액권 <br />
+                            ( 단,낙찰가/구입가가 100,000엔/1,000달러/1,000파운드로 이용에 제한이 되십니다.)
+                          </li>
+                          <li>본 상품권은 구매 이후 환불 되지 않습니다.</li>
+                          <li>50회 미만 사용시에도 차액은 환불 되지 않으니 이점 유의 하시고 구매하시기 바랍니다.</li>
+                          <li>유효기간은 구입일로 부터 1개월이며, 유효 기간이 지난 후에는 소멸됩니다.</li>
+                          <li>정액권 구입은 1개월간 1회로 제한됩니다.</li>
+                        </ul>
+                        <a href="../mypage/management.html" class="basic-button__light-gray-line buy-ticket-button"
+                          >정액권 구매하기</a
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 결제 정보 -->
+                <li class="order-list">
+                  <h3 class="order-title"><b>결제 정보</b><a href="" class="order-title__sub">예치금 충전</a></h3>
+                  <article class="order-list-box">
+                    <!-- 예치금 결제 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">예치금 결제</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <div class="order__balance">
+                          <div class="order__balance-list">
+                            <p>보유 예치금 : 300,000원</p>
+                            <p>(사용가능 예치금 : 200,000원)</p>
+                          </div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="useAll" />
+                            <label for="useAll">
+                              <span class="basic-check-box__squire-icon black"></span>전액 사용</label
+                            >
+                          </div>
+                        </div>
+                        <div class="order__deposit-wrap">
+                          <label for="deposit">사용 예치금</label>
+                          <div class="basic-input">
+                            <input id="deposit" type="number" inputmode="numeric" placeholder="0" inputmode="numeric" />
+                          </div>
+                          <!-- ???? -->
+                          <!-- <button type="button" class="order__check-deposit">최근 예치금 조회</button> -->
+                        </div>
+                        <!-- <p class="order__deposit-desc">* 예치금 부족 시 예치금 충전 후 결제해 주세요.</p> -->
+                      </div>
+                    </div>
+                    <!-- 결제수단 선택 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">결제수단 선택</p>
+                      </div>
+                      <div class="order__info-area order__pay-area">
+                        <div class="payment-tabs">
+                          <div class="payment-radio-tab">
+                            <input type="radio" name="payment2" id="card" checked />
+                            <label for="card">카드결제</label>
+                          </div>
+                          <div class="payment-radio-tab">
+                            <input type="radio" name="payment2" id="cash" />
+                            <label for="cash">무통장입금(가상계좌)</label>
+                          </div>
+                        </div>
+                        <ul class="payment-tab-contents"></ul>
+                      </div>
+                    </div>
+                    <!-- 현금영수증 신청 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">현금영수증 신청</p>
+                      </div>
+                      <div class="order__info-area">
+                        <div class="order__cash-receipt">
+                          <div class="radio-check-button">
+                            <input type="radio" name="receipt" id="receipt1" />
+                            <label for="receipt1"><span class="radio-check-button-icon"></span>개인소득공제</label>
+                          </div>
+                          <div class="radio-check-button">
+                            <input type="radio" name="receipt" id="receipt12" checked />
+                            <label for="receipt12"><span class="radio-check-button-icon"></span>사업자 지출증빙</label>
+                          </div>
+                        </div>
+                        <ul class="payment-tab-contents">
+                          <li class="payment-tab-contents__list">
+                            <div class="order__input-group">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option>휴대폰 번호로 발급</option>
+                                  <option>현금영수증카드번호</option>
+                                </select>
+                              </div>
+                              <div class="basic-input">
+                                <input id="text" type="number" inputmode="tel" placeholder="" />
+                              </div>
+                            </div>
+                            <ul class="order__deposit-desc">
+                              <li>입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.</li>
+                            </ul>
+                          </li>
+                          <li class="payment-tab-contents__list">
+                            <div class="order__input-group">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option>사업자등록번호</option>
+                                </select>
+                              </div>
+                              <div class="basic-input">
+                                <input id="text" type="number" inputmode="numeric" placeholder="" />
+                              </div>
+                            </div>
+                            <ul class="order__deposit-desc">
+                              <li>입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 결제 정보 (즉시 낙찰) -->
+                <li class="order-list">
+                  <h3 class="order-title">
+                    <div class="title-wrap">
+                      <b>결제 정보</b> <small class="little">(즉시 낙찰은 예치금 또는 카드결제만 가능 합니다.)</small>
+                    </div>
+                    <a href="" class="order-title__sub">예치금 충전</a>
+                  </h3>
+
+                  <article class="order-list-box">
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">예치금 결제</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <div class="order__balance">
+                          <div class="order__balance-list">
+                            <p>보유 예치금 : 300,000원</p>
+                            <p>(사용가능 예치금 : 200,000원)</p>
+                          </div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="useAll" />
+                            <label for="useAll">
+                              <span class="basic-check-box__squire-icon black"></span>전액 사용</label
+                            >
+                          </div>
+                        </div>
+                        <div class="order__deposit-wrap">
+                          <label for="deposit">사용 예치금</label>
+                          <div class="basic-input">
+                            <input id="deposit" type="number" inputmode="numeric" placeholder="0" inputmode="numeric" />
+                          </div>
+                          <button type="button" class="order__check-deposit">최근 예치금 조회</button>
+                        </div>
+                        <p class="order__deposit-desc">* 예치금 부족 시 예치금 충전 후 결제해 주세요.</p>
+                      </div>
+                    </div>
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">결제수단 선택</p>
+                      </div>
+                      <div class="order__info-area order__pay-area">
+                        <div class="payment-tabs">
+                          <div class="payment-radio-tab">
+                            <input type="radio" name="payment" id="card" checked />
+                            <label for="card">카드결제</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">현금영수증 신청</p>
+                      </div>
+                      <div class="order__info-area">
+                        <div class="order__cash-receipt">
+                          <div class="radio-check-button">
+                            <input type="radio" name="receipta" id="receipt3" />
+                            <label for="receipt3"><span class="radio-check-button-icon"></span>개인소득공제</label>
+                          </div>
+                          <div class="radio-check-button">
+                            <input type="radio" name="receipta" id="receipt4" checked />
+                            <label for="receipt4"><span class="radio-check-button-icon"></span>사업자 지출증빙</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 주문·결제 동의 사항 -->
+                <li class="order-list">
+                  <h3 class="order-title"><b>주문·결제 동의 사항</b></h3>
+                  <article class="order-list-box">
+                    <div class="order__input-group">
+                      <div class="order__notice-header">
+                        <p class="order__notice-title">전자보증안내 및 개인정보 동의</p>
+                        <div class="order__notice-utils">
+                          <p class="order__notice-title">개인정보 이용동의</p>
+                          <div class="order__notice-utils-radio">
+                            <div class="radio-check-button">
+                              <input type="radio" name="notes1" id="aa1" checked />
+                              <label for="aa1"><span class="radio-check-button-icon"></span>동의</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="notes1" id="2" />
+                              <label for="2"><span class="radio-check-button-icon"></span>동의 안함</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notice__content">
+                        <pre>
+전자보증안내 및 개인정보 동의 (100% 매매보호 안전결제) 가상계좌 또는 온라인입금으로 결제하시는 고객께는 물품대금결제 시 구매자의 피해 보호를 위해 “(주)서울보증보험”의 보증보험증권이 발급됩니다. 증권이 발급되는 것의 의미는, 물품대금 결제 시에 소비자에게 서울보증보험의 쇼핑몰보증보험 계약체결서를 인터넷상으로 자동 발급하며, 피해발생 시 쇼핑몰보증보험으로써 완벽하게 보호받을 수 있습니다. 또한,</pre
+                        >
+                      </div>
+                    </div>
+                    <div class="order__input-group">
+                      <div class="order__notice-header">
+                        <p class="order__notice-title">비드바이 서비스 내용 동의</p>
+                        <div class="order__notice-utils">
+                          <p class="order__notice-title">개인정보 이용동의</p>
+                          <div class="order__notice-utils-radio">
+                            <div class="radio-check-button">
+                              <input type="radio" name="notes2" id="aa1" checked />
+                              <label for="aa1"><span class="radio-check-button-icon"></span>동의</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="notes2" id="bb2" />
+                              <label for="bb2"><span class="radio-check-button-icon"></span>동의 안함</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notice__content">
+                        <pre>
+전자보증안내 및 개인정보 동의 (100% 매매보호 안전결제) 가상계좌 또는 온라인입금으로 결제하시는 고객께는 물품대금결제 시 구매자의 피해 보호를 위해 “(주)서울보증보험”의 보증보험증권이 발급됩니다. 증권이 발급되는 것의 의미는, 물품대금 결제 시에 소비자에게 서울보증보험의 쇼핑몰보증보험 계약체결서를 인터넷상으로 자동 발급하며, 피해발생 시 쇼핑몰보증보험으로써 완벽하게 보호받을 수 있습니다. 또한,</pre
+                        >
+                      </div>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 통관 관련 안내 -->
+                <li class="order-list">
+                  <h3 class="order-title"><b>통관 관련 안내</b></h3>
+                  <article class="order-list-box">
+                    <!-- 목록통관 면세 -->
+                    <div class="order__radio-group">
+                      <div class="order__selection">
+                        <p class="order__title">목록통관 면세</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <ul class="order__info-desc order__list-style">
+                          <li>
+                            목록통관 면세조건 충족을 위해서는 반드시 물품가액 기준(상품가격+현지운송료+소비세) 미화$150
+                            (단, 미국에서 구매한 제품은 한미FTA에 따라 미화$200)이하여야 하고,
+                          </li>
+                          <li>
+                            목록통관 배제대상 물품이 아니어야 합니다.<br />
+                            기준금액에 국내로 배송되는 국제운송료와 보험료는 미포함이며 자가사용목적 물품과 회사에서
+                            사용할 샘플 등이 이에 해당합니다.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 운송사별 정보 -->
+                <li class="order-list">
+                  <h3 class="order-title"><b>운송사별 정보</b></h3>
+                  <article class="order-list-box">
+                    <!-- 비드바이 선편특송 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">비드바이 선편특송</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">특징</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>배송기간이 길어 파손 위험률 높음</li>
+                                <li>전담관세사가 통관대행처리</li>
+                                <li>매주 화, 목 2일만 출하</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">적용배송물(사이즈기준)</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>중량무게, 부피 제한 없음</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">배송기간</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row td-center">
+                              <ul>
+                                <li>7 ~ 8일</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                      </div>
+                    </div>
+
+                    <!-- 비드바이 특송(사가와) -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">비드바이 특송(사가와)</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">특징</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>현재 화물 위치 추적 가능</li>
+                                <li>전담관세사가 통관대행처리</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">적용배송물(사이즈기준)</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>중량무게, 부피 제한 없음</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">배송기간</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row td-center">
+                              <ul>
+                                <li>3 ~ 5일</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                      </div>
+                    </div>
+
+                    <!-- 비드바이특송(로토스) -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">비드바이특송(로토스)</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">특징</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>현재 화물 위치 추적 가능</li>
+                                <li>전담관세사가 통관대행처리</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">적용배송물(사이즈기준)</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>중량무게, 부피 제한 없음</li>
+                                <li>부피무게가 68Kg 이상일 경우엔 부피무게 청구</li>
+                                <li>오버사이즈의 물품은 추가 비용 발생</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">배송기간</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row td-center">
+                              <ul>
+                                <li>3 ~ 5일</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                      </div>
+                    </div>
+
+                    <!-- EMS -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">EMS</p>
+                      </div>
+
+                      <div class="order__info-area">
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">특징</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>20만엔 초과 상품은 통관 수수료 2,800엔이 2차 결제시 청구 됩니다.</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">적용배송물(사이즈기준)</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>30kg까지 취급.</li>
+                                <li>한변길이 150cm미만</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">배송기간</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row td-center">
+                              <ul>
+                                <li>3 ~ 5일</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                      </div>
+                    </div>
+
+                    <!-- 일본내배송 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">일본내배송</p>
+                      </div>
+                      <div class="order__info-area small-padding">
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">특징</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>일본내배송 선택시 수수료 건당 ￥1,000 별도 발생</li>
+                                <li>
+                                  파손 및 보상기준 물품의 파손 및 상품이상 등의 클레임 대행 일절 불가<br />
+                                  (직접 택배사에 접수 필요)
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">적용배송물(사이즈기준)</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>일본 내 일반택배 (야마토/사가와)로 배송 가능한 사이즈(세변의 합 200cm까지)</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">배송기간</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>
+                                  인수희망 날짜 지정: 상품 미도착시, 현지도착일을 기준으로 5일 이후<br />
+                                  현지도착 상품의 경우 일본내 배송요청 일자로부터 5일 이후<br />
+                                </li>
+                                <li>
+                                  인수희망 날짜 지정 :<br />
+                                  상품 미도착시, 현지도착일을 기준으로 5일 이후 현지도착 상품의 경우 일본내 배송요청
+                                  일자로부터 5일 이후
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                      </div>
+                    </div>
+
+                    <!-- 최저가배송 -->
+                    <div class="order__table-group">
+                      <div class="order__selection">
+                        <p class="order__title">최저가배송</p>
+                      </div>
+
+                      <div class="order__info-area small-padding">
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">특징</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row">
+                              <ul class="order__list-style">
+                                <li>물품의 무게/부피를 모르는 상태에서 국제운송방법 선택이 어려운 회원님 전용</li>
+                                <li>
+                                  물품이 도착하면 배송팀에서 포장 이후 국제배송료가 가장 저렴한 운송 방법으로 2차 결제
+                                  안내. <br />
+                                  (단, 배송기간, 통관절차 등은 고려하지 않고 오로지 국제 운송료만 을 기준으로 진행, 다른
+                                  고려사항이 있으실 경우 다른 옵션 선택해 주세요)
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">적용배송물(사이즈기준)</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row td-center">
+                              <ul class="order__list-style">
+                                <li>운송방법에 따라 다름</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                        <article class="order__table">
+                          <div class="order__table-header">
+                            <span class="order__table-header-title">배송기간</span>
+                          </div>
+                          <ul class="order__table-body">
+                            <li class="order__table-row td-center">
+                              <ul class="order__list-style">
+                                <li>운송방법에 따라 다름</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </article>
+                      </div>
+                    </div>
+                  </article>
+                </li>
+              </ul>
+            </article>
+
+            <div class="order-utils">
+              <div class="basic-check-box__squire gray">
+                <input type="checkbox" name="" id="1eeee5" required />
+                <label for="1eeee5">
+                  <span class="basic-check-box__squire-icon black"></span> (필수) 주문결제 안내 사항 확인
+                  하였습니다.</label
+                >
+              </div>
+              <div class="basic-check-box__squire gray">
+                <input type="checkbox" name="" id="16" required />
+                <label for="16">
+                  <span class="basic-check-box__squire-icon black"></span> (필수) 해당 구입 물품은 민간 사용 용도이며
+                  군사 목적 용도로 사용되지 않습니다.</label
+                >
+              </div>
+            </div>
+
+            <div class="order-button-wrap">
+              <button onclick="history.back();" class="basic-button__gray-line">주문취소</button>
+              <button type="button" class="basic-button__blue">1차 결제하기</button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

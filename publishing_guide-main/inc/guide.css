@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+#pub_list td:nth-of-type(1),
+#pub_list td:nth-of-type(2),
+#pub_list td:nth-of-type(5),
+#pub_list td:nth-of-type(6) {
+  text-align: center;
+}
+#pub_list tbody tr:nth-of-type(even) td {
+  background-color: var(--col-white-bg-1);
+}
+#pub_list tbody tr:hover td {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#pub_list td a {
+  display: flex;
+  width: 100%;
+  max-width: 120px;
+  height: 36px;
+  margin: 0 auto;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: var(--col-white);
+  background-color: var(--col-bidbuy);
+}
+#pub_list td small {
+  color: var(--col-bidbuy);
+}
+.guide-print {
+  display: flex;
+  float: right;
+  width: 120px;
+  height: 36px;
+  margin-left: 10px;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border: 1px solid var(--col-bidbuy);
+  outline: none;
+  color: var(--col-bidbuy);
+  background-color: transparent;
+  cursor: pointer;
+}
+.guide-print.disabled {
+  color: #bbb;
+  border-color: transparent;
+  background-color: var(--col-white-bg-2);
+  cursor: default;
+}
+.guide-print::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media print {
+  body {
+    zoom: 55%;
+  }
+}

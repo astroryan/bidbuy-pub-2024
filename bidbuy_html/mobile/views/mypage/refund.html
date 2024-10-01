@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- START :: HEADER -->
+      <header id="header"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="my-page refund-page">
+        <!-- 마이페이지 DASHBOARD -->
+        <section id="myDashBoard" class="my-dashboard simple"></section>
+
+        <div class="inner-width">
+          <section class="my-refund">
+            <article class="refund-info">
+              <h3 class="my-title">
+                <b>환불신청</b>
+                <div class="title-utils">
+                  <button type="button" class="basic-button__light-gray-line">환불 관련 FAQ</button>
+                </div>
+              </h3>
+              <div class="refund-info__inner">
+                <p class="refund-info__title"><b>환불 신청 안내</b></p>
+                <ol class="refund-info__order-list">
+                  <li>환불 처리 소요시간은 정상영업시간 기준 24시간이내에 환불처리가 완료됩니다.</li>
+                  <li>
+                    2개월 이내의 카드결제시 카드결제취소처리가 됩니다.<br />(카드사 반영은 약 7일정도 시간이
+                    소요되십니다) 가상계좌/온라인입금시 은행 계좌로 환불처리 됩니다.
+                  </li>
+                </ol>
+                <ul class="refund-info__list">
+                  <li>예치금 환불내역은 예치금충전 메뉴에서 예치금 거래내역을 통해 확인 가능합니다.</li>
+                  <li>보증금 환불내역은 보증금 메뉴에서 보증금 거래내역을 통해 확인 가능합니다.</li>
+                  <li>보증금 환불신청을 하시면 해당국가의 관심물품이 모두 삭제됩니다.</li>
+                </ul>
+              </div>
+            </article>
+            <div class="refund-wrap">
+              <!-- 나의 환불 계좌 정보 -->
+              <article class="refund-account">
+                <h3 class="my-title">
+                  <b>나의 환불 계좌 정보</b>
+                </h3>
+                <div class="my-box line">
+                  <div class="refund__content">
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">환불은행</label>
+                      <div class="basic-input refund__input-value disabled">
+                        <input id="" type="text" value="농협" required disabled />
+                      </div>
+                    </div>
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">계좌번호</label>
+                      <div class="basic-input refund__input-value disabled">
+                        <input id="" type="text" value="3424-03890-01" required disabled />
+                      </div>
+                    </div>
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">예금주</label>
+                      <div class="basic-input refund__input-value disabled">
+                        <input id="" type="text" value="3424-03890-01" required disabled />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="refund-button-wrap">
+                    <button type="button" class="basic-button__black-line">변경</button>
+                  </div>
+                </div>
+                <!-- 환불 -->
+                <!-- <div class="my-box line">
+                  <div class="refund__content">
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">환불은행</label>
+                      <div class="basic-select-box gray refund__input-value">
+                        <select name="" id="" required>
+                          <option value="" disabled selected>농협</option>
+                          <option>농협1</option>
+                          <option>농협2</option>
+                          <option>농협3</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">계좌번호</label>
+                      <div class="basic-input refund__input-value">
+                        <input id="" type="text" placeholder="" required />
+                      </div>
+                    </div>
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">예금주</label>
+                      <div class="basic-input refund__input-value">
+                        <input id="" type="text" placeholder="등록계좌의 예금주와 필히 일치" required />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="refund-button-wrap">
+                    <button type="button" class="basic-button__black-line">취소</button>
+                    <button type="button" class="basic-button__blue">저장</button>
+                  </div>
+                </div> -->
+              </article>
+              <!-- 환불 신청하기 -->
+              <article class="refund-apply">
+                <h3 class="my-title">
+                  <b>환불 신청하기</b>
+                </h3>
+                <div class="my-box line">
+                  <div class="refund__content">
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">환불대상선택</label>
+                      <div class="refund__input-value">
+                        <div class="refund__radio-wrap">
+                          <ul class="refund__option-desc">
+                            <li class="radio-check-button">
+                              <input type="radio" name="payment" id="1" checked />
+                              <label for="1"><span class="radio-check-button-icon"></span>예치금</label>
+                            </li>
+                            <li class="radio-check-button">
+                              <input type="radio" name="payment" id="2" />
+                              <label for="2"><span class="radio-check-button-icon"></span>야후 보조금</label>
+                            </li>
+                            <li class="radio-check-button">
+                              <input type="radio" name="payment" id="3" />
+                              <label for="3"><span class="radio-check-button-icon"></span>이베이 보조금</label>
+                            </li>
+                          </ul>
+                          <span class="refund__option-small">(중복 선택 후 일괄 환불 가능)</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">예치금 환불금액</label>
+                      <div class="basic-input refund__input-value">
+                        <input id="" type="text" placeholder="5자 이내" required />
+                      </div>
+                      <small>(환불 가능액 ￦ 30,000)</small>
+                    </div>
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">야후보조금 환불금액</label>
+                      <div class="basic-input refund__input-value disabled">
+                        <input id="" type="text" placeholder="잔고 금액 노출" required disabled />
+                      </div>
+                      <small>(환불 가능액 ￦ 30,000)</small>
+                    </div>
+                    <div class="refund__input-group">
+                      <label for="" class="refund__input-title">이베이보조금 환불</label>
+                      <div class="basic-input refund__input-value disabled">
+                        <input id="" type="text" placeholder="잔고 금액 노출" required disabled />
+                      </div>
+                      <small>(환불 가능액 ￦ 30,000)</small>
+                    </div>
+                    <div class="refund__input-group">
+                      <p class="refund__input-title">최종 환불 예상 합계</p>
+                      <p class="refund__input-value"><strong>￦ 123,000</strong></p>
+                    </div>
+                  </div>
+                  <div class="refund-button-wrap">
+                    <button type="button" class="basic-button__black-line">환불 신청하기</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

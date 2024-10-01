@@ -1625,7 +1625,7 @@ const $MYPAGE_DASHBOARD_CONT = `  <div class="inner-width">
     </div>
   </div>
   <div class="my-dashboard-side-box">
-    <a href="../mypage/coupon.html" class="my-dashboard__bid-point my-box line">
+    <a href="../mypage/rank.html" class="my-dashboard__bid-point my-box line">
       <p class="side-title">등급포인트</p>
       <p class="side-value p_1"><b>180</b>점</p>
     </a>

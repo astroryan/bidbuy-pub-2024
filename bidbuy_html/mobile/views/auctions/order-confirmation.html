@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- MODAL :: 본 경매 입찰내역  -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="auction-list"></button> -->
+      <div class="modal-auction-list modal">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">본 경매 입찰내역</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__content">
+              <article class="basic-table">
+                <div class="basic-table__header">
+                  <div>입찰일시</div>
+                  <div>입찰가</div>
+                  <div>상태</div>
+                </div>
+                <div class="basic-table__body">
+                  <div class="basic-table__row">
+                    <div><p>2024.05.10 17:13:48</p></div>
+                    <div>
+                      <p>
+                        옵션명<br />
+                        1개 | ¥300
+                      </p>
+                    </div>
+                    <div>예약입찰</div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div><p>2024.05.10 17:13:48</p></div>
+                    <div>
+                      <p>
+                        옵션명<br />
+                        1개 | ¥300
+                      </p>
+                    </div>
+                    <div>예약취소</div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div><p>2024.05.10 17:13:48</p></div>
+                    <div>
+                      <p>옵션명</p>
+                    </div>
+                    <div>입찰실패</div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div><p>2024.05.10 17:13:48</p></div>
+                    <div>
+                      <p>옵션명</p>
+                    </div>
+                    <div>입찰실패</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- MODAL :: 인보이스 출력  -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="print-invoice"></button> -->
+      <div class="modal-print-invoice modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">인보이스 출력</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__content"></div>
+            <button type="button" class="basic-button__black-line" onclick="alert('인쇄하기')">인쇄하기</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- START :: HEADER -->
+      <header id="header" class="simple" data-title="주문상세정보"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <div id="main" class="order-page order-confirmation-page">
+        <div class="inner-width">
+          <!-- 경매주문상품정보 -->
+          <section class="order-list order-list-box">
+            <h3 class="order-title">
+              경매주문상품정보<button
+                type="button"
+                class="modal_button order-title__sub"
+                onclick="openModal(this, event)"
+                data-modal="auction-list"
+              >
+                본 입찰내역 조회
+              </button>
+            </h3>
+            <article class="order-item">
+              <figure class="order-item__image img-wrap">
+                <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+              </figure>
+              <div class="order-item__details">
+                <div class="order-item__platform">
+                  <figure class="platform__flag">
+                    <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                  </figure>
+                  <p>야후경매 <span>- kcc-brand:10000055</span></p>
+                </div>
+                <p class="order-item__name">
+                  \父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ ピスタチオサンド 10 アソート ラングドシャ
+                  チョコレート
+                </p>
+                <ul class="order-item__options">
+                  <li class="order-item__option">
+                    <p class="order-item__label">주문옵션</p>
+                    <p class="order-item__value">OOOOOOO</p>
+                  </li>
+                  <li class="order-item__option">
+                    <p class="order-item__label">주문수량</p>
+                    <p class="order-item__value">1개</p>
+                  </li>
+                  <li class="order-item__option">
+                    <p class="order-item__label">낙찰가</p>
+                    <p class="order-item__value">¥ 46,000</p>
+                  </li>
+                  <li class="order-item__option">
+                    <p class="order-item__label">낙찰상품</p>
+                    <p class="order-item__value order-item__value--private">
+                      비공개 <button type="button" class="small-gary-text toggle-button">공개로 변경</button>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="order-item__status-card">
+                <p class="status-card__desc">현재상태: 배송완료</p>
+                <p class="status-card__desc">주문번호: BJP0194792054</p>
+                <ul class="status-card-details">
+                  <li class="order-list__line">
+                    <p class="order-list__label">입찰일자</p>
+                    <p class="order-list__value">2024-04-04 12:12:32</p>
+                  </li>
+                  <li class="order-list__line">
+                    <p class="order-list__label">낙찰일자</p>
+                    <p class="order-list__value">2024-04-05 12:00:00</p>
+                  </li>
+                  <li class="order-list__line">
+                    <p class="order-list__label">결제금액</p>
+                    <p class="order-list__value">￦ 42,000</p>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </section>
+          <section class="order__container">
+            <!-- 주문배송정보 / 주문결제정보 -->
+            <article class="order__left-container">
+              <ul>
+                <!-- 주문배송정보 -->
+                <li class="order-list order-list-box">
+                  <h3 class="order-title">
+                    <b>주문배송정보</b
+                    ><button
+                      type="button"
+                      class="modal_button order-title__sub"
+                      onclick="openModal(this, event)"
+                      data-modal="print-invoice"
+                    >
+                      인보이스출력
+                    </button>
+                  </h3>
+                  <article class="order-info-article">
+                    <ul class="order-list__details">
+                      <li class="order-list__line">
+                        <p class="order-list__label">수취인명</p>
+                        <p class="order-list__value">김비드</p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label">배송지</p>
+                        <p class="order-list__value">04503</p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label"></p>
+                        <p class="order-list__value">서울시 영등포구 여의도동 234 3층</p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label">연락처</p>
+                        <p class="order-list__value">010-0000-000</p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label">통관고유부호</p>
+                        <p class="order-list__value">P093432113 (개인)</p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label">운송장번호</p>
+                        <p class="order-list__value">123456789123<a href="" class="small-gary-text">배송조회</a></p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label">배송운송사</p>
+                        <p class="order-list__value">비드바이특송</p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label">현지도착일</p>
+                        <p class="order-list__value">2020-05-05 16:16:16</p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label">국제배송일</p>
+                        <p class="order-list__value">2020-05-09 06:06:23</p>
+                      </li>
+                      <li class="order-list__line">
+                        <p class="order-list__label">묶음배송상태</p>
+                        <p class="order-list__value">
+                          <b>배송대기(묶음배송)</b>
+                          <button type="button" class="small-gary-text toggle-button">개별배송으로 전환</button>
+                          <!-- <button type="button" class="small-gary-text toggle-button">배송대기로 전환</button> -->
+                        </p>
+                      </li>
+                    </ul>
+                  </article>
+                </li>
+              </ul>
+            </article>
+
+            <!-- 관련 묶음배송 정보/ 주문 메모 내역 -->
+            <article class="order__right-container">
+              <ul class="">
+                <!-- 관련 묶음배송 정보-->
+                <li class="order-list order-list-box">
+                  <h3 class="order-title">
+                    <b>관련 묶음배송 정보</b
+                    ><a href="../mypage/bundle_shipping_management.html" class="order-title__sub">묶음배송관리</a>
+                  </h3>
+                  <article class="bundle-list-wrap">
+                    <!-- PUB :: 묶음배송 여부  분기처리 -->
+                    <!-- A: 묶음주문 X -->
+                    <!-- <p class="empty-text">본 주문은 묶음배송 관련 내용이 없습니다.
+                    </p> -->
+                    <!-- A: 묶음주문 O -->
+                    <ol class="bundle-list">
+                      <!-- 1 -->
+                      <li class="bundle-item__box">
+                        <figure class="img-wrap">
+                          <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                        </figure>
+                        <div class="bundle-item__details">
+                          <div class="bundle-item__market">
+                            <figure class="bundle-item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="p_1">
+                              <b>야후경매</b> <span>- キー プレゼント 202ー プレゼント 202ー プレゼント 2024 ピ</span>
+                            </p>
+                          </div>
+                          <p class="bundle-item__desc"><b>구매일자</b><span>2024-04-04 15:15:12</span></p>
+                          <p class="bundle-item__desc">
+                            <b>상품가</b><span class="p_1">결제비용 : ¥ 46,000 / 48,00048,00048,000원</span>
+                          </p>
+                        </div>
+                        <div class="bundle-item__delivery-status">
+                          <p class="basic-button__light-gray-line">배송완료</p>
+                        </div>
+                      </li>
+                      <!-- 2 -->
+                      <li class="bundle-item__box">
+                        <figure class="img-wrap">
+                          <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                        </figure>
+                        <div class="bundle-item__details">
+                          <div class="bundle-item__market">
+                            <figure class="bundle-item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="p_1"><b>야후경매</b> - キー プレゼント 2024 ピ</p>
+                          </div>
+                          <p class="bundle-item__desc p_1"><b>구매일자</b><span>2024-04-04 15:15:12</span></p>
+                          <p class="bundle-item__desc p_1">
+                            <b>상품가</b><span class="p_1">결제비용 : ¥ 46,000 / 48,000원</span>
+                          </p>
+                        </div>
+                        <div class="bundle-item__delivery-status">
+                          <p class="basic-button__light-gray-line">배송완료</p>
+                        </div>
+                      </li>
+                      <!-- 3 -->
+                      <li class="bundle-item__box">
+                        <figure class="img-wrap">
+                          <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                        </figure>
+                        <div class="bundle-item__details">
+                          <div class="bundle-item__market">
+                            <figure class="bundle-item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="p_1"><b>야후경매</b> - キー プレゼント 2024 ピ</p>
+                          </div>
+                          <p class="bundle-item__desc p_1"><b>구매일자</b><span>2024-04-04 15:15:12</span></p>
+                          <p class="bundle-item__desc p_1">
+                            <b>상품가</b><span class="p_1">결제비용 : ¥ 46,000 / 48,000원</span>
+                          </p>
+                        </div>
+                        <div class="bundle-item__delivery-status">
+                          <p class="basic-button__light-gray-line">배송완료</p>
+                        </div>
+                      </li>
+                      <!-- 4 -->
+                      <li class="bundle-item__box">
+                        <figure class="img-wrap">
+                          <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                        </figure>
+                        <div class="bundle-item__details">
+                          <div class="bundle-item__market">
+                            <figure class="bundle-item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="p_1"><b>야후경매</b> - キー プレゼント 2024 ピ</p>
+                          </div>
+                          <p class="bundle-item__desc p_1"><b>구매일자</b><span>2024-04-04 15:15:12</span></p>
+                          <p class="bundle-item__desc p_1">
+                            <b>상품가</b><span class="p_1">결제비용 : ¥ 46,000 / 48,000원</span>
+                          </p>
+                        </div>
+                        <div class="bundle-item__delivery-status">
+                          <p class="basic-button__light-gray-line">배송완료</p>
+                        </div>
+                      </li>
+                    </ol>
+                  </article>
+                </li>
+
+                <!-- 주문결제정보 -->
+                <li class="order-list order-list-box">
+                  <h3 class="order-title"><b>주문결제정보</b></h3>
+                  <article class="">
+                    <div class="payment__summary__header">
+                      <p>비용산출항목</p>
+                      <p>1차 결제비용 내역</p>
+                      <p>2차 결제비용 내역</p>
+                    </div>
+                    <div class="payment__summary__details">
+                      <ul>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>낙찰상품가</b></span>
+                          <span class="order-list__value"> ¥ 4,800 (¥ 2,400 x 2개)</span>
+                          <span class="order-list__value"> -</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>대행수수료</b></span>
+                          <span class="order-list__value">¥ 100</span>
+                          <span class="order-list__value">-</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>현지세금</b></span>
+                          <span class="order-list__value">-</span>
+                          <span class="order-list__value">¥ 100</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>송금수수료</b></span>
+                          <span class="order-list__value">¥ 100</span>
+                          <span class="order-list__value">-</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>현지배송료</b></span>
+                          <span class="order-list__value">¥ 100</span>
+                          <span class="order-list__value">-</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>무게</b></span>
+                          <span class="order-list__value">- </span>
+                          <span class="order-list__value">500g</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>국제운송료</b></span>
+                          <span class="order-list__value">-</span>
+                          <span class="order-list__value">¥ 1,000</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>창고보관료</b></span>
+                          <span class="order-list__value">-</span>
+                          <span class="order-list__value">¥ 50</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>술술케어</b></span>
+                          <span class="order-list__value">¥ 1,000</span>
+                          <span class="order-list__value">-</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>합계</b></span>
+                          <span class="order-list__value">¥ 45,000</span>
+                          <span class="order-list__value">¥ 45,000</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>적용환율</b></span>
+                          <span class="order-list__value">9.2%</span>
+                          <span class="order-list__value">9.2%</span>
+                        </li>
+                        <li class="payment-list__line total-payment-list__line">
+                          <span class="order-list__label"><b>총 금액</b></span>
+                          <span class="order-list__value"><b>￦554,000</b> </span>
+                          <span class="order-list__value"><b>￦554,000</b></span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>결제수단 1</b></span>
+                          <span class="order-list__value"><b>￦554,000 / *카드결제</b></span>
+                          <span class="order-list__value"><b>￦84,000 / *카드결제</b></span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"></span>
+                          <span class="order-list__value">승인번호:98704321 </span>
+                          <span class="order-list__value">승인번호:98704321</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>결제수단 2</b></span>
+                          <span class="order-list__value">-</span>
+                          <span class="order-list__value">-</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>결제일</b></span>
+                          <span class="order-list__value">2024-05-05 12:23:45</span>
+                          <span class="order-list__value">2024-06-23 12:23:45</span>
+                        </li>
+                        <li class="payment-list__line">
+                          <span class="order-list__label"><b>보증보험</b></span>
+                          <span class="order-list__value">-</span>
+                          <span class="order-list__value">-</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="payment__summary__total">
+                      <p>총 결제금액</p>
+                      <p><strong>￦654,000</strong></p>
+                      <p><strong>￦654,000</strong></p>
+                    </div>
+                  </article>
+                </li>
+
+                <!-- 주문 메모 내역 -->
+                <li class="order-list order-list-box">
+                  <h3 class="order-title"><b>주문 메모 내역</b></h3>
+                  <article class="">
+                    <div class="order-memo-box">
+                      <div class="basic-textarea">
+                        <textarea name="" id="" cols="" rows="" placeholder="문의 내용 입력"></textarea>
+                      </div>
+                      <button type="button" class="basic-button__gray">문의</button>
+                    </div>
+                    <ul class="order-memo-list">
+                      <!-- 1 -->
+                      <li>
+                        <div class="order-memo__header">
+                          <b>관리자메모</b> <span class="order-memo__date">[2024-05-16 24:14:55]</span>
+                        </div>
+                        <p class="order-memo__content">
+                          관리자메모로 안내 드리도록 하겠습니다. 이상 없이 구매완료 시 “결제완료” 에서 “주문완료” 로<br />
+                          상태 변경 됩니다. [청약 철회에 대한 안내] 실제 주문완료 이후에는 구매대행계약의 청약철회를 할
+                          수 <br />
+                          없습니다. 다만, 판매자가 환불에 동의한 경우 고객님의 비용부담으로 반품, 환불 절차를
+                          대행합니다. <br />
+                          (메루카리/라쿠마/페이페이프리마 제외) 이 경우 대행 수수료는 환불 대상이 아닙니다. 또한 부피,
+                          무게 등의 차이로 인한 송료 차액은 2차 결제시 실제 금액으로 정산 될수 있습니다. <br />
+                          이용시 참고 부탁드립니다. 감사합니다.
+                        </p>
+                        <p class="order-memo__footer">
+                          2024.05.16 20:06:42 취소사유 고객님 요청으로 거래 취소되었습니다.
+                        </p>
+                      </li>
+                      <!-- 2 -->
+                      <li>
+                        <div class="order-memo__header">
+                          <b>메모 문의</b> <span class="order-memo__date">[2024-05-16 24:14:55]</span>
+                          <button type="button" class="small-gary-text">삭제</button>
+                        </div>
+                        <p class="order-memo__content">
+                          또한 부피, 무게 등의 차이로 인한 송료 차액은 2차 결제시 실제 금액으로 정산 될수 있습니다.<br />
+                          이용시 참고 부탁드립니다. 감사합니다.
+                        </p>
+
+                        <div class="order-memo-answer">
+                          <p class="answer-title">[답변] 2025-12-04 13:23</p>
+                          <p class="answer-content">
+                            네.. 고객님 답변 드립니다. 고객님 답변 드립니다. 고객님 답변 드립니다. 고객님 답변
+                            드립니다.<br />
+                            고객님 답변 드립니다. 고객님 답변 드립니다. 고객님 답변 드립니다. 고객님 답변 드립니다.
+                            고객님 <br />
+                            답변 드립니다. 고객님 답변 드립니다. 고객님 답변 드립니다.
+                          </p>
+                        </div>
+                      </li>
+                      <!-- 1 -->
+                      <li>
+                        <div class="order-memo__header">
+                          <b>관리자메모</b> <span class="order-memo__date">[2024-05-16 24:14:55]</span>
+                        </div>
+                        <p class="order-memo__content">
+                          관리자메모로 안내 드리도록 하겠습니다. 이상 없이 구매완료 시 “결제완료” 에서 “주문완료” 로<br />
+                          상태 변경 됩니다. [청약 철회에 대한 안내] 실제 주문완료 이후에는 구매대행계약의 청약철회를 할
+                          수 <br />
+                          없습니다. 다만, 판매자가 환불에 동의한 경우 고객님의 비용부담으로 반품, 환불 절차를
+                          대행합니다. <br />
+                          (메루카리/라쿠마/페이페이프리마 제외) 이 경우 대행 수수료는 환불 대상이 아닙니다. 또한 부피,
+                          무게 등의 차이로 인한 송료 차액은 2차 결제시 실제 금액으로 정산 될수 있습니다. <br />
+                          이용시 참고 부탁드립니다. 감사합니다.
+                        </p>
+                        <p class="order-memo__footer">
+                          2024.05.16 20:06:42 취소사유 고객님 요청으로 거래 취소되었습니다.
+                        </p>
+                      </li>
+                    </ul>
+                  </article>
+                </li>
+              </ul>
+            </article>
+          </section>
+          <div class="order-button-wrap">
+            <button onclick="window.print();return false;" class="basic-button__gray-line">인쇄하기</button>
+            <a href="" class="basic-button__blue">주문목록</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

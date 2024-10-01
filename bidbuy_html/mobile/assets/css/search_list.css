@@ -272,6 +272,9 @@
     gap: 32px;
     padding-top: 35px;
   }
+  & .contents .result {
+    width: 100%;
+  }
   & .list-item {
     display: flex;
     flex-wrap: wrap;
@@ -617,7 +620,7 @@
 .modal-filter .filter__search input {
   flex: 1;
   height: 50px;
-  padding: 0 12px;
+  padding: 0 9px;
   border-radius: 5px;
   box-sizing: border-box;
   background-color: var(--col_gray_2);
