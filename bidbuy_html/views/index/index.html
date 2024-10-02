@@ -51,8 +51,9 @@
     <script src="../../assets/js/include.js" defer></script>
     <script src="../../assets/js/common.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
-    <!-- <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script> -->
+    <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <!-- <script type="module" src="../../assets/js/sort.js"></script> -->
@@ -80,9 +81,18 @@
           // center: "title",
           // right: "next",
           initialView: "dayGridMonth",
+
           // header toolbar
+          // titleFormat: function (date) {
+          //   return date.date.month + 1;
+          // },
+          // titleFormat: (date) => `${date}  ${date.date.month + 1}`,
+          // titleFormat: {
+          //   month: "MMMM yyyy",
+          // },
           titleFormat: function (date) {
-            return date.date.month + 1;
+            // title 설정
+            return date.date.month + 1 + "월";
           },
 
           headerToolbar: {
@@ -90,76 +100,76 @@
             center: "title",
             right: "next",
           },
+          eventRender: function (info) {
+            info.el.querySelector(".fc-toolbar-title").innerHTML = "<i>" + info.event.title + "</i>";
+          },
+          // 아이콘 추가
+          eventContent: function (info) {
+            let iconEl = document.createElement("div");
+            iconEl.classList = "calendar-icon";
+            const method = info.event.extendedProps.method;
+
+            if (method === "ship") {
+              iconEl.innerHTML = "<img src='../../assets/images/icon/calendar_ship.svg' />";
+            } else if (method === "airplane") {
+              iconEl.innerHTML = "<img src='../../assets/images/icon/calendar_airplane.svg' />";
+            }
+            let arrayOfDomNodes = [iconEl];
+            return { domNodes: arrayOfDomNodes };
+          },
+          fixedWeekCount: false, // 추가 주 삭제
           height: 275,
-          // contentHeight: "auto",
+
+          // 툴팁
           eventDidMount: function (info) {
-            var title = info.event.title;
-            var tooltip = new Tooltip(info.el, {
-              title: title,
-              // title: info.event.extendedProps.description,
-              placement: "top",
+            const tooltip = new Tooltip(info.el, {
+              html: true,
+              title: `
+                <div class="tooltip-box">
+                  <p class="tooltip-top"><b>${info.event.title}</b> <small>${info.event.extendedProps.subTitle}</small></p>
+                  <p class="tooltip-desc">${info.event.extendedProps.description}</p>
+                </div>
+            `,
+              placement: "bottom",
               trigger: "hover",
               container: "body",
             });
           },
 
-          // dayMaxEventRows: true,
-          // expandRows: true, // 화면에 맞게 높이 재설정
-          //tooltip
-          // eventDidMount: function (info) {
-          //   var title = info.event.title;
-          //   if (title.length > 0) {
-          //     tippy(info.el, {
-          //       content: title,
-          //       placement: "bottom", //툴팁 방향
-          //       theme: "yellow", //css테마 설정된 데이터 값
-          //       arrow: false, //툴팁에서 말풍선 모양처럼 화살표 출력여부
-          //     });
-          //   }
-          // },
-          // eventRender: function (info) {
-          //   var tooltip = new Tooltip(info.el, {
-          //     title: info.event.extendedProps.description, //이벤트 디스크립션을 툴팁으로 가져옵니다.
-          //     // title: info.event.title, 이벤트 타이틀을 툴팁으로 가져옵니다.
-          //     placement: "top",
-          //     trigger: "hover",
-          //     container: "body",
-          //   });
-          // },
-
           events: [
             {
-              title: "All Day Event",
-              description: "description for All Day Event",
-              start: "2024-09-25",
+              title: "한국 [KOR]",
+              method: "ship",
+              imageurl: ["../../assets/images/icon/calendar_ship.svg", "../../assets/images/icon/calendar_ship.svg"],
+              subTitle: "08.13(화) 출고 스케쥴 (KST)",
+              description: "· 4/27(토)~5/6(월)까지 골든위크로 지연 예상",
+              start: "2024-10-12",
+            },
+            {
+              title: "한국 [KOR]",
+              method: "airplane",
+              imageurl: "../../assets/images/icon/calendar_airplane.svg",
+              subTitle: "08.13(화) 출고 스케쥴 (KST)",
+              description: "· 골든위크로 지연 예상",
+              start: "2024-10-15",
+            },
+            {
+              title: "한국 [KOR]",
+              method: "airplane",
+              imageurl: "../../assets/images/icon/calendar_airplane.svg",
+              subTitle: "08.13(화) 출고 스케쥴 (KST)",
+              description: "· 4/27(토)~5/6(월)까지 골든위크로 지연 예상",
+              start: "2024-10-25",
+            },
+            {
+              title: "한국 [KOR]",
+              method: "ship",
+              imageurl: "../../assets/images/icon/calendar_ship.svg",
+              subTitle: "08.13(화) 출고 스케쥴 (KST)",
+              description: "· 4/27(토)~5/6(월)",
+              start: "2024-10-25",
             },
           ],
-          // events: [
-          //   {
-          //     title: "한국 [KOR]",
-          //     description: "description for All Day Event",
-          //     start: "2024-09-25",
-          //   },
-          //   {
-          //     title: "한국 [KOR]",
-          //     start: "2024-09-05",
-          //   },
-          //   {
-          //     title: "한국 [KOR]",
-          //     start: "2024-10-25",
-          //   },
-          //   {
-          //     title: "한국 [KOR]",
-          //     start: "2024-10-05",
-          //   },
-          // ],
-
-          // dateClick: function (info) {
-          //   alert("Clicked on: " + info.dateStr); //
-          //   // change the day's background color just for fun
-          //   // info.dayEl.style.backgroundColor = "red";
-          //   // $("#calendarModal").modal("show");
-          // },
         });
         calendar.render();
       });
@@ -171,6 +181,7 @@
       <header id="header"></header>
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
+
       <main id="main" class="main-page">
         <div class="inner-width flex">
           <section class="main-visual">
