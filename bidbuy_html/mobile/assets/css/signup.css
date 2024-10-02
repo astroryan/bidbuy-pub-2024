@@ -285,8 +285,6 @@
   & .signup-list {
     margin-top: 40px;
   }
-  & .signup-list > li {
-  }
   & .signup-list > li + li {
     margin-top: 30px;
   }
@@ -591,8 +589,6 @@
   & .terms-list + .terms-list {
     margin-top: 20px;
   }
-  & .terms-item {
-  }
   & .terms-item + .terms-item {
     margin-top: 30px;
   }
@@ -786,9 +782,6 @@
   & .coupon-desc li + li {
     margin-top: 8px;
   }
-  & .coupon-desc b {
-  }
-
   & .signup-complete-button-wrap {
     display: flex;
     gap: 10px;

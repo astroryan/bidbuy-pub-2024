@@ -47,6 +47,7 @@
     <!-- JS -->
     <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
     <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
     <script src="../../assets/js/include.js" defer></script>
     <script src="../../assets/js/common.js" defer></script>
   </head>
@@ -54,7 +55,7 @@
   <body>
     <div id="content-wrap">
       <!-- START :: HEADER -->
-      <header id="header" class="simple" data-title="커뮤니티"></header>
+      <header id="header" class="simple" data-title="고객센터"></header>
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
       <main id="main" class="cs-page cs-main-page">
@@ -67,8 +68,10 @@
             <!-- 1:1 문의 -->
             <article class="cs-qna-box cs-box line">
               <h3>1:1문의하기</h3>
-              <a href="../cs/qna.html" class="qna-list-button">나의 문의내역</a>
-              <a href="../cs/faq_form.html" class="qua-submit-button">문의하기</a>
+              <div class="flex">
+                <a href="../cs/qna.html" class="qna-list-button">나의 문의내역</a>
+                <a href="../cs/qna_form.html" class="qua-submit-button">문의하기</a>
+              </div>
             </article>
             <!-- 공지 & 뉴스 -->
             <article class="cs-news-box cs-box line">
@@ -157,7 +160,12 @@
           <!-- 자주하는 질문-->
           <section class="cs-faq tabs-container">
             <h3 class="cs-title">
-              <b>자주하는 질문</b>
+              <div class="cs-title-inner">
+                <b>자주하는 질문 </b>
+                <div class="cs-faq__utils">
+                  <a href="" class="basic-button__light-gray-line">전체보기</a>
+                </div>
+              </div>
               <div class="title-utils">
                 <div class="basic-select-box">
                   <select name="" id="">
@@ -177,8 +185,8 @@
             <div class="faq__tabs tabs">
               <button type="button" class="active" data-idx="0">경매대행</button>
               <button type="button" data-idx="1">구매대행</button>
-              <button type="button" data-idx="2">배송/통관/<br />관세</button>
-              <button type="button" data-idx="3">취소/환불/<br />반품/교환</button>
+              <button type="button" data-idx="2">배송/통관/관세</button>
+              <button type="button" data-idx="3">취소/환불/반품/교환</button>
               <button type="button" data-idx="4">파손/분실</button>
               <button type="button" data-idx="5">비용/결제</button>
               <button type="button" data-idx="6">회원서비스</button>
@@ -514,10 +522,6 @@
                 </ul>
               </li>
             </ul>
-
-            <div class="cs-faq__utils">
-              <a href="" class="basic-button__light-gray-line">전체보기</a>
-            </div>
           </section>
         </div>
       </main>

@@ -46,6 +46,7 @@
     <!-- JS -->
     <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
     <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
     <script src="../../assets/js/include.js" defer></script>
     <script src="../../assets/js/common.js" defer></script>
   </head>
@@ -53,7 +54,7 @@
   <body>
     <div id="content-wrap">
       <!-- START :: HEADER -->
-      <header id="header"></header>
+      <header id="header" class="simple" data-title="리뷰"></header>
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
       <main id="main" class="community-page community-review-page">
@@ -67,195 +68,194 @@
               <h3 class="community-sub-title">
                 <b>주간 BEST 후기</b>
               </h3>
-
-              <div class="review-swiper-wrap">
-                <div class="swiper review-swiper">
-                  <ul class="swiper-wrapper">
-                    <li class="swiper-slide">
-                      <a href="../community/review_details.html" class="review-box community-box line">
-                        <div class="review__user">
-                          <figure class="review__user-img img-wrap">
-                            <img src="../../assets/images/dummy/user.png" alt="" />
-                          </figure>
-                          <div class="review__user-info">
-                            <div class="review__user-name-wrap">
-                              <p class="review__user-name">Yyoo007</p>
-                              <p class="review__user-status">신규회원</p>
-                              <div class="review__comment-num">3</div>
-                            </div>
-                            <div class="review__rating">
-                              <div class="review__star">
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/start_red_empty.svg" alt="별점" /></span>
-                                <span class="review__star-num">4</span>
-                              </div>
+            </div>
+            <div class="review-swiper-wrap">
+              <div class="swiper review-swiper">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="../community/review_details.html" class="review-box community-box line">
+                      <div class="review__user">
+                        <figure class="review__user-img img-wrap">
+                          <img src="../../assets/images/dummy/user.png" alt="" />
+                        </figure>
+                        <div class="review__user-info">
+                          <div class="review__user-name-wrap">
+                            <p class="review__user-name">Yyoo007</p>
+                            <p class="review__user-status">신규회원</p>
+                            <div class="review__comment-num">3</div>
+                          </div>
+                          <div class="review__rating">
+                            <div class="review__star">
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/start_red_empty.svg" alt="별점" /></span>
+                              <span class="review__star-num">4</span>
                             </div>
                           </div>
                         </div>
+                      </div>
 
-                        <div class="item__market line">
-                          <figure class="item__country">
-                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
-                          </figure>
-                          <p>이베이경매</p>
-                        </div>
+                      <div class="item__market line">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>이베이경매</p>
+                      </div>
 
-                        <div class="review__content">
-                          <p class="review__title p_2">즉결/BLUE GIANT/전10권/이시즈카 신이 치/전권·완결  [1]</p>
-                          <p class="review__text p_2">
-                            잘 도착 하였읍니다. 상태도 좋아요…..<br />
-                            포장두 완벽 하구요….
-                          </p>
-                          <p class="review__date">2024-05-05</p>
-                          <figure class="review__img img-wrap">
-                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
-                          </figure>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="swiper-slide">
-                      <a href="../community/review_details.html" class="review-box community-box line">
-                        <div class="review__user">
-                          <figure class="review__user-img img-wrap">
-                            <img src="../../assets/images/dummy/user.png" alt="" />
-                          </figure>
-                          <div class="review__user-info">
-                            <div class="review__user-name-wrap">
-                              <p class="review__user-name">Yyoo007</p>
-                              <p class="review__user-status">신규회원</p>
-                              <div class="review__comment-num">3</div>
-                            </div>
-                            <div class="review__rating">
-                              <div class="review__star">
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/start_red_empty.svg" alt="별점" /></span>
-                                <span class="review__star-num">4</span>
-                              </div>
+                      <div class="review__content">
+                        <p class="review__title p_2">즉결/BLUE GIANT/전10권/이시즈카 신이 치/전권·완결  [1]</p>
+                        <p class="review__text p_2">
+                          잘 도착 하였읍니다. 상태도 좋아요…..<br />
+                          포장두 완벽 하구요….
+                        </p>
+                        <p class="review__date">2024-05-05</p>
+                        <figure class="review__img img-wrap">
+                          <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                        </figure>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="../community/review_details.html" class="review-box community-box line">
+                      <div class="review__user">
+                        <figure class="review__user-img img-wrap">
+                          <img src="../../assets/images/dummy/user.png" alt="" />
+                        </figure>
+                        <div class="review__user-info">
+                          <div class="review__user-name-wrap">
+                            <p class="review__user-name">Yyoo007</p>
+                            <p class="review__user-status">신규회원</p>
+                            <div class="review__comment-num">3</div>
+                          </div>
+                          <div class="review__rating">
+                            <div class="review__star">
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/start_red_empty.svg" alt="별점" /></span>
+                              <span class="review__star-num">4</span>
                             </div>
                           </div>
                         </div>
+                      </div>
 
-                        <div class="item__market line">
-                          <figure class="item__country">
-                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
-                          </figure>
-                          <p>이베이경매</p>
-                        </div>
+                      <div class="item__market line">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>이베이경매</p>
+                      </div>
 
-                        <div class="review__content">
-                          <p class="review__title p_2">즉결/BLUE GIANT/전10권/이시즈카 신이 치/전권·완결  [1]</p>
-                          <p class="review__text p_2">
-                            잘 도착 하였읍니다. 상태도 좋아요…..<br />
-                            포장두 완벽 하구요….
-                          </p>
-                          <p class="review__date">2024-05-05</p>
-                          <figure class="review__img img-wrap">
-                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
-                          </figure>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="swiper-slide">
-                      <a href="../community/review_details.html" class="review-box community-box line">
-                        <div class="review__user">
-                          <figure class="review__user-img img-wrap">
-                            <img src="../../assets/images/dummy/user.png" alt="" />
-                          </figure>
-                          <div class="review__user-info">
-                            <div class="review__user-name-wrap">
-                              <p class="review__user-name">Yyoo007</p>
-                              <p class="review__user-status">신규회원</p>
-                              <div class="review__comment-num">3</div>
-                            </div>
-                            <div class="review__rating">
-                              <div class="review__star">
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/start_red_empty.svg" alt="별점" /></span>
-                                <span class="review__star-num">4</span>
-                              </div>
+                      <div class="review__content">
+                        <p class="review__title p_2">즉결/BLUE GIANT/전10권/이시즈카 신이 치/전권·완결  [1]</p>
+                        <p class="review__text p_2">
+                          잘 도착 하였읍니다. 상태도 좋아요…..<br />
+                          포장두 완벽 하구요….
+                        </p>
+                        <p class="review__date">2024-05-05</p>
+                        <figure class="review__img img-wrap">
+                          <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                        </figure>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="../community/review_details.html" class="review-box community-box line">
+                      <div class="review__user">
+                        <figure class="review__user-img img-wrap">
+                          <img src="../../assets/images/dummy/user.png" alt="" />
+                        </figure>
+                        <div class="review__user-info">
+                          <div class="review__user-name-wrap">
+                            <p class="review__user-name">Yyoo007</p>
+                            <p class="review__user-status">신규회원</p>
+                            <div class="review__comment-num">3</div>
+                          </div>
+                          <div class="review__rating">
+                            <div class="review__star">
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/start_red_empty.svg" alt="별점" /></span>
+                              <span class="review__star-num">4</span>
                             </div>
                           </div>
                         </div>
+                      </div>
 
-                        <div class="item__market line">
-                          <figure class="item__country">
-                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
-                          </figure>
-                          <p>이베이경매</p>
-                        </div>
+                      <div class="item__market line">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>이베이경매</p>
+                      </div>
 
-                        <div class="review__content">
-                          <p class="review__title p_2">즉결/BLUE GIANT/전10권/이시즈카 신이 치/전권·완결  [1]</p>
-                          <p class="review__text p_2">
-                            잘 도착 하였읍니다. 상태도 좋아요…..<br />
-                            포장두 완벽 하구요….
-                          </p>
-                          <p class="review__date">2024-05-05</p>
-                          <figure class="review__img img-wrap">
-                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
-                          </figure>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="swiper-slide">
-                      <a href="../community/review_details.html" class="review-box community-box line">
-                        <div class="review__user">
-                          <figure class="review__user-img img-wrap">
-                            <img src="../../assets/images/dummy/user.png" alt="" />
-                          </figure>
-                          <div class="review__user-info">
-                            <div class="review__user-name-wrap">
-                              <p class="review__user-name">Yyoo007</p>
-                              <p class="review__user-status">신규회원</p>
-                              <div class="review__comment-num">3</div>
-                            </div>
-                            <div class="review__rating">
-                              <div class="review__star">
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
-                                <span><img src="../../assets/images/icon/start_red_empty.svg" alt="별점" /></span>
-                                <span class="review__star-num">4</span>
-                              </div>
+                      <div class="review__content">
+                        <p class="review__title p_2">즉결/BLUE GIANT/전10권/이시즈카 신이 치/전권·완결  [1]</p>
+                        <p class="review__text p_2">
+                          잘 도착 하였읍니다. 상태도 좋아요…..<br />
+                          포장두 완벽 하구요….
+                        </p>
+                        <p class="review__date">2024-05-05</p>
+                        <figure class="review__img img-wrap">
+                          <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                        </figure>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="../community/review_details.html" class="review-box community-box line">
+                      <div class="review__user">
+                        <figure class="review__user-img img-wrap">
+                          <img src="../../assets/images/dummy/user.png" alt="" />
+                        </figure>
+                        <div class="review__user-info">
+                          <div class="review__user-name-wrap">
+                            <p class="review__user-name">Yyoo007</p>
+                            <p class="review__user-status">신규회원</p>
+                            <div class="review__comment-num">3</div>
+                          </div>
+                          <div class="review__rating">
+                            <div class="review__star">
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/star_red.svg" alt="별점" /></span>
+                              <span><img src="../../assets/images/icon/start_red_empty.svg" alt="별점" /></span>
+                              <span class="review__star-num">4</span>
                             </div>
                           </div>
                         </div>
+                      </div>
 
-                        <div class="item__market line">
-                          <figure class="item__country">
-                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
-                          </figure>
-                          <p>이베이경매</p>
-                        </div>
+                      <div class="item__market line">
+                        <figure class="item__country">
+                          <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                        </figure>
+                        <p>이베이경매</p>
+                      </div>
 
-                        <div class="review__content">
-                          <p class="review__title p_2">즉결/BLUE GIANT/전10권/이시즈카 신이 치/전권·완결  [1]</p>
-                          <p class="review__text p_2">
-                            잘 도착 하였읍니다. 상태도 좋아요…..<br />
-                            포장두 완벽 하구요….
-                          </p>
-                          <p class="review__date">2024-05-05</p>
-                          <figure class="review__img img-wrap">
-                            <img src="../../assets/images/dummy/item_01.jpg" alt="" />
-                          </figure>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <button type="button" class="review-swiper-button-next"></button>
-                <button type="button" class="review-swiper-button-prev"></button>
+                      <div class="review__content">
+                        <p class="review__title p_2">즉결/BLUE GIANT/전10권/이시즈카 신이 치/전권·완결  [1]</p>
+                        <p class="review__text p_2">
+                          잘 도착 하였읍니다. 상태도 좋아요…..<br />
+                          포장두 완벽 하구요….
+                        </p>
+                        <p class="review__date">2024-05-05</p>
+                        <figure class="review__img img-wrap">
+                          <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                        </figure>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </div>
+              <!-- <button type="button" class="review-swiper-button-next"></button>
+                <button type="button" class="review-swiper-button-prev"></button> -->
             </div>
           </article>
           <div class="inner-width">

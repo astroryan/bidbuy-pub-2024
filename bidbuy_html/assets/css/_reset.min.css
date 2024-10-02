@@ -1,11 +1,5 @@
 @charset "utf-8";
 
-/* 변수 */
-:root {
-}
-:root[color-theme="dark"] {
-}
-
 *,
 *::before,
 *::after {

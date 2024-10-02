@@ -8,12 +8,17 @@
     color: var(--col_black_1);
     padding-bottom: 20px;
   }
+  & .cs-title-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   & .title-utils {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 14px;
   }
   & .cs-title .basic-select-box {
     flex-shrink: 0;
@@ -178,7 +183,7 @@
   }
   & .cs-qna-box {
     background-color: var(--mainBlueOpacity);
-    padding: 20px 15px;
+    padding: 20px 20px 30px;
   }
   & .cs-qna-box h3 {
     font-size: 18px;
@@ -189,6 +194,7 @@
   }
   & .qna-list-button,
   & .qua-submit-button {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -199,7 +205,7 @@
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.11);
   }
   & .qua-submit-button {
-    margin-top: 20px;
+    margin-left: 10px;
   }
   & .qna-list-button:after,
   & .qua-submit-button:after {
@@ -215,8 +221,8 @@
     background: url("../images/icon/qna_submit.svg") no-repeat center / contain;
   }
   & .cs-news-box {
-    padding: 20px 15px;
-    margin-top: 40px;
+    padding: 20px 15px 37px;
+    margin-top: 20px;
   }
 
   & .cs-news-inner {
@@ -252,16 +258,19 @@
   & .cs-contact-inner {
     padding-top: 26px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
   }
   & .cs-contact-box dl {
-    width: calc(100% / 2 - 34px / 2);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
   }
 
   & .cs-contact-box dt {
     position: relative;
-    flex-shrink: 0;
+    flex: 1;
     display: flex;
     gap: 5px;
     font-size: 14px;
@@ -277,11 +286,10 @@
     background-size: contain;
   }
   & .cs-contact-box dd {
-    flex: 1;
+    flex: 0.7;
     font-size: 13px;
     color: var(--col_black_1);
     margin-top: 8px;
-    padding-left: 23px;
   }
 
   /* 자주하는 질문 */
@@ -294,12 +302,18 @@
   & .faq__tabs button {
     flex: unset;
     flex-shrink: 0;
-    width: 25%;
-    font-size: 12px;
+    width: 50%;
+    height: 40px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    font-weight: 400;
     padding: 0 5px;
   }
-  & .faq__tabs button:nth-child(n + 5) {
+  & .faq__tabs button:nth-child(n + 3) {
     border-top: 1px solid var(--col_gray_3);
+  }
+  & .faq__tabs button:nth-child(odd) {
+    border-left: none;
   }
   & .faq__tabs-content {
     margin-top: 30px;
@@ -330,12 +344,6 @@
     padding-right: 10px;
   }
 
-  & .faq__accordion-button:after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background: url("../images/icon/arrow_down_gray.svg") no-repeat center / contain;
-  }
   & .faq__content {
     display: none;
     background-color: var(--col_gray_2);
@@ -346,16 +354,13 @@
     overflow: hidden;
     transition: all 0.5s linear;
   }
-  & .faq__accordion-button.active:after {
-    transform: rotate(-180deg);
-  }
+
   & .faq__accordion-button.active ~ .faq__content {
     display: block;
   }
   & .cs-faq__utils {
     display: flex;
     justify-content: flex-end;
-    margin-top: 40px;
   }
   & .cs-faq__utils .basic-button__light-gray-line {
     position: relative;

@@ -83,13 +83,6 @@
     color: var(--col_black_1);
     font-weight: 400;
   }
-  /* & .strong {
-    font-weight: 700;
-    color: var(--mainBlue);
-  } */
-
-  & .menu-depth__list-wrap {
-  }
   & .menu-depth__list {
     display: flex;
     align-items: center;
@@ -204,10 +197,6 @@
     overflow: hidden;
     margin-right: 5px;
   }
-  & .nav-wrap b {
-  }
-  & .nav-wrap {
-  }
   & .tag-section {
     margin-top: 43px;
   }
@@ -229,10 +218,7 @@
     flex-shrink: 0;
     width: 290px;
   }
-  & .filter {
-  }
-  & .filter-list {
-  }
+
   & .filter-list > li {
     border-bottom: 1px solid var(--col_gray_4);
   }
@@ -294,9 +280,7 @@
     color: var(--col_black_1);
     white-space: nowrap;
   }
-  & .filter__price-range {
-    /* display: flex; */
-  }
+
   & .filter__price-range-top {
     display: flex;
     align-items: center;
@@ -462,7 +446,6 @@
     gap: 20px;
   }
   & .list-item > li {
-    /* width: calc(100% / 4 - (60px / 3)); */
     width: calc(25% - 15px);
   }
   & .result-top {

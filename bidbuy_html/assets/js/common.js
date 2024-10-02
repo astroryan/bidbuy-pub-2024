@@ -46,6 +46,7 @@ const stickyHeader = () => {
     }
   });
 };
+
 // 카테고리
 const categoryToggle = () => {
   const categoryList = document.querySelectorAll(" .category__sub-list button");
@@ -72,6 +73,7 @@ const categoryToggle = () => {
     });
   });
 };
+
 // 기본 탭 버튼 클릭 이벤트
 const onClickTab = () => {
   const tabs = document.querySelectorAll(".tabs > button");
@@ -97,14 +99,6 @@ const onClickTab = () => {
       contents.forEach((li, index) => {
         li.style.display = index === selectedIdx ? "block" : "none";
       });
-
-      // 모든 콘텐츠 요소를 숨기고
-      // contents.forEach((li) => {
-      //   li.style.display = "none";
-      // });
-
-      // 클릭된 탭에 해당하는 콘텐츠만 표시
-      // contents[selectedIdx].style.display = "block";
     });
   });
 };
@@ -129,11 +123,27 @@ function openModal(button, event) {
     initializeModalDepths(selectedModal);
   }
 
-  // 알림모달은 스크롤 블럭제거
+  // 알림 모달은 스크롤 블럭제거
   if (!selectedModal.classList.contains("side-modal")) {
     blockBodyScroll();
   }
-  document.removeEventListener("keydown", () => {
+
+  if (selectedModal.classList.contains("modal-category")) {
+    const ulEl = document.querySelector(".custom-shopping__list");
+    function Sort() {
+      if (ulEl) {
+        new Sortable(ulEl, {
+          animation: 200,
+          ghostClass: "active",
+          forceFallback: true,
+          handle: ".custom-shopping__drag-button",
+          preventOnFilter: false,
+        });
+      }
+    }
+    Sort();
+  }
+  document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       selectedModal.style.display = "none";
       unblockBodyScroll();
@@ -184,7 +194,6 @@ function blockBodyScroll(className = "overflow-hidden") {
 
 function unblockBodyScroll(className = "overflow-hidden") {
   const isBlocked = document.body.classList.contains(className);
-  console.log("unblockBodyScroll");
 
   if (!isBlocked) return;
 
@@ -225,6 +234,7 @@ function openAnswer(button) {
     }
   }
 }
+
 function closeAnswer(button) {
   const listEl = button.closest(".inquiry-list");
   const answer = listEl.querySelector(".inquiry-answer");
@@ -301,6 +311,149 @@ function couponTab(button) {
 
   tabContents.forEach((content) => {
     content.style.display = content.dataset.idx === currentIdx ? "block" : "none";
+  });
+}
+
+// 메인페이지 캘린더
+function calendar() {
+  const calendarEl = document.getElementById("calendar");
+  if (!calendarEl) return;
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: "dayGridMonth",
+    fixedWeekCount: false, // 추가 주 삭제
+    height: 275,
+    headerToolbar: {
+      left: "prev",
+      center: "title",
+      right: "next",
+    },
+
+    // 타이틀
+    titleFormat: function (date) {
+      return "";
+    },
+    datesSet: function (dateInfo) {
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const monthNumber = dateInfo.view.currentStart.getMonth() + 1;
+      const monthName = monthNames[dateInfo.view.currentStart.getMonth()];
+
+      const titleEl = document.querySelector(".fc-toolbar-title");
+      titleEl.innerHTML = `<span class="month-number">${monthNumber}</span> <small class="month-name">${monthName}</small>`;
+    },
+
+    // 아이콘 추가
+    eventContent: function (info) {
+      let iconEl = document.createElement("div");
+      iconEl.classList = "calendar-icon";
+      const method = info.event.extendedProps.method;
+
+      if (method === "ship") {
+        iconEl.innerHTML = "<img src='../../assets/images/icon/calendar_ship.svg' />";
+      } else if (method === "airplane") {
+        iconEl.innerHTML = "<img src='../../assets/images/icon/calendar_airplane.svg' />";
+      }
+      let arrayOfDomNodes = [iconEl];
+      return { domNodes: arrayOfDomNodes };
+    },
+
+    // 툴팁
+    eventDidMount: function (info) {
+      const tooltip = new Tooltip(info.el, {
+        html: true,
+        title: `
+                  <div class="tooltip-box">
+                    <p class="tooltip-top"><b>${info.event.title}</b> <small>${info.event.extendedProps.subTitle}</small></p>
+                    <p class="tooltip-desc">${info.event.extendedProps.description}</p>
+                  </div>
+              `,
+        placement: "bottom",
+        trigger: "hover",
+        container: "body",
+      });
+    },
+
+    // dummy
+    events: [
+      {
+        title: "한국 [KOR]",
+        method: "ship",
+        subTitle: "08.13(화) 출고 스케쥴 (KST)",
+        description: "· 4/27(토)~5/6(월)까지 골든위크로 지연 예상",
+        start: "2024-10-12",
+      },
+      {
+        title: "한국 [KOR]",
+        method: "airplane",
+        subTitle: "08.13(화) 출고 스케쥴 (KST)",
+        description: "· 골든위크로 지연 예상",
+        start: "2024-10-15",
+      },
+      {
+        title: "한국 [KOR]",
+        method: "airplane",
+        subTitle: "08.13(화) 출고 스케쥴 (KST)",
+        description: "· 4/27(토)~5/6(월)까지 골든위크로 지연 예상",
+        start: "2024-10-25",
+      },
+      {
+        title: "한국 [KOR]",
+        method: "ship",
+        subTitle: "08.13(화) 출고 스케쥴 (KST)",
+        description: "· 4/27(토)~5/6(월)",
+        start: "2024-10-25",
+      },
+      {
+        title: "한국 [KOR]",
+        method: "ship",
+        subTitle: "08.13(화) 출고 스케쥴 (KST)",
+        description: "· 4/27(토)~5/6(월)",
+        start: "2024-11-11",
+      },
+      {
+        title: "일본 [KOR]",
+        method: "airplane",
+        subTitle: "08.13(화) 출고 스케쥴 (KST)",
+        description: "· 4/27(토)~5/6(월)까지 골든위크로 지연 예상",
+        start: "2024-11-25",
+      },
+      {
+        title: "일본 [KOR]",
+        method: "ship",
+        subTitle: "08.13(화) 출고 스케쥴 (KST)",
+        description: "· 4/27(토)~5/6(월)",
+        start: "2024-11-01",
+      },
+    ],
+  });
+
+  const calendarModal = document.querySelector(".modal-schedule");
+
+  // MutationObserver 설정
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.target.style.display === "block") {
+        // display가 block으로 변경될 때 캘린더 렌더링
+        calendar.render();
+      }
+    });
+  });
+
+  observer.observe(calendarModal, {
+    attributes: true, // 속성 변화를 감지
+    attributeFilter: ["style"], // style 속성만 감지
   });
 }
 
@@ -461,6 +614,8 @@ window.addEventListener("DOMContentLoaded", () => {
   // 클릭이벤트
   onClickTab();
   toggleButton();
+
+  calendar(); // 캘린더
 
   // SWIPER
   mainSlide(); // 매인배너

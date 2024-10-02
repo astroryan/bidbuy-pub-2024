@@ -46,6 +46,7 @@
     <!-- JS -->
     <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
     <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
     <script src="../../assets/js/include.js" defer></script>
     <script src="../../assets/js/common.js" defer></script>
   </head>
@@ -54,7 +55,7 @@
     <div id="content-wrap">
       <!-- MODAL :: 본 경매 입찰내역  -->
       <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="auction-list"></button> -->
-      <div class="modal-auction-list modal">
+      <div class="modal-auction-list modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
           <div class="modal__header">

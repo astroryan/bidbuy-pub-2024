@@ -47,6 +47,7 @@
     <!-- JS -->
     <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
     <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
     <script src="../../assets/js/include.js" defer></script>
     <script src="../../assets/js/common.js" defer></script>
   </head>
@@ -249,7 +250,7 @@
       </div>
 
       <!-- START :: HEADER -->
-      <header id="header"></header>
+      <header id="header" class="simple" data-title="마이페이지 관리"></header>
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
       <main id="main" class="my-page management-page">
@@ -282,19 +283,18 @@
               <li data-ids="0" class="deposit-management__tab">
                 <h3 class="my-title">
                   <b>예치금 관리</b>
-                  <div class="title-utils">
-                    <button type="button" class="basic-button__light-gray-line">예치금 환불</button>
-                    <button
-                      type="button"
-                      class="basic-button__blue modal_button"
-                      onclick="openModal(this, event)"
-                      data-modal="deposit-charge"
-                    >
-                      예치금 충전
-                    </button>
-                  </div>
                 </h3>
-
+                <div class="title-utils">
+                  <button type="button" class="basic-button__light-gray-line">예치금 환불</button>
+                  <button
+                    type="button"
+                    class="basic-button__blue modal_button"
+                    onclick="openModal(this, event)"
+                    data-modal="deposit-charge"
+                  >
+                    예치금 충전
+                  </button>
+                </div>
                 <section class="my-management-table-wrap">
                   <!-- 1. 예치금 관리 없을때 -->
                   <!-- <article class="basic-table">
@@ -444,11 +444,10 @@
                 <div class="auction-deposit-management__section">
                   <h3 class="my-title">
                     <b>경매보증금 관리</b>
-                    <div class="title-utils">
-                      <button type="button" class="basic-button__light-gray-line">보증금 환불</button>
-                    </div>
                   </h3>
-
+                  <div class="title-utils">
+                    <button type="button" class="basic-button__light-gray-line">보증금 환불</button>
+                  </div>
                   <!-- 경매보증금 관리 -->
                   <section class="my-management-table-wrap auction-deposit-table">
                     <!-- 1. 경매보증금 관리 없을때 -->
@@ -634,19 +633,18 @@
               <li data-ids="2" class="ticket__tab" style="display: none">
                 <h3 class="my-title">
                   <b>수수료 정액권 관리</b>
-                  <div class="title-utils">
-                    <button type="button" class="basic-button__light-gray-line">정액권 환불</button>
-                    <button
-                      type="button"
-                      class="basic-button__blue modal_button"
-                      onclick="openModal(this, event)"
-                      data-modal="ticket"
-                    >
-                      정액권 구매
-                    </button>
-                  </div>
                 </h3>
-
+                <div class="title-utils">
+                  <button type="button" class="basic-button__light-gray-line">정액권 환불</button>
+                  <button
+                    type="button"
+                    class="basic-button__blue modal_button"
+                    onclick="openModal(this, event)"
+                    data-modal="ticket"
+                  >
+                    정액권 구매
+                  </button>
+                </div>
                 <section class="my-management-table-wrap ticket-table">
                   <!-- 1. 수수료 정액권 관리 없을때 -->
                   <!-- <article class="basic-table">
@@ -756,11 +754,10 @@
               <li data-ids="3" class="coupon__tab" style="display: none">
                 <h3 class="my-title">
                   <b>쿠폰 관리</b>
-                  <div class="title-utils">
-                    <button type="button" class="basic-button__light-gray-line">쿠폰 다운로드</button>
-                  </div>
                 </h3>
-
+                <div class="title-utils">
+                  <button type="button" class="basic-button__light-gray-line">쿠폰 다운로드</button>
+                </div>
                 <section class="my-management-table-wrap coupon-table">
                   <!-- 1. 쿠폰 관리 없을때 -->
                   <!-- <article class="basic-table">

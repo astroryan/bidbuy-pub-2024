@@ -1,6 +1,6 @@
 @charset "utf-8";
 .cart-page {
-  padding: 56px 0 80px;
+  padding: 14px 0 80px;
 
   & .title {
     margin-bottom: 27px;
@@ -29,42 +29,18 @@
   & .tab-content-list {
     padding-top: 30px;
   }
-
-  /* & .basic-table__header > div,
-  & .basic-table__row > div {
-    flex-shrink: 0;
-  }
-  & .basic-table__row > div {
-    min-height: 113px;
-  } */
-
-  /* & .basic-table__header > div:nth-child(1),
-  & .basic-table__row > div:nth-child(1) {
-    flex: unset;
-    width: 98px;
-  }
   & .basic-table__header > div:nth-child(2),
   & .basic-table__row > div:nth-child(2) {
-    flex: unset;
-    width: 386px;
-    margin-right: 80px;
+    flex: 1 0 400px;
   }
   & .basic-table__header > div:nth-child(3),
-  & .basic-table__row > div:nth-child(3) {
-    flex: unset;
-    width: 210px;
-  }
+  & .basic-table__row > div:nth-child(3),
   & .basic-table__header > div:nth-child(4),
-  & .basic-table__row > div:nth-child(4) {
-    flex: unset;
-    width: 210px;
+  & .basic-table__row > div:nth-child(4),
+  & .basic-table__header > div:nth-child(6),
+  & .basic-table__row > div:nth-child(6) {
+    flex: 0 0 130px;
   }
-
-  & .basic-table__header > div:nth-child(5),
-  & .basic-table__row > div:nth-child(5) {
-    flex: unset;
-    width: 76px;
-  } */
 
   & .cart-item {
     display: flex;
@@ -120,8 +96,6 @@
   }
   & .cart-utils {
     position: relative;
-    display: flex;
-    justify-content: flex-start;
     margin-top: 20px;
   }
   & .cart-table__button-wrap {
@@ -142,48 +116,47 @@
     font-weight: bold;
   }
   & .basic-pagination {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 32px;
+    justify-content: center;
   }
 
   & .cart-banner {
-    height: 230px;
+    min-height: 130px;
     background: url("../images/banner/cart_banner.jpg") no-repeat center / cover;
-    padding: 30px 0;
+    padding: 21px 0;
     text-align: center;
-    margin-top: 64px;
+    margin-top: 50px;
   }
   & .cart-banner h3 {
-    font-size: 19px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 1.32;
-    margin-bottom: 19px;
+    margin-bottom: 25px;
   }
   & .total-price {
-    font-size: 25px;
+    font-size: 16px;
     line-height: 1;
     color: var(--col_black_1);
   }
-
+  & .last-price {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+  }
   & .cart-banner__button-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     height: 60px;
-    margin-top: 40px;
+    margin-top: 37px;
   }
   & .cart-banner__button-wrap > * {
     height: 100%;
     border-radius: 30px;
-    width: 220px;
+    flex: 1;
     font-size: 16px;
   }
-  /* & .cart-banner__button-wrap .basic-button__gray-line {
-    font-weight: 400;
-  } */
 }
 
 /* 주문상세정보 주문결제 상세화면 */
@@ -205,11 +178,7 @@
   & .order__container {
     margin-top: 40px;
   }
-  & .order__left-container,
-  & .order__right-container {
-  }
-  & .order-item {
-  }
+
   & .order-item__image {
     flex-shrink: 0;
     width: 100%;
@@ -218,8 +187,6 @@
     border: solid 1px var(--col_gray_4);
     overflow: hidden;
     margin-bottom: 20px;
-  }
-  & .order-item__details {
   }
   & .order-item__platform {
     display: flex;
@@ -515,8 +482,6 @@
     max-height: 406px;
     overflow-y: auto;
   }
-  & .bundle-list {
-  }
   & .bundle-item__box {
     position: relative;
     display: grid;
@@ -536,8 +501,6 @@
     border-radius: 12px;
     border: solid 1px var(--col_gray_4);
     overflow: hidden;
-  }
-  & .bundle-item__details {
   }
   & .bundle-item__market {
     display: flex;
@@ -690,16 +653,8 @@
 
 /* MODAL :: 본 경매 입찰내역 */
 .modal-auction-list {
-  /* & .basic-table__header > div,
-  & .basic-table__row > div {
-    flex-shrink: 0;
-  } */
-  /* & .basic-table__header > div {
-    min-height: 60px;
-  } */
   & .basic-table__row > div {
     min-height: 73px;
-    /* text-align: center; */
   }
 
   & .basic-table__header > div:nth-child(1),

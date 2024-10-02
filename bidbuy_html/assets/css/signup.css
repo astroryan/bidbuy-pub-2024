@@ -444,7 +444,6 @@
     display: flex;
     justify-content: center;
     gap: 48px;
-    /* justify-content: space-between; */
   }
   & .signup-order .signup-order-list {
     position: relative;
@@ -566,8 +565,6 @@
   }
   & .terms-list + .terms-list {
     margin-top: 20px;
-  }
-  & .terms-item {
   }
   & .terms-item + .terms-item {
     margin-top: 30px;
@@ -776,8 +773,6 @@
   }
   & .coupon-desc li + li {
     margin-top: 20px;
-  }
-  & .coupon-desc b {
   }
 
   & .signup-complete-button-wrap {

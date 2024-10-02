@@ -773,8 +773,6 @@
     width: 627px;
     padding: 40px 20px;
   }
-  & .basic-check-box__squire {
-  }
   & .memo-tabs-container {
     padding-top: 20px;
   }
@@ -786,10 +784,6 @@
   }
   & .my-memo-content {
     padding-top: 20px;
-  }
-  & .empty-text {
-  }
-  & .my-memo__list {
   }
   & .memo-item__box {
     display: flex;
@@ -850,8 +844,6 @@
   }
   & .memo-item__status {
     margin-left: auto;
-  }
-  & .memo-item__writer {
   }
   & .memo-item__box .basic-button__blue-line {
     display: flex;
@@ -1739,7 +1731,6 @@
     padding: 30px;
   }
   & .my-shipping-box input {
-    /* padding: 30px; */
     padding: 0 12px;
   }
   & .shipping__form-line {
@@ -1888,7 +1879,7 @@
     gap: 10px;
   }
   & .basic-table__row > div:nth-child(6):has(:only-child) {
-    padding-right: 72px;
+    padding-right: 75px;
   }
   & .edit-button {
     flex-shrink: 0;
@@ -2258,6 +2249,9 @@
 }
 
 /* 마이페이지 :: 개인정보관리 */
+.info-main-page {
+  padding-top: 70px;
+}
 .info-page {
   & .my-info {
     text-align: center;

@@ -206,6 +206,10 @@
     display: flex;
     align-items: center;
   }
+  & .review-box .item__market.line {
+    display: inline-flex;
+    margin-top: 10px;
+  }
   & .review__user-img {
     flex-shrink: 0;
     width: 51px;
@@ -250,7 +254,7 @@
     gap: 3px;
   }
 
-  & .review-box .item__market {
+  & .review__item .item__market {
     display: inline-flex;
     margin-top: 25px;
     margin-bottom: 10px;
@@ -455,7 +459,6 @@
     color: var(--col_black_1);
     line-height: 1.59;
     letter-spacing: -0.34px;
-    color: var(--col_black_1);
   }
   & .global-news__post {
     display: flex;
@@ -652,9 +655,6 @@
 
   & .review-box {
     padding: 20px 24px 25px;
-  }
-  & .review-swiper {
-    /* overflow: unset; */
   }
   & .review-swiper-wrap {
     position: relative;

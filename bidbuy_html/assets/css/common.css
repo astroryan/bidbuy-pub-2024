@@ -1736,6 +1736,7 @@ input[type="radio"] label {
 /* STICKY HEADER :: GNB DROPDOWN MENU */
 #header.header-sticky .dropdown-menu-box {
   position: fixed;
+  min-width: 1920px;
   top: 80px;
   z-index: -1;
 }
@@ -2737,7 +2738,6 @@ a.guide-content__accordion-button .guide-content__title:after {
   color: var(--col_white);
   letter-spacing: -0.35px;
   border-radius: 4px;
-  border: solid 1px var(--col_gray_4);
   background-color: var(--col_gray_7);
 }
 .comment-wrap {

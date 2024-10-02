@@ -1827,29 +1827,29 @@ const $CS_DASHBOARD_CONT = `
 </article>
 </div>
 `;
-
-const $COMMUNITY_CONT = `<div class="inner-width">
-<a href="" class="community-dashboard__banner community-box box-shadow">
-  <img src="../../assets/images/dummy/community_banner.png" alt="새로운 비드바이몰" />
-</a>
-<a href="" class="community-dashboard__card-banner community-box box-shadow">
-  <h2>
-    <b>비바 출석부</b><br />
-    화/목 빙고 완성하고 롤렛을 돌리세요! <br />
-    월 개근 시 등급포인트 5점 혜택까지
-  </h2>
-</a>
-<a href="../community/global_news.html" class="community-dashboard__card-banner community-box box-shadow">
-  <h2>
-    <b>비바 특파원</b> <br />
-    글로벌 Hot 경매와 <br />
-    직구 아이템을 소개
-  </h2>
-</a>
-<div class="community-utils">
-  <a href="../community/event.html" class="event-button community-box box-shadow line">이벤트</a>
-  <a href="../community/review.html" class="review-button community-box box-shadow line">이용후기</a>
-</div>
+// 공통 커뮤니티 대쉬보드
+const $COMMUNITY_CONT = `
+<div class="inner-width">
+  <div class="community-dashboard__inner">
+    <a href="" class="community-dashboard__card-banner community-box box-shadow">
+      <h2>
+        <b>비바 출석부</b><br />
+        화/목 빙고 완성하고 <br />
+        롤렛을 돌리세요!
+      </h2>
+    </a>
+    <a href="../community/global_news.html" class="community-dashboard__card-banner community-box box-shadow">
+      <h2>
+        <b>비바 특파원</b> <br />
+        글로벌 Hot 경매와 <br />
+        직구 아이템을 소개
+      </h2>
+    </a>
+  </div>
+  <div class="community-utils">
+    <a href="../community/event.html" class="event-button community-box box-shadow line">이벤트</a>
+    <a href="../community/review.html" class="review-button community-box box-shadow line">이용후기</a>
+  </div>
 </div>`;
 
 const $SIMPLE_HEADER_CONT = (title) => `

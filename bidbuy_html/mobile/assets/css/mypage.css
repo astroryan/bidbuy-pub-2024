@@ -24,8 +24,6 @@
 
   & .my-title:has(:is(.my-title__sub, .title-utils)) {
     display: flex;
-    flex-direction: column;
-    gap: 25px;
   }
 
   & .mo-title-wrap {
@@ -643,8 +641,7 @@
   }
   & .my-alarms .my-title {
     font-size: 16px;
-  }
-  & .my-order {
+    justify-content: space-between;
   }
   & .my-order__empty-text {
     padding: 30px;
@@ -770,8 +767,6 @@
     align-items: center;
     gap: 11px;
   }
-  & .memo-item__writer {
-  }
   & .memo-item__box .basic-button__blue-line {
     display: flex;
     justify-content: center;
@@ -804,6 +799,7 @@
   & .title-utils {
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 15px;
   }
 
   & .basic-table__header > div:nth-child(2),
@@ -843,6 +839,7 @@
   & .title-utils {
     flex-direction: column-reverse;
     gap: 10px;
+    margin-bottom: 15px;
   }
 
   & .basic-table__header > div:nth-child(2),
@@ -906,6 +903,9 @@
 
 /* 마이페이지 :: 경매 낙찰 상품 */
 .order-auction-list-page {
+  & .title-utils {
+    margin-bottom: 15px;
+  }
   & .basic-table__header > div:nth-child(1),
   & .basic-table__row > div:nth-child(1) {
     flex: 0 0 230px;
@@ -1210,11 +1210,6 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
-  }
-
-  & .seller-item-list {
-    /* border-top: 1px solid var(--col_gray_3); */
-    /* border-bottom: 1px solid var(--col_gray_3); */
   }
 
   & .seller-item-list > li {
@@ -1623,18 +1618,33 @@
 }
 /* 마이페이지 :: 예치금 관리 / 경매보증금 관리, 보증금 거래 내역 / 수수료 정액권 관리 / 쿠폰 관리  */
 .management-page {
+  & .my-title {
+    padding-bottom: 10px;
+  }
   & .management__tabs {
-    height: 60px;
+    flex-wrap: wrap;
   }
   & .management__tabs button {
-    font-size: 13px;
+    flex: 1 0 50%;
+    height: 60px;
+    font-weight: 500;
+    font-size: 15px;
     line-height: 1.4;
   }
+  & .management__tabs button:nth-child(n + 3) {
+    border-top: 1px solid var(--col_gray_1);
+  }
+  & .management__tabs button:nth-child(3) {
+    border-left: 0;
+  }
+
   & .management__tabs-content {
     padding-top: 38px;
   }
   & .title-utils {
+    justify-content: flex-end;
     gap: 10px;
+    margin-bottom: 15px;
   }
   & .title-utils > :is(button, a) {
     min-width: 98px;
@@ -1671,6 +1681,7 @@
     line-height: 1.57;
     letter-spacing: -0.28px;
     color: var(--col_black_1);
+    word-break: keep-all;
   }
   & .deposit-info__text b {
     font-weight: 500;
@@ -2361,50 +2372,50 @@
   & .benefit-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 44px 33px;
+    gap: 25px 19px;
   }
   & .benefit-list > li {
     position: relative;
     flex-shrink: 0;
-    width: calc(100% / 2 - 33px / 2);
-    height: 127px;
-    padding-left: 60px;
+    width: 145px;
+    height: 72px;
+    padding-left: 33px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
   }
   & .coupon-title {
-    font-size: 12px;
+    font-size: 9px;
     font-weight: 500;
     letter-spacing: -0.12px;
   }
   & .coupon-price {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 800;
-    margin-top: 5px;
+    margin-top: 2px;
   }
 
   & .coupon-num {
     position: absolute;
-    top: -14px;
-    right: -8px;
-    width: 37px;
-    height: 38px;
+    top: -8px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
+    font-size: 12px;
     line-height: 0.76;
     color: var(--col_white);
     border-radius: 50%;
   }
   & .benefit-list .basic-button__light-gray-line {
-    width: 81px;
-    height: 24px;
-    font-size: 12px;
+    width: 46px;
+    height: 15px;
+    font-size: 8px;
     font-weight: 500;
-    margin-top: 13px;
+    margin-top: 3px;
   }
   & .green-coupon {
     background: url("../images/my/coupon_green.png") no-repeat center / contain;
@@ -2438,14 +2449,9 @@
     padding-top: 75px;
   }
   & .my-coupon__rank .my-box {
-    display: flex;
-    gap: 50px;
     padding: 30px;
   }
-  & .rank-now-box {
-    flex-shrink: 0;
-    width: 220px;
-  }
+
   & .rank-title {
     font-size: 16px;
     line-height: 1.44;
@@ -2499,30 +2505,28 @@
   }
 
   & .my-coupon__wrap {
-    display: flex;
-    gap: 30px;
-    margin-top: 46px;
+    margin-top: 40px;
   }
   /* 이달의 혜택 */
-  & .my-coupon__monthly-benefit {
-    flex-shrink: 0;
-    width: 584px;
-  }
   & .my-coupon__monthly-benefit .my-box {
-    padding: 34px 20px 43px 21px;
+    padding: 16px 14px 40px 12px;
   }
   & .my-title {
     position: relative;
   }
   & .my-title .basic-button__light-gray-line {
-    position: absolute;
+    flex-shrink: 0;
+    width: 168px;
+    height: 40px;
+    font-size: 15px;
+    /* position: absolute;
     right: 0;
     bottom: 20px;
     width: 168px;
     height: 40px;
     font-size: 15px;
     font-weight: normal;
-    color: var(--col_black_1);
+    color: var(--col_black_1); */
   }
   & .benefit-text {
     text-align: center;
@@ -2539,7 +2543,7 @@
   }
   /* 등급별 혜택 안내 */
   & .my-coupon__rank-benefit {
-    flex: 1;
+    margin-top: 40px;
   }
   & .my-coupon__rank-benefit .my-box {
     display: flex;
@@ -2575,8 +2579,18 @@
     border-bottom-left-radius: 12px;
   }
   & .rank-content {
-    flex: 1;
-    padding: 26px 30px 33px 26px;
+    padding: 15px 14px 30px 12px;
+  }
+  & .rank-content > li + li {
+    padding-top: 23px;
+    margin-top: 23px;
+    border-top: 1px solid var(--col_gray_4);
+  }
+  & .rank-content__title {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.16px;
+    margin-bottom: 15px;
   }
   & .rank-benefit-desc > li {
     display: flex;
@@ -2591,28 +2605,17 @@
     background: url("../../assets/images/icon/check_my.svg") no-repeat center/ contain;
   }
   & .rank-benefit-desc {
-    margin-bottom: 78px;
+    margin-bottom: 25px;
   }
   & .rank-benefit-desc > li {
     line-height: 2.14;
     letter-spacing: -0.14px;
   }
-
-  & .my-coupon__rank-benefit .benefit-list {
-    gap: 37px 27px;
-  }
-  & .my-coupon__rank-benefit .benefit-list > li {
-    width: calc(100% / 2 - 27px / 2);
-    height: 103px;
-    padding-left: 47px;
-  }
-  & .my-coupon__rank-benefit .coupon-num {
-    position: absolute;
-    top: -10px;
-    right: -6px;
-    width: 31px;
-    height: 31px;
+  & .rank-benefit-small {
     font-size: 14px;
+    margin-top: 28px;
+    text-align: center;
+    color: var(--col_gray_6);
   }
 
   /* 비드바이 등급 안내 */

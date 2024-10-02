@@ -133,8 +133,6 @@
   gap: 27px;
   padding: 21px 0 33px;
 }
-.offline-utils > li {
-}
 .offline-utils > li + li {
   position: relative;
 }
@@ -158,8 +156,6 @@
   margin-top: auto;
   /* @@@ */
   background-color: #b8b8b8;
-}
-.main-side__online {
 }
 .online-utils {
   display: flex;
@@ -1321,8 +1317,8 @@
   color: #999;
   padding: 2px 3px;
 }
-.fc .fc-scrollgrid table {
-  border-top: 1px solid var(--col_gray_5);
+.fc .fc-view-harness-active > .fc-view {
+  border-top: 1px solid var(--col_gray_6);
 }
 .fc-theme-standard td,
 .fc-theme-standard th,
@@ -1330,13 +1326,12 @@
 .fc-theme-standard th {
   border: solid 1px #e8e8e8;
 }
-
 .popper,
 .tooltip {
   position: absolute;
   z-index: 10;
   background: #333;
-  color: #fff;
+  color: var(--col_white);
   width: 280px;
   border-radius: 3px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
@@ -1436,8 +1431,6 @@
 .fc-daygrid-day-bottom {
   display: none;
 }
-.tooltip-box {
-}
 .tooltip-top {
   position: relative;
   display: flex;
@@ -1450,7 +1443,7 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 250px;
+  width: 98%;
   height: 1px;
   content: "";
   background-color: #464646;
@@ -1460,13 +1453,12 @@
   font-size: 14px;
   font-weight: bold;
   letter-spacing: -0.14px;
-  color: #fff;
+  color: var(--col_white);
 }
 .tooltip-top small {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: -0.1px;
-  padding-right: 14px;
   color: #999;
 }
 .tooltip-desc {
@@ -1474,7 +1466,7 @@
   font-weight: 500;
   text-align: left;
   letter-spacing: -0.11px;
-  color: #fff;
+  color: var(--col_white);
 }
 .fc-h-event {
   background-color: transparent;
@@ -1490,7 +1482,9 @@
 .fc .fc-daygrid-day.fc-day-today {
   background-color: transparent;
 }
-
+.fc-day:hover {
+  background-color: var(--mainBlueOpacity);
+}
 .fc-day:has(.calendar-icon) .fc-daygrid-day-top:after {
   position: absolute;
   top: 6.5px;
@@ -1499,6 +1493,16 @@
   height: 5px;
   content: "";
   border-radius: 50%;
-  background-color: #579ee5;
+  background-color: var(--mainBlue);
   transform: translateX(-50%);
+}
+.month-number {
+  font-size: 20px;
+  font-weight: bold;
+}
+.month-name {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: -0.11px;
+  color: #999;
 }
