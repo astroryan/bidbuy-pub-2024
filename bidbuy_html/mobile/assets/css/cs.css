@@ -1,0 +1,795 @@
+@charset "utf-8";
+/* 고객센터 공통 */
+.cs-page {
+  padding-bottom: 126px;
+
+  & .cs-title {
+    font-size: 20px;
+    color: var(--col_black_1);
+    padding-bottom: 20px;
+  }
+  & .cs-title-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .title-utils {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  & .cs-title .basic-select-box {
+    flex-shrink: 0;
+    width: 80px;
+    height: 40px;
+  }
+  & .cs-title .basic-select-box select {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  & .cs-title .basic-input {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+  }
+  & .cs-title .basic-input input {
+    flex: 1;
+    min-width: 0;
+    height: 40px;
+    padding: 0 9px;
+    font-size: 15px;
+  }
+
+  & .cs-title .basic-button__gray {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--col_gray_6) url("../../assets/images/icon/search_white.svg") no-repeat center / 20px 20px;
+  }
+
+  & .cs-sub-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.39;
+    color: var(--col_black_1);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--col_gray_4);
+  }
+  & .small-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col_gray_6);
+  }
+  & .cs-box {
+    background-color: var(--col_white);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  & .cs-box.line {
+    border: solid 1px var(--col_gray_4);
+  }
+  & .cs-box.box-shadow {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  & .cs-dashboard {
+    padding: 14px 0;
+    background-color: var(--col_gray_2);
+  }
+
+  & .cs-dashboard__card-banner {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.36;
+    color: var(--col_white);
+    background: url("../images/banner/cs_card.png") no-repeat center / cover;
+  }
+
+  & .cs-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  & .cs-menu-box {
+    position: relative;
+    flex: 1;
+    padding: 20px 16px;
+    overflow: unset;
+  }
+  & .cs-menu-box + .cs-menu-box:after {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: -23px;
+    content: "";
+    background: url(../images/icon/arrow_right_light_gray_thin.svg) no-repeat center / contain;
+    transform: translateX(-50%);
+  }
+  & .cs-menu__title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--mainMint);
+    margin-bottom: 8px;
+  }
+  & .cs-menu__sub-title {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  & .cs-menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  & .cs-menu-list > a {
+    display: grid;
+    place-content: center;
+    width: calc(100% / 2 - 10px / 2);
+    height: 70px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    text-align: center;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    border-radius: 10px;
+    border: solid 1px var(--col_gray_3);
+    background-color: var(--col_gray_2);
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  & .cs-menu-list > a.active {
+    color: var(--col_black_1);
+    border: solid 1.5px var(--mainMint);
+  }
+
+  & .tabs button {
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  & .cs-table-utils {
+    margin-top: 50px;
+  }
+  & .basic-pagination {
+    justify-content: center;
+  }
+}
+
+/* 고객센터 :: 메인 */
+.cs-main-page {
+  & .cs-main-wrap {
+    padding-top: 40px;
+  }
+  & .cs-qna-box {
+    background-color: var(--mainBlueOpacity);
+    padding: 20px 20px 30px;
+  }
+  & .cs-qna-box h3 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--mainBlue);
+    margin-bottom: 20px;
+  }
+  & .qna-list-button,
+  & .qua-submit-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 14px 16px;
+    background-color: var(--col_white);
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.11);
+  }
+  & .qua-submit-button {
+    margin-left: 10px;
+  }
+  & .qna-list-button:after,
+  & .qua-submit-button:after {
+    content: "";
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+  & .qna-list-button:after {
+    background: url("../images/icon/qna.svg") no-repeat center / contain;
+  }
+  & .qua-submit-button:after {
+    background: url("../images/icon/qna_submit.svg") no-repeat center / contain;
+  }
+  & .cs-news-box {
+    padding: 20px 15px 37px;
+    margin-top: 20px;
+  }
+
+  & .cs-news-inner {
+    padding-top: 22px;
+  }
+  & .cs-news__item + .cs-news__item {
+    margin-top: 18px;
+  }
+  & .cs-news__list .item__country {
+    margin-right: 15px;
+  }
+
+  & .cs-news__item {
+    display: flex;
+    align-items: center;
+  }
+  & .cs-news__title {
+    flex-shrink: 0;
+    flex: 1;
+    min-width: 0;
+    padding-right: 20px;
+  }
+  & .cs-news__date {
+    font-size: 12px;
+    text-align: right;
+    color: var(--col_gray_6);
+  }
+  & .cs-contact-box {
+    flex: 1;
+    padding: 20px 15px;
+    margin-top: 40px;
+  }
+  & .cs-contact-inner {
+    padding-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  & .cs-contact-box dl {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  & .cs-contact-box dt {
+    position: relative;
+    flex: 1;
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--col_black_1);
+  }
+  & .cs-contact-box dt::before {
+    content: "";
+    flex-shrink: 0;
+    width: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  & .cs-contact-box dd {
+    flex: 0.7;
+    font-size: 13px;
+    color: var(--col_black_1);
+    margin-top: 8px;
+  }
+
+  /* 자주하는 질문 */
+  & .cs-faq {
+    margin-top: 40px;
+  }
+  & .faq__tabs {
+    flex-wrap: wrap;
+  }
+  & .faq__tabs button {
+    flex: unset;
+    flex-shrink: 0;
+    width: 50%;
+    height: 40px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    font-weight: 400;
+    padding: 0 5px;
+  }
+  & .faq__tabs button:nth-child(n + 3) {
+    border-top: 1px solid var(--col_gray_3);
+  }
+  & .faq__tabs button:nth-child(odd) {
+    border-left: none;
+  }
+  & .faq__tabs-content {
+    margin-top: 30px;
+  }
+
+  & .faq-list {
+    border-top: 1px solid var(--col_gray_3);
+    border-bottom: 1px solid var(--col_gray_3);
+  }
+
+  & .faq-list__item + .faq-list__item {
+    border-top: 1px solid var(--col_gray_3);
+  }
+  & .faq__accordion-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: -0.15px;
+    padding: 17px 0;
+  }
+  & .faq__accordion-button .nowrap {
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+    padding-right: 10px;
+  }
+
+  & .faq__content {
+    display: none;
+    background-color: var(--col_gray_2);
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.14px;
+    padding: 20px;
+    overflow: hidden;
+    transition: all 0.5s linear;
+  }
+
+  & .faq__accordion-button.active ~ .faq__content {
+    display: block;
+  }
+  & .cs-faq__utils {
+    display: flex;
+    justify-content: flex-end;
+  }
+  & .cs-faq__utils .basic-button__light-gray-line {
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 23px;
+  }
+  & .cs-faq__utils .basic-button__light-gray-line:after {
+    content: "";
+    width: 12.6px;
+    height: 13.1px;
+    background: url("../images/icon/sort.svg") no-repeat center / contain;
+  }
+}
+
+/* 고객센터 :: 이용안내 = 비드바이 배송·통관·관세 안내 */
+.cs-guide-page {
+  & .cs-guide {
+    margin-top: 50px;
+  }
+
+  & .cs-title {
+    padding-bottom: 30px;
+  }
+
+  & .guide__sub-tabs {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 0 10px;
+    margin-top: 15px;
+
+    white-space: nowrap;
+    overflow-y: visible;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    border-bottom: 1px solid var(--col_gray_3);
+  }
+  & .guide__sub-tabs button {
+    position: relative;
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    padding: 19px 0;
+  }
+  & .guide__sub-tabs button + button:after {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 1px;
+    height: 13px;
+    background-color: var(--col_gray_4);
+    content: "";
+    transform: translateY(-50%);
+  }
+  & .guide__sub-tabs-content {
+    padding-bottom: 20px;
+  }
+  & .sub-content-wrap {
+    padding: 15px 0;
+  }
+  & .sub-content-title {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 2.13;
+    letter-spacing: -0.32px;
+    color: var(--col_black_1);
+  }
+  & .sub-content-desc {
+    font-size: 12px;
+    line-height: 1.57;
+    letter-spacing: -0.14px;
+    color: var(--col_black_2);
+    margin-top: 19px;
+  }
+  & .guide-list {
+    display: flex;
+    gap: 21px;
+
+    white-space: nowrap;
+    overflow-y: visible;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+  }
+  & .guide-list__item {
+    flex: 1 0 300px;
+  }
+  & .guide-list__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+    font-size: 14px;
+    color: var(--col_black_1);
+    padding: 15px;
+    background-color: var(--mainBlueOpacity);
+  }
+  & .guide-list__title span {
+    font-size: 12px;
+  }
+
+  & .guide-list__details {
+    counter-reset: guideList;
+  }
+  & .guide-list__details li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 22px 0;
+    line-height: 1.4;
+    border-bottom: 1px solid var(--col_gray_4);
+    font-size: 12px;
+  }
+  & .guide-list__details > li:before {
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--mainBlue);
+    color: var(--col_white);
+    counter-increment: guideList 1;
+    content: counter(guideList);
+    margin-right: 12px;
+    border-radius: 50%;
+  }
+}
+
+/* 고객센터 :: 공지사항 목록 */
+.cs-notice-page {
+  & .cs-notice {
+    padding-top: 40px;
+  }
+
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: 1 0 300px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    gap: 7.5px;
+    color: var(--col_gray_6);
+  }
+  & .basic-table__row > div:nth-child(2) .item__country {
+    width: 20px;
+    height: 20px;
+  }
+  & .notice-badge {
+    display: grid;
+    place-content: center;
+    width: 58px;
+    height: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_white);
+    border-radius: 5px;
+    background-color: var(--mainBlue);
+  }
+}
+.cs-notice-details {
+  padding-top: 50px;
+}
+/* 고객센터 :: 1:1문의 */
+.qna-page {
+  & .cs-qna {
+    padding-top: 50px;
+  }
+
+  & .basic-table__header > div:nth-child(4),
+  & .basic-table__row > div:nth-child(4) {
+    flex: 1 0 240px;
+  }
+
+  & .add-answer .answer-text {
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    text-align: center;
+    color: var(--mainBlue);
+    text-decoration: underline;
+  }
+}
+
+/* 고객센터 :: 1:1문의하기 */
+& .qna-form-page {
+  & .cs-qna-form {
+    padding-top: 50px;
+  }
+
+  & .cs-qna-form .cs-box {
+    padding: 30px;
+  }
+
+  & .qna-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  & .qna-form__group + .qna-form__group {
+    margin-top: 30px;
+  }
+  & .qna-form__label {
+    font-weight: 500;
+  }
+  & .qna-form__content {
+    flex: 1;
+  }
+  & .qna-form__radio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  & .qna-form__select-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  & .qna-form__select-buttons button {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: var(--col_black_2);
+  }
+  & .qna-form__select-buttons .gray-tab {
+    border: solid 1px #d8d8d8;
+    background-color: #f5f5f5;
+  }
+  & .qna-form__select-buttons .blue-tab {
+    background-color: var(--mainBlue);
+    color: var(--col_white);
+  }
+
+  & .qna-form__textarea {
+    height: 163px;
+  }
+
+  & .qna-file {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+  }
+
+  & .basic-input-file input {
+    display: none;
+  }
+
+  & .file-button {
+    display: grid;
+    place-content: center;
+    width: 100px;
+    height: 48px;
+    border-radius: 4px;
+    border: solid 1px #d8d8d8;
+    background-color: var(--col_gray_1);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--col_gray_5);
+    cursor: pointer;
+  }
+
+  & .basic-input input {
+    width: 100%;
+    height: 48px;
+    padding: 0 9px;
+  }
+
+  & .qna-small-text {
+    font-size: 13px;
+    letter-spacing: -0.26px;
+    color: var(--col_gray_6);
+    margin-top: 20px;
+  }
+  & .qna-form__button-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+  }
+  & .qna-form__button-wrap > :is(button, a) {
+    width: 110px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 22.5px;
+  }
+  & .qna-form__button-wrap .basic-button__light-gray-line {
+    font-weight: 400;
+  }
+}
+
+/* MODAL :: 문의 물품ID(경매) ,문의 물품ID(구매) */
+.inquiry-modal {
+  & .modal-qna-text {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.6;
+    letter-spacing: -0.32px;
+    text-align: center;
+    color: var(--col_gray_6);
+    margin-bottom: 30px;
+  }
+  & .basic-table {
+    margin-bottom: 40px;
+  }
+
+  & .basic-button__light-gray-line {
+    width: 100%;
+    font-size: 13px;
+    height: 30px;
+    font-weight: 500;
+  }
+  & .modal-bottom-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+}
+/* MODAL :: 문의 물품ID(경매)  */
+.modal-id-auction {
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: 0 0 300px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+}
+/* MODAL :: 문의 물품ID(구매) */
+.modal-id-purchase {
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: 0 0 300px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+  & .basic-table__header > div:nth-child(3),
+  & .basic-table__row > div:nth-child(3) {
+    flex: 0 0 200px;
+  }
+}
+/* MODAL :: 주문번호로등록 */
+.modal-search-order {
+  & .search-order-num-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+    border-top: 1px solid #d8d8d8;
+  }
+  & .search-order-num-wrap p {
+    flex-shrink: 0;
+    width: 130px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.14px;
+    color: var(--col_black_2);
+  }
+
+  & .basic-select-box {
+    width: 168px;
+    height: 48px;
+    margin-right: 10px;
+  }
+  & .search-order-num-wrap .basic-input {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+  }
+  & .search-order-num-wrap .basic-input input {
+    flex: 1;
+    padding: 0 9px;
+  }
+  & .search-order-button {
+    display: grid;
+    place-content: center;
+    width: 60px;
+    height: 48px;
+    font-weight: bold;
+    line-height: 1.57;
+    letter-spacing: -0.28px;
+    text-align: center;
+    color: var(--col_black_1);
+    border-radius: 4px;
+    border: solid 1px #d8d8d8;
+    background-color: var(--col_white);
+  }
+
+  & .basic-table__header > div:nth-child(2),
+  & .basic-table__row > div:nth-child(2) {
+    flex: 0 0 300px;
+  }
+  & .basic-table__row > div:nth-child(2) {
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: -0.14px;
+    color: var(--col_black_1);
+  }
+  & .basic-table__default {
+    font-size: 14px;
+    letter-spacing: -0.32px;
+    text-align: center;
+    color: var(--col_gray_6);
+    padding-top: 30px;
+    border-top: solid 1px #d8d8d8;
+  }
+}
+
+.notice-details__bottom {
+  margin-top: 40px;
+
+  & .details-list {
+    margin-top: 20px;
+  }
+
+  & .answer-status.complete {
+    text-decoration: underline;
+    color: var(--mainBlue);
+  }
+}

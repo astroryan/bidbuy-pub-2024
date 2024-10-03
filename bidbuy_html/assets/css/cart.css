@@ -181,9 +181,6 @@
     width: 220px;
     font-size: 16px;
   }
-  /* & .cart-banner__button-wrap .basic-button__gray-line {
-    font-weight: 400;
-  } */
 }
 
 /* 주문상세정보 주문결제 상세화면 */
@@ -220,6 +217,7 @@
     border-radius: 12px;
     border: solid 1px var(--col_gray_4);
     margin-right: 38px;
+    overflow: hidden;
   }
   & .order-item__details {
     flex-shrink: 0;
@@ -252,7 +250,6 @@
     color: var(--col_gray_6);
   }
   & .order-item__platform span {
-    max-width: 50%;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: -0.32px;

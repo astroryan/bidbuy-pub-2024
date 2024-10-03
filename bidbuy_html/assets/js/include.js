@@ -3614,7 +3614,7 @@ const $FOOTER_CONT = `
             </ul>
           </div>
         </div>
-        <div class="footer_bottom">
+        <div class="footer__bottom">
           <div class="inner-width flex">
             <h1 class="footer__logo"><span class="blind">Bidbuy</span></h1>
             <div class="footer__info">
@@ -3734,7 +3734,7 @@ const $MYPAGE_DASHBOARD_CONT = `
     </div>
   </div>
   <div class="my-dashboard-side-box my-box box-shadow">
-    <a href="../mypage/coupon.html" class="my-dashboard__bid-point">
+    <a href="../mypage/rank.html" class="my-dashboard__bid-point">
       <p class="side-title">등급포인트</p>
       <p class="side-value p_1"><b>180</b>점</p>
     </a>

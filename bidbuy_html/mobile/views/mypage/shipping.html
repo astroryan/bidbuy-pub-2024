@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- START :: HEADER -->
+      <header id="header" class="simple" data-title="배송지관리"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="my-page shipping-page">
+        <!-- 마이페이지 DASHBOARD -->
+        <section id="myDashBoard" class="my-dashboard"></section>
+
+        <div class="inner-width">
+          <section class="my-shipping">
+            <h3 class="my-title">
+              <b>배송지 관리</b>
+              <div class="title-utils">
+                <a href="../mypage/bundle_shipping_management.html" class="basic-button__light-gray-line"
+                  >묶음배송 가능주문 목록</a
+                >
+              </div>
+            </h3>
+            <article class="my-shipping-box my-box line">
+              <div class="shipping__form-line">
+                <div class="shipping__input-group">
+                  <label for="">배송지명</label>
+                  <div class="basic-input">
+                    <input id="" type="text" placeholder="10자 이내" required />
+                  </div>
+                </div>
+              </div>
+              <div class="shipping__form-line">
+                <div class="shipping__input-group">
+                  <label for="">수취인명</label>
+                  <div class="basic-input">
+                    <input id="" type="text" placeholder="5자 이내" required />
+                  </div>
+                </div>
+              </div>
+              <div class="shipping__form-line">
+                <div class="shipping__input-group">
+                  <label for="">휴대전화번호</label>
+                  <div class="basic-input">
+                    <input id="" type="text" placeholder="“-” 없이 숫자만 입력" inputmode="numeric" required />
+                  </div>
+                </div>
+              </div>
+              <div class="shipping__form-line address-form-line">
+                <div class="shipping__input-group">
+                  <label for="">주소(한국)</label>
+                  <div class="basic-input shipping-half-input">
+                    <input id="" type="text" placeholder="우편번호" required readonly />
+                    <button type="button" class="basic-button__light-gray-line">우편번호검색</button>
+                  </div>
+                </div>
+                <div class="address-desc-input">
+                  <div class="basic-input">
+                    <input id="" type="text" placeholder="" required />
+                  </div>
+                </div>
+                <div class="address-desc-input">
+                  <div class="basic-input">
+                    <input id="" type="text" placeholder="" required />
+                  </div>
+                </div>
+              </div>
+              <div class="shipping__form-line">
+                <div class="shipping__input-group">
+                  <label for="">개인통관고유부호 (사업자등록번호)</label>
+                  <div class="basic-input shipping-half-input">
+                    <input id="" type="text" placeholder="" required />
+                  </div>
+                  <p class="shipping__form-gray-text">* 수취인, 휴대전화번호, 개인통관고유부호는 동일인 정보</p>
+                </div>
+              </div>
+              <div class="shipping__form-line">
+                <div class="basic-check-box__squire gray">
+                  <input type="checkbox" name="" id="default-addr" />
+                  <label for="default-addr">
+                    <span class="basic-check-box__squire-icon black"></span>기본배송지로 지정</label
+                  >
+                </div>
+              </div>
+              <div class="shipping__form-utils">
+                <button type="button" class="basic-button__light-gray-line">취소</button>
+                <button type="button" class="basic-button__blue">저장</button>
+              </div>
+            </article>
+
+            <!-- 테이블 -->
+            <!-- 1. 등록된 배송지 없을때 -->
+            <!-- <article class="my-shipping-table basic-table">
+                <div class="basic-table__header">
+                  <div> 배송지명 </div>
+                  <div> 수취인명 </div>
+                  <div> 주소 </div>
+                  <div> 휴대폰/연락처 </div>
+                  <div>
+                    개인통관고유부호<br />
+                    (사업자등록번호)
+                  </div>
+                  <div>관리</div>
+                </div>
+                <div class="basic-table__empty-text">등록된 배송지가 없습니다.</div>
+              </article> -->
+            <!-- 2. 등록된 배송지 있을때 -->
+            <article class="my-shipping-table basic-table">
+              <div class="basic-table__header">
+                <div>배송지명</div>
+                <div>수취인명</div>
+                <div>주소</div>
+                <div>휴대폰/연락처</div>
+                <div>
+                  개인통관고유부호<br />
+                  (사업자등록번호)
+                </div>
+                <div>관리</div>
+              </div>
+              <div class="basic-table__body">
+                <!-- PUB:: 기본배송지일 경우 main-address 클래스 추가 -->
+                <div class="basic-table__row main-address">
+                  <div>서울집</div>
+                  <div>박비드</div>
+                  <div class="td-left">
+                    <p>04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호</p>
+                  </div>
+                  <div>010-9999-8888</div>
+                  <div>P1131245r2</div>
+                  <div>
+                    <button type="button" class="basic-button__light-gray-line edit-button">수정</button>
+                    <button type="button" class="shipping-delete-button delete-button">삭제</button>
+                  </div>
+                </div>
+                <div class="basic-table__row">
+                  <div>서울집</div>
+                  <div>박비드</div>
+                  <div class="td-left">
+                    <p>04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호동산빌라 201동 3104호</p>
+                  </div>
+                  <div>010-9999-8888</div>
+                  <div>P1131245r2</div>
+                  <div>
+                    <button type="button" class="basic-button__light-gray-line edit-button">수정</button>
+                  </div>
+                </div>
+                <div class="basic-table__row">
+                  <div>경기도</div>
+                  <div>박비드</div>
+                  <div class="td-left"><p>04530 경기도 성남시 처인구 강송로33</p></div>
+                  <div>010-9999-8888</div>
+                  <div>P1131245r2</div>
+                  <div>
+                    <button type="button" class="basic-button__light-gray-line edit-button">수정</button>
+                  </div>
+                </div>
+                <div class="basic-table__row">
+                  <div>경기도</div>
+                  <div>박비드</div>
+                  <div class="td-left">
+                    <p>04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호</p>
+                  </div>
+                  <div>010-9999-8888</div>
+                  <div>P1131245r2</div>
+                  <div>
+                    <button type="button" class="basic-button__light-gray-line edit-button">수정</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <div class="basic-pagination">
+              <button class="first-button" type="button"></button>
+              <button class="prev-button" type="button"></button>
+
+              <div class="basic-pagination__button-wrap">
+                <button class="page-button" type="button">1</button>
+                <button class="page-button active" ype="button">2</button>
+                <button class="page-button" type="button">3</button>
+                <button class="page-button" type="button">4</button>
+                <button class="page-button" type="button">5</button>
+              </div>
+
+              <button class="next-button" type="button"></button>
+              <button class="last-button" type="button"></button>
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

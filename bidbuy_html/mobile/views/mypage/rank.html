@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- START :: HEADER -->
+      <header id="header" class="simple" data-title="마이페이지"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="my-page coupon-page">
+        <!-- 마이페이지 DASHBOARD -->
+        <section id="myDashBoard" class="my-dashboard"></section>
+
+        <div class="inner-width">
+          <!-- 등급포인트 내역 -->
+          <section class="my-coupon__rank">
+            <h3 class="my-title">
+              <b>등급 포인트 내역</b>
+              <div class="title-utils">
+                <button type="button" class="my-title__sub">프리미엄등급 혜택보기</button>
+              </div>
+            </h3>
+            <article class="my-box line box-shadow">
+              <div class="rank-now-box">
+                <p class="rank-title"><b>NOW!</b></p>
+                <div class="rank-status">
+                  <p>우수회원 : 180점</p>
+                </div>
+                <p class="rank-desc">
+                  산정기간 23-12-01 ~ 24-05-31<br />
+                  Next 등급 포인트까지 20점 남음
+                </p>
+              </div>
+            </article>
+          </section>
+          <div class="my-coupon__wrap">
+            <!-- 이달의 혜택 -->
+            <section class="my-coupon__monthly-benefit">
+              <h3 class="my-title">
+                <b>이달의 혜택</b>
+                <div class="title-utils">
+                  <button type="button" class="basic-button__light-gray-line">쿠폰 전체다운로드</button>
+                </div>
+              </h3>
+              <article class="my-box line box-shadow">
+                <ul class="benefit-list">
+                  <li class="blue-coupon">
+                    <p class="coupon-title">대행 수수료 할인</p>
+                    <p class="coupon-price">2,000원</p>
+                    <button type="button" class="basic-button__light-gray-line">다운로드</button>
+                    <p class="coupon-num">x<b>1</b></p>
+                  </li>
+                  <li class="green-coupon">
+                    <p class="coupon-title">국제운임할인</p>
+                    <p class="coupon-price">1,000원</p>
+                    <button type="button" class="basic-button__light-gray-line">다운로드</button>
+                    <p class="coupon-num">x<b>3</b></p>
+                  </li>
+                  <li class="blue-coupon">
+                    <p class="coupon-title">대행 수수료 할인</p>
+                    <p class="coupon-price">1,000원</p>
+                    <button type="button" class="basic-button__light-gray-line">다운로드</button>
+                    <p class="coupon-num">x<b>3</b></p>
+                  </li>
+                  <li class="purple-coupon">
+                    <p class="coupon-title">보관료 할인</p>
+                    <p class="coupon-price">2,000원</p>
+                    <button type="button" class="basic-button__light-gray-line">다운로드</button>
+                    <p class="coupon-num">x<b>1</b></p>
+                  </li>
+                </ul>
+                <div class="benefit-text">
+                  <p><b>쿠폰사용기간 : 2024-06-01 ~ 2024-06-30</b></p>
+                  <small>(매월 1일 새로운 혜택이 제공됩니다.)</small>
+                </div>
+              </article>
+            </section>
+            <!-- 등급별 혜택 안내 -->
+            <section class="my-coupon__rank-benefit">
+              <h3 class="my-title">
+                <b>등급별 혜택 안내</b>
+              </h3>
+              <article class="my-box line box-shadow">
+                <ul class="rank-content">
+                  <li class="rank-content__list">
+                    <p class="rank-content__title">VIP등급 580점~</p>
+                    <ul class="rank-benefit-desc">
+                      <li>등급포인트 580점 ~</li>
+                      <li>경매 입찰 조건 : 동시입찰 3건, 결제대기 2건</li>
+                    </ul>
+                    <ul class="benefit-list">
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                      <li class="green-coupon">
+                        <p class="coupon-title">국제운임할인</p>
+                        <p class="coupon-price">1,000원</p>
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">1,000원</p>
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="purple-coupon">
+                        <p class="coupon-title">보관료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="rank-content__list">
+                    <p class="rank-content__title">프리미엄 200점~</p>
+                    <ul class="rank-benefit-desc">
+                      <li>등급포인트 200점 ~ 579점</li>
+                      <li>경매 입찰 조건 : 동시입찰 3건, 결제대기 2건</li>
+                    </ul>
+                    <ul class="benefit-list">
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                      <li class="green-coupon">
+                        <p class="coupon-title">국제운임할인</p>
+                        <p class="coupon-price">1,000원</p>
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">1,000원</p>
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="purple-coupon">
+                        <p class="coupon-title">보관료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="rank-content__list">
+                    <p class="rank-content__title">우수회원 100점~</p>
+                    <ul class="rank-benefit-desc">
+                      <li>등급포인트 100점 ~ 199점</li>
+                      <li>경매 입찰 조건 : 동시입찰 3건, 결제대기 2건</li>
+                    </ul>
+                    <ul class="benefit-list">
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                      <li class="green-coupon">
+                        <p class="coupon-title">국제운임할인</p>
+                        <p class="coupon-price">1,000원</p>
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">1,000원</p>
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="purple-coupon">
+                        <p class="coupon-title">보관료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="rank-content__list">
+                    <p class="rank-content__title">일반회원 50점~</p>
+                    <ul class="rank-benefit-desc">
+                      <li>등급포인트 50점 ~ 99점</li>
+                      <li>경매 입찰 조건 : 동시입찰 3건, 결제대기 2건</li>
+                    </ul>
+                    <ul class="benefit-list">
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                      <li class="green-coupon">
+                        <p class="coupon-title">국제운임할인</p>
+                        <p class="coupon-price">1,000원</p>
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">1,000원</p>
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="purple-coupon">
+                        <p class="coupon-title">보관료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="rank-content__list">
+                    <p class="rank-content__title">신규회원</p>
+                    <ul class="rank-benefit-desc">
+                      <li>등급포인트 0점 ~ 49점</li>
+                      <li>경매 입찰 조건 : 동시입찰 3건, 결제대기 2건</li>
+                    </ul>
+                    <ul class="benefit-list">
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                      <li class="green-coupon">
+                        <p class="coupon-title">국제운임할인</p>
+                        <p class="coupon-price">1,000원</p>
+
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="blue-coupon">
+                        <p class="coupon-title">대행 수수료 할인</p>
+                        <p class="coupon-price">1,000원</p>
+
+                        <p class="coupon-num">x<b>3</b></p>
+                      </li>
+                      <li class="purple-coupon">
+                        <p class="coupon-title">보관료 할인</p>
+                        <p class="coupon-price">2,000원</p>
+
+                        <p class="coupon-num">x<b>1</b></p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </article>
+              <p class="rank-benefit-small">(등급별 혜택 안내 등급 쿠폰은 매달 자동 발급됩니다.)</p>
+            </section>
+          </div>
+
+          <!-- 비드바이 등급 안내 -->
+          <section class="my-coupon__rank-info">
+            <h3 class="my-title">
+              <b>비드바이 등급 안내</b>
+            </h3>
+            <article class="my-box line box-shadow"></article>
+          </section>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

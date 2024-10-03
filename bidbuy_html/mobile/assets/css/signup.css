@@ -1,0 +1,814 @@
+@charset "utf-8";
+
+.auth-page {
+  padding: 50px 0 80px;
+
+  & .title {
+    margin-bottom: 40px;
+  }
+  & .input-inner-width {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  & .basic-input label {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--col_black_2);
+    margin-bottom: 10px;
+  }
+  & .basic-input input {
+    width: 100%;
+    height: 48px;
+    font-size: 15px;
+    padding: 15px 14px;
+  }
+  & .basic-input + .basic-input {
+    margin-top: 25px;
+  }
+}
+.login-page {
+  & .login-box {
+    width: 100%;
+    background-color: var(--col_white);
+    border-radius: 12px;
+    border: solid 1px var(--col_gray_4);
+    padding: 50px 20px 35px;
+  }
+
+  & .login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  & .login-utils {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 27px;
+  }
+  & .login-utils a {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--col_gray_6);
+  }
+  & .login-utils a + a::before {
+    position: absolute;
+    top: 50%;
+    left: -13px;
+    width: 1px;
+    height: 10px;
+    content: "";
+    background-color: #d5d5d5;
+    transform: translateY(-50%);
+  }
+  & .basic-button__blue {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    margin-top: 30px;
+  }
+  & .social-login {
+    width: 100%;
+    margin: 0 auto;
+  }
+  & .social-login h4 {
+    position: relative;
+    font-size: 15px;
+    text-align: center;
+    color: var(--col_black_1);
+    margin: 50px 0 35px;
+  }
+  & .social-login h4:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: var(--col_gray_4);
+    transform: translateY(-50%);
+  }
+  & .social-login h4 span {
+    position: relative;
+    display: inline-block;
+    padding: 0 22px;
+    background-color: var(--col_white);
+  }
+  & .social-login-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  & .social-login-list a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  & .social-login-list a:before {
+    flex-shrink: 0;
+    width: 37px;
+    height: 37px;
+    content: "";
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  & .social-login-list p {
+    font-size: 14px;
+    color: var(--col_gray_6);
+    white-space: nowrap;
+  }
+  & .sns-naver:before {
+    background: url("../../assets/images/icon/login_naver.svg") no-repeat center / contain;
+  }
+  & .sns-kakao:before {
+    background: url("../../assets/images/icon/login_kakao.svg") no-repeat center / contain;
+  }
+  & .sns-google:before {
+    background: url("../../assets/images/icon/login_goggle.svg") no-repeat center / contain;
+  }
+  & .sns-apple:before {
+    background: url("../../assets/images/icon/login_apple.svg") no-repeat center / contain;
+  }
+  & .login-banner {
+    width: 100%;
+    margin: 40px auto 0;
+  }
+
+  & .login-banner ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  & .login-banner li {
+    width: calc((100% - 10px) / 2);
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  & .login-banner li:is(:nth-child(1), :nth-child(4)) {
+    background-color: var(--mainMint);
+  }
+  & .login-banner li:is(:nth-child(2), :nth-child(3)) {
+    background-color: var(--mainBlue);
+  }
+  & .login-banner p {
+    font-size: 13px;
+    letter-spacing: -0.32px;
+    color: var(--col_white);
+  }
+  & .login-banner b {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.36px;
+    color: var(--col_white);
+  }
+}
+.forgot-page {
+  & .forgot-box {
+    padding: 50px 20px 35px;
+    border-radius: 12px;
+    border: solid 1px var(--col_gray_4);
+    background-color: var(--col_white);
+  }
+  & .find-id,
+  & .find-pwd {
+    border-bottom: 1px solid var(--col_gray_4);
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+  & .find-id .basic-button__blue,
+  & .find-pwd .basic-button__blue {
+    width: 100%;
+    height: 48px;
+    margin-top: 20px;
+    border-radius: 4px;
+  }
+
+  & .forgot-box hgroup {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  & .forgot-box h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--col_black_1);
+  }
+  & .forgot-box h4 {
+    font-size: 13px;
+    line-height: 1.54;
+    letter-spacing: -0.26px;
+    text-align: center;
+
+    color: var(--col_gray_5);
+    margin-top: 9px;
+  }
+
+  & .radio-button-wrap {
+    display: flex;
+    gap: 23px;
+    margin-top: 13px;
+  }
+  & .radio-input {
+    margin-top: 25px;
+  }
+  & .forget-desc {
+    font-size: 12px;
+    line-height: 1.3;
+    text-align: center;
+    letter-spacing: -0.26px;
+    color: var(--col_black_1);
+  }
+
+  & .auth-input-fields {
+    margin-top: 20px;
+  }
+  & .auth-input-fields li {
+    display: none;
+  }
+  & .radio-input:has(.radio-button-wrap > li:nth-child(1) input:checked) .auth-input-fields > li:nth-child(1) {
+    display: block;
+  }
+  & .radio-input:has(.radio-button-wrap > li:nth-child(2) input:checked) .auth-input-fields > li:nth-child(2) {
+    display: block;
+  }
+  & .forgot-button-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  & .forgot-button-wrap .basic-button__black-line {
+    flex: 1;
+    height: 45px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 23px;
+  }
+}
+
+.signup-page {
+  padding: 0 0 50px;
+
+  & .signup-section .basic-input input,
+  & .signup-section .basic-select-box select {
+    height: 48px;
+  }
+  & .signup-section .basic-input input {
+    width: 100%;
+    padding: 15px 12px;
+  }
+  & .signup-section .with-button {
+    display: flex;
+    gap: 10px;
+  }
+
+  & .signup-section .basic-button__light-gray-line {
+    flex-shrink: 0;
+    width: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  & .signup-list {
+    margin-top: 40px;
+  }
+  & .signup-list > li + li {
+    margin-top: 30px;
+  }
+  & .signup-title {
+    font-size: 18px;
+    line-height: 1.25;
+    color: var(--col_black_1);
+    margin-bottom: 20px;
+  }
+
+  & .signup-list-box {
+    padding: 30px;
+    border-radius: 12px;
+    border: solid 1px var(--col_gray_4);
+  }
+  & .signup-list-box > li + li {
+    margin-top: 15px;
+  }
+  & .signup-benefits {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 46px;
+  }
+  & .signup-benefits > label {
+    flex-shrink: 0;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57;
+    color: var(--col_black_1);
+  }
+  & .consent-options {
+    margin-top: 20px;
+  }
+  & .consent-options > li {
+    display: flex;
+    align-items: center;
+  }
+  & .consent-options > li + li {
+    margin-top: 20px;
+  }
+  & .consent-title {
+    width: 84px;
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 1.57;
+    color: var(--col_black_1);
+  }
+  & .consent-title ~ .radio-check-button {
+    margin-left: auto;
+  }
+  & .consent-options .radio-check-button + .radio-check-button {
+    margin-left: 13px;
+  }
+  & .signup-select-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  & .signup-select-input:has(.birth-options) {
+    align-items: unset;
+    flex-direction: column;
+    gap: 15px;
+  }
+  & .signup-select-input .basic-select-box {
+    flex: 1;
+  }
+  & .signup-select-input .basic-select-box ~ .radio-button-wrap {
+    flex: 1;
+    gap: 13px;
+  }
+  & .birth-options {
+    display: flex;
+    gap: 10px;
+  }
+  & .radio-button-wrap {
+    display: flex;
+  }
+  & .birth-radio {
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  & .signup-desc {
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+  }
+
+  & .signup-path-title {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--col_black_1);
+    margin-bottom: 23px;
+  }
+  & .signup-path .radio-button-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  & .signup-path .radio-check-button + .radio-check-button {
+    margin-left: 19px;
+  }
+
+  & .signup-path .etc-input {
+    flex: 1;
+    margin-left: 10px;
+    /* height: 48px; */
+  }
+  & .signup-button-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+  }
+  & .signup-button-wrap.colum {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .signup-button-wrap .basic-button__black-line {
+    height: 45px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 14px;
+  }
+  & .signup-button-wrap .basic-button__blue {
+    height: 45px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 14px;
+  }
+
+  /* 소셜 로그인 */
+  & .social-banner {
+    width: 100%;
+    margin: 38px auto 0;
+    padding: 35px 0;
+    object-fit: contain;
+    border-radius: 11px;
+    background-color: var(--col_white);
+  }
+  & .social-banner b {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.39;
+    color: var(--col_black_1);
+    margin-bottom: 18px;
+  }
+  & .social-banner p {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+    text-align: center;
+    color: var(--col_gray_6);
+  }
+
+  & .top-content {
+    width: 100%;
+    text-align: center;
+    background: #f7f7f9;
+    padding: 50px 0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  & .sub-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 2.13;
+    letter-spacing: -0.32px;
+    color: var(--col_gray_6);
+    margin-bottom: 10px;
+  }
+  & .signup-inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  & .signup-order {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  & .signup-order .signup-order-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    padding: 14px 0;
+    border-radius: 5px;
+    background-color: var(--col_white);
+  }
+  & .signup-order .signup-order-list + .signup-order-list::before {
+    position: absolute;
+    top: 50%;
+    left: -19px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    transform: translateY(-50%);
+    background: url("../images/icon/arrow_right_light_gray.svg") no-repeat center / contain;
+  }
+
+  & .signup-order .signup-order__num {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 11px;
+    line-height: 1.21;
+    letter-spacing: -0.28px;
+    color: var(--col_white);
+    border-radius: 50%;
+    padding: 5px;
+    background-color: var(--mainMint);
+    margin-bottom: 9.5px;
+  }
+
+  & .signup-order .signup-order__text {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.47;
+    letter-spacing: -0.43px;
+    color: var(--col_black_1);
+  }
+  & .signup-order .signup-order-list.active {
+    box-shadow: 0 0 0 1.5px var(--mainMint) inset;
+  }
+
+  & .signup-banner {
+    width: 100%;
+    margin: 40px auto 0;
+  }
+
+  & .signup-banner ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  & .signup-banner li {
+    width: calc((100% - 10px) / 2);
+    height: 103px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  & .signup-banner li:is(:nth-child(1), :nth-child(4)) .badge {
+    color: var(--mainMint);
+  }
+  & .signup-banner li:is(:nth-child(1), :nth-child(4)) {
+    background-color: var(--mainMint);
+  }
+  & .signup-banner li:is(:nth-child(2), :nth-child(3)) .badge {
+    color: var(--mainBlue);
+  }
+  & .signup-banner li:is(:nth-child(2), :nth-child(3)) {
+    background-color: var(--mainBlue);
+  }
+  & .signup-banner .badge {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.08;
+    letter-spacing: -0.24px;
+
+    margin-bottom: 10px;
+    padding: 5px 17px;
+    border-radius: 12px;
+    background-color: var(--col_white);
+  }
+  & .signup-banner p {
+    font-size: 13px;
+    letter-spacing: -0.26px;
+    color: var(--col_white);
+    margin-bottom: 6px;
+  }
+  & .signup-banner b {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: -0.32px;
+    color: var(--col_white);
+  }
+
+  & .terms-section {
+    margin-top: 40px;
+  }
+
+  & .terms-list {
+    border-radius: 12px;
+    border: solid 1px var(--col_gray_4);
+    padding: 30px 20px;
+  }
+  & .terms-list + .terms-list {
+    margin-top: 20px;
+  }
+  & .terms-item + .terms-item {
+    margin-top: 30px;
+  }
+  & .terms-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  & .terms-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57;
+    color: var(--col_black_1);
+  }
+  & .terms-header .basic-check-box__squire label {
+    justify-content: flex-end;
+  }
+  & .terms-content {
+    padding: 20px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: var(--col_gray_2);
+  }
+  & .terms-content pre {
+    width: 100%;
+    max-height: 100px;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.26px;
+    color: var(--col_gray_6);
+    overflow: auto;
+  }
+  & .signup-utils {
+    margin-top: 33px;
+  }
+  & .signup-utils .radio-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  & .signup-utils .radio-button-wrap {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+  & .signup-utils .basic-check-box__squire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  & .sns-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 18px;
+  }
+  & .sns-list > span {
+    width: 25px;
+    height: 25px;
+  }
+  & .sns-naver {
+    background: url("../../assets/images/icon/login_naver.svg") no-repeat center / contain;
+  }
+  & .sns-kakao {
+    background: url("../../assets/images/icon/login_kakao.svg") no-repeat center / contain;
+  }
+  & .sns-google {
+    background: url("../../assets/images/icon/login_goggle.svg") no-repeat center / contain;
+  }
+  & .sns-apple {
+    background: url("../../assets/images/icon/login_apple.svg") no-repeat center / contain;
+  }
+  /* 가입완료 */
+  & .signup-complete-banner {
+    width: 100%;
+    padding: 50px 0;
+    background: url("../../assets/images/banner/signup_banner_blue.jpg") no-repeat left bottom / cover;
+  }
+  & .signup-complete-banner__text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+  }
+  & .signup-complete-banner p {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    text-align: right;
+    color: var(--col_white);
+  }
+  & .signup-complete-banner b {
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: bold;
+  }
+  & .signup-complete__coupon {
+    margin-top: 30px;
+  }
+  & .signup-complete__coupon > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  & .signup-complete__coupon > li + li {
+    margin-top: 30px;
+  }
+  & .signup-complete__coupon > li:nth-child(1) span {
+    background-color: var(--mainBlue);
+  }
+  & .signup-complete__coupon > li:nth-child(1) .coupon-img {
+    background: url("../images/signup/coupon_01.png") no-repeat center / cover;
+  }
+  & .signup-complete__coupon > li:nth-child(2) span {
+    background-color: var(--mainMint);
+  }
+  & .signup-complete__coupon > li:nth-child(2) .coupon-img {
+    background: url("../images/signup/coupon_02.png") no-repeat center / cover;
+  }
+  & .signup-complete__coupon .coupon-img {
+    align-self: center;
+    width: calc(335px / 4 * 3);
+    height: calc(166px / 4 * 3);
+  }
+  & .signup-complete__coupon .coupon-text {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: calc(202px / 4 * 3);
+    margin-left: auto;
+  }
+  & .signup-complete__coupon span {
+    display: inline-block;
+    font-size: calc(11px / 4 * 3);
+    font-weight: bold;
+    color: var(--col_white);
+    padding: 3px 10px 5px;
+    border-radius: 11px;
+    background-color: var(--mainBlue);
+    margin-bottom: calc(10px / 4 * 3);
+  }
+  & .signup-complete__coupon p {
+    font-size: calc(14px / 4 * 3);
+    letter-spacing: -0.14px;
+    color: var(--col_black_2);
+  }
+  & .signup-complete__coupon strong {
+    display: inline-block;
+    font-size: calc(23px / 4 * 3);
+    font-weight: bold;
+    color: var(--col_black_2);
+    margin-top: calc(8px / 4 * 3);
+  }
+  & .signup-complete__coupon .basic-button__light-gray-line {
+    width: calc(92px / 4 * 3);
+    height: calc(28px / 4 * 3);
+    font-size: calc(13px / 4 * 3);
+    font-weight: 500;
+    line-height: 1.54;
+    color: var(--col_black_2);
+    margin-top: calc(10px / 4 * 3);
+  }
+  & .coupon-desc > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+  }
+  & .coupon-desc > li::before {
+    content: "·";
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: var(--col_gray_7);
+  }
+  & .coupon-desc li {
+    letter-spacing: -0.35px;
+    color: var(--col_black_1);
+  }
+  & .coupon-desc li + li {
+    margin-top: 8px;
+  }
+  & .signup-complete-button-wrap {
+    display: flex;
+    gap: 10px;
+  }
+  & .complete-buttons {
+    margin-top: 50px;
+  }
+  & .complete-buttons .basic-button__black-line {
+    width: 220px;
+  }
+}
+
+/* MODAL :: 소셜계정 이메일 중복체크 */
+.modal-social-email-check__desc {
+  margin: 30px 0 50px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.57;
+  letter-spacing: -0.28px;
+  text-align: center;
+  color: var(--col_gray_6);
+}
+.modal-social-email-check .modal-button-wrap {
+  flex-direction: column;
+}
+.modal-social-email-check__desc .modal-button-wrap > *,
+.modal-social-email-check .modal-button-wrap > [class^="basic-button__"] {
+  min-width: 0;
+  width: 100%;
+}

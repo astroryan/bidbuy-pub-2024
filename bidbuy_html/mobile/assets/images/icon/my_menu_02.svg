@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="그룹_9788" data-name="그룹 9788" transform="translate(-518 -144)">
+    <rect id="사각형_3295" data-name="사각형 3295" width="30" height="30" transform="translate(518 144)" fill="none"/>
+    <g id="Icon_akar-bell" data-name="Icon akar-bell" transform="translate(518.104 144.88)">
+      <path id="패스_11492" data-name="패스 11492" d="M15.7,7.5l-1.63,0A6.94,6.94,0,0,0,7.1,14.172v4.214a4.377,4.377,0,0,1-.59,2.466l-.319.487a1.112,1.112,0,0,0,.91,1.728H22.7a1.112,1.112,0,0,0,.91-1.728l-.319-.487a4.389,4.389,0,0,1-.59-2.467V14.173a6.987,6.987,0,0,0-7-6.669Zm2.534,15.564a3.336,3.336,0,0,1-6.672,0" transform="translate(0 -1.164)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_11493" data-name="패스 11493" d="M17.224,3a2.224,2.224,0,0,1,2.224,2.224V6.336H15V5.224A2.224,2.224,0,0,1,17.224,3Z" transform="translate(-2.328 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

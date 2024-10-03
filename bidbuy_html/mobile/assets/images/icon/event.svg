@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+    <defs>
+        <clipPath id="c6qouuo9ga">
+            <path data-name="사각형 5379" transform="translate(1501 666)" style="fill:none" d="M0 0h29v29H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 9554" transform="translate(-1501 -666)" style="clip-path:url(#c6qouuo9ga)">
+        <path data-name="Icon feather-gift" d="M21.265 13.147v10.148H5.029V13.147M3 8.074h20.295v5.074H3zm10.147 15.221V8.074m0 0H8.581a2.537 2.537 0 1 1 0-5.074c3.552 0 4.566 5.074 4.566 5.074zm0 0h4.566a2.537 2.537 0 1 0 0-5.074c-3.551 0-4.566 5.074-4.566 5.074z" transform="translate(1502.353 667.353)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;fill:none"/>
+    </g>
+</svg>

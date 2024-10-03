@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+    <defs>
+        <clipPath id="cdqw67b5va">
+            <path data-name="사각형 5379" transform="translate(1501 666)" style="fill:none" d="M0 0h29v29H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 9554" transform="translate(-1501 -666)" style="clip-path:url(#cdqw67b5va)">
+        <g data-name="Icon akar-shipping-box-02">
+            <path data-name="패스 11497" d="M13.261 3.707a2.182 2.182 0 0 1 2.119 0l8.2 4.555a1.091 1.091 0 0 1 .561.954V18.2a2.182 2.182 0 0 1-1.122 1.907l-7.639 4.246a2.182 2.182 0 0 1-2.119 0l-7.638-4.244A2.182 2.182 0 0 1 4.5 18.2V9.215a1.091 1.091 0 0 1 .561-.954l8.2-4.555z" style="stroke-linecap:round;stroke:#000;stroke-linejoin:round;fill:none" transform="translate(1501.5 666.567)"/>
+            <path data-name="패스 11498" d="m10.637 6.75 9.821 5.456v3.819M9 15.292l3.274 1.824" transform="translate(1500.274 665.663)" style="stroke-linecap:round;stroke:#000;stroke-linejoin:round;fill:none"/>
+            <path data-name="패스 11499" d="m4.5 10.5 9.821 5.456m0 0 9.82-5.456m-9.821 5.456v10.912" transform="translate(1501.5 664.641)" style="stroke:#000;stroke-linejoin:round;fill:none"/>
+        </g>
+    </g>
+</svg>

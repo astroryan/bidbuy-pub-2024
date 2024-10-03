@@ -773,8 +773,6 @@
     width: 627px;
     padding: 40px 20px;
   }
-  & .basic-check-box__squire {
-  }
   & .memo-tabs-container {
     padding-top: 20px;
   }
@@ -786,10 +784,6 @@
   }
   & .my-memo-content {
     padding-top: 20px;
-  }
-  & .empty-text {
-  }
-  & .my-memo__list {
   }
   & .memo-item__box {
     display: flex;
@@ -850,8 +844,6 @@
   }
   & .memo-item__status {
     margin-left: auto;
-  }
-  & .memo-item__writer {
   }
   & .memo-item__box .basic-button__blue-line {
     display: flex;
@@ -1115,7 +1107,6 @@
     font-size: 15px;
     font-weight: 400;
     height: 40px;
-    font-size: 15px;
     letter-spacing: -0.15px;
     border: solid 1px var(--col_gray_3);
     background-color: var(--col_white);
@@ -1740,7 +1731,6 @@
     padding: 30px;
   }
   & .my-shipping-box input {
-    /* padding: 30px; */
     padding: 0 12px;
   }
   & .shipping__form-line {
@@ -1889,7 +1879,7 @@
     gap: 10px;
   }
   & .basic-table__row > div:nth-child(6):has(:only-child) {
-    padding-right: 72px;
+    padding-right: 75px;
   }
   & .edit-button {
     flex-shrink: 0;
@@ -1995,6 +1985,9 @@
 
 /* 경매보증금 관리, 보증금 거래 내역 */
 .auction-deposit-management__tab {
+  & .auction-deposit-management__section + .auction-deposit-management__section {
+    margin-top: 40px;
+  }
   /* 경매보증금 관리 */
   & .auction-deposit-table .basic-table__header > div {
     height: 50px;
@@ -2044,6 +2037,7 @@
     margin-top: 12px;
   }
   & .info-list > li:before {
+    flex-shrink: 0;
     content: "";
     width: 16.8px;
     height: 16.8px;
@@ -2255,6 +2249,9 @@
 }
 
 /* 마이페이지 :: 개인정보관리 */
+.info-main-page {
+  padding-top: 70px;
+}
 .info-page {
   & .my-info {
     text-align: center;

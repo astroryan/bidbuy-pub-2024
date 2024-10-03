@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="31" viewBox="0 0 32 31">
-  <defs>
-    <clipPath id="clip-path">
-      <rect id="사각형_3" data-name="사각형 3" width="32" height="31" transform="translate(-0.292)" fill="#fff" stroke="#707070" stroke-width="1"/>
-    </clipPath>
-  </defs>
-  <g id="마스크_그룹_9650" data-name="마스크 그룹 9650" transform="translate(0.292)" clip-path="url(#clip-path)">
-    <g id="Icon_akar-bell" data-name="Icon akar-bell" transform="translate(8.005 6.252)">
-      <g id="그룹_13432" data-name="그룹 13432">
-        <path id="패스_60" data-name="패스 60" d="M15,7.5l-1.514,0a6.444,6.444,0,0,0-6.473,6.195v3.913a4.064,4.064,0,0,1-.548,2.29l-.3.452a1.032,1.032,0,0,0,.845,1.6H21.5a1.033,1.033,0,0,0,.845-1.6l-.3-.452a4.075,4.075,0,0,1-.548-2.291V13.7A6.487,6.487,0,0,0,15,7.5Zm2.353,14.451a3.1,3.1,0,1,1-6.195,0" transform="translate(-6.999 -5.403)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-        <path id="패스_61" data-name="패스 61" d="M17.065,3A2.065,2.065,0,0,1,19.13,5.065V6.1H15V5.065A2.065,2.065,0,0,1,17.065,3Z" transform="translate(-9.805 -4)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-      </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="31" viewBox="0 0 32 31">
+    <defs>
+        <clipPath id="jowg5he8va">
+            <path data-name="사각형 3" transform="translate(-.292)" style="fill:#fff;stroke:#707070" d="M0 0h32v31H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 9650" transform="translate(.292)" style="clip-path:url(#jowg5he8va)">
+        <g data-name="Icon akar-bell">
+            <g data-name="그룹 13432">
+                <path data-name="패스 60" d="M15 7.5h-1.514a6.444 6.444 0 0 0-6.473 6.195v3.913a4.064 4.064 0 0 1-.548 2.29l-.3.452a1.032 1.032 0 0 0 .845 1.6H21.5a1.033 1.033 0 0 0 .845-1.6l-.3-.452a4.075 4.075 0 0 1-.548-2.291V13.7A6.487 6.487 0 0 0 15 7.5zm2.353 14.451a3.1 3.1 0 1 1-6.195 0" transform="translate(1.006 .849)" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px"/>
+                <path data-name="패스 61" d="M17.065 3a2.065 2.065 0 0 1 2.065 2.065V6.1H15V5.065A2.065 2.065 0 0 1 17.065 3z" transform="translate(-1.8 2.252)" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px"/>
+            </g>
+        </g>
     </g>
-  </g>
 </svg>

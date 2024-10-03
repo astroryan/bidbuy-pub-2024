@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- MODAL :: 판매자 등록 상품 보기 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="seller-item-list"></button> -->
+      <div class="modal-seller-item-list modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">장바구니 담기</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__content">
+              <p class="modal-seller-item-list__title"><b>해당 판매자(출품자)가 등록한 상품 목록 입니다.</b></p>
+              <div class="seller-item-list-wrap">
+                <ul class="seller-item-list">
+                  <li>
+                    <div class="table-item td-left">
+                      <a href="../auctions/index.html" class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="table-item__info">
+                        <div class="table-item__market">
+                          <a href="../auctions/index.html" class="item__country">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </a>
+                          <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                        </div>
+                        <a href="../auctions/index.html" class="table-item__name nowrap"
+                          >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                          10枚入 アソー</a
+                        >
+                      </div>
+                    </div>
+                    <p class="item-status">입찰가능</p>
+                  </li>
+                  <li>
+                    <div class="table-item td-left">
+                      <a href="../auctions/index.html" class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="table-item__info">
+                        <div class="table-item__market">
+                          <a href="../auctions/index.html" class="item__country">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </a>
+                          <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                        </div>
+                        <a href="../auctions/index.html" class="table-item__name nowrap"
+                          >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                          10枚入 アソー</a
+                        >
+                      </div>
+                    </div>
+                    <p class="item-status">경매종료</p>
+                  </li>
+                  <li>
+                    <div class="table-item td-left">
+                      <a href="../auctions/index.html" class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="table-item__info">
+                        <div class="table-item__market">
+                          <a href="../auctions/index.html" class="item__country">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </a>
+                          <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                        </div>
+                        <a href="../auctions/index.html" class="table-item__name nowrap"
+                          >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                          10枚入 アソー</a
+                        >
+                      </div>
+                    </div>
+                    <p class="item-status">구매가능</p>
+                  </li>
+                  <li>
+                    <div class="table-item td-left">
+                      <a href="../auctions/index.html" class="img-wrap">
+                        <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                      </a>
+                      <div class="table-item__info">
+                        <div class="table-item__market">
+                          <a href="../auctions/index.html" class="item__country">
+                            <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                          </a>
+                          <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                        </div>
+                        <a href="../auctions/index.html" class="table-item__name nowrap"
+                          >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【 ピスタチオサンド
+                          10枚入 アソー</a
+                        >
+                      </div>
+                    </div>
+                    <p class="item-status">판매종료</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="basic-pagination">
+                <button class="first-button" type="button"></button>
+                <button class="prev-button" type="button"></button>
+
+                <div class="basic-pagination__button-wrap">
+                  <button class="page-button" type="button">1</button>
+                  <button class="page-button active" ype="button">2</button>
+                  <button class="page-button" type="button">3</button>
+                  <button class="page-button" type="button">4</button>
+                  <button class="page-button" type="button">5</button>
+                </div>
+
+                <button class="next-button" type="button"></button>
+                <button class="last-button" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- START :: HEADER -->
+      <header id="header"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="my-page wish-page">
+        <!-- 마이페이지 DASHBOARD -->
+        <section id="myDashBoard" class="my-dashboard simple"></section>
+
+        <div class="inner-width">
+          <!-- 마이페이지 :: 관심 상품, 관심 판매자, 관심 키워드, 최근 본 상품  -->
+          <section class="my-wish tabs-container">
+            <div class="wish__tabs tabs">
+              <button type="button" class="active" data-idx="0">관심 상품</button>
+              <button type="button" data-idx="1">관심 판매자</button>
+              <button type="button" data-idx="2">관심 키워드</button>
+              <button type="button" data-idx="3">최근 본 상품</button>
+            </div>
+            <ul class="wish__tabs-content tabs-content">
+              <!-- 1. 관심 상품 -->
+              <li data-ids="0" class="wish-item__tab">
+                <h3 class="my-title">
+                  <b>관심 상품</b>
+                </h3>
+
+                <h3 class="my-title">
+                  <div class="title-utils">
+                    <div class="basic-select-box">
+                      <select name="" id="">
+                        <option value="" disabled selected>채널선택</option>
+                        <option>채널선택1</option>
+                        <option>채널선택2</option>
+                        <option>채널선택3</option>
+                      </select>
+                    </div>
+                    <div class="basic-input">
+                      <input type="search" />
+                    </div>
+                    <button type="button" class="basic-button__gray my-search-button">
+                      <span class="blind">검색</span>
+                    </button>
+                  </div>
+                </h3>
+                <section class="my-wish-table-wrap">
+                  <!-- 1. 관심 제품 없을때 -->
+                  <!-- <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>구분</div>
+                      <div>상품정보</div>
+                      <div>가격 / 입찰수</div>
+                      <div>종료일시</div>
+                      <div></div>
+                    </div>
+                    <p class="basic-table__empty-text">관심 상품이 없습니다</p>
+                  </article> -->
+                  <!-- 2. 관심 제품 있을때 -->
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>구분</div>
+                      <div>상품정보</div>
+                      <div>가격 / 입찰수</div>
+                      <div>종료일시</div>
+                      <div></div>
+                    </div>
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="1" />
+                            <label for="1"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 경매</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../auctions/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../auctions/index.html" class="table-item__name p_2"
+                                >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【
+                                ピスタチオサンド 10枚入 アソー</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div><div>¥ 92,000 / 23bid</div></div>
+                        <div>2024-07-06 05:23:46<br />( 11일10시간7분 )</div>
+                        <div class="my-wish-button-td">
+                          <a href="../auctions/index.html" class="basic-button__light-gray-line">수정</a>
+                          <a href="../auctions/index.html" class="basic-button__blue">입찰</a>
+                        </div>
+                      </div>
+                      <!-- 2-->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="2" />
+                            <label for="2"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 경매</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../auctions/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../auctions/index.html" class="table-item__name p_2"
+                                >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【
+                                ピスタチオサンド 10枚入 アソー</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div><div>¥ 92,000 / 23bid</div></div>
+                        <div>2024-07-06 05:23:46<br />( 11일10시간7분 )</div>
+                        <div class="my-wish-button-td">
+                          <a href="../auctions/index.html" class="basic-button__light-gray-line">수정</a>
+                          <a href="../auctions/index.html" class="basic-button__blue">입찰</a>
+                        </div>
+                      </div>
+                      <!-- 3 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="3" />
+                            <label for="3"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 경매</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../auctions/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../auctions/index.html" class="table-item__name p_2"
+                                >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【
+                                ピスタチオサンド 10枚入 アソー</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div><div>¥ 92,000 / 23bid</div></div>
+                        <div>입찰종료</div>
+                        <div class="my-wish-button-td">참여한 경매</div>
+                      </div>
+                      <!-- 4 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="4" />
+                            <label for="4"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 구매</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../purchases/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../purchases/index.html" class="table-item__name p_2">【 公式 】 父の</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div><div>¥ 92,000 / 23bid</div></div>
+                        <div>입찰종료</div>
+                        <div class="my-wish-button-td">-</div>
+                      </div>
+                      <!-- 5 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="5" />
+                            <label for="5"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 구매</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../purchases/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../purchases/index.html" class="table-item__name p_2">【 公式 】 父の</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div><div>¥ 92,000 / 23bid</div></div>
+                        <div>2024-07-06 05:23:46<br />( 11일10시간7분 )</div>
+                        <div class="my-wish-button-td">
+                          <a href="../purchases/order.html" class="basic-button__blue">구매</a>
+                        </div>
+                      </div>
+                      <!-- 6 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="6" />
+                            <label for="6"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 구매</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../purchases/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../purchases/index.html" class="table-item__name p_2">【 公式 】 父の</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div><div>¥ 92,000 / 23bid</div></div>
+                        <div>판매종료</div>
+                        <div class="my-wish-button-td">-</div>
+                      </div>
+                      <!-- 7 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="7" />
+                            <label for="7"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 경매</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../purchases/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../purchases/index.html" class="table-item__name p_2">【 公式 】 父の</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div><div>¥ 92,000 / 23bid</div></div>
+                        <div>판매종료</div>
+                        <div class="my-wish-button-td">-</div>
+                      </div>
+                    </div>
+                  </article>
+                  <div class="my-wish-utils">
+                    <div class="my-wish-utils__button-wrap">
+                      <button type="button" class="basic-button__gray-line">선택삭제</button>
+                      <button type="button" class="basic-button__gray-line">종료 물품삭제</button>
+                    </div>
+                    <div class="basic-pagination">
+                      <button class="first-button" type="button"></button>
+                      <button class="prev-button" type="button"></button>
+
+                      <div class="basic-pagination__button-wrap">
+                        <button class="page-button" type="button">1</button>
+                        <button class="page-button active" ype="button">2</button>
+                        <button class="page-button" type="button">3</button>
+                        <button class="page-button" type="button">4</button>
+                        <button class="page-button" type="button">5</button>
+                      </div>
+
+                      <button class="next-button" type="button"></button>
+                      <button class="last-button" type="button"></button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+
+              <!-- 2. 관심 판매자 -->
+              <li data-ids="1" class="wish-seller__tab" style="display: none">
+                <h3 class="my-title">
+                  <b>관심 판매자</b>
+                </h3>
+
+                <section class="my-wish-table-wrap">
+                  <!-- 1. 관심 판매자 없을때 -->
+                  <!-- <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>유형</div>
+                      <div>판매자 ID</div>
+                      <div>메모</div>
+                      <div></div>
+                    </div>
+                    <p class="basic-table__empty-text">관심 판매자가 없습니다</p>
+                  </article> -->
+                  <!-- 2. 관심 판매자 있을때 -->
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>유형</div>
+                      <div>판매자 ID</div>
+                      <div>메모</div>
+                      <div></div>
+                    </div>
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="a" />
+                            <label for="a"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 경매</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="table-item ellipsis-text">
+                            <div class="table-item__market">
+                              <figure class="item__country">
+                                <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                              </figure>
+                              <p class="nowrap">야후경매 <span class="table-item__code">- sim111dancin</span></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="basic-input">
+                            <input type="text" placeholder="메모 문구 노출" />
+                          </div>
+                        </div>
+                        <div class="my-wish-button-td">
+                          <button type="button" class="basic-button__light-gray-line">저장</button>
+                          <button
+                            type="button"
+                            class="basic-button__blue modal_button"
+                            onclick="openModal(this, event)"
+                            data-modal="seller-item-list"
+                          >
+                            판매자 상품보기
+                          </button>
+                        </div>
+                      </div>
+                      <!-- 2 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="b" />
+                            <label for="b"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 경매</b>
+                        </div>
+                        <div class="table-item td-left">
+                          <div class="table-item__market">
+                            <figure class="item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="nowrap">야후경매 <span class="table-item__code">- sim111dancin</span></p>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="basic-input">
+                            <input type="text" placeholder="메모 문구 노출" />
+                          </div>
+                        </div>
+                        <div class="my-wish-button-td">
+                          <button type="button" class="basic-button__light-gray-line">저장</button>
+                          <button
+                            type="button"
+                            class="basic-button__blue modal_button"
+                            onclick="openModal(this, event)"
+                            data-modal="seller-item-list"
+                          >
+                            판매자 상품보기
+                          </button>
+                        </div>
+                      </div>
+                      <!-- 3 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="c" />
+                            <label for="c"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b>구매</b>
+                        </div>
+                        <div class="table-item td-left">
+                          <div class="table-item__market">
+                            <figure class="item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="nowrap">야후경매 <span class="table-item__code">- sim111dancin</span></p>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="basic-input">
+                            <input type="text" placeholder="메모 문구 노출" />
+                          </div>
+                        </div>
+                        <div class="my-wish-button-td">
+                          <button type="button" class="basic-button__light-gray-line">저장</button>
+                          <p class="td-empty-area">-</p>
+                        </div>
+                      </div>
+                      <!-- 4 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="d" checked />
+                            <label for="d"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b> 경매</b>
+                        </div>
+                        <div class="table-item td-left">
+                          <div class="table-item__market">
+                            <figure class="item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="nowrap">야후경매 <span class="table-item__code">- sim111dancin</span></p>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="basic-input">
+                            <input type="text" placeholder="메모 문구 노출" />
+                          </div>
+                        </div>
+                        <div class="my-wish-button-td">
+                          <button type="button" class="basic-button__light-gray-line">저장</button>
+                          <button
+                            type="button"
+                            class="basic-button__blue modal_button"
+                            onclick="openModal(this, event)"
+                            data-modal="seller-item-list"
+                          >
+                            판매자 상품보기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <div class="my-wish-utils">
+                    <div class="my-wish-utils__button-wrap">
+                      <button type="button" class="basic-button__gray-line">선택삭제</button>
+                    </div>
+                    <div class="basic-pagination">
+                      <button class="first-button" type="button"></button>
+                      <button class="prev-button" type="button"></button>
+
+                      <div class="basic-pagination__button-wrap">
+                        <button class="page-button" type="button">1</button>
+                        <button class="page-button active" ype="button">2</button>
+                        <button class="page-button" type="button">3</button>
+                        <button class="page-button" type="button">4</button>
+                        <button class="page-button" type="button">5</button>
+                      </div>
+
+                      <button class="next-button" type="button"></button>
+                      <button class="last-button" type="button"></button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+
+              <!-- 3. 관심 키워드 -->
+              <li data-ids="2" class="wish-keyword__tab" style="display: none">
+                <h3 class="my-title">
+                  <b>관심 키워드</b>
+                </h3>
+
+                <section class="my-wish-table-wrap">
+                  <!-- 1. 관심 키워드 없을때 -->
+                  <!-- <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>유형</div>
+                      <div>판매자 ID</div>
+                      <div>키워드(원문) /  페이지명</div>
+                      <div>추천 키워드</div>
+                    </div>
+                    <p class="basic-table__empty-text">관심 키워드가 없습니다</p>
+                  </article> -->
+                  <!-- 2. 관심 키워드 있을때 -->
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>유형</div>
+                      <div>판매자 ID</div>
+                      <div>키워드(원문) / 페이지명</div>
+                      <div>추천 키워드</div>
+                    </div>
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="3a" />
+                            <label for="3a"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b class="ellipsis-text">키워드(메뉴)</b>
+                        </div>
+                        <div class="table-item">
+                          <div class="table-item__market">
+                            <figure class="item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="nowrap">야후경매</p>
+                          </div>
+                        </div>
+                        <div><a href="" class="keyword-text ellipsis-text">Networking Cables & Adapters</a></div>
+                        <div></div>
+                      </div>
+                      <!-- 2 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="3n" />
+                            <label for="3n"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b class="ellipsis-text">화면 바로가기</b>
+                        </div>
+                        <div class="table-item">
+                          <div class="table-item__market">
+                            <figure class="item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="nowrap">이베이경매</p>
+                          </div>
+                        </div>
+                        <div>
+                          <a href="" class="keyword-text ellipsis-text"
+                            >고객센터 - 공지사항 - [한국] 2024년 6월 카드사별</a
+                          >
+                        </div>
+                        <div></div>
+                      </div>
+                      <!-- 3 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="3c" />
+                            <label for="3c"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b class="ellipsis-text">키워드(메뉴)</b>
+                        </div>
+                        <div class="table-item">
+                          <div class="table-item__market">
+                            <figure class="item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="nowrap">야후경매</p>
+                          </div>
+                        </div>
+                        <div><a href="" class="keyword-text ellipsis-text">Networking Cables & Adapters</a></div>
+                        <div></div>
+                      </div>
+                      <!-- 4 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="3d" />
+                            <label for="3d"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b class="ellipsis-text">경매</b>
+                        </div>
+                        <div class="table-item">
+                          <div class="table-item__market">
+                            <figure class="item__country">
+                              <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                            </figure>
+                            <p class="nowrap">야후경매</p>
+                          </div>
+                        </div>
+                        <div><a href="" class="keyword-text ellipsis-text">Networking Cables & Adapters</a></div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </article>
+                  <div class="my-wish-utils">
+                    <div class="my-wish-utils__button-wrap">
+                      <button type="button" class="basic-button__gray-line">선택삭제</button>
+                    </div>
+                    <div class="basic-pagination">
+                      <button class="first-button" type="button"></button>
+                      <button class="prev-button" type="button"></button>
+
+                      <div class="basic-pagination__button-wrap">
+                        <button class="page-button" type="button">1</button>
+                        <button class="page-button active" ype="button">2</button>
+                        <button class="page-button" type="button">3</button>
+                        <button class="page-button" type="button">4</button>
+                        <button class="page-button" type="button">5</button>
+                      </div>
+
+                      <button class="next-button" type="button"></button>
+                      <button class="last-button" type="button"></button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+
+              <!-- 4. 최근 본 상품 -->
+              <li data-ids="3" class="recent-item__tab" style="display: none">
+                <h3 class="my-title">
+                  <b>최근 본 상품</b>
+                </h3>
+
+                <section class="my-wish-table-wrap">
+                  <!-- 1. 최근 본 상품 없을때 -->
+                  <!-- <article class="basic-table">
+                      <div class="basic-table__header">
+                        <div>선택</div>
+                        <div>기록일</div>
+                        <div>상품정보</div>
+                      </div>
+                      <p class="basic-table__empty-text">최근 본 상품이 없습니다</p>
+                    </article> -->
+                  <!-- 2. 최근 본 상품 있을때 -->
+                  <article class="basic-table">
+                    <div class="basic-table__header">
+                      <div>선택</div>
+                      <div>기록일</div>
+                      <div>상품정보</div>
+                    </div>
+                    <div class="basic-table__body">
+                      <!-- 1 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="r1" />
+                            <label for="r1"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b>2024-07-06 05:23:46</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../auctions/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../auctions/index.html" class="table-item__name p_2"
+                                >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【
+                                ピスタチオサンド 10枚入 アソー</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 2 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="r2" />
+                            <label for="r2"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b>2024-07-06 05:23:46</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../auctions/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../auctions/index.html" class="table-item__name p_2"
+                                >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【
+                                ピスタチオサンド 10枚入 アソー</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 3 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="r3" />
+                            <label for="r3"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b>2024-07-06 05:23:46</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../auctions/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../auctions/index.html" class="table-item__name p_2"
+                                >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【
+                                ピスタチオサンド 10枚入 アソー</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 4 -->
+                      <div class="basic-table__row">
+                        <div>
+                          <div class="basic-check-box__squire gray">
+                            <input type="checkbox" name="" id="r4" />
+                            <label for="r4"> <span class="basic-check-box__squire-icon"></span></label>
+                          </div>
+                        </div>
+                        <div>
+                          <b>2024-07-06 05:23:46</b>
+                        </div>
+                        <div class="td-left">
+                          <div class="my-order-item ellipsis-text">
+                            <a href="../auctions/index.html" class="img-wrap">
+                              <img src="../../assets/images/dummy/item_01.jpg" alt="" />
+                            </a>
+                            <div class="table-item__info">
+                              <div class="table-item__market">
+                                <figure class="item__country">
+                                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                                </figure>
+                                <p class="nowrap">야후경매 <span class="table-item__code">- im111dancin</span></p>
+                              </div>
+                              <a href="../auctions/index.html" class="table-item__name p_2"
+                                >【 公式 】 父の日 ギフト スイーツ クッキー プレゼント 2024 ピスタチオ 【
+                                ピスタチオサンド 10枚入 アソタチオサンド 10枚入 アソタチオサンド 10枚入 アソタチオサンド
+                                10枚入 アソー</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <div class="my-wish-utils">
+                    <div class="my-wish-utils__button-wrap">
+                      <button type="button" class="basic-button__gray-line">선택삭제</button>
+                      <p class="recent-text">최근 본 상품은 최대 30건까지만 기록됩니다.</p>
+                    </div>
+                    <div class="basic-pagination">
+                      <button class="first-button" type="button"></button>
+                      <button class="prev-button" type="button"></button>
+
+                      <div class="basic-pagination__button-wrap">
+                        <button class="page-button" type="button">1</button>
+                        <button class="page-button active" ype="button">2</button>
+                        <button class="page-button" type="button">3</button>
+                        <button class="page-button" type="button">4</button>
+                        <button class="page-button" type="button">5</button>
+                      </div>
+
+                      <button class="next-button" type="button"></button>
+                      <button class="last-button" type="button"></button>
+                    </div>
+                  </div>
+                </section>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

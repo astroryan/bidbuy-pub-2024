@@ -454,7 +454,6 @@
     gap: 10px;
     height: 45px;
     margin-top: 27px;
-    /* margin-top: auto; */
   }
   & .details-button-wrap > button {
     flex-shrink: 0;
@@ -1146,7 +1145,6 @@
   display: flex;
   justify-content: center;
   gap: 35px;
-  /* justify-content: space-between; */
 }
 .bid-modal .bid-order-list {
   position: relative;
@@ -1500,7 +1498,7 @@
   & .top-content {
     padding: 34px 0;
     text-align: center;
-    background: url("../../assets/images/banner/auction_banner.jpg") no-repeat center / cover;
+    background: url("../images/banner/aution_banner.jpg") no-repeat center / cover;
   }
   & .top-content__timestamp {
     font-size: 14px;
@@ -1802,8 +1800,6 @@
     flex-shrink: 0;
     width: 798px;
   }
-  & .order__form {
-  }
   & .order-title {
     font-size: 20px;
     font-weight: bold;
@@ -1840,8 +1836,6 @@
   }
   & .order-list-box + .order-list-box {
     margin-top: 20px;
-  }
-  & .order__input-group {
   }
 
   & .order__input-group + .order__input-group {
@@ -1975,8 +1969,6 @@
     padding: 30px;
   }
 
-  & .order__notice {
-  }
   & .order-notice__radio .radio-check-button + .radio-check-button {
     margin-top: 12px;
   }

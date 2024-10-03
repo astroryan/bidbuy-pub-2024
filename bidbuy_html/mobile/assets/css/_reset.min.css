@@ -1,11 +1,5 @@
 @charset "utf-8";
 
-/* 변수 */
-:root {
-}
-:root[color-theme="dark"] {
-}
-
 *,
 *::before,
 *::after {
@@ -146,6 +140,7 @@ select {
 input,
 textarea {
   -webkit-user-select: auto;
+  color: inherit;
 } /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
 button,
 select,
@@ -155,6 +150,7 @@ input:where([type="text"], [type="tel"], [type="button"], [type="password"], [ty
   -webkit-appearance: none; /* 네이티브 외형 감추기*/
   -moz-appearance: none;
   appearance: none;
+  color: inherit;
   border: 0;
   border-radius: 0;
   -webkit-border-radius: 0;

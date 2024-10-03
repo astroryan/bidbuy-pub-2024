@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
+    <script src="../../assets/js/libary/ion.rangeSlider.min.js" defer></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+    <script>
+      // 금액 range range slider
+      //search_item 수량 선택 플러그인
+      $(function () {
+        let $con = $(".modal-filter"),
+          $range = $con.find(".js-range-slider"),
+          $inputFrom = $con.find(".js-input-from"),
+          $inputTo = $con.find(".js-input-to"),
+          instance,
+          min = 0,
+          max = 100000,
+          from = null,
+          to = null;
+
+        $range.ionRangeSlider({
+          skin: "round",
+          type: "double",
+          min: min,
+          max: max,
+          from: 0,
+          to: 100000,
+          step: 1000,
+          prettify_separator: ",",
+          // min_interval:'100',
+          // Hide_from_to:'false',
+          force_edges: "false",
+          hide_min_max: "false",
+          onStart: updateInputs,
+          onChange: updateInputs,
+        });
+
+        instance = $range.data("ionRangeSlider");
+
+        function updateInputs(data) {
+          from = data.from;
+          to = data.to;
+          $inputFrom.prop("value", from);
+          $inputTo.prop("value", to);
+
+          from = $inputFrom.val();
+          to = $inputTo.val();
+        }
+
+        $inputFrom.on("input", function () {
+          var val = $(this).prop("value");
+
+          // validate
+          if (val < min) {
+            val = min;
+          } else if (val > to) {
+            val = to;
+          }
+
+          instance.update({
+            from: val,
+          });
+        });
+
+        $inputTo.on("input", function () {
+          var val = $(this).prop("value");
+
+          // validate
+          if (val < from) {
+            val = from;
+          } else if (val > max) {
+            val = max;
+          }
+
+          instance.update({
+            to: val,
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- MODAL :: 태그 선택 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="tag"></button> -->
+      <div class="modal-tag modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="inner-width">
+            <div class="modal__title">태그 선택</div>
+            <button class="modal__close-button" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+            <article class="tag-section">
+              <ul class="tag-list">
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="qqq" />
+                    <label for="qqq" title="M-65">M-65</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="eeee" />
+                    <label for="eeee" title="커버울">커버울</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="sssss" />
+                    <label for="sssss" title="테일러드 재킷">테일러드 재킷</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="aaaaa" />
+                    <label for="aaaaa" title="플라이트 재킷">플라이트 재킷</label>
+                  </button>
+                </li>
+
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="sssd" />
+                    <label for="sssd" title="M-65">M-65</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="wewe" />
+                    <label for="wewe" title="M-65">M-65</label>
+                  </button>
+                </li>
+
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="aaaaa1" />
+                    <label for="aaaaa1" title="플라이트 재킷">플라이트 재킷</label>
+                  </button>
+                </li>
+
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="sdf" />
+                    <label for="sdf" title="M-65">M-65</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="eeee2" />
+                    <label for="eeee2" title="커버울">커버울</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="sssss4" />
+                    <label for="sssss4" title="테일러드 재킷">테일러드 재킷</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="2123" />
+                    <label for="2123" title="플라이트 재킷">플라이트 재킷</label>
+                  </button>
+                </li>
+
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="44444" />
+                    <label for="44444" title="M-65">M-65</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="asd" />
+                    <label for="asd" title="커버울">커버울</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="qwe" />
+                    <label for="qwe" title="테일러드 재킷">테일러드 재킷</label>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="tab-check-button mint">
+                    <input type="checkbox" name="" id="cvv" />
+                    <label for="cvv" title="라이트 재킷"> 플라이트 재킷</label>
+                  </button>
+                </li>
+
+                <li>
+                  <div class="tab-check-button mint">
+                    <input type="checkbox" name="" id="4543" />
+                    <label for="4543" title="M-65">M-65</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="tab-check-button mint">
+                    <input type="checkbox" name="" id="ghfdfh" />
+                    <label for="ghfdfh" title="커버울">커버울</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="tab-check-button mint">
+                    <input type="checkbox" name="" id="hfgd" />
+                    <label for="hfgd" title="테일러드 재킷">테일러드 재킷</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="tab-check-button mint">
+                    <input type="checkbox" name="" id="twerd" />
+                    <label for="twerd" title="플라이트 재킷">플라이트 재킷</label>
+                  </div>
+                </li>
+              </ul>
+            </article>
+            <button type="button" class="basic-button__light-gray-line" onclick="closeModal(this)">적용</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- MODAL :: 필터·정렬 -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="filter"></button> -->
+      <div class="modal-filter modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="inner-width">
+            <button class="modal__close-button" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+            <article class="filter-box">
+              <form class="filter">
+                <ul class="filter-list">
+                  <li>
+                    <button type="button" class="filter__accordion-button toggle-button active">
+                      <div class="filter__title">필터·정렬</div>
+                    </button>
+                    <div class="filter__filter-options">
+                      <fieldset class="filter__sub-group filter-box-list">
+                        <div class="tab-check-button">
+                          <input type="checkbox" name="" id="1" checked />
+                          <label for="1">전체</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="checkbox" name="" id="2" />
+                          <label for="2">경매</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="checkbox" name="" id="3" />
+                          <label for="3">구매</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="checkbox" name="" id="4" />
+                          <label for="4">흥정</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="checkbox" name="" id="5" />
+                          <label for="5">신품</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="checkbox" name="" id="6" />
+                          <label for="6">중고</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="checkbox" name="" id="7" />
+                          <label for="7">무료배송</label>
+                        </div>
+                      </fieldset>
+                      <fieldset class="filter__sub-group filter-box-list">
+                        <div class="tab-check-button">
+                          <input type="radio" name="sort" id="11" checked />
+                          <label for="11">인기순</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="radio" name="sort" id="12" />
+                          <label for="12">신상품순</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="radio" name="sort" id="13" />
+                          <label for="13">좋아요순</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="radio" name="sort" id="14" />
+                          <label for="14">마감순</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="radio" name="sort" id="15" />
+                          <label for="15">높은가격순</label>
+                        </div>
+                        <div class="tab-check-button">
+                          <input type="radio" name="sort" id="17" />
+                          <label for="17">입찰수순</label>
+                        </div>
+                      </fieldset>
+                      <fieldset class="filter__sub-group">
+                        <!-- range 플러그인 사용으로 값은 자동으로 입력됩니다! -->
+                        <div class="filter__price-range">
+                          <div class="filter__price-range-top">
+                            <p class="legend">금액</p>
+                            <div class="range-slider">
+                              <input type="text" class="js-range-slider" value="" />
+                            </div>
+                          </div>
+                          <div class="extra-controls">
+                            <input
+                              type="text"
+                              class="js-input-from"
+                              value="0"
+                              id="inBuyCountSt"
+                              placeholder="숫자 입력"
+                            />
+                            <i>~</i>
+                            <input
+                              type="text"
+                              class="js-input-to"
+                              value="100000"
+                              id="inBuyCountEn"
+                              placeholder="숫자 입력"
+                            />
+                          </div>
+                        </div>
+                        <button type="submit" class="basic-button__light-gray-line">적용</button>
+                      </fieldset>
+
+                      <fieldset class="filter__sub-group">
+                        <div class="sub-group__title">
+                          <p class="legend">목록내 검색</p>
+                          <div class="sub-group__search-list">
+                            <span>
+                              라이다스
+                              <button type="button" class="delete-button"></button>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="filter__search">
+                          <input type="search" />
+                          <button type="button" class="filter__search-button"></button>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </li>
+                  <li>
+                    <button type="button" class="filter__accordion-button toggle-button active">
+                      <div class="filter__title">검색옵션</div>
+                    </button>
+                    <div class="filter__filter-options">
+                      <fieldset class="filter__sub-group">
+                        <div>
+                          <p class="legend">Maker</p>
+                          <ul class="option-check-list">
+                            <li>
+                              <div class="basic-check-box__squire">
+                                <input type="checkbox" name="" id="1eeee" />
+                                <label for="1eeee">
+                                  <span class="basic-check-box__squire-icon"></span> BMW (3184)</label
+                                >
+                              </div>
+                            </li>
+                            <li>
+                              <div class="basic-check-box__squire">
+                                <input type="checkbox" name="" id="21445" />
+                                <label for="21445"><span class="basic-check-box__squire-icon"></span>BMW (3184)</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="basic-check-box__squire">
+                                <input type="checkbox" name="" id="321223413W" />
+                                <label for="321223413W"
+                                  ><span class="basic-check-box__squire-icon"></span>BMW (3184)</label
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </li>
+                </ul>
+              </form>
+            </article>
+            <button type="button" class="basic-button__light-gray-line" onclick="closeModal(this)">적용</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- START :: HEADER -->
+      <header id="header"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="list-page system-list-page">
+        <div class="inner-width">
+          <section class="top-content">
+            <h2>
+              <span class="top-content__main-text">8 밀리 (8ミリ)</span>
+              <div class="button-wrap">
+                <button type="button" class="keyword-button" onclick="toggleKeyword(this, event)">
+                  <input type="checkbox" id="likeKeyword" />
+                  <label for="likeKeyword"></label>
+                </button>
+                <button
+                  type="button"
+                  class="fitter-button modal_button"
+                  onclick="openModal(this, event)"
+                  data-modal="filter"
+                ></button>
+              </div>
+            </h2>
+            <div class="nav-wrap">
+              <ul class="nav-list">
+                <li>
+                  <div class="img-wrap"><img src="../../assets/images/icon/country_jp.png" alt="jp" /></div>
+                  일본야후경매
+                </li>
+                <li>가전, AV, 카메라</li>
+                <li>일본야후경매</li>
+                <li>카메라, 광학기기</li>
+                <li>필름 카메라</li>
+                <li><b>8 밀리</b></li>
+              </ul>
+            </div>
+          </section>
+          <!-- 컨텐츠 -->
+          <section class="contents">
+            <article class="result">
+              <div class="result-top">
+                <p class="result__title">전체 <b>560</b>건</p>
+              </div>
+              <ul class="list-item item-list">
+                <li class="item-box">
+                  <a href="" class="item__img img-wrap">
+                    <img src="https://placehold.co/400x20" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price">
+                        <span class="item__total-price">¥<s>18,000</s></span>
+                        <span class="item__discount-percent">(40%)</span>
+                      </p>
+                    </div>
+                    <div class="item-tags">
+                      <span>#Nike</span>
+                      <span>#배송무료</span>
+                    </div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                  1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                  2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                  > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <div class="item-button-wrap">
+                        <button class="item-button__cart">
+                          <span class="blind">장바구니</span>
+                        </button>
+                        <!-- <a href="제품상세" class="item-button__bid basic-button__dark-gray">
+                        입찰
+                        <div class="num-badge">5</div>
+                      </a>
+                      <a href="제품상세" class="item-button__buy basic-button__blue">
+                        구매
+                        <div class="num-badge">5</div>
+                      </a>
+                      <a href="제품상세" class="item-button__check "> <span class="blind">확인</span></a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+                <li class="item-box">
+                  <a href="" class="item__img img-wrap">
+                    <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price">
+                        <span class="item__total-price">즉시낙찰 ¥299</span>
+                      </p>
+                    </div>
+                    <div class="item-tags">
+                      <span>#Nike</span>
+                      <span>#배송무료</span>
+                    </div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                  1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                  2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                  > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <p>
+                        05.04<br />
+                        14:47(1일)
+                      </p>
+                      <div class="item-button-wrap">
+                        <a href="제품상세" class="item-button__bid basic-button__dark-gray">
+                          입찰
+                          <div class="num-badge">5</div>
+                        </a>
+                        <a href="제품상세" class="item-button__buy basic-button__blue">
+                          구매
+                          <div class="num-badge">5</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+                <li class="item-box list favorite-item">
+                  <a href="" class="item__img img-wrap">
+                    <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name">あすつく ビール 送料無料 アサヒ</a>
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price"></p>
+                    </div>
+                    <div class="item-tags"></div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                  1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                  2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                  > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <p>
+                        05.04<br />
+                        14:47(1일)
+                      </p>
+                      <div class="item-button-wrap">
+                        <a href="제품상세" class="item-button__bid basic-button__dark-gray">
+                          입찰
+                          <div class="num-badge">5</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button active" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+                <li class="item-box list favorite-item">
+                  <a href="" class="item__img img-wrap">
+                    <img src="../../assets/images/dummy/item_01.jpg" alt="item" />
+                  </a>
+                  <div class="item__info">
+                    <div class="item__market line">
+                      <figure class="item__country">
+                        <img src="../../assets/images/icon/country_uk.png" alt="uk" />
+                      </figure>
+                      <p>라쿠텐 - Ten past Ten</p>
+                    </div>
+                    <a href="" class="item__name"
+                      >あすつく ビール 送料無料 アサヒあすつく ビール 送料無料 アサヒあすつく ビール 送料無料
+                      アサヒあすつく ビール 送料無料 アサヒ</a
+                    >
+                    <div class="item__price">
+                      <p>¥ 10,000</p>
+                      <p class="item__discount-price">
+                        <span class="item__total-price">¥<s>18,000</s> (40%)</span>
+                      </p>
+                    </div>
+                    <div class="item-tags">
+                      <span>#Nike</span>
+                      <span>#배송무료</span>
+                    </div>
+                    <!-- PUB :: 버튼 리스트 -->
+                    <!-- 
+                  1. 입찰 버튼 (경매 상품건 만 노출) 클릭 시 상세 화면 이동 
+                  2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
+                  > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
+                    <div class="item__bottom">
+                      <div class="item-button-wrap">
+                        <a href="제품상세" class="item-button__bid basic-button__dark-gray">
+                          입찰
+                          <div class="num-badge">5</div>
+                        </a>
+                        <button class="item-button__cart">
+                          <span class="blind">장바구니</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="like-button" type="button" onClick="onClickLikeButton(this)">
+                    <span>25</span>
+                    <span class="like-button__icon"></span>
+                  </button>
+                </li>
+              </ul>
+              <div class="bottom-pagination-wrap">
+                <div class="basic-pagination">
+                  <button class="first-button" type="button"></button>
+                  <button class="prev-button" type="button"></button>
+
+                  <div class="basic-pagination__button-wrap">
+                    <button class="page-button" type="button">1</button>
+                    <button class="page-button active" ype="button">2</button>
+                    <button class="page-button" type="button">3</button>
+                    <button class="page-button" type="button">4</button>
+                    <button class="page-button" type="button">5</button>
+                  </div>
+
+                  <button class="next-button" type="button"></button>
+                  <button class="last-button" type="button"></button>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>

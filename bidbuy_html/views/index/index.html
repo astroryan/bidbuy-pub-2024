@@ -41,8 +41,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.2/main.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.4.2/main.min.css" /> -->
 
     <!-- JS -->
     <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
@@ -50,120 +48,10 @@
     <script src="../../assets/js/libary/Sortable.min.js"></script>
     <script src="../../assets/js/include.js" defer></script>
     <script src="../../assets/js/common.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
-    <!-- <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script> -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <!-- <script type="module" src="../../assets/js/sort.js"></script> -->
-    <script type="module">
-      // category Sort
-      const ulEl = document.querySelector(".custom-shopping__list");
-      console.log(ulEl);
-      if (ulEl) {
-        new Sortable(ulEl, {
-          animation: 200, // 이동 속도를 약간 더 느리게 설정
-          ghostClass: "active",
-          forceFallback: true, // 미지원 브라우저나 상황에서도 강제로 드래그 동작을 적용
-          handle: ".custom-shopping__drag-button", // 클래스를 가진 요소에서만 드래그 가능
-          preventOnFilter: false, // 필터된 요소에서 기본 동작을 막지 않음
-          // swapThreshold: 0.5, // 요소가 중간에 도달했을 때 스와핑
-          // invertSwap: true, // 스와핑을 반전하여 좀 더 직관적인 느낌 제공
-        });
-      }
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const calendarEl = document.getElementById("calendar");
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-          // left: "prev",
-          // center: "title",
-          // right: "next",
-          initialView: "dayGridMonth",
-          // header toolbar
-          titleFormat: function (date) {
-            return date.date.month + 1;
-          },
-
-          headerToolbar: {
-            left: "prev",
-            center: "title",
-            right: "next",
-          },
-          height: 275,
-          // contentHeight: "auto",
-          eventDidMount: function (info) {
-            var title = info.event.title;
-            var tooltip = new Tooltip(info.el, {
-              title: title,
-              // title: info.event.extendedProps.description,
-              placement: "top",
-              trigger: "hover",
-              container: "body",
-            });
-          },
-
-          // dayMaxEventRows: true,
-          // expandRows: true, // 화면에 맞게 높이 재설정
-          //tooltip
-          // eventDidMount: function (info) {
-          //   var title = info.event.title;
-          //   if (title.length > 0) {
-          //     tippy(info.el, {
-          //       content: title,
-          //       placement: "bottom", //툴팁 방향
-          //       theme: "yellow", //css테마 설정된 데이터 값
-          //       arrow: false, //툴팁에서 말풍선 모양처럼 화살표 출력여부
-          //     });
-          //   }
-          // },
-          // eventRender: function (info) {
-          //   var tooltip = new Tooltip(info.el, {
-          //     title: info.event.extendedProps.description, //이벤트 디스크립션을 툴팁으로 가져옵니다.
-          //     // title: info.event.title, 이벤트 타이틀을 툴팁으로 가져옵니다.
-          //     placement: "top",
-          //     trigger: "hover",
-          //     container: "body",
-          //   });
-          // },
-
-          events: [
-            {
-              title: "All Day Event",
-              description: "description for All Day Event",
-              start: "2024-09-25",
-            },
-          ],
-          // events: [
-          //   {
-          //     title: "한국 [KOR]",
-          //     description: "description for All Day Event",
-          //     start: "2024-09-25",
-          //   },
-          //   {
-          //     title: "한국 [KOR]",
-          //     start: "2024-09-05",
-          //   },
-          //   {
-          //     title: "한국 [KOR]",
-          //     start: "2024-10-25",
-          //   },
-          //   {
-          //     title: "한국 [KOR]",
-          //     start: "2024-10-05",
-          //   },
-          // ],
-
-          // dateClick: function (info) {
-          //   alert("Clicked on: " + info.dateStr); //
-          //   // change the day's background color just for fun
-          //   // info.dayEl.style.backgroundColor = "red";
-          //   // $("#calendarModal").modal("show");
-          // },
-        });
-        calendar.render();
-      });
-    </script>
+    <!-- 캘린더 -->
+    <script src="../../assets/js/libary/index.global.min.js"></script>
+    <script src="../../assets/js/libary/popper.min.js"></script>
+    <script src="../../assets/js/libary/tooltip.min.js"></script>
   </head>
   <body>
     <div id="content-wrap">
@@ -171,6 +59,7 @@
       <header id="header"></header>
       <!-- END :: HEADER -->
       <!-- START :: MAIN -->
+
       <main id="main" class="main-page">
         <div class="inner-width flex">
           <section class="main-visual">
@@ -254,15 +143,15 @@
                         <button class="item-button__cart">
                           <span class="blind">장바구니</span>
                         </button>
-                        <!-- <a href="../auctions/" class="item-button__bid basic-button__dark-gray">
+                        <!-- <a href="../auctions/index.html" class="item-button__bid basic-button__dark-gray">
                           입찰
                           <div class="num-badge">5</div>
                         </a>
-                        <a href="../auctions/" class="item-button__buy basic-button__blue">
+                        <a href="../auctions/index.html" class="item-button__buy basic-button__blue">
                           구매
                           <div class="num-badge">5</div>
                         </a>
-                        <a href="../auctions/" class="item-button__check "> <span class="blind">확인</span></a> -->
+                        <a href="../auctions/index.html" class="item-button__check "> <span class="blind">확인</span></a> -->
                       </div>
                     </div>
                   </div>
@@ -300,13 +189,16 @@
                     2. 카트 버튼(구매 대행 아이템만 노출) 클릭 시 - 장바구니 담기 모달
                     > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
                     <div class="item__bottom">
-                      <p>05.04 14:47(1일)</p>
+                      <p>
+                        05.04<br />
+                        14:47(1일)
+                      </p>
                       <div class="item-button-wrap">
-                        <a href="../auctions/" class="item-button__bid basic-button__dark-gray">
+                        <a href="../auctions/index.html" class="item-button__bid basic-button__dark-gray">
                           입찰
                           <div class="num-badge">5</div>
                         </a>
-                        <a href="../auctions/" class="item-button__buy basic-button__blue">
+                        <a href="../auctions/index.html" class="item-button__buy basic-button__blue">
                           구매
                           <div class="num-badge">5</div>
                         </a>
@@ -342,7 +234,7 @@
                     <div class="item__bottom">
                       <p>05.04 14:47(1일)</p>
                       <div class="item-button-wrap">
-                        <a href="../auctions/" class="item-button__bid basic-button__dark-gray">
+                        <a href="../auctions/index.html" class="item-button__bid basic-button__dark-gray">
                           입찰
                           <div class="num-badge">5</div>
                         </a>
@@ -387,7 +279,7 @@
                     > 썸네일 & 아이템명 클릭시 상세페이지 이동 -->
                     <div class="item__bottom">
                       <div class="item-button-wrap">
-                        <a href="../auctions/" class="item-button__bid basic-button__dark-gray">
+                        <a href="../auctions/index.html" class="item-button__bid basic-button__dark-gray">
                           입찰
                           <div class="num-badge">5</div>
                         </a>
@@ -433,7 +325,7 @@
                     <div class="item__bottom">
                       <p>05.04 14:47(1일)</p>
                       <div class="item-button-wrap">
-                        <a href="../auctions/" class="item-button__check"> <span class="blind">확인</span></a>
+                        <a href="../auctions/index.html" class="item-button__check"> <span class="blind">확인</span></a>
                         <button class="item-button__cart">
                           <span class="blind">장바구니</span>
                         </button>
@@ -476,7 +368,7 @@
                     <div class="item__bottom">
                       <p>05.04 14:47(1일)</p>
                       <div class="item-button-wrap">
-                        <a href="../auctions/" class="item-button__buy basic-button__blue">
+                        <a href="../auctions/index.html" class="item-button__buy basic-button__blue">
                           구매
                           <div class="num-badge">5</div>
                         </a>
@@ -501,11 +393,11 @@
                   비드바이 멤버십으로<br />
                   탁월한 해외쇼핑 경험과 혜택
                 </p>
-                <a href="/auth.html" class="basic-button__blue">로그인</a>
+                <a href="../auth/index.html" class="basic-button__blue">로그인</a>
                 <ul class="offline-utils">
-                  <li><a href="">ID/PW찾기</a></li>
-                  <li><a href="">이용가이드</a></li>
-                  <li><a href="/signup.html">회원가입</a></li>
+                  <li><a href="../auth/forgot.html">ID/PW찾기</a></li>
+                  <li><a href="../cs/guide.html">이용가이드</a></li>
+                  <li><a href="../signup/index.html">회원가입</a></li>
                 </ul>
               </div>
               <figure class="offline-banner">
@@ -516,7 +408,7 @@
             <article class="main-side__online" style="display: none">
               <div class="main-side__inner">
                 <ul class="online-utils">
-                  <li><a href="">개인정보</a></li>
+                  <li><a href="../mypage/info.html">개인정보</a></li>
                   <li><a href="">로그아웃</a></li>
                 </ul>
 
@@ -539,15 +431,15 @@
                 </div>
               </div>
               <div class="user-info-box__points">
-                <a href="" class="user-info-box__bid-point">
+                <a href="../mypage/management.html" class="user-info-box__bid-point">
                   <p>비드포인트</p>
                   <p><b>180</b>점</p>
                 </a>
-                <a href="" class="user-info-box__yahoo-point">
+                <a href="../mypage/management.html" class="user-info-box__yahoo-point">
                   <p>야후보증금</p>
                   <p><b>30,000</b>원</p>
                 </a>
-                <a href="" class="user-info-box__ebay-point">
+                <a href="../mypage/management.html" class="user-info-box__ebay-point">
                   <p>이베이보증금</p>
                   <p><b>30,000</b>원</p>
                 </a>
@@ -579,34 +471,36 @@
             </article>
             <div class="main-side__sidebar">
               <article class="main-side__notice">
-                <h2 class="main-title">BB공지<a href="">더 보기</a></h2>
+                <h2 class="main-title">BB공지<a href="../cs/notice.html">더 보기</a></h2>
                 <ul class="main-notice-list">
                   <li>
                     <figure class="main-notice__country">
                       <img src="../../assets/images/icon/country_jp.png" alt="jp" />
                     </figure>
-                    <a href="" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
+                    <a href="../cs/notice_details.html" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
                     <p class="main-notice__date">2024.04.26</p>
                   </li>
                   <li>
                     <figure class="main-notice__country">
                       <img src="../../assets/images/icon/country_usa.png" alt="usa" />
                     </figure>
-                    <a href="" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
+                    <a href="../cs/notice_details.html" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
                     <p class="main-notice__date">2024.04.26</p>
                   </li>
                   <li>
                     <figure class="main-notice__country">
                       <img src="../../assets/images/icon/country_uk.png" alt="uk" />
                     </figure>
-                    <a href="" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
+                    <a href="../cs/notice_details.html" class="main-notice__title">5월 출하 및 골든위크연휴 안내</a>
                     <p class="main-notice__date">2024.04.26</p>
                   </li>
                   <li>
                     <figure class="main-notice__country">
                       <img src="../../assets/images/icon/country_kor.png" alt="kor" />
                     </figure>
-                    <a href="" class="main-notice__title">2024년 5월 카드사별 무이자 및 부분결제 부분결제</a>
+                    <a href="../cs/notice_details.html" class="main-notice__title"
+                      >2024년 5월 카드사별 무이자 및 부분결제 부분결제</a
+                    >
                     <p class="main-notice__date">2024.04.26</p>
                   </li>
                 </ul>
@@ -806,7 +700,7 @@
                   <div class="center__info">
                     <p class="center__title"><b>영국</b>UK</p>
                     <p class="center__region">런던 사무소</p>
-                    <p class="center__time">24.05.08 PM 03:02:11</p>
+                    <p class="center__desc">24.05.08 PM 03:02:11</p>
                   </div>
 
                   <div class="center__status">
@@ -821,7 +715,7 @@
                 </li>
               </ul>
 
-              <div class="modal-schedule modal side-modal">
+              <div class="modal-schedule modal side-modal" style="display: none">
                 <section class="modal__box modal-schedule__box">
                   <div class="modal-schedule__header">
                     <div class="modal-schedule__title">한국 출고 스케줄</div>
@@ -976,7 +870,7 @@
                 <div class="reviews-list">
                   <a href="../community/review_details.html" class="review-box">
                     <div class="review-box__header">
-                      <div class="review-box---">
+                      <div class="review-box-info-wrap">
                         <div class="review__info">
                           <figure class="review__profile img-wrap">
                             <img src="../../assets/images/dummy/user.png" alt="k****" />
@@ -1019,7 +913,7 @@
                   </a>
                   <a href="../community/review_details.html" class="review-box">
                     <div class="review-box__header">
-                      <div class="review-box---">
+                      <div class="review-box-info-wrap">
                         <div class="review__info">
                           <figure class="review__profile img-wrap">
                             <img src="../../assets/images/dummy/user.png" alt="k****" />

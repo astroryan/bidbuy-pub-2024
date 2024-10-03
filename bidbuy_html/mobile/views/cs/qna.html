@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="naver" />
+    <meta name="description" content="웹페이지 설명" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="BIDBUY" />
+    <meta property="og:type" content="website" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 웹페이지 타입(blog, website 등) -->
+    <meta property="og:keywords" content="웹페이지 URL" />
+    <meta property="og:description" content="웹페이지 설명" />
+    <meta property="og:url" content="https://www.naver.com" />
+    <meta property="og:image" content="이미지경로" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="이미지 alt" />
+    <meta property="og:site_name" content="BIDBUY" />
+    <meta name="twitter:site" content="@트위터아이디" />
+    <!-- 웹 사이트의 @username -->
+    <meta name="twitter:url" content="http://~~~~/this.page" />
+    <!-- 웹상 경로(URL). 불필요 get param을 제거하는 편을 추천 -->
+    <meta name="twitter:title" content="naver" />
+    <!-- 트위터: 콘텐츠 제목-->
+    <meta name="twitter:description" content="웹페이지 설명" />
+    <!-- 트위터: 웹페이지 설명 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 트위터: 카드 타입(요약정보, 사진, 비디오) / 카드형식 :  “summary”, “summary_large_image”, “app”, or “player” -->
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+    <!-- 트위터: 표시되는 이미지 / 절대경로 -->
+    <link rel="canonical" href="http://~~~~/this.page" />
+    <!-- 표준 페이지 설정. 검색엔진에서 현재 페이지의 URL을 알려둔다. 같은 페이지이지만, 여러 URL이 있는 경우 설정하면, 표준 페이지의 URL로 검색엔진이 보여준다.
+		SEO를 신경쓴다면 꼭 설정  -->
+
+    <link rel="icon" href="../../assets/images/icon/logo.svg" sizes="32x32" />
+    <link rel="apple-touch-icon" href="이미지경로" />
+    <title>Bidbuy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/libary/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/css/libary/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
+    <script src="../../assets/js/include.js" defer></script>
+    <script src="../../assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <!-- START :: HEADER -->
+      <header id="header" class="simple" data-title="1:1문의"></header>
+      <!-- END :: HEADER -->
+      <!-- START :: MAIN -->
+      <main id="main" class="cs-page qna-page">
+        <!-- 고객센터 DASHBOARD -->
+        <section id="csDashboard" class="cs-dashboard cs-box"></section>
+
+        <div class="inner-width">
+          <!-- 1:1 문의내역-->
+          <section class="cs-qna tabs-container">
+            <h3 class="cs-title">
+              <b>1:1 문의내역</b>
+            </h3>
+            <article class="basic-table">
+              <div class="basic-table__header">
+                <div>문의일</div>
+                <div>국가</div>
+                <div>구분</div>
+                <div>제목</div>
+                <div>상태</div>
+              </div>
+              <div class="basic-table__body">
+                <!-- PUB :: 답변완료시 basic-table__row에 add-answer클래스 추가 -->
+                <!-- 1 -->
+                <a href="../cs/qna_details.html" class="basic-table__row">
+                  <div>2024-06-01</div>
+                  <div>일본</div>
+                  <div><p class="ellipsis-text">배송문의</p></div>
+                  <div class="td-left"><p class="ellipsis-text">경매 상품에 대한 배송문의를 자세히 해주세요.</p></div>
+                  <div class="answer-text">답변준비</div>
+                </a>
+                <!-- 1 -->
+                <a href="../cs/qna_details.html" class="basic-table__row">
+                  <div>2024-06-01</div>
+                  <div>일본</div>
+                  <div><p class="ellipsis-text">배송문의</p></div>
+                  <div class="td-left"><p class="ellipsis-text">경매 상품에 대한 배송문의를 자세히 해주세요.</p></div>
+                  <div class="answer-text">답변준비</div>
+                </a>
+                <!-- 1 -->
+                <a href="../cs/qna_details.html" class="basic-table__row add-answer">
+                  <div>2024-06-01</div>
+                  <div>일본</div>
+                  <div><p class="ellipsis-text">배송문의</p></div>
+                  <div class="td-left">
+                    <p class="ellipsis-text">
+                      경매 상품에 대한 배송문의를 자세히 해주세요.경매 상품에 대한 배송문의를 자세히 해주세요.경매
+                      상품에 대한 배송문의를 자세히 해주세요.경매 상품에 대한 배송문의를 자세히 해주세요.
+                    </p>
+                  </div>
+                  <div class="answer-text">답변완료</div>
+                </a>
+                <!-- 1 -->
+                <a href="../cs/qna_details.html" class="basic-table__row add-answer">
+                  <div>2024-06-01</div>
+                  <div>일본</div>
+                  <div><p class="ellipsis-text">배송문의</p></div>
+                  <div class="td-left"><p class="ellipsis-text">경매 상품에 대한 배송문의를 자세히 해주세요.</p></div>
+                  <div class="answer-text">답변완료</div>
+                </a>
+              </div>
+            </article>
+            <div class="cs-table-utils">
+              <div class="basic-pagination">
+                <button class="first-button" type="button"></button>
+                <button class="prev-button" type="button"></button>
+
+                <div class="basic-pagination__button-wrap">
+                  <button class="page-button" type="button">1</button>
+                  <button class="page-button active" ype="button">2</button>
+                  <button class="page-button" type="button">3</button>
+                  <button class="page-button" type="button">4</button>
+                  <button class="page-button" type="button">5</button>
+                </div>
+
+                <button class="next-button" type="button"></button>
+                <button class="last-button" type="button"></button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- END :: MAIN -->
+      <!-- START :: FOOTER -->
+      <footer id="footer"></footer>
+      <!-- END :: FOOTER -->
+    </div>
+  </body>
+</html>
