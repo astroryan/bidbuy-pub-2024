@@ -828,8 +828,23 @@
     margin-top: 40px;
   }
   & .item-detail-info .tabs {
+    position: sticky;
+    top: 62px;
+    left: 0;
     width: 100%;
     height: 60px;
+    background-color: var(--col_white);
+    z-index: 3;
+  }
+  & .item-detail-info .tabs:before {
+    position: absolute;
+    bottom: calc(100% + 1px);
+    left: 50%;
+    width: calc(100% + 2px);
+    height: 10px;
+    content: "";
+    background-color: var(--col_white);
+    transform: translateX(-50%);
   }
 
   & .item-detail-info .tabs-content > li {

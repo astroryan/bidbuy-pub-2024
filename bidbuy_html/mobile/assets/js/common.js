@@ -80,7 +80,7 @@ const categoryToggle = () => {
 
 // 기본 탭 버튼 클릭 이벤트
 const onClickTab = () => {
-  const tabs = document.querySelectorAll(".tabs > button");
+  const tabs = document.querySelectorAll(".tabs > button:not(.scroll-tab)");
   tabs.forEach((button) => {
     button.addEventListener("click", (e) => {
       const target = e.currentTarget;
@@ -115,6 +115,67 @@ const toggleButton = () => {
       el.classList.toggle("active");
     });
   });
+};
+
+// 탭 버튼 클릭 스크롤 이벤트
+const onClickTabScroll = () => {
+  const tabsContainer = document.querySelector(".scroll-tabs-container");
+  if (!tabsContainer) return;
+  const tabsContentElement = [...tabsContainer.querySelectorAll(".tab-content-list")]; // 배열로 변환
+  const tabs = [...tabsContainer.querySelectorAll(".tabs button")]; // 배열로 변환
+  const headerHeight = document.querySelector("#header").getBoundingClientRect().height;
+  const offsetTop = headerHeight + 68; // 헤더와 탭의 높이
+  let scrollTop = 0;
+
+  // SCROLL EVENT
+  const linksOnScroll = () => {
+    let current = "0"; // 기본값: 0번째 탭 활성화
+    const lastSection = tabsContentElement[tabsContentElement.length - 1]; // 마지막 섹션 참조
+
+    // 스크롤이 문서의 끝에 가까울 때 마지막 섹션 탭 활성화
+    if (scrollTop + window.innerHeight >= document.body.scrollHeight) {
+      current = lastSection.dataset.idx;
+    } else {
+      tabsContentElement.forEach((section) => {
+        if (offsetTop >= section.getBoundingClientRect().top) {
+          current = section.dataset.idx;
+        }
+      });
+    }
+
+    // 현재 탭 업데이트
+    tabs.forEach((tab) => {
+      tab.classList.toggle("active", tab.dataset.idx === current);
+    });
+  };
+
+  // MOVE TO SECTION
+  const moveToSection = (el) => {
+    const idx = el.dataset.idx;
+    tabsContentElement.forEach((section) => {
+      if (section.dataset.idx === idx) {
+        let y = section.getBoundingClientRect().top + scrollTop - offsetTop;
+        window.scrollTo({
+          top: Math.ceil(y),
+          behavior: "smooth",
+        });
+      }
+    });
+  };
+
+  // 탭 클릭 이벤트 추가
+  tabs.forEach((button) => {
+    button.addEventListener("click", (e) => moveToSection(e.target));
+  });
+
+  // Scroll 이벤트 핸들러
+  const scrollHandler = () => {
+    scrollTop = window.scrollY;
+    linksOnScroll(); // 활성 탭 업데이트
+  };
+
+  // Scroll 이벤트 리스너 추가
+  window.addEventListener("scroll", () => requestAnimationFrame(scrollHandler));
 };
 
 // 모달 열기
@@ -625,6 +686,7 @@ window.addEventListener("DOMContentLoaded", () => {
   categoryToggle();
   // 클릭이벤트
   onClickTab();
+  onClickTabScroll();
   toggleButton();
 
   calendar(); // 캘린더
