@@ -124,8 +124,29 @@
                       <div class="basic-input half-input">
                         <input id="" type="text" inputmode="numeric" required />
                       </div>
-                      <button type="button" class="basic-button__light-gray-line">인증하기</button>
+                      <button type="button" class="basic-button__light-gray-line">인증번호 발송</button>
                     </div>
+                  </li>
+                  <li class="info-edit__input-group">
+                    <label for="" class="info-edit__input-title"></label>
+                    <div class="info-edit__input-value">
+                      <div class="basic-input half-input">
+                        <input
+                          id=""
+                          type="text"
+                          inputmode="numeric"
+                          autocomplete="one-time-code"
+                          placeholder="인증번호 입력"
+                          required
+                        />
+                      </div>
+                      <button type="button" class="basic-button__light-gray-line">인증번호 확인</button>
+                    </div>
+                    <!-- PUB :: show 클래스 추가시 텍스트 노출됩니다 -->
+                    <!-- <p class="alert-text show">입력하신 휴대전화번호로 인증번호가 발송 되었습니다.</p> -->
+                    <p class="alert-text show">인증번호 발송이 완료되지 못했습니다. 휴대전화번호를 확인해 주세요.</p>
+                    <!-- <p class="alert-text show">휴대전화번호 인증에 문제가 있습니다. 다시 확인해 주세요.</p> -->
+                    <!-- <p class="alert-text show">인증이 완료 되었습니다.</p> -->
                   </li>
                 </ul>
               </article>
