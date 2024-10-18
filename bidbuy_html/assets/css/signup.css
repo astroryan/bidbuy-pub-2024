@@ -258,6 +258,10 @@
 .signup-page {
   padding: 30px 0 100px;
 
+  & input:read-only {
+    background-color: var(--col_gray_4);
+  }
+
   & .signup-section .basic-input input,
   & .signup-section .basic-select-box select {
     height: 48px;
