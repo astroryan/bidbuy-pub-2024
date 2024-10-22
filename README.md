@@ -96,9 +96,9 @@ community.css
 - pc만 결제영역 sticky 추가
 
 6. 회원가입, 회원정보수정 (+ sns 회원가입)
-   join.html
-   sns.html
-   info_edit.html
+   signup/join.html
+   signup/sns.html
+   mypage/info_edit.html
 
 - 인증하기 -> 인증번호 발송, placeholder text 수정
 - 알림 텍스트 추가
