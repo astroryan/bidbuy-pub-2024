@@ -44,6 +44,8 @@
 
     <!-- JS -->
     <script src="../../assets/js/libary/jquery-3.5.1.js"></script>
+    <script src="../../assets/js/libary/swiper-bundle.min.js" defer></script>
+    <script src="../../assets/js/libary/Sortable.min.js"></script>
     <script src="../../assets/js/include.js" defer></script>
     <script src="../../assets/js/common.js" defer></script>
   </head>
@@ -52,7 +54,7 @@
     <div id="content-wrap">
       <!-- MODAL :: 소셜계정 이메일 중복체크 -->
       <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="social-email-check"></button> -->
-      <div class="modal-social-email-check modal">
+      <div class="modal-social-email-check modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
           <div class="modal__header">
@@ -167,11 +169,22 @@
                     </li>
                     <li class="basic-input with-button">
                       <input type="text" placeholder="휴대전화번호" inputmode="numeric" required />
-                      <a href="#" class="basic-button__light-gray-line">인증하기</a>
+                      <a href="#" class="basic-button__light-gray-line">인증번호 발송</a>
                     </li>
                     <li class="basic-input with-button">
-                      <input type="text" placeholder="인증번호 입력" inputmode="numeric" required />
+                      <input
+                        type="text"
+                        autocomplete="one-time-code"
+                        placeholder="인증번호 입력"
+                        inputmode="numeric"
+                        required
+                      />
                       <button type="button" class="basic-button__light-gray-line">인증번호 확인</button>
+                      <!-- PUB :: show 클래스 추가시 텍스트 노출됩니다 -->
+                      <p class="alert-text show">입력하신 휴대전화번호로 인증번호가 발송 되었습니다.</p>
+                      <!-- <p class="alert-text show">인증번호 발송이 완료되지 못했습니다.<br> 휴대전화번호를 확인해 주세요.</p> -->
+                      <!-- <p class="alert-text show">휴대전화번호 인증에 문제가 있습니다. 다시 확인해 주세요.</p> -->
+                      <!-- <p class="alert-text show">인증이 완료 되었습니다.</p> -->
                     </li>
                   </ul>
                 </li>
@@ -251,8 +264,10 @@
                       </ul>
                     </li>
                     <li class="basic-input with-button">
-                      <input type="text" placeholder="추천인 등록 혜택" />
+                      <input type="text" placeholder="추천인의 비드바이코리아 아이디를 입력 하세요" />
                       <a href="#" class="basic-button__light-gray-line">아이디 검색</a>
+                      <!-- PUB :: show 클래스 추가시 텍스트 노출됩니다 -->
+                      <p class="alert-text show">추천인 등록이 완료 되었습니다.</p>
                     </li>
                     <li class="signup-desc">
                       추천인 등록시 회원님과 추천인에게<br />

@@ -50,12 +50,56 @@
 | "community" | global_news.html                  | 커뮤니티 > 비바특파원 - 리스트                                           | 100% ( 240927 ) |             |
 | "community" | global_news_details.html          | 커뮤니티 > 비바특파원 - 상세                                             | 100% ( 240927 ) | ㅇ          |
 
-# JS
-
-- 사용된 js
+# 사용된 라이브러리 JS
 
 1. swiper
 2. rangeSlide
 3. fullcalendar, popper, tooltip
 4. Sortable
 5. jquery
+
+# 241019 퍼블리싱 수정사항 반영
+
+1. 경매, 구매 상세 페이지
+   actions/index.html
+   purchases/index.html
+
+<!-- js -->
+
+common.js
+
+<!-- css -->
+
+items.css
+
+- 탭 기능 수정 (탭 -> 스크롤 앵커)
+- 구매대행 텍스트 수정 및 입찰내역 탭 삭제
+
+2. 고객센터 > 공지사항 상세
+   cs/notice_details.html
+
+<!-- css -->
+
+common.css
+community.css
+
+- 목록버튼 추가 및 css 정리
+
+3. 주문결제완료 상세화면
+   order-confirmation.html
+
+- a태그 추가
+
+4. 1차 결제페이지
+   order.html
+
+- pc만 결제영역 sticky 추가
+
+6. 회원가입, 회원정보수정 (+ sns 회원가입)
+   signup/join.html
+   signup/sns.html
+   mypage/info_edit.html
+
+- 인증하기 -> 인증번호 발송, placeholder text 수정
+- 알림 텍스트 추가
+- 추천인등록 텍스트 추가 및 placeholder text 수정

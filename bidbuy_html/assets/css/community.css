@@ -548,9 +548,7 @@
     align-items: center;
     margin-left: auto;
   }
-  & .details-bottom-wrap {
-    justify-content: flex-end;
-  }
+
   & .details-bottom-wrap .list-button {
     color: var(--col_gray_5);
   }

@@ -455,6 +455,7 @@ input[type="date"]:valid::before {
   flex: 1;
   font-weight: 700;
   color: var(--col_gray_6);
+  background-color: var(--col_white);
 }
 
 .tabs button + button {
@@ -2669,6 +2670,10 @@ a.guide-content__accordion-button .guide-content__title:after {
   justify-content: space-between;
   margin-top: 30px;
 }
+
+.details-page .details-bottom-wrap:has(a:only-child) {
+  justify-content: flex-end;
+}
 .details-page .details-bottom__button-wrap {
   display: flex;
   align-items: center;
@@ -2895,4 +2900,28 @@ a.guide-content__accordion-button .guide-content__title:after {
 .footer__info-bottom {
   font-size: 11px;
   color: #999999;
+}
+.basic-input:has(.alert-text) {
+  position: relative;
+  padding-bottom: 24px;
+}
+.info-edit__input-group:has(.alert-text) {
+  position: relative;
+  padding-bottom: 24px;
+}
+.alert-text {
+  position: absolute;
+  bottom: 0;
+  left: 3px;
+  width: 100%;
+  display: none;
+  color: var(--mainBlue);
+  font-weight: 600;
+}
+.alert-text.show {
+  display: block;
+  font-size: 12px;
+}
+.info-edit__input-group .alert-text {
+  left: 120px;
 }

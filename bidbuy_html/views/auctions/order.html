@@ -1138,74 +1138,76 @@
                 </ul>
               </section>
               <!-- 1차 결제비용 내역 -->
-              <section class="payment-summary">
-                <div class="payment-summary__header">
-                  <p>1차 결제비용 내역</p>
-                  <button type="button" class="refresh-button">새로고침</button>
-                </div>
-                <div class="payment-summary__details">
-                  <ul>
-                    <li class="payment-item">
-                      <span class="payment-label"><b>(+) 상품가</b></span>
-                      <span class="payment-value"><b>¥ 92,000</b></span>
-                    </li>
-                    <li class="payment-item">
-                      <span class="payment-label">(+) 대행수수료</span>
-                      <span class="payment-value">¥ 2,400</span>
-                    </li>
-                    <li class="payment-item">
-                      <span class="payment-label">(+) 송금수수료</span>
-                      <span class="payment-value">¥ 300</span>
-                    </li>
-                    <li class="payment-item">
-                      <span class="payment-label">(+) 국제 운송료</span>
-                      <span class="payment-value">¥ 1,400</span>
-                    </li>
-                    <li class="payment-item">
-                      <span class="payment-label">(+) 현재 배송료</span>
-                      <span class="payment-value">미정 (2차 결제 시)</span>
-                    </li>
-                    <li class="payment-item">
-                      <span class="payment-label">(+) 현지 세금 (소비세)</span>
-                      <span class="payment-value">미정 (2차 결제 시)</span>
-                    </li>
-                    <li class="payment-item">
-                      <span class="payment-label">(-) 쿠폰 할인 (대행수수료쿠폰 1건)</span>
-                      <span class="payment-value">¥ 250</span>
-                    </li>
-                    <li class="payment-item">
-                      <span class="payment-label"><b>주문 총액</b></span>
-                      <span class="payment-value"><b>¥ 162,000</b></span>
-                    </li>
-                  </ul>
-                  <p class="exchange-rate">환율 (일본) <b>1 JPY</b> > (한국)<b> 9.1 원</b></p>
-                  <p class="payment-total-amount">
-                    <b>1차 결제 총액</b>
-                    <strong>￦ 910,919</strong>
-                  </p>
-                </div>
-              </section>
+              <div class="payment-sticky">
+                <section class="payment-summary">
+                  <div class="payment-summary__header">
+                    <p>1차 결제비용 내역</p>
+                    <button type="button" class="refresh-button">새로고침</button>
+                  </div>
+                  <div class="payment-summary__details">
+                    <ul>
+                      <li class="payment-item">
+                        <span class="payment-label"><b>(+) 상품가</b></span>
+                        <span class="payment-value"><b>¥ 92,000</b></span>
+                      </li>
+                      <li class="payment-item">
+                        <span class="payment-label">(+) 대행수수료</span>
+                        <span class="payment-value">¥ 2,400</span>
+                      </li>
+                      <li class="payment-item">
+                        <span class="payment-label">(+) 송금수수료</span>
+                        <span class="payment-value">¥ 300</span>
+                      </li>
+                      <li class="payment-item">
+                        <span class="payment-label">(+) 국제 운송료</span>
+                        <span class="payment-value">¥ 1,400</span>
+                      </li>
+                      <li class="payment-item">
+                        <span class="payment-label">(+) 현재 배송료</span>
+                        <span class="payment-value">미정 (2차 결제 시)</span>
+                      </li>
+                      <li class="payment-item">
+                        <span class="payment-label">(+) 현지 세금 (소비세)</span>
+                        <span class="payment-value">미정 (2차 결제 시)</span>
+                      </li>
+                      <li class="payment-item">
+                        <span class="payment-label">(-) 쿠폰 할인 (대행수수료쿠폰 1건)</span>
+                        <span class="payment-value">¥ 250</span>
+                      </li>
+                      <li class="payment-item">
+                        <span class="payment-label"><b>주문 총액</b></span>
+                        <span class="payment-value"><b>¥ 162,000</b></span>
+                      </li>
+                    </ul>
+                    <p class="exchange-rate">환율 (일본) <b>1 JPY</b> > (한국)<b> 9.1 원</b></p>
+                    <p class="payment-total-amount">
+                      <b>1차 결제 총액</b>
+                      <strong>￦ 910,919</strong>
+                    </p>
+                  </div>
+                </section>
 
-              <div class="order-utils">
-                <div class="basic-check-box__squire gray">
-                  <input type="checkbox" name="" id="1eeee5" required />
-                  <label for="1eeee5">
-                    <span class="basic-check-box__squire-icon black"></span> (필수) 주문결제 안내 사항 확인
-                    하였습니다.</label
-                  >
+                <div class="order-utils">
+                  <div class="basic-check-box__squire gray">
+                    <input type="checkbox" name="" id="1eeee5" required />
+                    <label for="1eeee5">
+                      <span class="basic-check-box__squire-icon black"></span> (필수) 주문결제 안내 사항 확인
+                      하였습니다.</label
+                    >
+                  </div>
+                  <div class="basic-check-box__squire gray">
+                    <input type="checkbox" name="" id="1eeee5" required />
+                    <label for="1eeee5">
+                      <span class="basic-check-box__squire-icon black"></span> (필수) 해당 구입 물품은 민간 사용
+                      용도이며 군사 목적 용도로 사용되지 않습니다.</label
+                    >
+                  </div>
                 </div>
-                <div class="basic-check-box__squire gray">
-                  <input type="checkbox" name="" id="1eeee5" required />
-                  <label for="1eeee5">
-                    <span class="basic-check-box__squire-icon black"></span> (필수) 해당 구입 물품은 민간 사용 용도이며
-                    군사 목적 용도로 사용되지 않습니다.</label
-                  >
-                </div>
-              </div>
 
-              <div class="order-button-wrap">
-                <button onclick="history.back();" class="basic-button__gray-line">주문취소</button>
-                <button type="button" class="basic-button__blue">1차 결제하기</button>
+                <div class="order-button-wrap">
+                  <button onclick="history.back();" class="basic-button__gray-line">주문취소</button>
+                  <button type="button" class="basic-button__blue">1차 결제하기</button>
+                </div>
               </div>
             </article>
           </section>
