@@ -104,3 +104,14 @@ community.css
 - 인증하기 -> 인증번호 발송, placeholder text 수정
 - 알림 텍스트 추가
 - 추천인등록 텍스트 추가 및 placeholder text 수정
+
+# 241024 2차결제 페이지 추가
+
+1. 파일명 변경
+   > order.html -> order_initial.html
+2. 파일명 생성
+   > order_final.html
+3. 연결된 링크 모두 수정
+   > cart/index.html
+   > mypage/payment_pending.html
+   > mypage/order.html
