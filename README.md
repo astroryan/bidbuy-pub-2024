@@ -10,7 +10,8 @@
 | "list"      | system_category_list.html         | 시스템 카테고리 목록 화면                                                | 100% ()         | ㅇ          |
 | "auctions"  | index.html                        | 경매대행상세                                                             | 100% ( 240919 ) | ㅇ          |
 | "auctions"  | complete.html                     | 경매대행상세 > 입찰완료                                                  | 100% ( 240920 ) | ㅇ          |
-| "auctions"  | order.html                        | 경매대행상세 > 1차결제                                                   | 100% ( 240921 ) | ㅇ          |
+| "auctions"  | order_initial.html                | 경매대행상세 > 1차결제                                                   | 100% ( 240921 ) | ㅇ          |
+| "auctions"  | order_final.html                  | 경매대행상세 > 2차결제                                                   | 100% ( 240921 ) | ㅇ          |
 | "auctions"  | order-confirmation.html           | 경매대행상세 > 주문결제완료 상세화면                                     | 100% ( 240921 ) | ㅇ          |
 | "purchases" | index.html                        | 구매대행상세                                                             | 100% ( 240919 ) | ㅇ          |
 | "purchases" | order.html                        | 구매대행상세 > 구매대행신청                                              | 100% ( 240919 ) | ㅇ          |

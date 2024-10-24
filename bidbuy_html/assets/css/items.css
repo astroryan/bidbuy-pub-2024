@@ -2299,7 +2299,6 @@
     line-height: 1.69;
     letter-spacing: -0.26px;
     color: var(--col_gray_5);
-    margin-left: 8px;
     text-decoration: underline;
   }
 
@@ -2620,7 +2619,11 @@
     transform: translateX(-50%);
   }
   & .exchange-rate b {
+    font-weight: 500;
     color: var(--col_black_1);
+  }
+  & .exchange-rate strong {
+    font-weight: 600;
   }
   & .payment-total-amount {
     display: flex;
