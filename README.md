@@ -115,3 +115,11 @@ community.css
    > cart/index.html
    > mypage/payment_pending.html
    > mypage/order.html
+
+# 241025 원문보기 추가
+
+1. 수정된 파일
+   > actions/index.html
+   > purchases/index.html
+
+> items.css
