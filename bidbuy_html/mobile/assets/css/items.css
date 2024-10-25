@@ -2192,8 +2192,12 @@
   & .order__coupon-wrap ~ .order__info-desc.order__list-style {
     padding-left: 40px;
   }
+  & .order__info-desc.order__list-style > li {
+    word-break: keep-all;
+    letter-spacing: -0.02em;
+  }
   & .order__info-desc.order__list-style > li + li {
-    margin-top: 20px;
+    margin-top: 3px;
   }
   & .order__coupon-wrap label {
     font-size: 14px;
@@ -2236,10 +2240,10 @@
   }
 
   & .order__list-style {
-    list-style-type: "-  ";
+    list-style-type: "- ";
     list-style-position: inside;
-    text-indent: -1em;
-    padding-left: 1em;
+    text-indent: -0.7em;
+    padding-left: 0.7em;
   }
 
   & .order__balance {
@@ -2570,6 +2574,13 @@
   & .exchange-rate b {
     font-weight: 400;
     color: var(--col_black_1);
+  }
+  & .exchange-rate b {
+    font-weight: 500;
+    color: var(--col_black_1);
+  }
+  & .exchange-rate strong {
+    font-weight: 600;
   }
   & .payment-total-amount {
     display: flex;

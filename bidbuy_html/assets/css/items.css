@@ -58,10 +58,14 @@
     justify-content: space-between;
     margin-top: 40px;
   }
-  & .interest-num {
+  & .detail-item__top-utils {
     position: absolute;
     top: -19px;
     right: 0;
+    display: flex;
+    gap: 10px;
+  }
+  & .interest-num {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2299,7 +2303,6 @@
     line-height: 1.69;
     letter-spacing: -0.26px;
     color: var(--col_gray_5);
-    margin-left: 8px;
     text-decoration: underline;
   }
 
@@ -2620,7 +2623,11 @@
     transform: translateX(-50%);
   }
   & .exchange-rate b {
+    font-weight: 500;
     color: var(--col_black_1);
+  }
+  & .exchange-rate strong {
+    font-weight: 600;
   }
   & .payment-total-amount {
     display: flex;

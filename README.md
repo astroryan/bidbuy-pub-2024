@@ -10,7 +10,8 @@
 | "list"      | system_category_list.html         | 시스템 카테고리 목록 화면                                                | 100% ()         | ㅇ          |
 | "auctions"  | index.html                        | 경매대행상세                                                             | 100% ( 240919 ) | ㅇ          |
 | "auctions"  | complete.html                     | 경매대행상세 > 입찰완료                                                  | 100% ( 240920 ) | ㅇ          |
-| "auctions"  | order.html                        | 경매대행상세 > 1차결제                                                   | 100% ( 240921 ) | ㅇ          |
+| "auctions"  | order_initial.html                | 경매대행상세 > 1차결제                                                   | 100% ( 240921 ) | ㅇ          |
+| "auctions"  | order_final.html                  | 경매대행상세 > 2차결제                                                   | 100% ( 241024 ) | ㅇ          |
 | "auctions"  | order-confirmation.html           | 경매대행상세 > 주문결제완료 상세화면                                     | 100% ( 240921 ) | ㅇ          |
 | "purchases" | index.html                        | 구매대행상세                                                             | 100% ( 240919 ) | ㅇ          |
 | "purchases" | order.html                        | 구매대행상세 > 구매대행신청                                              | 100% ( 240919 ) | ㅇ          |
@@ -103,3 +104,22 @@ community.css
 - 인증하기 -> 인증번호 발송, placeholder text 수정
 - 알림 텍스트 추가
 - 추천인등록 텍스트 추가 및 placeholder text 수정
+
+# 241024 2차결제 페이지 추가
+
+1. 파일명 변경
+   > order.html -> order_initial.html
+2. 파일명 생성
+   > order_final.html
+3. 연결된 링크 모두 수정
+   > cart/index.html
+   > mypage/payment_pending.html
+   > mypage/order.html
+
+# 241025 원문보기 추가
+
+1. 수정된 파일
+   > actions/index.html
+   > purchases/index.html
+
+> items.css
