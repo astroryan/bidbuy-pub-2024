@@ -52,110 +52,9 @@
 
   <body>
     <div id="content-wrap">
-      <!-- MODAL :: 배송지 선택  -->
-      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="address"></button> -->
-      <div class="modal-address modal" style="display: none">
-        <div class="modal__dim" onclick="closeModal(this)"></div>
-        <section class="modal__box">
-          <div class="modal__header">
-            <div class="modal__title">배송지 선택</div>
-            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
-              <span class="blind">모달 닫기</span>
-            </button>
-          </div>
-          <div class="modal__body">
-            <div class="modal__content">
-              <!-- 1. 등록된 배송지 없을때 -->
-              <!-- <article class="basic-table">
-                <div class="basic-table__header">
-                  <div> 배송지명 </div>
-                  <div> 수취인명 </div>
-                  <div> 주소 </div>
-                  <div> 휴대폰/연락처 </div>
-                  <div>
-                    개인통관고유부호<br />
-                    (사업자등록번호)
-                  </div>
-                  <div></div>
-                </div>
-                <div class="basic-table__empty-text">등록된 배송지가 없습니다.</div>
-              </article> -->
-              <!-- 2. 등록된 배송지 있을때 -->
-              <article class="basic-table">
-                <div class="basic-table__header">
-                  <div>배송지명</div>
-                  <div>수취인명</div>
-                  <div>주소</div>
-                  <div>휴대폰/연락처</div>
-                  <div>
-                    개인통관고유부호<br />
-                    (사업자등록번호)
-                  </div>
-                  <div></div>
-                </div>
-                <div class="basic-table__body">
-                  <!-- PUB:: 기본배송지일 경우 main-address 클래스 추가 -->
-                  <div class="basic-table__row main-address">
-                    <div>서울집</div>
-                    <div>박비드</div>
-                    <div class="td-left">04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호</div>
-                    <div>010-9999-8888</div>
-                    <div>P1131245r2</div>
-                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
-                  </div>
-                  <div class="basic-table__row">
-                    <div>서울집</div>
-                    <div>박비드</div>
-                    <div class="td-left">
-                      04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호동산빌라 201동 3104호
-                    </div>
-                    <div>010-9999-8888</div>
-                    <div>P1131245r2</div>
-                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
-                  </div>
-                  <div class="basic-table__row">
-                    <div>경기도</div>
-                    <div>박비드</div>
-                    <div class="td-left">04530 경기도 성남시 처인구 강송로33</div>
-                    <div>010-9999-8888</div>
-                    <div>P1131245r2</div>
-                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
-                  </div>
-                  <div class="basic-table__row">
-                    <div>경기도</div>
-                    <div>박비드</div>
-                    <div class="td-left">04530 경기도 성남시 처인구 강송로33 동산빌라 201동 3104호</div>
-                    <div>010-9999-8888</div>
-                    <div>P1131245r2</div>
-                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="modal-bottom-wrap">
-              <a href="" class="basic-button__black-line">배송지관리</a>
-              <div class="basic-pagination">
-                <button class="first-button" type="button"></button>
-                <button class="prev-button" type="button"></button>
-
-                <div class="basic-pagination__button-wrap">
-                  <button class="page-button" type="button">1</button>
-                  <button class="page-button active" ype="button">2</button>
-                  <button class="page-button" type="button">3</button>
-                  <button class="page-button" type="button">4</button>
-                  <button class="page-button" type="button">5</button>
-                </div>
-
-                <button class="next-button" type="button"></button>
-                <button class="last-button" type="button"></button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <!-- MODAL :: 보유쿠폰내역  -->
+      <!-- MODAL :: 국제 배송료 쿠폰 내역  -->
       <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="coupon-list"></button> -->
-      <div class="modal-coupon-list modal" style="display: none">
+      <div class="modal-coupon-list modal-coupon_01 modal" style="display: none">
         <div class="modal__dim" onclick="closeModal(this)"></div>
         <section class="modal__box">
           <div class="modal__header">
@@ -190,7 +89,7 @@
                   <div class="basic-table__row">
                     <div>01030230423</div>
                     <div class="td-left">
-                      대행수수료 할인<br />
+                      국제배송료 할인<br />
                       경매 입찰 조건 : 동시입찰 3건, 결제대기 2건
                     </div>
                     <div>￦ 2,000</div>
@@ -200,7 +99,86 @@
                   <div class="basic-table__row">
                     <div>01030230423</div>
                     <div class="td-left">
-                      대행수수료 할인<br />
+                      국제배송료 할인<br />
+                      경매 입찰 조건 : 동시입찰 3건, 결제대기 2건
+                    </div>
+                    <div>￦ 2,000</div>
+                    <div>2024-06-01 ~ 2024-06-30</div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="modal-bottom-wrap">
+              <a href="" class="basic-button__black-line">쿠폰내역관리</a>
+              <!-- <div class="basic-pagination">
+                <button class="first-button" type="button"></button>
+                <button class="prev-button" type="button"></button>
+
+                <div class="basic-pagination__button-wrap">
+                  <button class="page-button" type="button">1</button>
+                  <button class="page-button active" ype="button">2</button>
+                  <button class="page-button" type="button">3</button>
+                  <button class="page-button" type="button">4</button>
+                  <button class="page-button" type="button">5</button>
+                </div>
+
+                <button class="next-button" type="button"></button>
+                <button class="last-button" type="button"></button>
+              </div> -->
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- MODAL :: 보관료 쿠폰 내역  -->
+      <!-- <button class="modal_button" type="button" onclick="openModal(this, event)" data-modal="coupon-list"></button> -->
+      <div class="modal-coupon-list modal-coupon_02 modal" style="display: none">
+        <div class="modal__dim" onclick="closeModal(this)"></div>
+        <section class="modal__box">
+          <div class="modal__header">
+            <div class="modal__title">보유쿠폰내역</div>
+            <button class="modal__close-button white" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="modal__content">
+              <!-- 1. 등록된 쿠폰이 없을때 -->
+              <!-- <article class="basic-table">
+                <div class="basic-table__header">
+                  <div> 쿠폰코드 </div>
+                  <div> 쿠폰사용범위 및 혜택 </div>
+                  <div> 할인금액 </div>
+                  <div> 사용기한 </div>
+                  <div> </div>
+                </div>
+                <div class="basic-table__empty-text">등록된 쿠폰이 없습니다.</div>
+              </article> -->
+              <!-- 2. 등록된 쿠폰이 있을때 -->
+              <article class="basic-table">
+                <div class="basic-table__header">
+                  <div>쿠폰코드</div>
+                  <div>쿠폰사용범위 및 혜택</div>
+                  <div>할인금액</div>
+                  <div>사용기한</div>
+                  <div></div>
+                </div>
+                <div class="basic-table__body">
+                  <div class="basic-table__row">
+                    <div>01030230423</div>
+                    <div class="td-left">
+                      보관료 할인<br />
+                      경매 입찰 조건 : 동시입찰 3건, 결제대기 2건
+                    </div>
+                    <div>￦ 2,000</div>
+                    <div>2024-06-01 ~ 2024-06-30</div>
+                    <div><button type="button" class="basic-button__light-gray-line">선택</button></div>
+                  </div>
+                  <div class="basic-table__row">
+                    <div>01030230423</div>
+                    <div class="td-left">
+                      보관료 할인<br />
                       경매 입찰 조건 : 동시입찰 3건, 결제대기 2건
                     </div>
                     <div>￦ 2,000</div>
@@ -277,93 +255,35 @@
             </ol>
           </section>
           <section class="order__container">
-            <!-- 주문자 정보, 수취인 정보, 쿠폰 및 정액권 사용, 결제 정보, 주문·결제 동의 사항   -->
+            <!-- 수취인 정보, 국제배송료 및 보관료 쿠폰, 결제 정보, 주문·결제 동의 사항   -->
             <article class="order__left-container">
               <ul class="order__form">
-                <!-- 주문자 정보 -->
-                <li class="order-list">
-                  <h3 class="order-title">
-                    <b>주문자 정보</b><a href="../mypage/info.html" class="order-title__sub">회원정보수정</a>
-                  </h3>
-                  <article class="order-list-box">
-                    <div class="order__input-group">
-                      <label for="name">주문자 성명</label>
-                      <div class="basic-input short-input">
-                        <input id="name" type="text" placeholder="회원명" required />
-                      </div>
-                    </div>
-                    <div class="order__input-group">
-                      <label for="address">주문자 주소</label>
-                      <div class="basic-input">
-                        <input id="address" type="text" placeholder="" required />
-                      </div>
-                    </div>
-                  </article>
-                </li>
-
                 <!-- 수취인 정보 -->
                 <li class="order-list">
                   <h3 class="order-title">
                     <b>수취인 정보</b>
-                    <span class="order-title__left-cont">
-                      <div class="basic-check-box__squire gray">
-                        <input type="checkbox" name="" id="same" />
-                        <label for="same"> <span class="basic-check-box__squire-icon black"></span>주문자와 동일</label>
-                      </div>
-                      <button
-                        type="button"
-                        class="modal_button order-title__sub"
-                        onclick="openModal(this, event)"
-                        data-modal="address"
-                      >
-                        배송지 선택
-                      </button>
-                    </span>
                   </h3>
                   <article class="order-list-box">
                     <div class="order__input-group">
                       <label for="name">수취인 성명</label>
-                      <div class="basic-input short-input">
-                        <input id="name" type="text" placeholder="5자리 이내만 가능 합니다." required />
-                      </div>
-                    </div>
-                    <div class="order__input-group">
-                      <label for="address">수령 주소</label>
-                      <div class="basic-input short-input">
-                        <input id="address" type="text" placeholder="우편번호" readonly required />
-                        <a href="" class="basic-button__light-gray-line search-address-button">우편번호검색</a>
-                      </div>
-                    </div>
-                    <div class="order__input-group small-margin">
-                      <div class="basic-input mid-input">
-                        <input id="address" type="text" placeholder="" required />
-                      </div>
-                    </div>
-                    <div class="order__input-group small-margin add-checkbox">
-                      <div class="basic-input mid-input">
-                        <input id="address" type="text" placeholder="" />
-                        <div class="basic-check-box__squire gray">
-                          <input type="checkbox" name="" id="default-addr" />
-                          <label for="default-addr">
-                            <span class="basic-check-box__squire-icon black"></span>기본배송지로 지정</label
-                          >
-                        </div>
+                      <div class="basic-input short-input disabled">
+                        <input id="name" type="text" placeholder="5자리 이내만 가능 합니다." required disabled />
                       </div>
                     </div>
 
                     <div class="order__input-group">
                       <label for="num">휴대전화번호</label>
-                      <div class="order__input-number">
+                      <div class="order__input-number disabled">
                         <div class="basic-input">
-                          <input id="num" type="text" placeholder="" inputmode="numeric" required />
+                          <input id="num" type="text" placeholder="" inputmode="numeric" required disabled />
                         </div>
                         <span>-</span>
                         <div class="basic-input">
-                          <input id="num" type="text" placeholder="" inputmode="numeric" required />
+                          <input id="num" type="text" placeholder="" inputmode="numeric" required disabled />
                         </div>
                         <span>-</span>
                         <div class="basic-input">
-                          <input id="num" type="text" placeholder="" inputmode="numeric" required />
+                          <input id="num" type="text" placeholder="" inputmode="numeric" required disabled />
                         </div>
                         <p class="order-text-gray">
                           ※ 개인통관고유부호 발급시 기재한 전화번호 입력! (불일치시 통관 지연)
@@ -372,8 +292,8 @@
                     </div>
                     <div class="order__input-group">
                       <label for="address">개인통관고유부호 (사업자등록번호)</label>
-                      <div class="basic-input short-input">
-                        <input id="text" type="text" placeholder="" required />
+                      <div class="basic-input short-input disabled">
+                        <input id="text" type="text" placeholder="" required disabled />
                         <a href="" class="basic-button__light-gray-line clearance-number-button"
                           >개인통관고유부호 발급방법</a
                         >
@@ -381,22 +301,22 @@
                     </div>
                     <div class="order__input-group">
                       <p class="clearance-desc">
-                        ※ 개인통관고유부호와 실명 미일치로 과태료 발생시 과태료 청구합니다.<br />
-                        ※ 판매목적일 경우 반드시 사업자등록번호를 입력 바랍니다. 입력 예) 120-06-0000<br />
-                        ※ 개인의 자가사용목적일 경우엔 개인통관고유부호를 입력 바랍니다. 입력 예) P1234567890000
+                        ※ 개인통관고유부호와 실명 미일치로 과태료 발생시 과태료 청구합니다.<br />
+                        ※ 판매목적일 경우 반드시 사업자등록번호를 입력 바랍니다. 입력 예) 120-06-0000<br />
+                        ※ 개인의 자가사용목적일 경우엔 개인통관고유부호를 입력 바랍니다. 입력 예) P1234567890000
                       </p>
                     </div>
                   </article>
                 </li>
 
-                <!-- 쿠폰 및 정액권 사용 -->
+                <!-- 국제배송료 및 보관료 쿠폰 -->
                 <li class="order-list">
-                  <h3 class="order-title"><b>쿠폰 및 정액권 사용</b></h3>
+                  <h3 class="order-title"><b>국제배송료 및 보관료 쿠폰</b></h3>
                   <article class="order-list-box">
-                    <!-- 대형수수료 할인쿠폰 -->
+                    <!-- 국제배송료 쿠폰 -->
                     <div class="order__table-group">
                       <div class="order__selection">
-                        <p class="order__title">대형수수료 할인쿠폰</p>
+                        <p class="order__title">국제배송료 쿠폰</p>
                       </div>
 
                       <div class="order__info-area">
@@ -410,46 +330,41 @@
                             type="button"
                             class="modal_button order__coupon-link"
                             onclick="openModal(this, event)"
-                            data-modal="coupon-list"
+                            data-modal="coupon_01"
                           >
                             쿠폰내역보기
                           </button>
                         </div>
                         <p class="order__info-desc">
-                          ※ 쿠폰의 사용가능 금액보다 대행수수료가 적을 경우, 남은 차액은 환불 되지 않습니다.
+                          ※ 쿠폰의 사용가능 금액보다 국제배송료가 적을 경우, 남은 차액은 환불 되지 않습니다.
                         </p>
                       </div>
                     </div>
-                    <!-- 정액권 (1개월) -->
-                    <div class="order__table-group ticket-group">
+                    <!-- 보관료 쿠폰 -->
+                    <div class="order__table-group">
                       <div class="order__selection">
-                        <p class="order__title">정액권 (1개월)</p>
+                        <p class="order__title">보관료 쿠폰</p>
                       </div>
 
                       <div class="order__info-area">
                         <div class="basic-check-box__squire gray order__coupon-wrap">
-                          <input type="checkbox" name="" id="same" />
-                          <label for="same">
-                            <span class="basic-check-box__squire-icon black"></span>정액권 사용<small
-                              >(보유 ￦300,000권 / 10회 / 5일남음)</small
-                            ></label
+                          <input type="checkbox" name="" id="abscd" />
+                          <label for="abscd">
+                            <span class="basic-check-box__squire-icon black"></span>할인쿠폰 사용 (사용가능 쿠폰 :
+                            4매)</label
                           >
-                          <button type="button" class="order__coupon-link toggle-button">상세보기</button>
+                          <button
+                            type="button"
+                            class="modal_button order__coupon-link"
+                            onclick="openModal(this, event)"
+                            data-modal="coupon_02"
+                          >
+                            쿠폰내역보기
+                          </button>
                         </div>
-                        <ul class="order__info-desc order__list-style">
-                          <li>
-                            상품의 구입금액에 상관없이 30만원으로 구매일로부터 <br />
-                            1개월간 총 50회의 경매, 구매대행 이용 시 대행수수료 정액권 <br />
-                            ( 단,낙찰가/구입가가 100,000엔/1,000달러/1,000파운드로 이용에 제한이 되십니다.)
-                          </li>
-                          <li>본 상품권은 구매 이후 환불 되지 않습니다.</li>
-                          <li>50회 미만 사용시에도 차액은 환불 되지 않으니 이점 유의 하시고 구매하시기 바랍니다.</li>
-                          <li>유효기간은 구입일로 부터 1개월이며, 유효 기간이 지난 후에는 소멸됩니다.</li>
-                          <li>정액권 구입은 1개월간 1회로 제한됩니다.</li>
-                        </ul>
-                        <a href="../mypage/management.html" class="basic-button__light-gray-line buy-ticket-button"
-                          >정액권 구매하기</a
-                        >
+                        <p class="order__info-desc">
+                          ※ 쿠폰의 사용가능 금액보다 보관료가 적을 경우, 남은 차액은 환불 되지 않습니다.
+                        </p>
                       </div>
                     </div>
                   </article>
@@ -480,12 +395,12 @@
                           <div class="basic-input">
                             <input id="deposit" type="number" placeholder="0" inputmode="numeric" />
                           </div>
-                          <!-- ???? -->
                           <button type="button" class="order__check-deposit">최근 예치금 조회</button>
                         </div>
                         <p class="order__deposit-desc">* 예치금 부족 시 예치금 충전 후 결제해 주세요.</p>
                       </div>
                     </div>
+
                     <!-- 결제수단 선택 -->
                     <div class="order__table-group">
                       <div class="order__selection">
@@ -497,12 +412,84 @@
                             <input type="radio" name="payment" id="card" checked />
                             <label for="card">카드결제</label>
                           </div>
-                          <div class="payment-radio-tab">
+                          <div class="payment-radio-tab cash-tab">
                             <input type="radio" name="payment" id="cash" />
                             <label for="cash">무통장입금(가상계좌)</label>
                           </div>
                         </div>
                         <ul class="payment-tab-contents"></ul>
+                      </div>
+                    </div>
+                    <!-- 현금영수증 신청 -->
+                    <div class="order__table-group cash-receipt" style="display: none">
+                      <div class="order__selection">
+                        <p class="order__title">현금영수증 신청</p>
+                      </div>
+                      <div class="order__info-area">
+                        <div class="order__cash-receipt-check-wrap">
+                          <p>
+                            현금영수증 소득공제 혜택을 위해 본 거래 정보를 국세청에 통보합니다.<br />
+                            현금영수증 발급 신청을 하시겠습니까? 
+                          </p>
+                          <div class="order__cash-receipt-check">
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt_check" id="receipt_check_1" />
+                              <label for="receipt_check_1"><span class="radio-check-button-icon"></span>예</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt_check" id="receipt_check_2" />
+                              <label for="receipt_check_2"><span class="radio-check-button-icon"></span>아니요</label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="order__cash-receipt-wrap">
+                          <div class="order__cash-receipt">
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt" id="receipt1" checked />
+                              <label for="receipt1"><span class="radio-check-button-icon"></span>개인소득공제</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt" id="receipt12" />
+                              <label for="receipt12"
+                                ><span class="radio-check-button-icon"></span>사업자 지출증빙</label
+                              >
+                            </div>
+                          </div>
+                     
+                        <ul class="payment-tab-contents">
+                          <li class="payment-tab-contents__list">
+                            <div class="order__input-group">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option>휴대폰 번호로 발급</option>
+                                  <option>현금영수증카드번호</option>
+                                </select>
+                              </div>
+                              <div class="basic-input">
+                                <input id="text" type="number" inputmode="tel" placeholder="" />
+                              </div>
+                            </div>
+                            <p class="order__deposit-desc">
+                              ※ 입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.
+                            </p>
+                          </li>
+                          <li class="payment-tab-contents__list">
+                            <div class="order__input-group">
+                              <div class="basic-select-box gray">
+                                <select name="" id="" required>
+                                  <option>사업자등록번호</option>
+                                </select>
+                              </div>
+                              <div class="basic-input">
+                                <input id="text" type="number" inputmode="numeric" placeholder="" />
+                              </div>
+                            </div>
+                            <p class="order__deposit-desc">
+                              ※ 입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.
+                            </p>
+                          </li>
+                        </ul>   </div>
                       </div>
                     </div>
                   </article>
@@ -684,7 +671,7 @@
                         <span class="payment-value">¥ 300</span>
                       </li>
                       <li class="payment-item">
-                        <span class="payment-label">(-) 쿠폰 할인 (대행수수료쿠폰 1건)</span>
+                        <span class="payment-label">(-) 쿠폰 할인 (국제배송료쿠폰 1건)</span>
                         <span class="payment-value">¥ 250</span>
                       </li>
                       <li class="payment-item">

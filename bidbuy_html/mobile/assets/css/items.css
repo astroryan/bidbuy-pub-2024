@@ -2182,6 +2182,7 @@
     line-height: 1.57;
     letter-spacing: -0.28px;
     color: var(--col_gray_6);
+    word-break: keep-all;
   }
   & .order__coupon-wrap {
     margin-bottom: 8px;
@@ -2316,6 +2317,10 @@
     background-color: var(--mainBlue);
     border-color: transparent;
   }
+  & .order__cash-receipt-wrap {
+    display: none;
+    margin-top: 20px;
+  }
   & .order__cash-receipt {
     display: flex;
     align-items: center;
@@ -2343,6 +2348,20 @@
     width: 100%;
   }
 
+  & .order__info-area:has(.order__cash-receipt-check > div:nth-child(1) input:checked) .order__cash-receipt-wrap {
+    display: block;
+  }
+
+  & .order__cash-receipt-check-wrap p {
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  & .order__cash-receipt-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+  }
   &
     .order__info-area:has(.order__cash-receipt > div:nth-child(1) input:checked)
     .payment-tab-contents
@@ -2398,17 +2417,13 @@
     color: var(--col_gray_6);
   }
 
-  /* @@@ */
-  /* & input:read-only {
-    background-color: var(--col_white) !important;
-  } */
-
   & .order__deposit-desc {
     font-size: 13px;
     line-height: 1.69;
     letter-spacing: -0.26px;
     color: var(--col_gray_6);
     margin-top: 15px;
+    word-break: keep-all;
   }
 
   /* right */

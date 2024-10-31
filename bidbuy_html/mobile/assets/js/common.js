@@ -117,6 +117,27 @@ const toggleButton = () => {
   });
 };
 
+// 무통장 입금 클릭시, 현금영수증 활성화
+const checkCashInput = () => {
+  const paymentTab = document.querySelector(".payment-tabs:has(.cash-tab)");
+
+  if (!paymentTab) return;
+  const cashReceiptBox = paymentTab.closest(".order-list-box").querySelector(".cash-receipt");
+  if (!cashReceiptBox) return;
+
+  const paymentInputs = paymentTab.querySelectorAll("input[type='radio']");
+  paymentInputs.forEach((radioInput) => {
+    radioInput.addEventListener("click", () => {
+      if (radioInput.closest(".cash-tab")) {
+        // cash-tab이 선택된 경우 Cash Receipt 박스 표시
+        cashReceiptBox.style.display = "block";
+      } else {
+        // 다른 결제 수단 선택 시 Cash Receipt 박스 숨기기
+        cashReceiptBox.style.display = "none";
+      }
+    });
+  });
+};
 // 탭 버튼 클릭 스크롤 이벤트
 const onClickTabScroll = () => {
   const tabsContainer = document.querySelector(".scroll-tabs-container");
@@ -688,6 +709,7 @@ window.addEventListener("DOMContentLoaded", () => {
   onClickTab();
   onClickTabScroll();
   toggleButton();
+  checkCashInput();
 
   calendar(); // 캘린더
 
