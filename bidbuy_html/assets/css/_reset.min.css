@@ -130,6 +130,7 @@ textarea {
   resize: none;
   box-shadow: none;
 }
+a,
 select {
   cursor: pointer;
 }
