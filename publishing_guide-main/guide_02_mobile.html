@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://contents.sixshop.com/uploadedFiles/212543/default/image_1654248056167.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://contents.sixshop.com/uploadedFiles/212543/default/image_1654248056167.png"
+    />
     <link rel="stylesheet" type="text/css" href="./inc/style.css" />
     <link rel="stylesheet" type="text/css" href="./inc/guide.css" />
     <script src="./inc/include.js" type="text/javascript" defer></script>
@@ -59,9 +63,13 @@
           </div>
 
           <button class="guide-print" onclick="print_guide()">프린트</button>
-          <a class="guide-print disabled" href="../bidbuy__v0.0.1.zip" download>다운로드</a>
+          <a class="guide-print disabled" href="../bidbuy__v0.0.1.zip" download
+            >다운로드</a
+          >
           <script>
-            const $DISABLED_BTN = document.querySelector(".guide-print.disabled");
+            const $DISABLED_BTN = document.querySelector(
+              ".guide-print.disabled"
+            );
             $DISABLED_BTN.removeAttribute("href");
             $DISABLED_BTN.removeAttribute("download");
           </script>
@@ -124,7 +132,8 @@
                 { section: "community", name: "커뮤니티 > 이용후기 - 리스트", directory: "./bidbuy_html/mobile/views/community/", id: "review", date_start: "", date_end: "", memo: "" },
                 { section: "community", name: "커뮤니티 > 이용후기 상세", directory: "./bidbuy_html/mobile/views/community/", id: "review_details", date_start: "", date_end: "", memo: "" },
                 { section: "community", name: "커뮤니티 > 비바특파원 - 리스트", directory: "./bidbuy_html/mobile/views/community/", id: "global_news", date_start: "", date_end: "", memo: "" },
-                { section: "community", name: "커뮤니티 > 비바특파원 - 상세", directory: "./bidbuy_html/mobile/views/community/", id: "global_news_details", date_start: "", date_end: "", memo: "" }
+                { section: "community", name: "커뮤니티 > 비바특파원 - 상세", directory: "./bidbuy_html/mobile/views/community/", id: "global_news_details", date_start: "", date_end: "", memo: "" },
+                { section: "community", name: "커뮤니티 > 비바출석부", directory: "./bidbuy_html/mobile/views/community/", id: "attendance", date_start: "2024-11-07", date_end: "2024-11-07", memo: "" }
               ];
 
             const $PAGE_TARGET = document.querySelector("#pub_list tbody");
@@ -133,9 +142,11 @@
               log = log += `<tr>`;
               log = log += `<td>${index + 1}</td>`;
               log = log += `<td>${key.section}</td>`;
-              log = log += `<td>${key.name}<br/><small>${key.directory}${key.id}.html</small></td>`;
+              log =
+                log += `<td>${key.name}<br/><small>${key.directory}${key.id}.html</small></td>`;
               if (key.directory !== "" && key.id !== "") {
-                log = log += `<td><a href=".${key.directory}${key.id}.html" target="_blank">바로가기</a></td>`;
+                log =
+                  log += `<td><a href=".${key.directory}${key.id}.html" target="_blank">바로가기</a></td>`;
               } else {
                 log = log += `<td>페이지 생성중</td>`;
               }
@@ -156,7 +167,8 @@
               let log = ``;
               log = log += `<tr>`;
               log = log += `<th>v${key.ver}</th>`;
-              log = log += `<td><code class="inline-code">${key.date}</code>&nbsp;&nbsp;&nbsp;${key.text}</td>`;
+              log =
+                log += `<td><code class="inline-code">${key.date}</code>&nbsp;&nbsp;&nbsp;${key.text}</td>`;
               log = log += `</tr>`;
               $HISTORY_TARGET.innerHTML = $HISTORY_TARGET.innerHTML += log;
             });
@@ -165,7 +177,7 @@
       </section>
 
       <!--푸터 영역-->
-      <section class="guide-foot"></section>
+      <!-- <section class="guide-foot"></section> -->
     </div>
   </body>
 </html>

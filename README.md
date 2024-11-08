@@ -50,6 +50,7 @@
 | "community" | review_details.html               | 커뮤니티 > 이용후기 상세                                                 | 100% ( 240927 ) | ㅇ          |
 | "community" | global_news.html                  | 커뮤니티 > 비바특파원 - 리스트                                           | 100% ( 240927 ) |             |
 | "community" | global_news_details.html          | 커뮤니티 > 비바특파원 - 상세                                             | 100% ( 240927 ) | ㅇ          |
+| "community" | attendance.html                   | 커뮤니티 > 비바 출석부                                                   | 100% ( 241107 ) | ㅇ          |
 
 # 사용된 라이브러리 JS
 
@@ -143,3 +144,8 @@ community.css
   > order_final.html
 
   > common.js
+
+# 241106 비바 출석부 페이지 생성 및 헤더에 계산기 추가
+
+1. 커뮤니티 > 비바출석부 생성
+2. 헤더에 계산기 추가

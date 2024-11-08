@@ -772,3 +772,115 @@
     width: calc((100% - 45px) / 4);
   }
 }
+/* 비바출석부 */
+
+.attendance-page {
+  & .attendance-wrap {
+    padding-top: 40px;
+  }
+
+  & .attendance-banner {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  & .attendance {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #eee;
+    padding: 35px 60px 40px;
+    margin-top: 10px;
+    letter-spacing: -0.02em;
+  }
+  & .attendance__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 26px;
+  }
+  & .attendance__title p {
+    color: var(--mainBlue);
+    font-size: 30px;
+    font-weight: bold;
+  }
+  & .attencance__table-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    padding: 20px 70px;
+    border-radius: 30px;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  & .attencance__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 18px;
+  }
+  & .attencance__table span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  & .attencance__table th span {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ddd;
+    color: #4a4a4a;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  & .attencance__table :is(th:first-child, th:last-child) span {
+    color: var(--mainBlue);
+  }
+  & .attencance__table td span {
+    height: 120px;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: var(--col_white);
+    border-radius: 10px;
+    color: #ccc;
+    overflow: hidden;
+  }
+
+  & td.active {
+  }
+  & td:has([class]) span {
+    font-size: 0;
+  }
+  & td.active span:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 81px;
+    height: 81px;
+    content: "";
+    background: #fff url("../images/icon/stamp.svg") no-repeat center / contain;
+    transform: translate(-50%, -50%);
+  }
+  & td.bingo span:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    content: "";
+    background: #fff url("../images/icon/bingo.svg") no-repeat center / contain;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: luminosity;
+    isolation: isolate;
+  }
+  & td.bingo-on span:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    content: "";
+    background: #fff url("../images/icon/bingo_on.svg") no-repeat center / contain;
+    transform: translate(-50%, -50%);
+  }
+}

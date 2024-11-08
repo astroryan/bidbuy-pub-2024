@@ -803,6 +803,456 @@ const $HEADER_CONT = `<div>
   </section>
 </div>
 
+<!--  통합계산기 -->
+  <div class="modal-calculator side-modal" style="display:none" >
+        <section class="modal-calculator__box">
+          <div class="modal-calculator__header">
+            <div class="modal-calculator__title">비용계산기</div>
+            <button class="modal__close-button" type="button" onclick="closeModal(this)">
+              <span class="blind">모달 닫기</span>
+            </button>
+          </div>
+          <div class="modal-calculator__body tabs-container">
+            <p class="calculator__sub-title">상품 구매 대행 시 예상 소요 비용을 계산해 보세요.</p>
+            <div class="calculator__tabs tabs">
+              <button type="button" class="active" data-idx="0">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_jp.png" alt="jp" />
+                </figure>
+                <b>일본</b>
+              </button>
+              <button type="button" data-idx="1">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_usa.png" alt="usa" />
+                </figure>
+                <b>미국</b>
+              </button>
+              <button type="button" data-idx="2">
+                <figure class="item__country">
+                  <img src="../../assets/images/icon/country_uk.png" alt="uk" />
+                </figure>
+                <b>영국</b>
+              </button>
+            </div>
+            <ul class="calculator__tabs-content tabs-content">
+              <!-- 일본 -->
+              <li data-idx="0">
+                <ul class="calculator__form">
+                  <li>
+                    <p class="calculator__input-title">소비세</p>
+                    <div class="calculator__input-wrap">
+                      <div class="basic-check-box__squire">
+                        <input type="radio" name="dutysss" id="duty1" checked />
+                        <label for="duty1"><span class="basic-check-box__squire-icon"></span>소비세 적용(10%)</label>
+                      </div>
+                      <div class="basic-check-box__squire">
+                        <input type="radio" name="dutysss" id="duty2" />
+                        <label for="duty2"><span class="basic-check-box__squire-icon"></span>미적용</label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">상품가격</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>JPY</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">회원등급</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <div class="basic-select-box gray">
+                        <select name="" id="">
+                          <option value="" disabled selected>일반회원</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">현지배송료</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>JPY</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">송금수수료</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>JPY</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">예상무게</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>kg</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">예상사이즈</p>
+                    <div class="calculator__input-wrap basic-input size-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>X</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>X</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>=</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <p class="calculator__small-text">가로(cm) X 세로(cm) X 높이(cm) = 부피(kg)</p>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">배송방법</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <div class="tab-check-button">
+                        <input type="checkbox" name="" id="ems" checked />
+                        <label for="ems">EMS</label>
+                      </div>
+                      <div class="tab-check-button">
+                        <input type="checkbox" name="" id="lotos" />
+                        <label for="lotos">로토스특송</label>
+                      </div>
+                      <div class="tab-check-button">
+                        <input type="checkbox" name="" id="sagawa" />
+                        <label for="sagawa">사가와특송</label>
+                      </div>
+                      <div class="tab-check-button">
+                        <input type="checkbox" name="" id="bySea" />
+                        <label for="bySea">선편특송</label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <button type="button" class="basic-button__light-gray-line">예상견적 결과보기</button>
+
+                <div class="payment-summary__details">
+                  <ul>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>배송방법</b></span>
+                      <span class="payment-value"><b>EMS</b></span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 현지구매비용</span>
+                      <span class="payment-value">¥ 300</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 적용무게</span>
+                      <span class="payment-value">12kg</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 국제 운송료</span>
+                      <span class="payment-value">¥ 12,000</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 대행수수료</span>
+                      <span class="payment-value">¥ 12,000</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>예상견적</b></span>
+                      <span class="payment-value"><b>¥ 162,000 X 9.2 = 123,400원</b></span>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>배송방법</b></span>
+                      <span class="payment-value"><b>로토스특송 </b></span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 현지구매비용</span>
+                      <span class="payment-value">¥ 300</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 적용무게</span>
+                      <span class="payment-value">12kg</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 국제 운송료</span>
+                      <span class="payment-value">¥ 12,000</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 대행수수료</span>
+                      <span class="payment-value">¥ 12,000</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>예상견적</b></span>
+                      <span class="payment-value"><b>¥ 162,000 X 9.2 = 123,400원</b></span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- 미국 -->
+              <li data-idx="1" style="display: none">
+                <ul class="calculator__form">
+                  <li>
+                    <p class="calculator__input-title">소비세</p>
+                    <div class="calculator__input-wrap">
+                      <div class="basic-check-box__squire">
+                        <input type="radio" name="dutyb" id="dutyb1" checked />
+                        <label for="dutyb1"><span class="basic-check-box__squire-icon"></span>소비세 적용(10%)</label>
+                      </div>
+                      <div class="basic-check-box__squire">
+                        <input type="radio" name="dutyb" id="dutyb2" />
+                        <label for="dutyb2"><span class="basic-check-box__squire-icon"></span>미적용</label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">상품가격</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>USD</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">회원등급</p>
+                    <div class="calculator__input-wrap">
+                      <div class="basic-select-box gray">
+                        <select name="" id="">
+                          <option value="" disabled selected>일반회원</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">현지배송료</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>USD</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">송금수수료</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>USD</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">예상무게</p>
+                    <div class="calculator__input-wrap lbs-input basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <div class="basic-select-box gray">
+                        <select name="" id="">
+                          <option value="" disabled selected>Lbs</option>
+                          <option>Lbs1</option>
+                          <option>Lbs1</option>
+                          <option>Lbs1</option>
+                          <option>Lbs1</option>
+                        </select>
+                      </div>
+                      <small>= 0 pound</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">예상사이즈</p>
+                    <div class="calculator__input-wrap basic-input size-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>X</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>X</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>=</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <p class="calculator__small-text">가로(cm) X 세로(cm) X 높이(cm) = 부피(kg)</p>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">배송방법</p>
+                    <div class="calculator__input-wrap">
+                      <div class="tab-check-button">
+                        <input type="checkbox" name="" id="bidbuy1" checked disabled />
+                        <label for="bidbuy1">비드바이 특송</label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <button type="button" class="basic-button__light-gray-line">예상견적 결과보기</button>
+
+                <div class="payment-summary__details">
+                  <ul>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>배송방법</b></span>
+                      <span class="payment-value"><b>비드바이 특송</b></span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 현지구매비용</span>
+                      <span class="payment-value">$ 35.60</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 적용무게</span>
+                      <span class="payment-value">12 lbs</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 국제 운송료</span>
+                      <span class="payment-value">$ 56.50</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 대행수수료</span>
+                      <span class="payment-value">$ 8.00</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>예상견적</b></span>
+                      <span class="payment-value"><b>$ 341.00 X 1.2 = 123,400원</b></span>
+                    </li>
+                  </ul>
+                  <div class="tariff-info">
+                    <p><b>관세안내</b></p>
+                    <p>
+                      세 부가세는 낙찰가기준 150달러를 초과할 경우 발생 되며,<br />
+                      비드바이 결제비용과 별도로 청구됩니다.<br />
+                      (한미 FTA 적용건은 낙찰가 기준 200달러까지 무관세)
+                    </p>
+                    <a
+                      href="https://www.customs.go.kr/kcs/ad/tax/BuyTaxCalculation.do"
+                      class="basic-button__light-gray-line"
+                      target="_blank"
+                      >예상세액조회 바로가기</a
+                    >
+                  </div>
+                </div>
+              </li>
+
+              <!-- 영국 -->
+              <li data-idx="2" style="display: none">
+                <ul class="calculator__form">
+                  <li>
+                    <p class="calculator__input-title">소비세</p>
+                    <div class="calculator__input-wrap">
+                      <div class="basic-check-box__squire">
+                        <input type="radio" name="dutyc" id="dutyc1" checked />
+                        <label for="dutyc1"><span class="basic-check-box__squire-icon"></span>소비세 적용(10%)</label>
+                      </div>
+                      <div class="basic-check-box__squire">
+                        <input type="radio" name="dutyc" id="dutyc2" />
+                        <label for="dutyc2"><span class="basic-check-box__squire-icon"></span>미적용</label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">상품가격</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>GBP</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">회원등급</p>
+                    <div class="calculator__input-wrap">
+                      <div class="basic-select-box gray">
+                        <select name="" id="">
+                          <option value="" disabled selected>일반회원</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                          <option>일반회원1</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">현지배송료</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>GBP</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">송금수수료</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>GBP</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">예상무게</p>
+                    <div class="calculator__input-wrap basic-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <small>kg</small>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">예상사이즈</p>
+                    <div class="calculator__input-wrap basic-input size-input">
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>X</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>X</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <span>=</span>
+                      <input type="text" placeholder="00" inputmode="numeric" />
+                      <p class="calculator__small-text">가로(cm) X 세로(cm) X 높이(cm) = 부피(kg)</p>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="calculator__input-title">배송방법</p>
+                    <div class="calculator__input-wrap">
+                      <div class="tab-check-button">
+                        <input type="checkbox" name="" id="bidbuy2" checked disabled />
+                        <label for="bidbuy2">비드바이 특송 </label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <button type="button" class="basic-button__light-gray-line">예상견적 결과보기</button>
+
+                <div class="payment-summary__details">
+                  <ul>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>배송방법</b></span>
+                      <span class="payment-value"><b>비드바이 특송</b></span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 현지구매비용</span>
+                      <span class="payment-value">35.60 파운드</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 적용무게</span>
+                      <span class="payment-value">12 lbs</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 국제 운송료</span>
+                      <span class="payment-value">56.50 파운드</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label">(+) 대행수수료</span>
+                      <span class="payment-value">8.00 파운드</span>
+                    </li>
+                    <li class="payment-item">
+                      <span class="payment-label"><b>예상견적</b></span>
+                      <span class="payment-value"><b>341.00 파운드 X 1.2 = 123,400원</b></span>
+                    </li>
+                  </ul>
+
+                  <div class="tariff-info">
+                    <p><b>관세안내</b></p>
+                    <p>
+                      세 부가세는 낙찰가기준 150달러를 초과할 경우 발생 되며,<br />
+                      비드바이 결제비용과 별도로 청구됩니다.<br />
+                      (한미 FTA 적용건은 낙찰가 기준 200달러까지 무관세)
+                    </p>
+                    <a
+                      href="https://www.customs.go.kr/kcs/ad/tax/BuyTaxCalculation.do"
+                      class="basic-button__light-gray-line"
+                      target="_blank"
+                      >예상세액조회 바로가기</a
+                    >
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
 <!-- 카테고리 -->
 <nav class="modal-category modal" style="display: none">
   <div class="modal__dim" onclick="closeModal(this)"></div>

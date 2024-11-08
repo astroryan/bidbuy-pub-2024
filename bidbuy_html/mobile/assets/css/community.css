@@ -771,3 +771,245 @@
     margin-top: 15px;
   }
 }
+
+/* 리뷰 페이지 */
+.community-review-page {
+  & .weekly-best-review {
+    padding: 50px 0;
+    background-color: var(--mainBlueOpacity);
+  }
+
+  & .review-box {
+    padding: 20px 24px 25px;
+  }
+  & .review-swiper-wrap {
+    position: relative;
+  }
+
+  & .review-swiper-button-next,
+  & .review-swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 53px;
+    height: 53px;
+    object-fit: contain;
+    background-color: var(--col_white);
+    background: url("../images/icon/arrow_swiper.png") no-repeat center / contain;
+    transform: translate(100%, -50%);
+    z-index: 2;
+  }
+  & .review-swiper-button-next {
+    right: -30px;
+  }
+  & .review-swiper-button-prev {
+    left: -30px;
+    transform: translate(-100%, -50%) rotate(-180deg);
+  }
+  & .swiper-button-disabled {
+    opacity: 0.5;
+  }
+
+  /* 프리미엄후기 */
+  & .premium-review {
+    padding-top: 40px;
+  }
+  & .premium-review__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  & .premium-review__list > li {
+    flex-shrink: 0;
+    width: calc((100% - 15px) / 2);
+  }
+  & .premium-review-box {
+    display: flex;
+    align-items: flex-start;
+    padding: 18px 20px 24px 21px;
+  }
+  & .premium-review__left {
+    flex-shrink: 0;
+    width: 150px;
+  }
+  & .premium-review__name {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_black_1);
+  }
+  & .premium-review__status {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--col_gray_6);
+    margin-top: 6px;
+  }
+  & .premium-review__desc {
+    margin-top: 38px;
+  }
+  & .premium-review__date {
+    font-size: 13px;
+    color: var(--col_gray_7);
+    margin-bottom: 10px;
+  }
+
+  & .premium-review__content {
+    padding-right: 10px;
+  }
+  & .premium-review__content .item__market {
+    display: inline-flex;
+    margin: 0;
+  }
+  & .premium-review__title {
+    font-size: 17px;
+    font-weight: bold;
+    height: 2lh;
+    line-height: 1.59;
+    letter-spacing: -0.34px;
+    color: var(--col_black_1);
+    margin-top: 5px;
+  }
+
+  & .premium-review__con {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    color: var(--col_gray_6);
+    margin-top: 14px;
+  }
+  & .premium-review__img {
+    flex-shrink: 0;
+    width: 117px;
+    height: 118px;
+    border-radius: 10px;
+    border: solid 1px var(--col_gray_4);
+    overflow: hidden;
+  }
+  & .basic-pagination {
+    margin-top: 40px;
+  }
+
+  /* 일반 후기 */
+  & .basic-review {
+    padding-top: 48px;
+  }
+  & .basic-review__list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  & .basic-review__list > li {
+    flex-shrink: 0;
+    width: calc((100% - 45px) / 4);
+  }
+}
+/* 비바출석부 */
+
+.attendance-page {
+  & .attendance-wrap {
+    padding-top: 18px;
+  }
+
+  & .attendance-banner {
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  & .attendance {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #eee;
+    padding: 15px 9px 17px;
+    margin-top: 12px;
+    letter-spacing: -0.02em;
+  }
+  & .attendance__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  & .attendance__title p {
+    color: var(--mainBlue);
+    font-size: 20px;
+    font-weight: bold;
+  }
+  & .attencance__table-button {
+    padding: 3.5px 14px;
+    border-radius: 13px;
+    overflow: hidden;
+  }
+  & .attencance__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+  }
+  & .attencance__table span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  & .attencance__table th span {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #ddd;
+    color: #999999;
+    padding: 6.5px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  & .attencance__table :is(th:first-child, th:last-child) span {
+    color: var(--mainBlue);
+  }
+  & .attencance__table td span {
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--col_white);
+    border-radius: 10px;
+    color: #ccc;
+    overflow: hidden;
+  }
+
+  & td:has([class]) span {
+    font-size: 0;
+  }
+  & td.active span:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1/1;
+    content: "";
+    background: #fff url("../images/icon/stamp.svg") no-repeat center / contain;
+    transform: translate(-50%, -50%);
+  }
+  & td.bingo span:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    width: 39px;
+    height: 39px;
+    aspect-ratio: 1/1;
+    content: "";
+    background: #fff url("../images/icon/bingo.svg") no-repeat center / contain;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: luminosity;
+    isolation: isolate;
+  }
+  & td.bingo-on span:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    width: 39px;
+    height: 39px;
+    aspect-ratio: 1/1;
+    content: "";
+    background: #fff url("../images/icon/bingo_on.svg") no-repeat center / contain;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -615,7 +615,7 @@ input[type="radio"] label {
   height: 19px;
   background: url("../images/icon/unchecked_squire.svg") no-repeat center / contain;
 }
-.basic-check-box__squire input[type="checkbox"]:checked ~ label .basic-check-box__squire-icon {
+.basic-check-box__squire input[type="checkbox"]:checked ~ label {
   background-image: url("../images/icon/checked_squire.svg");
 }
 
@@ -2536,6 +2536,197 @@ a.guide-content__accordion-button .guide-content__title:after {
   content: "";
   background: url("../images/icon/arrow_right_gray.svg") no-repeat center / contain;
   margin-left: auto;
+}
+
+/* 비용 계산기 */
+.modal-calculator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 100vh;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid var(--col_gray_4);
+  border-radius: 0px 12px 12px 0px;
+  background-color: var(--col_white);
+
+  transform: none;
+  z-index: 20;
+}
+
+.modal-calculator .modal-calculator__title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 17px 22px;
+}
+
+.modal-calculator .modal__close-button {
+  top: 15px;
+  right: 10px;
+  transform: none;
+}
+.calculator__sub-title {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.modal-calculator__body {
+  padding: 0 15px 35px;
+}
+.calculator__tabs {
+  width: 100%;
+  margin: 0 auto;
+}
+.calculator__tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 0;
+  gap: 12px;
+}
+
+.calculator__tabs-content {
+  max-height: calc(100vh - 185px);
+  overflow-y: auto;
+  /* padding: 35px 3px 0 0; */
+  padding-top: 35px;
+}
+.calculator__form {
+  margin-bottom: 40px;
+}
+.calculator__form li {
+  display: flex;
+  align-items: center;
+}
+
+.calculator__form li + li {
+  margin-top: 16px;
+}
+.calculator__form li:has(.size-input) + li {
+  margin-top: 40px;
+}
+.calculator__input-title {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  width: 80px;
+}
+.calculator__form li small {
+  font-size: 14px;
+  color: #999;
+  margin-left: 6px;
+}
+.calculator__input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.calculator__input-wrap.basic-input input {
+  padding: 0 12px;
+}
+.calculator__input-wrap.basic-input input,
+.calculator__input-wrap .basic-select-box {
+  flex: 0 1 168px;
+  height: 48px;
+}
+.size-input {
+  position: relative;
+}
+.calculator__input-wrap.size-input input {
+  flex: auto;
+  width: 48px;
+}
+.calculator__input-wrap.size-input input:last-child {
+  flex: 1;
+}
+.calculator__input-wrap:has(.basic-check-box__squire) {
+  gap: 40px;
+}
+.size-input span {
+  font-size: 10px;
+  color: #999;
+  margin: 0 2px;
+}
+.lbs-input {
+}
+.calculator__input-wrap.lbs-input input {
+  flex: auto;
+  width: 88px;
+}
+.calculator__input-wrap.lbs-input .basic-select-box {
+  flex: auto;
+  width: 70px;
+  margin-left: 9px;
+}
+.calculator__small-text {
+  position: absolute;
+  top: calc(100% + 9px);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: #999;
+}
+.calculator__input-wrap:has(.tab-check-button) {
+  gap: 6px;
+}
+.calculator__input-wrap .tab-check-button:only-child {
+  min-width: 97px;
+}
+.calculator__input-wrap .tab-check-button label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 43px;
+  font-size: 12px;
+  padding: 16px 5px;
+}
+
+.modal-calculator .basic-button__light-gray-line {
+  width: 290px;
+  height: 50px;
+  margin: 0 auto;
+}
+.tariff-info {
+  padding-top: 23px;
+}
+.tariff-info p {
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.tariff-info p + p {
+  margin-top: 16px;
+}
+.tariff-info b {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tariff-info .basic-button__light-gray-line {
+  margin-top: 20px;
+}
+
+.payment-summary__details {
+  margin-top: 15px;
+}
+.payment-summary__details ul {
+  padding: 25px 0;
+  border-bottom: 1px solid var(--col_gray_4);
+}
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  letter-spacing: 0.02px;
+}
+.payment-item + .payment-item {
+  margin-top: 18px;
+}
+.payment-label {
+}
+.payment-label b {
+  font-weight: bold;
 }
 
 /* 글 상세페이지 */
