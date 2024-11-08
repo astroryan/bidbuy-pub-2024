@@ -573,7 +573,6 @@ input[type="radio"] label {
 .basic-checkbox__circle input[type="checkbox"]:checked ~ label .basic-checkbox__circle-icon {
   background-image: url("../images/icon/checked_circle.svg");
 }
-/* @@ */
 .tab-check-button input {
   display: none;
 }
@@ -629,7 +628,10 @@ input[type="radio"] label {
   height: 19px;
   background: url("../images/icon/unchecked_squire.svg") no-repeat center / contain;
 }
-.basic-check-box__squire input[type="checkbox"]:checked ~ label .basic-check-box__squire-icon {
+.basic-check-box__squire
+  :is(input[type="checkbox"], input[type="radio"]):checked
+  ~ label
+  .basic-check-box__squire-icon {
   background-image: url("../images/icon/checked_squire.svg");
 }
 
@@ -644,10 +646,13 @@ input[type="radio"] label {
   height: 20px;
   background: url("../images/icon/unchecked_squire_gray.svg") no-repeat center / contain;
 }
-.basic-check-box__squire.gray input[type="checkbox"]:checked ~ label {
+.basic-check-box__squire.gray :is(input[type="checkbox"], input[type="radio"]):checked ~ label {
   color: var(--col_black_1);
 }
-.basic-check-box__squire.gray input[type="checkbox"]:checked ~ label .basic-check-box__squire-icon.black {
+.basic-check-box__squire.gray
+  :is(input[type="checkbox"], input[type="radio"]):checked
+  ~ label
+  .basic-check-box__squire-icon.black {
   border-radius: 4px;
   border: solid 1px var(--col_gray_4);
   background-image: url("../images/icon/checked_squire_black.svg");
@@ -2391,6 +2396,197 @@ a.guide-content__accordion-button .guide-content__title:after {
   color: var(--col_black_1);
   justify-self: center;
 }
+
+/* 비용 계산기 */
+.modal-calculator__box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--col_white);
+  transform: none;
+  z-index: 20;
+}
+
+.modal-calculator .modal-calculator__title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 17px 22px;
+}
+
+.modal-calculator .modal__close-button {
+  top: 15px;
+  right: 10px;
+  transform: none;
+}
+.calculator__sub-title {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.modal-calculator__body {
+  padding: 0 15px 20px;
+}
+.calculator__tabs {
+  width: 100%;
+  margin: 0 auto;
+}
+.calculator__tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  gap: 8px;
+}
+.calculator__tabs .item__country {
+  width: 18px;
+  height: 18px;
+}
+
+.calculator__tabs-content {
+  max-height: calc(100vh - 150px);
+  max-height: calc(100dvh - 150px);
+  overflow-y: auto;
+  padding-top: 35px;
+}
+.calculator__form {
+  margin-bottom: 40px;
+}
+.calculator__form li {
+  display: flex;
+  align-items: center;
+}
+
+.calculator__form li + li {
+  margin-top: 16px;
+}
+.calculator__form li:has(.size-input) + li {
+  margin-top: 40px;
+}
+.calculator__input-title {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  width: 75px;
+}
+.calculator__form li small {
+  font-size: 14px;
+  color: #999;
+  margin-left: 6px;
+}
+.calculator__input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.calculator__input-wrap.basic-input input {
+  padding: 0 12px;
+}
+.calculator__input-wrap.basic-input input,
+.calculator__input-wrap .basic-select-box {
+  flex: 0 1 60%;
+  height: 48px;
+  min-width: 0;
+}
+.size-input {
+  position: relative;
+}
+.calculator__input-wrap.size-input input {
+  flex: 0 0 20%;
+  min-width: 0;
+}
+.calculator__input-wrap.size-input .size-total {
+  flex: 1;
+}
+.calculator__input-wrap:has(.basic-check-box__squire) {
+  gap: 40px;
+}
+.size-input span {
+  font-size: 10px;
+  color: #999;
+  margin: 0 2px;
+}
+.calculator__input-wrap.lbs-input input {
+  flex: auto;
+  width: 88px;
+}
+.calculator__input-wrap.lbs-input .basic-select-box {
+  flex: auto;
+  width: 70px;
+  margin-left: 9px;
+}
+.calculator__small-text {
+  position: absolute;
+  top: calc(100% + 9px);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: #999;
+}
+.calculator__input-wrap:has(.tab-check-button) {
+  gap: 6px;
+}
+.calculator__input-wrap .tab-check-button:only-child {
+  min-width: 97px;
+}
+.calculator__input-wrap .tab-check-button label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 43px;
+  font-size: 12px;
+  padding: 16px 5px;
+}
+
+.modal-calculator .basic-button__light-gray-line {
+  width: 290px;
+  height: 50px;
+  margin: 0 auto;
+}
+.tariff-info {
+  padding-top: 23px;
+}
+.tariff-info p {
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.tariff-info p + p {
+  margin-top: 16px;
+}
+.tariff-info b {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tariff-info .basic-button__light-gray-line {
+  margin-top: 20px;
+}
+
+.payment-summary__details {
+  margin-top: 15px;
+}
+.payment-summary__details ul {
+  padding: 25px 0;
+  border-bottom: 1px solid var(--col_gray_4);
+}
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  letter-spacing: 0.02px;
+}
+.payment-item + .payment-item {
+  margin-top: 18px;
+}
+
+.payment-label b {
+  font-weight: bold;
+}
+
 /* 글 상세페이지 */
 .details-page .details-header {
   border-top: 1px solid var(--col_gray_4);

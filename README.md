@@ -149,3 +149,14 @@ community.css
 
 1. 커뮤니티 > 비바출석부 생성
 2. 헤더에 계산기 추가
+3. 주석 삭제 및 reset a 태그 pointer 추가
+
+- 수정된 파일리스트
+  > bidbuy_html/assets/css/common.css
+  > bidbuy_html/assets/js/include.js
+  > bidbuy_html/mobile/assets/css/common.css
+  > bidbuy_html/mobile/assets/js/include.js
+  > bidbuy_html/mobile/views/index/index.html
+  > bidbuy_html/views/index/index.html
+- 생성 파일
+  > attendance.html

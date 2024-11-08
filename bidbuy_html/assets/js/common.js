@@ -537,11 +537,6 @@ function calendar() {
   });
 }
 
-// 비용계산기
-function callCalculator() {
-  const calculator = document.querySelector(".calculator");
-}
-
 // ::::::::::: SWIPER :::::::::::
 function mainSlide() {
   if (document.querySelector(".main-slider")) {
