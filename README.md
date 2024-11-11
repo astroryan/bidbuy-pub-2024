@@ -50,6 +50,7 @@
 | "community" | review_details.html               | 커뮤니티 > 이용후기 상세                                                 | 100% ( 240927 ) | ㅇ          |
 | "community" | global_news.html                  | 커뮤니티 > 비바특파원 - 리스트                                           | 100% ( 240927 ) |             |
 | "community" | global_news_details.html          | 커뮤니티 > 비바특파원 - 상세                                             | 100% ( 240927 ) | ㅇ          |
+| "community" | attendance.html                   | 커뮤니티 > 비바 출석부                                                   | 100% ( 241107 ) | ㅇ          |
 
 # 사용된 라이브러리 JS
 
@@ -123,3 +124,39 @@ community.css
    > purchases/index.html
 
 > items.css
+
+# 241030 1차, 2차결제 수정사항
+
+1. 2차결제 주문자 정보삭제
+2. 2차결제 수취인 정보 [수취인 성명, 휴대전화번호, 개인통관부호] 만 남기고, 해당 부분 disabled 처리
+3. 쿠폰, 정액권 -> 쿠폰을 2가지[대행수수료, 국제배송료]로 작업 및 정액권 삭제
+4. [1차,2차 결제] 결제 정보 무통장입금 클릭시 현금영수증 section 노출
+5. [1차,2차 결제] 현금 영수증 발급 유무 라디오 버튼 추가
+
+-> 관련 모달 및 텍스트 전체적 수정 완료
+
+- 수정된 파일리스트
+
+  > items.css
+
+  > order_initial.html
+
+  > order_final.html
+
+  > common.js
+
+# 241106 비바 출석부 페이지 생성 및 헤더에 계산기 추가
+
+1. 커뮤니티 > 비바출석부 생성
+2. 헤더에 계산기 추가
+3. 주석 삭제 및 reset a 태그 pointer 추가
+
+- 수정된 파일리스트
+  > bidbuy_html/assets/css/common.css
+  > bidbuy_html/assets/js/include.js
+  > bidbuy_html/mobile/assets/css/common.css
+  > bidbuy_html/mobile/assets/js/include.js
+  > bidbuy_html/mobile/views/index/index.html
+  > bidbuy_html/views/index/index.html
+- 생성 파일
+  > attendance.html

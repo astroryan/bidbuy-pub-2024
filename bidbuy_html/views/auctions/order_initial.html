@@ -660,7 +660,7 @@
                             <input type="radio" name="payment" id="card" checked />
                             <label for="card">카드결제</label>
                           </div>
-                          <div class="payment-radio-tab">
+                          <div class="payment-radio-tab cash-tab">
                             <input type="radio" name="payment" id="cash" />
                             <label for="cash">무통장입금(가상계좌)</label>
                           </div>
@@ -669,54 +669,75 @@
                       </div>
                     </div>
                     <!-- 현금영수증 신청 -->
-                    <div class="order__table-group">
+                    <div class="order__table-group cash-receipt" style="display: none">
                       <div class="order__selection">
                         <p class="order__title">현금영수증 신청</p>
                       </div>
                       <div class="order__info-area">
-                        <div class="order__cash-receipt">
-                          <div class="radio-check-button">
-                            <input type="radio" name="receipt" id="receipt1" />
-                            <label for="receipt1"><span class="radio-check-button-icon"></span>개인소득공제</label>
-                          </div>
-                          <div class="radio-check-button">
-                            <input type="radio" name="receipt" id="receipt12" checked />
-                            <label for="receipt12"><span class="radio-check-button-icon"></span>사업자 지출증빙</label>
+                        <div class="order__cash-receipt-check-wrap">
+                          <p>
+                            현금영수증 소득공제 혜택을 위해 본 거래 정보를 국세청에 통보합니다.<br />
+                            현금영수증 발급 신청을 하시겠습니까? 
+                          </p>
+                          <div class="order__cash-receipt-check">
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt_check" id="receipt_check_1" checked />
+                              <label for="receipt_check_1"><span class="radio-check-button-icon"></span>예</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt_check" id="receipt_check_2" />
+                              <label for="receipt_check_2"><span class="radio-check-button-icon"></span>아니요</label>
+                            </div>
                           </div>
                         </div>
-                        <ul class="payment-tab-contents">
-                          <li class="payment-tab-contents__list">
-                            <div class="order__input-group">
-                              <div class="basic-select-box gray">
-                                <select name="" id="" required>
-                                  <option>휴대폰 번호로 발급</option>
-                                  <option>현금영수증카드번호</option>
-                                </select>
-                              </div>
-                              <div class="basic-input">
-                                <input id="text" type="text" placeholder="" />
-                              </div>
+
+                        <div class="order__cash-receipt-wrap">
+                          <div class="order__cash-receipt">
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt" id="receipt1" checked />
+                              <label for="receipt1"><span class="radio-check-button-icon"></span>개인소득공제</label>
                             </div>
-                            <p class="order__deposit-desc">
-                              ※ 입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.
-                            </p>
-                          </li>
-                          <li class="payment-tab-contents__list">
-                            <div class="order__input-group">
-                              <div class="basic-select-box gray">
-                                <select name="" id="" required>
-                                  <option>사업자등록번호</option>
-                                </select>
-                              </div>
-                              <div class="basic-input">
-                                <input id="text" type="text" placeholder="" />
-                              </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt" id="receipt12" />
+                              <label for="receipt12"
+                                ><span class="radio-check-button-icon"></span>사업자 지출증빙</label
+                              >
                             </div>
-                            <p class="order__deposit-desc">
-                              ※ 입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.
-                            </p>
-                          </li>
-                        </ul>
+                          </div>
+                          <ul class="payment-tab-contents">
+                            <li class="payment-tab-contents__list">
+                              <div class="order__input-group">
+                                <div class="basic-select-box gray">
+                                  <select name="" id="" required>
+                                    <option>휴대폰 번호로 발급</option>
+                                    <option>현금영수증카드번호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-input">
+                                  <input id="text" type="text" placeholder="" />
+                                </div>
+                              </div>
+                              <p class="order__deposit-desc">
+                                ※ 입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.
+                              </p>
+                            </li>
+                            <li class="payment-tab-contents__list">
+                              <div class="order__input-group">
+                                <div class="basic-select-box gray">
+                                  <select name="" id="" required>
+                                    <option>사업자등록번호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-input">
+                                  <input id="text" type="text" placeholder="" />
+                                </div>
+                              </div>
+                              <p class="order__deposit-desc">
+                                ※ 입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </article>
@@ -761,26 +782,82 @@
                       <div class="order__info-area order__pay-area">
                         <div class="payment-tabs">
                           <div class="payment-radio-tab">
-                            <input type="radio" name="payment" id="card" checked />
-                            <label for="card">카드결제</label>
+                            <input type="radio" name="payment2" id="card2" checked />
+                            <label for="card2">카드결제</label>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="order__table-group">
+
+                    <!-- 현금영수증 신청 -->
+                    <div class="order__table-group cash-receipt">
                       <div class="order__selection">
                         <p class="order__title">현금영수증 신청</p>
                       </div>
                       <div class="order__info-area">
-                        <div class="order__cash-receipt">
-                          <div class="radio-check-button">
-                            <input type="radio" name="receipt" id="receipt1" />
-                            <label for="receipt1"><span class="radio-check-button-icon"></span>개인소득공제</label>
+                        <div class="order__cash-receipt-check-wrap">
+                          <p>
+                            현금영수증 소득공제 혜택을 위해 본 거래 정보를 국세청에 통보합니다.<br />
+                            현금영수증 발급 신청을 하시겠습니까? 
+                          </p>
+                          <div class="order__cash-receipt-check">
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt_check2" id="receipt_check_21" checked />
+                              <label for="receipt_check_21"><span class="radio-check-button-icon"></span>예</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt_check2" id="receipt_check_22" />
+                              <label for="receipt_check_22"><span class="radio-check-button-icon"></span>아니요</label>
+                            </div>
                           </div>
-                          <div class="radio-check-button">
-                            <input type="radio" name="receipt" id="receipt12" checked />
-                            <label for="receipt12"><span class="radio-check-button-icon"></span>사업자 지출증빙</label>
+                        </div>
+
+                        <div class="order__cash-receipt-wrap">
+                          <div class="order__cash-receipt">
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt3" id="receipt31" checked />
+                              <label for="receipt31"><span class="radio-check-button-icon"></span>개인소득공제</label>
+                            </div>
+                            <div class="radio-check-button">
+                              <input type="radio" name="receipt3" id="receipt142" />
+                              <label for="receipt142"
+                                ><span class="radio-check-button-icon"></span>사업자 지출증빙</label
+                              >
+                            </div>
                           </div>
+                          <ul class="payment-tab-contents">
+                            <li class="payment-tab-contents__list">
+                              <div class="order__input-group">
+                                <div class="basic-select-box gray">
+                                  <select name="" id="" required>
+                                    <option>휴대폰 번호로 발급</option>
+                                    <option>현금영수증카드번호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-input">
+                                  <input id="text" type="text" placeholder="" />
+                                </div>
+                              </div>
+                              <p class="order__deposit-desc">
+                                ※ 입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.
+                              </p>
+                            </li>
+                            <li class="payment-tab-contents__list">
+                              <div class="order__input-group">
+                                <div class="basic-select-box gray">
+                                  <select name="" id="" required>
+                                    <option>사업자등록번호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-input">
+                                  <input id="text" type="text" placeholder="" />
+                                </div>
+                              </div>
+                              <p class="order__deposit-desc">
+                                ※ 입력하신 정보는 현금영수증 발급에만 자동으로 처리되며 저장하지 않습니다.
+                              </p>
+                            </li>
+                          </ul>
                         </div>
                       </div>
                     </div>

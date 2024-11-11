@@ -2116,7 +2116,7 @@
     width: 158px;
     height: 34px;
     border-radius: 5px;
-    border: solid 1px #e8e8e8;
+    /* border: solid 1px #e8e8e8; */
     background-color: var(--col_white);
     margin-top: 19px;
   }
@@ -2376,6 +2376,10 @@
     background-color: var(--mainBlue);
     border-color: transparent;
   }
+  & .order__cash-receipt-wrap {
+    display: none;
+    margin-top: 20px;
+  }
   & .order__cash-receipt {
     display: flex;
     align-items: center;
@@ -2401,6 +2405,20 @@
   }
   & .payment-tab-contents__list input {
     width: 267px;
+  }
+
+  & .order__info-area:has(.order__cash-receipt-check > div:nth-child(1) input:checked) .order__cash-receipt-wrap {
+    display: block;
+  }
+
+  & .order__cash-receipt-check-wrap p {
+    line-height: 1.4;
+  }
+  & .order__cash-receipt-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
   }
 
   &
