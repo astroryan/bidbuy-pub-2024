@@ -40,7 +40,6 @@
                 <col width="30%" />
                 <col width="10%" />
                 <col width="10%" />
-                <col width="10%" />
                 <col width="" />
               </colgroup>
               <thead>
@@ -49,7 +48,6 @@
                   <th>분류</th>
                   <th>페이지명</th>
                   <th>링크</th>
-                  <th>착수일</th>
                   <th>완료일</th>
                   <th>비고</th>
                 </tr>
@@ -68,13 +66,13 @@
           <br /><br /><br /><br /><br />
 
           <!-- ##### 버전 체크 ##### -->
-          <h3 class="guide-subtitle">히스토리</h3>
+<!--           <h3 class="guide-subtitle">히스토리</h3>
           <table class="guide-table" id="his_list">
             <colgroup>
               <col width="15%" />
             </colgroup>
             <tbody></tbody>
-          </table>
+          </table> -->
 
           <script type="text/javascript">
             /* ##### 산출물 목록 ##### */
@@ -141,7 +139,7 @@
               } else {
                 log = log += `<td>페이지 생성중</td>`;
               }
-              log = log += `<td>${key.date_start}</td>`;
+              // log = log += `<td>${key.date_start}</td>`;
               log = log += `<td>${key.date_end}</td>`;
               log = log += `<td>${key.memo}</td>`;
               log = log += `</tr>`;
@@ -150,18 +148,18 @@
 
             /* ##### 버전 체크 ##### */
             // prettier-ignore
-            const HISTORY = [
-              { date: '2024-09-13', ver: '0.0.0', text: '프로젝트 생성' },
-            ];
-            const $HISTORY_TARGET = document.querySelector("#his_list tbody");
-            [...HISTORY].reverse().forEach((key) => {
-              let log = ``;
-              log = log += `<tr>`;
-              log = log += `<th>v${key.ver}</th>`;
-              log = log += `<td><code class="inline-code">${key.date}</code>&nbsp;&nbsp;&nbsp;${key.text}</td>`;
-              log = log += `</tr>`;
-              $HISTORY_TARGET.innerHTML = $HISTORY_TARGET.innerHTML += log;
-            });
+            // const HISTORY = [
+            //   { date: '2024-09-13', ver: '0.0.0', text: '프로젝트 생성' },
+            // ];
+            // const $HISTORY_TARGET = document.querySelector("#his_list tbody");
+            // [...HISTORY].reverse().forEach((key) => {
+            //   let log = ``;
+            //   log = log += `<tr>`;
+            //   log = log += `<th>v${key.ver}</th>`;
+            //   log = log += `<td><code class="inline-code">${key.date}</code>&nbsp;&nbsp;&nbsp;${key.text}</td>`;
+            //   log = log += `</tr>`;
+            //   $HISTORY_TARGET.innerHTML = $HISTORY_TARGET.innerHTML += log;
+            // });
           </script>
         </div>
       </section>
